@@ -1,6 +1,6 @@
 const CACHE_VERSION = 'lockily-pwa-v1';
 const CORE_CACHE = [
-  './lockily.html', './manifest.webmanifest', './favicon.png',
+  './index.html', './manifest.webmanifest', './favicon.png',
   './icon-192.png', './icon-512.png', './icon-maskable-512.png',
   './apple-touch-icon-180.png', './lockily-share.png'
 ];
@@ -16,9 +16,9 @@ self.addEventListener('fetch', event => {
   if (request.mode === 'navigate') {
     event.respondWith(fetch(request).then(response => {
       const copy = response.clone();
-      caches.open(CACHE_VERSION).then(cache => cache.put('./lockily.html', copy));
+      caches.open(CACHE_VERSION).then(cache => cache.put('./index.html', copy));
       return response;
-    }).catch(async () => (await caches.match(request)) || (await caches.match('./lockily.html'))));
+    }).catch(async () => (await caches.match(request)) || (await caches.match('./index.html'))));
     return;
   }
   if (request.destination === 'image') {
