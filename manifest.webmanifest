@@ -1,0 +1,21 @@
+{
+  "name": "Lockily — Relationship Status Intelligence",
+  "short_name": "Lockily",
+  "description": "Lock your person, check phone-number attention, unlock Lock-in reports and monitor relationship-status changes.",
+  "id": "./lockily.html",
+  "start_url": "./lockily.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff7fb",
+  "theme_color": "#351628",
+  "orientation": "portrait-primary",
+  "lang": "en-NG",
+  "dir": "ltr",
+  "categories": ["lifestyle", "social"],
+  "prefer_related_applications": false,
+  "icons": [
+    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"icon-maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  ]
+}
