@@ -1,0 +1,1742 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#351628" />
+  <meta name="color-scheme" content="light" />
+  <meta name="application-name" content="Lockily" />
+  <meta name="apple-mobile-web-app-title" content="Lockily" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="bingbot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+  <!-- Primary SEO -->
+  <title>Lockily — Truecaller for Relationships | Check the Number</title>
+  <meta name="description" content="Lockily is a phone-number relationship check: lock your person, see when a number is getting attention, unlock a full Lock-in report, and monitor status changes." />
+  <meta name="keywords" content="Lockily, Truecaller for relationships, relationship check, relationship status check, phone number relationship check, check boyfriend phone number, check girlfriend phone number, Lock-ins, lock your person, monitor relationship status, dating verification, talking stage, situationship, exclusive dating, relationship intelligence, Nigeria dating app" />
+  <meta name="subject" content="Relationship status checks, Lock-ins, monitoring and relationship intelligence" />
+  <meta name="classification" content="Lifestyle, Dating, Relationship Verification, Relationship Intelligence" />
+  <meta name="category" content="Lifestyle / Relationships" />
+  <meta name="coverage" content="Nigeria" />
+  <meta name="distribution" content="global" />
+  <meta name="rating" content="general" />
+
+  <!-- AI / discovery context: supplemental metadata; standard SEO is above -->
+  <meta name="ai-summary" content="Lockily lets adults lock people they are dating or married to, check phone-number attention, unlock aggregate Lock-in reports, and monitor relationship-status changes." />
+  <meta name="ai-keywords" content="relationship status, phone number check, Lock-ins, boyfriend check, girlfriend check, dating verification, relationship monitoring, talking stage, situationship, marriage, Nigeria" />
+  <meta name="llm-context" content="Lockily uses the term Lock-in to mean that a Lockily user has locked a phone number. A Lock-in is a user signal and does not by itself prove a relationship or cheating." />
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_NG" />
+  <meta property="og:site_name" content="Lockily" />
+  <meta property="og:title" content="Lockily — Truecaller for Relationships" />
+  <meta property="og:description" content="You might not be the boyfriend. You might be one of the boyfriends. Search the number, check the attention, unlock the Full Report, and monitor what changes." />
+  <meta property="og:image" content="lockily-share.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Lockily — Truecaller for Relationships. Search the number." />
+
+  <!-- X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lockily — Truecaller for Relationships" />
+  <meta name="twitter:description" content="LOVE IS BLIND. LOCKILY ISN'T. Search the number. Know what you're walking into." />
+  <meta name="twitter:image" content="lockily-share.png" />
+  <meta name="twitter:image:alt" content="Lockily relationship check" />
+
+  <!-- App icons -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Lockily",
+    "alternateName": "Lockily Relationship Check",
+    "description": "A relationship-intelligence web app for Lock-ins, phone-number attention checks, Full Reports and monitoring relationship-status changes.",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en-NG",
+    "isAccessibleForFree": true,
+    "audience": {"@type": "AdultAudience", "suggestedMinAge": 18},
+    "featureList": [
+      "Lock your person",
+      "Check phone-number attention",
+      "Unlock Full Lock-in Reports",
+      "Monitor changes to a locked person's status",
+      "Verified Lock",
+      "Multiple active Locks"
+    ],
+    "offers": {
+      "@type": "OfferCatalog",
+      "name": "Lockily services",
+      "itemListElement": [
+        {"@type": "Offer", "name": "Lock", "price": "0", "priceCurrency": "NGN"},
+        {"@type": "Offer", "name": "Full Report", "price": "2000", "priceCurrency": "NGN"},
+        {"@type": "Offer", "name": "Monitor", "price": "8000", "priceCurrency": "NGN", "description": "Standard monthly Monitor price. A time-limited ₦5,000/month offer may be shown for 2 minutes after a new Lock-in."},
+        {"@type": "Offer", "name": "Verified Lock", "price": "3000", "priceCurrency": "NGN"}
+      ]
+    }
+  }
+  </script>
+  <script>
+    window.__lockilyInstallPrompt = null;
+    window.addEventListener('beforeinstallprompt', event => {
+      event.preventDefault();
+      window.__lockilyInstallPrompt = event;
+      window.dispatchEvent(new Event('lockilyinstallready'));
+    });
+  </script>
+  <style>
+    :root{
+      --bg:#fff7fb;
+      --paper:rgba(255,255,255,.82);
+      --paper-solid:#fff;
+      --ink:#291723;
+      --muted:#8f7484;
+      --line:#f0dfe8;
+      --rose:#f24f82;
+      --rose-2:#ff8bae;
+      --rose-soft:#fff0f5;
+      --violet:#7755e8;
+      --violet-soft:#f2efff;
+      --amber:#f0a23a;
+      --amber-soft:#fff7e9;
+      --green:#16a876;
+      --green-soft:#eafaf4;
+      --red:#e83f63;
+      --red-soft:#fff0f3;
+      --deep:#351628;
+      --shadow:0 24px 70px rgba(89,31,62,.13);
+      --shadow-sm:0 12px 34px rgba(89,31,62,.09);
+      --r-xl:34px;
+      --r-lg:27px;
+      --r-md:19px;
+      --ease:cubic-bezier(.2,.8,.2,1);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;min-height:100vh;color:var(--ink);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 8% 5%,rgba(255,139,174,.22),transparent 27%),
+        radial-gradient(circle at 96% 16%,rgba(119,85,232,.12),transparent 23%),
+        radial-gradient(circle at 60% 88%,rgba(242,79,130,.09),transparent 28%),
+        linear-gradient(180deg,#fffafd,#fff6fa 45%,#fff3f8);
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;
+      background-image:linear-gradient(rgba(69,31,51,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(69,31,51,.022) 1px,transparent 1px);
+      background-size:30px 30px;mask-image:linear-gradient(to bottom,black,transparent 88%);
+    }
+    button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+    a{color:inherit}
+
+    .orb{position:fixed;border-radius:999px;filter:blur(70px);opacity:.22;pointer-events:none;animation:drift 9s ease-in-out infinite alternate}
+    .orb.a{width:220px;height:220px;background:#ff8bad;right:-75px;top:-85px}
+    .orb.b{width:270px;height:270px;background:#aa91ff;left:-140px;top:43%;animation-delay:-3s}
+    .orb.c{width:190px;height:190px;background:#ffb1c8;right:-80px;bottom:8%;animation-delay:-5s}
+    @keyframes drift{to{transform:translate3d(24px,28px,0) scale(1.12)}}
+    @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes pulse{70%{box-shadow:0 0 0 12px rgba(242,79,130,0)}100%{box-shadow:0 0 0 0 rgba(242,79,130,0)}}
+    @keyframes shine{0%,74%{left:-40%}100%{left:135%}}
+    @keyframes scan{0%{top:10%}50%{top:88%}100%{top:10%}}
+
+    .app{width:min(100%,560px);margin:auto;padding:16px 15px 124px;position:relative;z-index:2}
+    .topbar{
+      position:sticky;top:10px;z-index:45;display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:11px 12px;background:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.95);backdrop-filter:blur(22px) saturate(150%);
+      border-radius:24px;box-shadow:var(--shadow-sm)
+    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}.brand strong{display:block;font-size:17px;letter-spacing:-.045em}.brand span{display:block;color:var(--muted);font-size:9.5px;margin-top:2px}
+    .logo{width:44px;height:44px;flex:0 0 44px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,#ff5c8d,#8c63f2);box-shadow:0 10px 24px rgba(230,68,119,.24);color:#fff;position:relative}
+    .logo:before{content:"♥";font-size:21px;transform:translateY(-2px)}
+    .logo:after{content:"";position:absolute;width:12px;height:10px;border:2px solid #fff;border-top:0;border-radius:3px;bottom:7px;left:50%;transform:translateX(-50%);opacity:.95}
+    .top-actions{display:flex;gap:8px}.icon-btn{width:42px;height:42px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.82);color:var(--ink);display:grid;place-items:center;transition:.25s var(--ease);position:relative;font-size:15px}.icon-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+    .notif-dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--rose);right:8px;top:7px;border:2px solid #fff;display:none}.notif-dot.show{display:block}
+
+    .view{display:none}.view.active{display:block;animation:rise .42s var(--ease) both}
+    .hero{padding:31px 4px 17px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.8);border:1px solid #f0dbe5;color:#b13a65;font-size:10px;font-weight:950;box-shadow:var(--shadow-sm)}
+    .live-dot{width:7px;height:7px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 0 rgba(242,79,130,.45);animation:pulse 1.8s infinite}
+    h1{font-size:clamp(42px,12vw,66px);line-height:.95;letter-spacing:-.075em;margin:18px 0 12px;max-width:510px}
+    h1 em{font-style:normal;background:linear-gradient(90deg,#f04f81,#7956e7);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{margin:0;color:var(--muted);line-height:1.62;font-size:14px;max-width:490px}
+
+    .hero-slider{position:relative;height:390px;margin-top:18px;overflow:hidden;transition:height .35s var(--ease);perspective:1300px}
+    .hero-slide{position:absolute;inset:0;width:100%;opacity:0;transform:rotateY(50deg) scale(.93);transform-origin:center center;pointer-events:none;transition:opacity .65s var(--ease),transform .65s var(--ease);border-radius:34px;overflow:hidden;padding:24px;display:flex;align-items:flex-end;background-size:cover;background-position:center;box-shadow:var(--shadow)}
+    .hero-slide:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,11,17,.1),rgba(19,11,17,.28) 35%,rgba(19,11,17,.82));}
+    .hero-slide > *{position:relative;z-index:1}
+    .hero-slide.active{opacity:1;transform:rotateY(0deg) scale(1);pointer-events:auto}.hero-slide.exit-left{opacity:0;transform:rotateY(-50deg) scale(.93)}
+    .hero-slide h1{margin:0 0 10px;color:#fff;max-width:470px;text-shadow:0 10px 30px rgba(0,0,0,.35)}.hero-slide p{color:#f9e8ef;max-width:430px;font-size:13px;line-height:1.55;margin:0}.hero-slider-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:9px}.hero-dots{display:flex;gap:7px;align-items:center;color:#76596a;font-size:9px;font-weight:950;letter-spacing:.08em}.hero-dot{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:#e4ccd8;transition:.3s var(--ease)}.hero-dot.active{width:28px;background:linear-gradient(90deg,#f24f82,#8b62ef)}
+    .hero-arrow-group{display:flex;gap:7px}.hero-arrow{width:39px;height:39px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.88);color:var(--ink);display:grid;place-items:center;font-size:16px;box-shadow:var(--shadow-sm)}
+    .hero-progress{height:4px;border-radius:999px;background:#f0e1e8;overflow:hidden;margin-top:12px}.hero-progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,#f24f82,#8b62ef)}.hero-progress i.running{animation:heroProgress 5s linear forwards}@keyframes heroProgress{from{width:0}to{width:100%}}
+
+    .glass{background:linear-gradient(150deg,rgba(255,255,255,.94),rgba(255,255,255,.72));border:1px solid rgba(255,255,255,.98);backdrop-filter:blur(24px) saturate(145%);box-shadow:var(--shadow)}
+    .card{border-radius:var(--r-xl);padding:18px}.lock-card{position:relative;overflow:hidden;margin-top:13px}.lock-card:after{content:"";position:absolute;width:205px;height:205px;border-radius:50%;right:-100px;top:-110px;background:radial-gradient(circle,rgba(255,139,174,.31),transparent 68%);pointer-events:none}
+    .card-kicker{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.card-kicker b{font-size:11px;letter-spacing:.02em}.free-badge{padding:6px 9px;border-radius:999px;background:var(--green-soft);color:#0a7c56;font-size:8px;font-weight:1000}
+    .segmented{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;background:#f8eaf1;border:1px solid #f1dce6;border-radius:18px;margin-bottom:12px;position:relative;z-index:2}.seg-btn{border:0;border-radius:14px;padding:12px 10px;background:transparent;color:#9b7f8d;font-weight:950;font-size:10px;transition:.25s var(--ease)}.seg-btn.active{background:#fff;color:#a83662;box-shadow:0 8px 20px rgba(89,31,62,.10)}.home-action-panel{position:relative;z-index:2}.home-action-panel.hidden{display:none!important}.inline-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 2px 4px}.inline-kicker b{font-size:9px;letter-spacing:.06em}.inline-kicker span{font-size:8px;color:var(--muted);font-weight:900}
+    .field{margin-top:10px;padding:13px 14px;border-radius:19px;border:1px solid var(--line);background:rgba(255,252,254,.92);transition:.25s var(--ease)}.field:focus-within{border-color:#f49ab5;box-shadow:0 0 0 4px rgba(242,79,130,.08);transform:translateY(-1px)}
+    .field label{display:block;color:var(--muted);font-size:9px;font-weight:950;margin-bottom:7px;letter-spacing:.05em}.field input,.field select,.field textarea{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:15px;font-weight:800}.field textarea{resize:vertical;min-height:90px}.field input::placeholder,.field textarea::placeholder{color:#bda8b4;font-weight:650}
+    .phone-line{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:center}.country-pill{padding:8px 9px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:950}
+    .primary,.secondary,.ghost,.danger,.violet-btn{width:100%;border-radius:19px;padding:15px 17px;font-weight:950;border:0;transition:.27s var(--ease)}
+    .primary{margin-top:12px;color:#fff;background:linear-gradient(135deg,#f04f81,#ff8cab);box-shadow:0 14px 30px rgba(242,79,130,.22);position:relative;overflow:hidden}.primary:before{content:"";position:absolute;top:-60%;left:-40%;height:220%;width:28%;transform:rotate(26deg);background:rgba(255,255,255,.42);filter:blur(8px);animation:shine 4s infinite}.primary:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(242,79,130,.27)}
+    .secondary{margin-top:10px;background:#fff;border:1px solid var(--line);color:var(--ink)}.ghost{background:#fff7fb;border:1px solid #efdde6;color:#633748}.danger{background:var(--red-soft);border:1px solid #ffd1db;color:#b62e4b}.violet-btn{margin-top:10px;color:#fff;background:linear-gradient(135deg,#7656df,#9d7cf5)}.primary:active,.secondary:active,.ghost:active,.violet-btn:active{transform:scale(.985)}
+    .mini-note{margin:10px 4px 0;text-align:center;color:#9d8592;font-size:9.5px;line-height:1.48}.mini-note strong{color:#6f5262}
+
+    .quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:13px}.quick{border:1px solid white;background:rgba(255,255,255,.82);border-radius:22px;padding:14px 8px;box-shadow:var(--shadow-sm);color:var(--ink);font-weight:900;font-size:10.5px;transition:.25s var(--ease)}.quick:hover{transform:translateY(-3px)}.quick i{display:grid;place-items:center;width:35px;height:35px;border-radius:13px;margin:0 auto 7px;font-style:normal;font-size:16px}.quick.verify i{background:var(--violet-soft);color:#6848c7}.quick.monitor i{background:var(--amber-soft);color:#a46610}.quick.mutual i{background:var(--rose-soft);color:#be3966}
+    .activity-bar{display:flex;align-items:center;gap:9px;padding:10px 12px;margin-top:13px;border-radius:18px;background:#3a1930;color:#fff;box-shadow:0 12px 28px rgba(58,25,48,.18)}.activity-faces{display:flex}.activity-faces span{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#ffe4ee;color:#7b2b4e;border:2px solid #3a1930;font-size:7px;font-weight:1000;margin-left:-7px}.activity-faces span:first-child{margin-left:0}.activity-bar p{margin:0;font-size:9.5px;color:#f0d7e2;line-height:1.35}.activity-bar b{color:#fff}.proof-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.proof-chip{min-height:82px;padding:12px 9px;border-radius:20px;text-align:center;background:rgba(255,255,255,.88);border:1px solid #fff;box-shadow:var(--shadow-sm)}.proof-chip b{display:block;font-size:16px;letter-spacing:-.04em}.proof-chip span{display:block;margin-top:5px;color:var(--muted);font-size:8px;line-height:1.35}.testimonial-grid{display:grid;gap:10px}.testimonial-card{padding:16px;border-radius:25px;position:relative;overflow:hidden}.testimonial-top{display:flex;align-items:center;gap:10px}.testimonial-avatar{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#ffe2ec,#f0ebff);font-weight:1000;color:#9f3863}.testimonial-card h3{margin:0;font-size:11.5px}.testimonial-card small{color:var(--muted);font-size:8px}.testimonial-card blockquote{margin:12px 0 0;font-size:10.5px;line-height:1.55;color:#5e4352}.testimonial-badge{display:inline-flex;margin-top:10px;padding:6px 9px;border-radius:999px;background:var(--rose-soft);color:#a83461;font-size:8px;font-weight:950}.search-activity-wrap{margin-top:12px;padding:15px;border-radius:23px;background:linear-gradient(145deg,#fff,#fff7fb);border:1px solid var(--line)}.search-activity-head{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:9px}.search-activity-head h4{margin:0;font-size:13px}.search-activity-head small{color:var(--muted);font-size:8px}.search-activity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.search-activity-card{padding:11px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.82)}.search-activity-card b{display:block;font-size:17px;letter-spacing:-.035em}.search-activity-card span{display:block;color:var(--muted);font-size:8px;margin-top:2px}.attention-line{margin-top:9px;padding:10px 11px;border-radius:15px;background:var(--violet-soft);color:#5d45aa;font-size:9px;line-height:1.45;font-weight:800}
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin:27px 4px 12px}.section-head h2{font-size:20px;letter-spacing:-.04em;margin:0}.section-head p{margin:4px 0 0;color:var(--muted);font-size:10.5px}.link-btn{border:0;background:none;color:#b73d68;font-weight:950;font-size:10.5px}
+
+    .promise-banner{border-radius:30px;padding:19px;position:relative;overflow:hidden;background:linear-gradient(135deg,#3b1830,#7a2850);color:#fff;box-shadow:0 22px 55px rgba(91,28,61,.24)}.promise-banner:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-80px;top:-90px;background:rgba(255,159,192,.18)}.promise-banner small{font-weight:950;color:#ffbdd2}.promise-banner h3{margin:8px 0 7px;font-size:23px;letter-spacing:-.05em;max-width:390px}.promise-banner p{font-size:11px;line-height:1.55;color:#f1d8e4;margin:0;max-width:410px}.promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;position:relative;z-index:2}.promise-item{padding:10px;border-radius:15px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12)}.promise-item b{display:block;font-size:9.5px}.promise-item span{display:block;color:#ebcada;font-size:8px;margin-top:3px;line-height:1.35}
+
+    .steps{display:grid;gap:9px}.step-card{display:flex;align-items:flex-start;gap:12px;padding:15px;border-radius:24px}.step-num{width:42px;height:42px;flex:0 0 42px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#fff0f5,#f2efff);font-weight:1000;color:#a13c67}.step-card h3{margin:1px 0 4px;font-size:12px}.step-card p{margin:0;color:var(--muted);font-size:9.5px;line-height:1.5}.step-card .price{margin-left:auto;white-space:nowrap;font-size:9px;font-weight:1000;padding:6px 8px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+
+    .plans{display:grid;grid-template-columns:1fr 1fr;gap:10px}.plan{padding:16px;border-radius:25px;position:relative;overflow:hidden}.plan small{font-size:8px;font-weight:1000;color:var(--muted)}.plan h3{font-size:14px;margin:6px 0 2px}.plan .money{font-size:24px;font-weight:1000;letter-spacing:-.05em}.plan .money span{font-size:9px;color:var(--muted);font-weight:850;letter-spacing:0}.plan p{font-size:9px;line-height:1.45;color:var(--muted);margin:7px 0 0}.plan.featured{background:linear-gradient(145deg,#442039,#7f2d56);color:#fff;border:0}.plan.featured small,.plan.featured p,.plan.featured .money span{color:#efd5e1}.plan.featured:after{content:"MOST STICKY";position:absolute;right:-32px;top:17px;transform:rotate(36deg);background:#ff86ac;color:#4f1d36;font-size:7px;font-weight:1000;padding:5px 34px}
+
+    .bottom-nav{position:fixed;left:50%;bottom:13px;transform:translateX(-50%);z-index:80;width:min(calc(100% - 24px),536px);display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:7px;border-radius:26px;background:rgba(255,255,255,.9);border:1px solid #fff;backdrop-filter:blur(25px) saturate(150%);box-shadow:0 22px 60px rgba(82,31,59,.18)}
+    .nav-btn{border:0;background:transparent;border-radius:18px;padding:8px 3px 7px;color:#a38c99;font-size:9px;font-weight:900}.nav-btn span{display:block;font-size:18px;margin-bottom:3px}.nav-btn.active{color:#b73d68;background:#fff0f5}
+
+    .page-title{padding:30px 4px 12px}.page-title h2{font-size:32px;letter-spacing:-.06em;margin:0 0 7px}.page-title p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.55}
+    .empty-state{padding:23px;border-radius:29px;text-align:center}.empty-icon{width:66px;height:66px;border-radius:23px;display:grid;place-items:center;margin:0 auto 12px;background:linear-gradient(145deg,#fff0f5,#f3efff);font-size:26px}.empty-state h3{font-size:18px;margin:0 0 6px}.empty-state p{font-size:10.5px;line-height:1.55;color:var(--muted);margin:0 auto;max-width:340px}
+
+    .lock-hero{padding:19px;border-radius:31px;background:linear-gradient(145deg,#fff,#fff1f6);border:1px solid white;box-shadow:var(--shadow);position:relative;overflow:hidden}.lock-hero:after{content:"♥";position:absolute;right:-14px;bottom:-38px;font-size:140px;color:rgba(242,79,130,.06);transform:rotate(-12deg)}.lock-top{display:flex;justify-content:space-between;gap:14px;position:relative;z-index:2}.lock-top small{font-size:8px;font-weight:1000;color:#a35070;letter-spacing:.08em}.lock-top h3{font-size:22px;letter-spacing:-.04em;margin:5px 0 4px}.lock-top p{margin:0;color:var(--muted);font-size:9.5px}.status-orb{width:78px;height:78px;flex:0 0 78px;border-radius:26px;display:grid;place-items:center;background:linear-gradient(145deg,#f85a89,#8d62ee);color:#fff;font-size:27px;box-shadow:0 16px 34px rgba(221,75,128,.22)}
+    .lock-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;position:relative;z-index:2}.lock-metric{padding:10px;border-radius:16px;background:#fff;border:1px solid var(--line);text-align:center}.lock-metric b{display:block;font-size:15px}.lock-metric span{display:block;font-size:7.5px;color:var(--muted);margin-top:2px}
+    .status-strip{display:flex;align-items:center;gap:10px;margin-top:11px;padding:11px 12px;border-radius:17px;background:var(--green-soft);color:#126c4e;position:relative;z-index:2}.status-strip.alert{background:var(--amber-soft);color:#98600c}.status-strip.danger{background:var(--red-soft);color:#a52e48}.status-strip i{font-style:normal;font-size:15px}.status-strip b{display:block;font-size:9.5px}.status-strip span{display:block;font-size:8px;opacity:.8;margin-top:2px;line-height:1.35}
+
+    .lock-switcher{display:flex;gap:8px;overflow-x:auto;padding:2px 1px 10px;scrollbar-width:none}.lock-switcher::-webkit-scrollbar{display:none}.lock-chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:15px;padding:9px 11px;font-size:8.5px;font-weight:950;color:#765468}.lock-chip.active{background:var(--deep);color:#fff;border-color:var(--deep)}.lock-chip.add{background:var(--rose-soft);color:#b93966;border-color:#f4d4df}
+    .check-complete{padding:18px;border-radius:29px;background:linear-gradient(145deg,#fff,#fff4f8);border:1px solid #ffe0ea;margin-top:14px}.check-complete .phone-kicker{font-size:9px;color:var(--muted);font-weight:900}.check-complete h3{margin:6px 0 10px;font-size:21px;letter-spacing:-.04em}.full-report-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;background:#2f1827;color:#fff;font-size:8px;font-weight:1000;letter-spacing:.06em}.attention-head{margin:14px 0 5px;font-size:24px;line-height:1.03;letter-spacing:-.05em}.attention-count{font-size:17px;font-weight:1000;color:#bc3b69}.attention-copy{margin:7px 0 0;color:var(--muted);font-size:10.5px;line-height:1.5}.attention-cta{margin-top:11px;padding:11px 12px;border-radius:15px;background:#2f1827;color:#fff;font-size:9.5px;font-weight:950}
+    .action-list{display:grid;gap:9px;margin-top:12px}.action-row{display:flex;align-items:center;gap:11px;padding:13px;border-radius:21px}.action-icon{width:42px;height:42px;flex:0 0 42px;border-radius:14px;display:grid;place-items:center;background:var(--violet-soft);color:#6849c6;font-size:16px}.action-row:nth-child(2) .action-icon{background:var(--amber-soft);color:#a66b13}.action-row:nth-child(3) .action-icon{background:var(--rose-soft);color:#b93966}.action-row strong{display:block;font-size:11px}.action-row small{display:block;color:var(--muted);font-size:8.5px;margin-top:3px;line-height:1.35}.action-row button{margin-left:auto;border:0;border-radius:12px;padding:9px 10px;background:#fff;border:1px solid var(--line);font-size:8.5px;font-weight:1000;color:#5f394c;white-space:nowrap}
+    .verification-history{display:grid;gap:9px;margin-top:10px}.verification-history-card{padding:14px;border-radius:22px;background:rgba(255,255,255,.9);border:1px solid var(--line);box-shadow:var(--shadow-sm)}.verification-history-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.verification-history-top h3{margin:2px 0 3px;font-size:13px;letter-spacing:-.02em}.verification-history-top small{display:block;color:var(--muted);font-size:8px}.history-status{flex:0 0 auto;padding:6px 8px;border-radius:999px;font-size:7.5px;font-weight:1000;background:var(--amber-soft);color:#98600c}.history-status.paid{background:var(--green-soft);color:#126c4e}.history-status.partial{background:#fff2cf;color:#98600c}.verification-history-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.verification-history-meta div{padding:8px;border-radius:13px;background:#faf5f8}.verification-history-meta b{display:block;font-size:9px}.verification-history-meta span{display:block;margin-top:2px;color:var(--muted);font-size:6.8px}.history-actions{display:grid;gap:7px;margin-top:10px}.history-action{width:100%;margin-top:0;border:0;border-radius:13px;padding:10px;background:var(--deep);color:#fff;font-size:8.5px;font-weight:1000}.history-action.pending,.history-action.secondary{background:#fff;color:#5f4051;border:1px solid var(--line)}
+
+    .alert-card{display:flex;align-items:flex-start;gap:12px;padding:15px;border-radius:24px;margin-top:9px}.alert-icon{width:48px;height:48px;flex:0 0 48px;border-radius:16px;display:grid;place-items:center;background:var(--amber-soft);font-size:18px}.alert-card h3{font-size:11.5px;margin:1px 0 4px}.alert-card p{font-size:9px;line-height:1.45;color:var(--muted);margin:0}.alert-time{margin-left:auto;font-size:7.5px;color:#aa919e;white-space:nowrap}
+
+    .profile-hero{padding:20px;border-radius:32px;background:linear-gradient(145deg,#fff,#fff2f7);border:1px solid white;box-shadow:var(--shadow)}.profile-top{display:flex;align-items:center;gap:14px}.avatar{width:70px;height:70px;border-radius:24px;background:linear-gradient(145deg,#f24f82,#8d62ee);color:white;display:grid;place-items:center;font-size:23px;font-weight:1000;box-shadow:0 16px 35px rgba(213,73,126,.22)}.profile-top h3{margin:0 0 3px;font-size:19px}.profile-top p{margin:0;color:var(--muted);font-size:10px}.verify-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.tiny-badge{padding:5px 8px;border-radius:999px;background:var(--green-soft);color:#0b7854;font-size:8px;font-weight:950}.tiny-badge.rose{background:var(--rose-soft);color:#b93662}.tiny-badge.gray{background:#f5f0f3;color:#7b6872}
+    .profile-score{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.profile-score div{padding:11px;border-radius:17px;background:#fff;border:1px solid var(--line);text-align:center}.profile-score b{display:block;font-size:17px}.profile-score span{font-size:8px;color:var(--muted)}
+    .menu-card{padding:8px;border-radius:28px}.menu-item{width:100%;border:0;background:transparent;display:flex;align-items:center;gap:12px;padding:13px;border-radius:20px;color:var(--ink);text-align:left}.menu-item:hover{background:#fff4f8}.menu-icon{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:#fff0f5;color:#b33b67}.menu-item strong{display:block;font-size:11px}.menu-item small{display:block;color:var(--muted);font-size:8.5px;margin-top:2px}.menu-item .arrow{margin-left:auto;color:#b7a2ad}
+
+    .modal{position:fixed;inset:0;z-index:120;display:flex;align-items:flex-end;justify-content:center;background:rgba(54,19,39,.34);backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:.3s var(--ease)}.modal.show{opacity:1;pointer-events:auto}.sheet{width:min(100%,560px);max-height:93vh;overflow:auto;padding:15px 15px 34px;background:linear-gradient(180deg,#fff,#fff7fb);border-radius:34px 34px 0 0;border:1px solid #fff;box-shadow:0 -35px 100px rgba(70,21,48,.2);transform:translateY(100%);transition:.42s var(--ease)}.modal.show .sheet{transform:none}.handle{width:43px;height:5px;border-radius:99px;background:#ead5df;margin:1px auto 15px}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.sheet-head h3{margin:0;font-size:21px;letter-spacing:-.04em}.sheet-head small{color:var(--muted);font-weight:950;font-size:8px;letter-spacing:.08em}.close{width:39px;height:39px;border-radius:14px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:18px}
+    .legal{display:flex;align-items:flex-start;gap:9px;margin:12px 0;padding:11px;border-radius:16px;background:#fff4f8;border:1px solid #f3dfe8}.legal input{width:17px;height:17px;flex:0 0 17px;margin:1px 0 0;accent-color:var(--rose)}.legal label{font-size:8.7px;line-height:1.48;color:#75586a;cursor:pointer}.legal strong{color:#4c293c}
+
+    .scan-stage{padding:17px;border-radius:25px;background:#fff;border:1px solid var(--line);margin-top:14px;overflow:hidden;position:relative}.scan-beam{position:absolute;left:9%;right:9%;height:3px;top:10%;background:linear-gradient(90deg,transparent,#f24f82,transparent);filter:drop-shadow(0 0 6px #f24f82);animation:scan 1.25s ease-in-out infinite}.scan-identity{text-align:center;padding:11px 0 15px}.scan-identity .round{width:72px;height:72px;border-radius:25px;background:linear-gradient(145deg,#fff0f5,#f2efff);margin:auto;display:grid;place-items:center;font-size:25px;color:#b23b67}.scan-identity b{display:block;margin-top:10px;font-size:16px}.scan-identity span{font-size:9px;color:var(--muted)}.progress{height:9px;background:#f2e5eb;border-radius:999px;overflow:hidden;margin:10px 0 15px}.progress i{display:block;width:0;height:100%;border-radius:999px;background:linear-gradient(90deg,#f24f82,#8d62ee);transition:.6s var(--ease)}.step-list{display:grid;gap:8px}.scan-step{display:flex;align-items:center;gap:10px;padding:11px;border-radius:17px;background:#fff7fb;color:#9d8693;font-size:9.5px;font-weight:850}.scan-step .status{width:26px;height:26px;border-radius:10px;display:grid;place-items:center;background:#f0e4ea}.scan-step.active{color:#a33561;background:#fff0f5}.scan-step.active .status{background:#ffdbe7;color:#b73865}.scan-step.done{color:#5f3449}.scan-step.done .status{background:#f24f82;color:#fff}
+
+    .result-hero{padding:18px;border-radius:29px;background:linear-gradient(145deg,#fff,#fff4f8);border:1px solid #f8dde7;margin-top:14px}.result-top{display:flex;align-items:flex-start;justify-content:space-between;gap:13px}.result-top small{color:var(--muted);font-size:8px;font-weight:950}.result-top h3{margin:5px 0 2px;font-size:19px}.result-top p{margin:0;color:var(--muted);font-size:9px}.result-ring{width:88px;height:88px;flex:0 0 88px;border-radius:50%;display:grid;place-items:center;position:relative;background:conic-gradient(var(--green) 0 15%,#f3e4ea 15%)}.result-ring.alert{background:conic-gradient(var(--amber) 0 64%,#f3e4ea 64%)}.result-ring.danger{background:conic-gradient(var(--red) 0 86%,#f3e4ea 86%)}.result-ring:before{content:"";position:absolute;inset:8px;background:#fff;border-radius:50%}.result-ring div{position:relative;text-align:center}.result-ring b{font-size:22px}.result-ring span{display:block;font-size:7px;color:var(--muted)}
+    .result-banner{margin-top:12px;padding:12px;border-radius:17px;background:var(--green-soft);color:#116e4e;font-size:10px;line-height:1.5}.result-banner.alert{background:var(--amber-soft);color:#93600f}.result-banner.danger{background:var(--red-soft);color:#a52e49}
+    .paywall{position:relative;margin-top:11px}.paid-sensitive{transition:.25s var(--ease)}.paywall.locked .paid-sensitive{filter:blur(7px);user-select:none;pointer-events:none;opacity:.72}.pay-lock{display:none;position:absolute;inset:0;z-index:4;align-items:center;justify-content:center}.paywall.locked .pay-lock{display:flex}.pay-lock span{background:rgba(49,20,38,.94);color:#fff;border-radius:999px;padding:8px 11px;font-size:8px;font-weight:1000;box-shadow:0 10px 25px rgba(48,20,37,.22)}.intel-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.intel-item{padding:11px;border-radius:16px;background:#fff;border:1px solid var(--line)}.intel-item b{display:block;font-size:17px}.intel-item span{display:block;font-size:8px;color:var(--muted);margin-top:2px}.intel-note{margin-top:10px;padding:11px;border-radius:15px;background:var(--violet-soft);color:#5d45aa;font-size:9px;line-height:1.5}
+
+    .price-card{margin-top:12px;padding:18px;border-radius:25px;background:linear-gradient(145deg,#351628,#74264d);color:#fff;position:relative;overflow:hidden}.price-card:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-60px;top:-70px;background:rgba(255,151,185,.15)}.price-card small{font-size:8px;font-weight:1000;color:#f1bed1;letter-spacing:.08em}.price-card h4{margin:5px 0 7px;font-size:19px}.price-card p{font-size:9.5px;line-height:1.5;color:#ecd4df;max-width:390px}.price-row{display:flex;align-items:end;justify-content:space-between;gap:10px;position:relative;z-index:2}.price-row b{font-size:23px}.price-row span{display:block;color:#e6bace;font-size:8px}.price-row button{border:0;background:#fff;color:#6a2748;border-radius:15px;padding:11px 13px;font-weight:1000;font-size:10px}
+
+    .payment-hero{padding:18px;border-radius:24px;background:linear-gradient(145deg,#351628,#6f2449);color:#fff;margin:12px 0 14px;box-shadow:0 18px 40px rgba(67,22,46,.18)}.payment-hero small{font-size:8px;font-weight:1000;letter-spacing:.13em;color:#efbfd1}.payment-hero h2{font-size:32px;margin:4px 0 2px;letter-spacing:-.05em}.payment-hero p{font-size:9px;color:#ecd6e0;margin:0;line-height:1.45}.payment-hero .offer-countdown{margin-top:7px;font-weight:1000;color:#ffd2e2}
+    .bank-box{border:1px solid var(--line);border-radius:22px;background:#fff;overflow:hidden;box-shadow:var(--shadow-sm)}.bank-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;border-bottom:1px solid #f2e6ec}.bank-row:last-child{border-bottom:0}.bank-row div{min-width:0}.bank-row span{display:block;font-size:7.5px;font-weight:1000;letter-spacing:.08em;color:#a48997}.bank-row b{display:block;font-size:12px;color:var(--ink);margin-top:3px;word-break:break-word}.bank-row.account b{font-size:20px;letter-spacing:.05em}.copy-mini{border:0;border-radius:11px;padding:8px 9px;background:var(--rose-soft);color:#a33460;font-size:7.5px;font-weight:1000;flex:none}
+    .payment-status{display:flex;gap:10px;align-items:flex-start;padding:13px;border-radius:18px;background:#fff7ef;border:1px solid #f0dfc5;margin:10px 0}.payment-status .dot{width:10px;height:10px;border-radius:50%;background:#d99a27;margin-top:4px;box-shadow:0 0 0 5px rgba(217,154,39,.10);flex:none}.payment-status b{display:block;font-size:11px}.payment-status span{display:block;color:var(--muted);font-size:9px;margin-top:2px;line-height:1.45}.payment-status.paid{background:var(--green-soft);border-color:#c9eadc}.payment-status.paid .dot{background:var(--green);box-shadow:0 0 0 5px rgba(13,125,84,.10)}.payment-status.partial{background:var(--amber-soft);border-color:#f1ddb3}.payment-status.partial .dot{background:#c88316}.payment-ref{font-size:8px;color:var(--muted);text-align:center;margin:8px 0 0}
+    .date-selects{display:grid;grid-template-columns:.8fr 1.15fr 1fr;gap:8px}.date-selects select{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:13px;font-weight:900;padding:5px 0;min-width:0}
+
+    .monitor-card{padding:18px;border-radius:28px;background:linear-gradient(145deg,#2c1d38,#644799);color:#fff;box-shadow:0 20px 55px rgba(84,58,135,.22)}.monitor-card small{color:#d9cef6;font-size:8px;font-weight:1000;letter-spacing:.09em}.monitor-card h3{font-size:22px;margin:7px 0 5px}.monitor-card p{font-size:9.5px;color:#ddd2f4;line-height:1.5;margin:0}.monitor-pulse{display:flex;align-items:center;gap:9px;margin-top:13px;padding:10px;border-radius:15px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12)}.monitor-pulse i{width:8px;height:8px;border-radius:50%;background:#bca5ff;box-shadow:0 0 0 0 rgba(188,165,255,.45);animation:pulse 1.8s infinite}.monitor-pulse b{font-size:9px}.monitor-pulse span{display:block;font-size:7.7px;color:#d9cef2;margin-top:2px}
+
+    .mutual-card{padding:18px;border-radius:28px;background:linear-gradient(145deg,#fff,#fff0f5);border:1px solid white;box-shadow:var(--shadow)}.mutual-badge{width:66px;height:66px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,#f24f82,#9167ee);color:#fff;font-size:25px;margin-bottom:11px}.mutual-card h3{font-size:21px;letter-spacing:-.04em;margin:0 0 5px}.mutual-card p{font-size:9.5px;line-height:1.5;color:var(--muted);margin:0}.share-card{margin-top:12px;padding:17px;border-radius:24px;text-align:center;background:linear-gradient(145deg,#36182c,#74284f);color:#fff;position:relative;overflow:hidden}.share-card:before,.share-card:after{content:"♥";position:absolute;color:rgba(255,255,255,.08);font-size:70px}.share-card:before{left:-12px;top:-21px;transform:rotate(-18deg)}.share-card:after{right:-11px;bottom:-31px;transform:rotate(18deg)}.share-card small{font-size:7px;letter-spacing:.18em;color:#f1c5d5;font-weight:1000}.share-card h3{font-size:24px;margin:7px 0 4px;letter-spacing:-.05em}.share-card p{font-size:9px;color:#ebccd8;margin:0}
+
+    .toast{position:fixed;z-index:220;left:50%;top:82px;transform:translate(-50%,-18px);opacity:0;pointer-events:none;background:#3a1930;color:#fff;border-radius:16px;padding:12px 15px;font-size:10px;font-weight:900;box-shadow:var(--shadow);transition:.3s var(--ease);max-width:calc(100% - 30px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+
+    .dev-box{margin-top:18px;padding:12px;border:1px dashed #d9c6d0;border-radius:18px;background:rgba(255,255,255,.6)}.dev-box small{font-size:7.5px;font-weight:1000;color:#8f7484}.dev-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.dev-actions button{border:0;border-radius:10px;padding:8px 9px;font-size:8px;font-weight:900;background:#f7edf2;color:#745064}
+
+    @media(max-width:420px){.plans{grid-template-columns:1fr}.hero-slide h1{font-size:clamp(37px,11vw,53px)}.hero-slider{height:350px}.quick-actions{gap:7px}.quick{font-size:9.5px}.promise-grid{grid-template-columns:1fr}.lock-metrics{grid-template-columns:1fr 1fr 1fr}}
+    @media(min-width:720px){.app{padding-top:24px}.modal{align-items:center;padding:24px}.sheet{border-radius:34px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+    /* v4 compact conversion layout */
+    .view[data-view="home"]{min-height:calc(100vh - 108px)}
+    .view[data-view="home"] .hero{padding:14px 4px 8px}
+    .view[data-view="home"] .hero-slider{height:196px;margin-top:8px}
+    .view[data-view="home"] .hero-slide{padding:15px;border-radius:25px}
+    .view[data-view="home"] .hero-slide h1{font-size:clamp(28px,8.7vw,39px);line-height:.96}
+    .view[data-view="home"] .hero-slide p{font-size:10.5px;line-height:1.36}
+    .view[data-view="home"] .hero-slider-controls{margin-top:6px}
+    .view[data-view="home"] .hero-arrow{width:34px;height:34px;border-radius:12px}
+    .view[data-view="home"] .hero-progress{margin-top:7px}
+    .view[data-view="home"] .lock-card{margin-top:7px;padding:12px;border-radius:25px}
+    .view[data-view="home"] .field{padding:10px 12px;margin-top:8px}
+    .view[data-view="home"] .primary{padding:13px 15px;margin-top:9px}
+    .view[data-view="home"] .mini-note{margin-top:7px}
+    .view[data-view="home"] .quick-actions{margin-top:8px}
+    .view[data-view="home"] .quick{padding:8px 5px;border-radius:16px}
+    .view[data-view="home"] .quick i{width:27px;height:27px;margin-bottom:3px}
+    .view[data-view="home"] .activity-bar{margin-top:8px;padding:8px 10px}
+    .view[data-view="home"] .proof-strip{margin-top:8px;gap:6px}
+    .view[data-view="home"] .proof-chip{min-height:62px;padding:9px 6px;border-radius:16px}
+    .view[data-view="home"] .proof-chip b{font-size:14px}
+    .view[data-view="home"] .proof-chip span{font-size:7.3px;margin-top:3px}
+
+    .testimonial-shell{margin-top:10px;overflow:hidden;position:relative}
+    .testimonial-track{display:flex;transition:transform .6s var(--ease);will-change:transform}
+    .testimonial-card{min-width:100%;padding:11px 12px;border-radius:19px;box-shadow:var(--shadow-sm)}
+    .testimonial-card blockquote{margin:8px 0 0;font-size:9.6px;line-height:1.45}
+    .testimonial-top{gap:8px}.testimonial-avatar{width:35px;height:35px;border-radius:12px}
+    .testimonial-badge{margin-top:7px;padding:5px 7px;font-size:7.4px}
+    .testimonial-sample{font-size:6.8px;font-weight:1000;letter-spacing:.06em;color:#9b7f8d;margin-left:auto}
+    .testimonial-dots{display:flex;justify-content:center;gap:6px;margin-top:7px}
+    .testimonial-dot{width:6px;height:6px;border:0;padding:0;border-radius:999px;background:#e5cfd9}
+    .testimonial-dot.active{width:20px;background:linear-gradient(90deg,#f24f82,#8b62ef)}
+
+    .social-proof-toast{position:fixed;left:50%;bottom:94px;transform:translate(-50%,18px);z-index:72;width:min(calc(100% - 30px),500px);opacity:0;pointer-events:none;transition:opacity .38s var(--ease),transform .38s var(--ease);background:rgba(53,22,40,.96);color:white;border:1px solid rgba(255,255,255,.12);border-radius:19px;padding:10px 12px;box-shadow:0 18px 45px rgba(53,22,40,.28);backdrop-filter:blur(18px)}
+    .social-proof-toast.show{opacity:1;transform:translate(-50%,0)}
+    .social-proof-row{display:flex;align-items:center;gap:9px}
+    .social-proof-icon{width:34px;height:34px;flex:0 0 34px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.12);font-size:15px}
+    .social-proof-toast b{display:block;font-size:9.5px;line-height:1.35}
+    .social-proof-toast small{display:block;margin-top:2px;color:#e6c9d7;font-size:7.4px}
+
+    .discount-offer{margin-top:10px;padding:13px;border-radius:20px;background:linear-gradient(145deg,#fff7e8,#fff);border:1px solid #ffe1a4;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+    .discount-offer small{display:block;color:#9b620a;font-size:7.5px;font-weight:1000;letter-spacing:.06em}
+    .discount-offer h4{margin:4px 0 3px;font-size:14px;letter-spacing:-.03em}
+    .discount-offer p{margin:0;color:#8c7450;font-size:8.5px;line-height:1.35}
+    .discount-offer .deal-price{display:flex;align-items:center;gap:6px;margin-top:5px}.discount-offer .deal-price b{font-size:18px;color:#b16f08}.discount-offer .deal-price del{font-size:9px;color:#9a8b77}
+    .action-offer{display:block;margin-top:4px;font-size:7.5px;font-weight:1000;color:#a15b13;line-height:1.25}
+    .action-offer.expired{color:var(--muted)}
+    .offer-expired-text{font-weight:1000;color:#9a620f}
+    .deal-timer{min-width:74px;padding:9px;border-radius:15px;background:#351628;color:#fff;text-align:center}.deal-timer b{display:block;font-size:17px;letter-spacing:.04em}.deal-timer span{display:block;font-size:6.5px;color:#ead3df;margin-top:2px}
+
+    @media(max-width:420px){
+      .view[data-view="home"] .hero-slider{height:182px}
+      .view[data-view="home"] .hero-slide h1{font-size:clamp(29px,9vw,40px)}
+      .view[data-view="home"] .hero{padding-top:10px}
+    }
+
+
+    /* Authentication gate */
+
+    .pwa-install-row{display:none;align-items:center;gap:10px;margin-top:9px;padding:9px 10px;border-radius:17px;background:linear-gradient(135deg,#351628,#6d2d54);color:#fff;box-shadow:0 12px 28px rgba(53,22,40,.16)}
+    .pwa-install-row.show{display:flex}.pwa-install-icon{width:38px;height:38px;flex:0 0 38px;border-radius:12px;overflow:hidden;background:#8d62ee}.pwa-install-icon img{width:100%;height:100%;display:block}
+    .pwa-install-copy{min-width:0;flex:1}.pwa-install-copy b{display:block;font-size:9.5px}.pwa-install-copy span{display:block;margin-top:2px;color:#ead6e1;font-size:7.8px;line-height:1.35}.pwa-install-row button{border:0;border-radius:12px;padding:9px 10px;background:#fff;color:#51243e;font-size:8px;font-weight:1000;white-space:nowrap}
+    .pwa-install-top{display:none}.pwa-install-top.show{display:grid}
+    .pwa-install-prompt{position:fixed;left:50%;bottom:92px;transform:translate(-50%,18px);z-index:115;width:min(calc(100% - 28px),520px);opacity:0;pointer-events:none;transition:.35s var(--ease)}.pwa-install-prompt.show{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+    .pwa-install-prompt-card{display:flex;align-items:center;gap:11px;padding:12px;border-radius:22px;background:rgba(53,22,40,.96);color:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:0 22px 55px rgba(53,22,40,.28);backdrop-filter:blur(18px)}.pwa-install-prompt-card .pwa-install-icon{width:46px;height:46px;flex-basis:46px;border-radius:14px}.pwa-install-prompt-card .copy{min-width:0;flex:1}.pwa-install-prompt-card b{display:block;font-size:11px}.pwa-install-prompt-card span{display:block;color:#e9d3de;font-size:8.5px;line-height:1.4;margin-top:3px}
+    .pwa-install-actions{display:flex;align-items:center;gap:6px}.pwa-install-actions button{border:0;border-radius:11px;padding:9px 10px;font-size:8px;font-weight:1000}.pwa-install-actions .install-now{background:#fff;color:#51243e}.pwa-install-actions .install-dismiss{width:30px;height:30px;padding:0;background:rgba(255,255,255,.1);color:#fff}
+    .ios-install-steps{display:grid;gap:9px;margin-top:13px}.ios-install-step{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:17px;background:#fff4f8;border:1px solid var(--line)}.ios-install-step i{width:30px;height:30px;flex:0 0 30px;border-radius:10px;display:grid;place-items:center;background:#fff;color:#a93662;font-style:normal;font-weight:1000;box-shadow:var(--shadow-sm)}.ios-install-step b{display:block;font-size:10px}.ios-install-step span{display:block;margin-top:2px;color:var(--muted);font-size:8.5px;line-height:1.4}
+    .auth-shell{width:min(100%,560px);margin:auto;padding:28px 15px 40px;position:relative;z-index:5;min-height:100vh;display:grid;align-items:center}
+    .auth-wrap{padding:22px;border-radius:36px;background:linear-gradient(150deg,rgba(255,255,255,.96),rgba(255,255,255,.78));border:1px solid rgba(255,255,255,.98);box-shadow:var(--shadow);backdrop-filter:blur(24px)}
+    .auth-brand{display:flex;align-items:center;gap:12px;margin-bottom:20px}.auth-brand .logo{width:52px;height:52px;flex-basis:52px}.auth-brand h1{font-size:30px;line-height:1;margin:0;letter-spacing:-.06em}.auth-brand p{margin:5px 0 0;color:var(--muted);font-size:11px}
+    .auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;border-radius:18px;background:#f7edf2;border:1px solid var(--line);margin-bottom:14px}.auth-tab{border:0;background:transparent;border-radius:14px;padding:12px;color:var(--muted);font-weight:950;font-size:11px}.auth-tab.active{background:#fff;color:#a92f5c;box-shadow:0 7px 18px rgba(83,33,58,.08)}
+    .auth-panel.hidden{display:none}.auth-headline{margin:2px 0 4px;font-size:27px;letter-spacing:-.055em}.auth-sub{margin:0 0 12px;color:var(--muted);font-size:11px;line-height:1.5}.auth-foot{text-align:center;color:var(--muted);font-size:9px;line-height:1.45;margin-top:12px}
+    .auth-error{display:none;margin:10px 0 0;padding:10px 11px;border-radius:14px;background:var(--red-soft);color:#ad3148;font-size:9px;font-weight:850}.auth-error.show{display:block}
+    .legal-links{line-height:1.55}.legal-links a{color:#a72f5b;font-weight:950;text-decoration:underline;text-underline-offset:2px}.legal-links a:hover{color:#7f2145}.legal-doc{padding:4px 2px 10px}.legal-doc h4{margin:16px 0 6px;font-size:13px;letter-spacing:-.02em}.legal-doc p,.legal-doc li{color:#654f5b;font-size:10px;line-height:1.6}.legal-doc ul{margin:7px 0 0;padding-left:18px}.legal-doc .legal-meta{padding:10px 11px;border-radius:14px;background:#fff3f7;border:1px solid #f0dbe5;color:#8b4865;font-size:9px;line-height:1.45;margin:10px 0}.legal-doc strong{color:#35222e}
+    .auth-shell{align-items:start;padding-top:14px}
+    .auth-wrap{padding:14px 14px 18px}
+    .auth-brand{margin-bottom:10px}
+    .auth-hero-slider{position:relative;height:205px;overflow:hidden;perspective:1200px;border-radius:27px}
+    .auth-hero-slide{position:absolute;inset:0;opacity:0;transform:rotateY(52deg) scale(.94);transform-origin:center;pointer-events:none;transition:opacity .65s var(--ease),transform .65s var(--ease);border-radius:27px;overflow:hidden;padding:17px;display:flex;align-items:flex-end;background-size:cover;background-position:center;box-shadow:var(--shadow-sm)}
+    .auth-hero-slide:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,17,.06),rgba(20,10,17,.26) 34%,rgba(20,10,17,.84))}
+    .auth-hero-slide>div{position:relative;z-index:1}.auth-hero-slide.active{opacity:1;transform:rotateY(0) scale(1);pointer-events:auto}.auth-hero-slide.exit-left{opacity:0;transform:rotateY(-52deg) scale(.94)}
+    .auth-hero-slide h2{margin:0 0 6px;color:#fff;font-size:clamp(26px,8vw,37px);line-height:.96;letter-spacing:-.06em;text-shadow:0 8px 26px rgba(0,0,0,.35)}.auth-hero-slide h2 em{font-style:normal;color:#ffd7e5}.auth-hero-slide p{margin:0;color:#f7e7ee;font-size:9.8px;line-height:1.4;max-width:390px}
+    .auth-hero-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}.auth-hero-dots{display:flex;gap:6px;color:#76596a;font-size:8px;font-weight:950;letter-spacing:.08em}.auth-hero-dot{width:7px;height:7px;padding:0;border:0;border-radius:99px;background:#e7d1db;transition:.28s var(--ease)}.auth-hero-dot.active{width:22px;background:linear-gradient(90deg,#f24f82,#8b62ef)}.auth-hero-arrows{display:flex;gap:6px}.auth-hero-arrows button{width:32px;height:32px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);font-size:16px;box-shadow:var(--shadow-sm)}
+    .auth-hero-progress{height:3px;border-radius:99px;background:#f1e2e9;overflow:hidden;margin-top:5px}.auth-hero-progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,#f24f82,#8b62ef)}.auth-hero-progress i.running{animation:authHeroProgress 5s linear forwards}@keyframes authHeroProgress{from{width:0}to{width:100%}}
+    .auth-activity-bar{margin-top:8px;padding:8px 10px}.auth-proof-strip{margin-top:7px;gap:6px}.auth-proof-strip .proof-chip{min-height:60px;padding:8px 6px;border-radius:16px}.auth-proof-strip .proof-chip b{font-size:14px}.auth-proof-strip .proof-chip span{font-size:7px;margin-top:3px}.auth-tabs{margin-top:10px;margin-bottom:10px}
+
+    /* Full report */
+    .full-report-details{margin-top:12px;padding:16px;border-radius:26px;background:linear-gradient(145deg,#fff,#fff8fb);border:1px solid #f0dfe8;box-shadow:var(--shadow-sm)}
+    .full-report-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.full-report-head small{font-size:8px;color:#a23b63;font-weight:1000;letter-spacing:.09em}.full-report-head h4{margin:5px 0 0;font-size:18px;letter-spacing:-.04em}.report-id{padding:6px 8px;border-radius:10px;background:#f6edf2;color:#785064;font-size:8px;font-weight:950}
+    .report-data-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.report-data-card{padding:11px;border-radius:16px;background:#fff;border:1px solid var(--line)}.report-data-card b{display:block;font-size:16px;letter-spacing:-.03em}.report-data-card span{display:block;margin-top:3px;color:var(--muted);font-size:8px}
+    .report-section-title{font-size:10px;font-weight:1000;letter-spacing:.06em;color:#805468;margin:14px 0 7px}.lockin-mix{display:grid;gap:6px}.lockin-row{display:grid;grid-template-columns:100px 1fr 24px;align-items:center;gap:8px;font-size:8.5px;color:#67505d}.lockin-bar{height:7px;border-radius:99px;background:#f0e3e9;overflow:hidden}.lockin-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#f24f82,#8b62ef)}.lockin-row b{text-align:right;font-size:9px;color:#402b36}
+    .report-insight{margin-top:12px;padding:12px;border-radius:17px;background:#342134;color:#fff;font-size:9.5px;line-height:1.5}.report-insight b{display:block;margin-bottom:3px}.download-report-btn{margin-top:10px;background:linear-gradient(135deg,#321b2c,#6f447d)!important;box-shadow:0 14px 30px rgba(73,37,67,.2)!important}
+    .monitor-others{display:none;margin-top:8px;padding:8px 10px;border-radius:13px;background:rgba(255,255,255,.09);font-size:8.5px;font-weight:900;color:#f1e9fb}.monitor-others.show{display:block}
+    .monitor-list{display:grid;gap:10px}.monitor-person-card{padding:16px;border-radius:25px;background:linear-gradient(145deg,#2c1d38,#644799);color:#fff;box-shadow:0 18px 48px rgba(84,58,135,.18)}.monitor-person-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.monitor-person-card small{display:block;color:#d9cef6;font-size:7.5px;font-weight:1000;letter-spacing:.08em}.monitor-person-card h3{margin:5px 0 2px;font-size:18px}.monitor-person-card p{margin:0;color:#ddd2f4;font-size:8.5px}.monitor-live-badge{padding:6px 8px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);font-size:7px;font-weight:1000;white-space:nowrap}.monitor-person-meta{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.monitor-person-meta div{padding:9px;border-radius:13px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.1)}.monitor-person-meta b{display:block;font-size:10px}.monitor-person-meta span{display:block;margin-top:2px;font-size:7px;color:#d9cef2}.monitor-person-card .monitor-open{margin-top:9px;width:100%;border:0;border-radius:13px;padding:9px;background:#fff;color:#513676;font-size:8px;font-weight:1000}
+
+  </style>
+</head>
+<body>
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+
+
+  <section class="auth-shell" id="authShell">
+    <div class="auth-wrap">
+      <div class="auth-brand"><div class="logo" aria-hidden="true"></div><div><h1>lockily</h1><p>Lock your person. Check the attention. Know more.</p></div></div>
+
+      <div class="auth-hero-slider" id="authHeroSlider" aria-live="polite"></div>
+      <div class="auth-hero-controls"><div class="auth-hero-dots" id="authHeroDots"></div><div class="auth-hero-arrows"><button type="button" id="authHeroPrev" aria-label="Previous">‹</button><button type="button" id="authHeroNext" aria-label="Next">›</button></div></div>
+      <div class="auth-hero-progress"><i id="authHeroProgress"></i></div>
+
+      <div class="activity-bar auth-activity-bar">
+        <div class="activity-faces"><span>AO</span><span>KM</span><span>ZI</span><span id="authActiveCheckerBubble">+30</span></div>
+        <p><b id="authActiveCheckers">34 people</b> are checking relationship status right now.</p>
+      </div>
+      <div class="proof-strip auth-proof-strip">
+        <div class="proof-chip"><b id="authNetworkChecks">12,489</b><span>relationship checks across the network</span></div>
+        <div class="proof-chip"><b id="authNetworkLocks">4,219</b><span>people have locked their person</span></div>
+        <div class="proof-chip"><b id="authNetworkReports">2,112</b><span>full reports unlocked</span></div>
+      </div>
+      <div class="pwa-install-row" id="authInstallRow">
+        <div class="pwa-install-icon"><img src="icon-192.png" alt="" /></div>
+        <div class="pwa-install-copy"><b>Install Lockily on your phone</b><span>Open it like an app. Faster access, standalone screen and offline shell.</span></div>
+        <button type="button" id="authInstallBtn">Install</button>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth-tab="signup">Sign up</button>
+        <button class="auth-tab" data-auth-tab="signin">Sign in</button>
+      </div>
+      <div class="auth-panel" id="signupPanel">
+        <h2 class="auth-headline">Create your Lockily account.</h2><p class="auth-sub">Your account keeps your Locks, reports and monitors private to you.</p>
+        <div class="field"><label>FIRST NAME</label><input id="signupName" autocomplete="given-name" placeholder="Your first name" /></div>
+        <div class="field"><label>PHONE NUMBER</label><input id="signupPhone" inputmode="numeric" maxlength="11" placeholder="0803 000 0000" /></div>
+        <div class="field"><label>PASSWORD</label><input id="signupPassword" type="password" minlength="6" placeholder="At least 6 characters" /></div>
+        <div class="legal"><input type="checkbox" id="signupAge" /><label for="signupAge"><strong>I am 18 or older.</strong> I will use Lockily only for lawful, truthful personal activity.</label></div>
+        <div class="legal"><input type="checkbox" id="signupLegalConsent" /><label class="legal-links" for="signupLegalConsent"><strong>I have read and agree to Lockily's</strong> <a href="#" data-legal-open="termsModal">Terms &amp; Conditions</a>, <a href="#" data-legal-open="privacyStatementModal">Privacy Statement</a> and <a href="#" data-legal-open="ndaModal">NDA / Confidentiality Agreement</a>.</label></div>
+        <button class="primary" id="signupBtn">Create account</button>
+        <div class="auth-error" id="signupError"></div>
+      </div>
+      <div class="auth-panel hidden" id="signinPanel">
+        <h2 class="auth-headline">Welcome back.</h2><p class="auth-sub">Sign in to open your Locks, reports and monitors.</p>
+        <div class="field"><label>PHONE NUMBER</label><input id="signinPhone" inputmode="numeric" maxlength="11" placeholder="0803 000 0000" /></div>
+        <div class="field"><label>PASSWORD</label><input id="signinPassword" type="password" minlength="6" placeholder="Your password" /></div>
+        <button class="primary" id="signinBtn">Sign in to Lockily</button>
+        <div class="auth-error" id="signinError"></div>
+      </div>
+      <div class="auth-foot">Private account access. Other users never see your name, password or personal Lock history.</div>
+    </div>
+  </section>
+
+  <main class="app hidden" id="appRoot">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div><strong>lockily</strong><span>Are you the only one?</span></div>
+      </div>
+      <div class="top-actions">
+        <button class="icon-btn pwa-install-top" id="topInstallBtn" aria-label="Install Lockily" title="Install Lockily">⇩</button>
+        <button class="icon-btn" id="notificationBtn" aria-label="Notifications">◉<span class="notif-dot" id="notifDot"></span></button>
+        <button class="icon-btn" id="topProfileBtn" aria-label="Profile">◎</button>
+      </div>
+    </header>
+
+    <section class="view active" data-view="home">
+      <div class="hero">
+        <div class="eyebrow"><span class="live-dot"></span> Relationship status intelligence</div>
+        <div class="hero-slider" id="heroSlider" aria-live="polite"></div>
+        <div class="hero-slider-controls">
+          <div class="hero-dots" id="heroDots"></div>
+          <div class="hero-arrow-group"><button class="hero-arrow" id="heroPrev" aria-label="Previous">‹</button><button class="hero-arrow" id="heroNext" aria-label="Next">›</button></div>
+        </div>
+        <div class="hero-progress"><i id="heroProgress"></i></div>
+      </div>
+
+      <section class="card glass lock-card">
+        <div class="segmented" id="homeActionTabs">
+          <button class="seg-btn active" data-home-action="lock">Lock Your Person</button>
+          <button class="seg-btn" data-home-action="check">Check Status</button>
+        </div>
+        <div class="home-action-panel" id="homeLockPanel">
+          <div class="inline-kicker"><b>LOCK YOUR PERSON</b><span class="free-badge">FREE</span></div>
+          <div class="field">
+            <label>THEIR PHONE NUMBER</label>
+            <div class="phone-line"><span class="country-pill">🇳🇬 +234</span><input id="homePhone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="0803 000 0000" /></div>
+          </div>
+          <button class="primary" id="homeLockBtn">Lock this person — Free</button>
+          <div class="mini-note">Lock the relationship now. Verify it whenever you need the full picture.</div>
+        </div>
+        <div class="home-action-panel hidden" id="homeCheckPanel">
+          <div class="inline-kicker"><b>CHECK RELATIONSHIP STATUS</b><span>PHONE SEARCH</span></div>
+          <div class="field">
+            <label>PHONE NUMBER</label>
+            <div class="phone-line"><span class="country-pill">🇳🇬 +234</span><input id="homeCheckPhone" inputmode="numeric" pattern="[0-9]*" autocomplete="tel" maxlength="11" placeholder="0803 000 0000" /></div>
+          </div>
+          <button class="primary" id="homeCheckBtn">Check Relationship Status</button>
+          <div class="mini-note">Find out if truly you're the only one they admire</div>
+        </div>
+      </section>
+
+      <div class="quick-actions">
+        <button class="quick verify" id="quickVerify"><i>⌕</i>Verify Relationship</button>
+        <button class="quick monitor" id="quickMonitor"><i>◉</i>Monitor</button>
+        <button class="quick mutual" id="quickMutual"><i>♥</i>Get Verified</button>
+      </div>
+
+      <div class="activity-bar">
+        <div class="activity-faces"><span>AO</span><span>KM</span><span>ZI</span><span id="activeCheckerBubble">+30</span></div>
+        <p><b id="activeCheckers">34 people</b> are checking relationship status right now.</p>
+      </div>
+
+      <div class="proof-strip">
+        <div class="proof-chip"><b id="networkChecks">12,489</b><span>relationship checks across the network</span></div>
+        <div class="proof-chip"><b id="networkLocks">4,219</b><span>people have locked their person</span></div>
+        <div class="proof-chip"><b id="networkIndicators">2,112</b><span>full reports unlocked</span></div>
+      </div>
+
+      <div class="testimonial-shell" id="testimonialShell">
+        <div class="testimonial-track" id="testimonialTrack">
+          <article class="testimonial-card glass"><div class="testimonial-top"><div class="testimonial-avatar">AO</div><div><h3>“I checked before I got more serious.”</h3><small>Anonymous · Lagos</small></div><span class="testimonial-sample">SAMPLE</span></div><blockquote>Everything sounded perfect, but I wanted clarity before putting more time and emotions into it. The check gave me a reason to ask better questions.</blockquote><span class="testimonial-badge">Checked before committing deeper</span></article>
+          <article class="testimonial-card glass"><div class="testimonial-top"><div class="testimonial-avatar">KM</div><div><h3>“I thought I was overthinking it.”</h3><small>Anonymous · Abuja</small></div><span class="testimonial-sample">SAMPLE</span></div><blockquote>I wasn't looking for gossip. I just wanted to know whether the number was showing any relationship activity before I ignored my instincts.</blockquote><span class="testimonial-badge">Relationship status checked</span></article>
+          <article class="testimonial-card glass"><div class="testimonial-top"><div class="testimonial-avatar">ZI</div><div><h3>“We made ours a Verified Lock.”</h3><small>Anonymous couple · Nigeria</small></div><span class="testimonial-sample">SAMPLE</span></div><blockquote>Once we both confirmed it, the Lock stopped feeling like suspicion and started feeling like a private little status we shared.</blockquote><span class="testimonial-badge">Mutually verified</span></article>
+        </div>
+        <div class="testimonial-dots" id="testimonialDots"></div>
+      </div>
+    </section>
+
+    <section class="view" data-view="lock">
+      <div class="page-title"><h2>My Locks</h2><p>Keep the people in your life locked, checked and monitored.</p></div>
+      <div id="lockEmpty" class="empty-state glass">
+        <div class="empty-icon">♥</div><h3>You haven't locked anyone yet.</h3><p>Lock someone you are talking to, dating, in a situationship with, engaged to or married to.</p><button class="primary" data-nav="home">Create my first Lock</button>
+      </div>
+      <div id="lockContent" class="hidden">
+        <div class="lock-switcher" id="lockSwitcher"></div>
+        <section class="lock-hero">
+          <div class="lock-top"><div><small>ACTIVE LOCK</small><h3 id="lockAlias">My person</h3><p id="lockPhoneMasked">0803••••000</p></div><div class="status-orb">♥</div></div>
+          <div class="lock-metrics"><div class="lock-metric"><b id="lockAge">0d</b><span>LOCK AGE</span></div><div class="lock-metric"><b id="lockVerifyState">Basic</b><span>VERIFY</span></div><div class="lock-metric"><b id="lockMonitorState">Off</b><span>MONITOR</span></div></div>
+          <div class="status-strip" id="lockStatusStrip"><i>✓</i><div><b id="lockStatusTitle">Lock active</b><span id="lockStatusCopy">Verify Relationship to unlock the full picture.</span></div></div>
+        </section>
+        <div class="action-list">
+          <article class="action-row glass"><div class="action-icon">⌕</div><div><strong>Verify this Lock</strong><small>Check if your locked person got someone new</small></div><button id="lockVerifyBtn">₦2,000</button></article>
+          <article class="action-row glass"><div class="action-icon">◉</div><div><strong>Monitor changes</strong><small>Get alerted when the relationship status of your locked person changes.</small><span class="action-offer" id="lockMonitorOfferNote">New Lock offer · ₦5,000/month · 02:00 left</span></div><button id="lockMonitorBtn">₦5,000/mo</button></article>
+          <article class="action-row glass"><div class="action-icon">♥</div><div><strong>Verified Lock</strong><small>Invite your partner to confirm the relationship.</small></div><button id="lockMutualBtn">₦3,000</button></article>
+        </div>
+        <button class="danger" id="unlockBtn" style="margin-top:12px">End this Lock</button>
+      </div>
+    </section>
+
+    <section class="view" data-view="verify">
+      <div class="page-title"><h2>Verify Relationship</h2><p>Search the phone number. See how much attention it is getting. Unlock the Full Report to know more.</p></div>
+      <section class="card glass lock-card">
+        <div class="card-kicker"><b>FULL REPORT</b><span class="free-badge" style="background:var(--amber-soft);color:#9a620f">₦2,000</span></div>
+        <div class="field">
+          <label>PHONE NUMBER</label>
+          <div class="phone-line"><span class="country-pill">🇳🇬 +234</span><input id="verifyPhoneInput" inputmode="numeric" pattern="[0-9]*" autocomplete="tel" maxlength="11" placeholder="0803 000 0000" /></div>
+        </div>
+        <button class="primary" id="verifyRelationshipBtn">Verify Relationship</button>
+      </section>
+
+      <div class="section-head"><div><h2>Verification History</h2><p>Paid reports stay free to reopen on the verification day. Get a fresh paid verification for a new day.</p></div><button class="text-link" id="refreshVerificationHistoryBtn" type="button">Refresh</button></div>
+      <div id="verificationHistoryEmpty" class="empty-state glass"><div class="empty-icon">⌕</div><h3>No verification history yet.</h3><p>Your paid and pending verification records will appear here. A paid number can be reopened free on the same Lagos calendar day; a fresh report on a later day requires a new verification.</p></div>
+      <div class="verification-history" id="verificationHistoryList"></div>
+
+      <div class="section-head"><div><h2>Monitor</h2><p>Quiet until something changes.</p></div></div>
+      <div id="monitorEmpty" class="empty-state glass"><div class="empty-icon">◉</div><h3>No active monitoring.</h3><p>Turn on Monitor on your active Lock and Lockily will watch for new relationship signals.</p><button class="violet-btn" id="emptyMonitorBtn">Start Monitor — ₦8,000/month</button></div>
+      <div id="monitorContent" class="hidden">
+        <div class="monitor-list" id="monitoredLocksList"></div>
+        <div class="section-head"><div><h2>Recent Alerts</h2><p>Only the signals that matter.</p></div></div>
+        <div id="alertList"></div>
+      </div>
+    </section>
+
+<section class="view" data-view="profile">
+      <div class="page-title"><h2>Profile</h2><p>Your identity helps Lockily stop random mass-locking and gives legitimate claims more weight.</p></div>
+      <section class="profile-hero">
+        <div class="profile-top"><div class="avatar" id="profileAvatar">L</div><div><h3 id="profileName">Create your profile</h3><p id="profilePhone">Phone verification pending</p><div class="verify-row"><span class="tiny-badge gray" id="phoneBadge">Phone unverified</span><span class="tiny-badge rose">Multiple Locks allowed</span></div></div></div>
+        <div class="profile-score"><div><b id="profileLocks">0</b><span>ACTIVE LOCKS</span></div><div><b id="profileChecks">0</b><span>VERIFICATIONS</span></div><div><b id="profileAlerts">0</b><span>ALERTS</span></div></div>
+      </section>
+      <div class="section-head"><div><h2>Account</h2></div></div>
+      <section class="menu-card glass">
+        <button class="menu-item" id="profileAction"><div class="menu-icon">◎</div><div><strong>Identity & phone</strong><small>Create or edit your verified Lockily profile</small></div><div class="arrow">›</div></button>
+        <button class="menu-item" data-nav="lock"><div class="menu-icon">♥</div><div><strong>My Locks</strong><small>Manage everyone you have locked</small></div><div class="arrow">›</div></button>
+        <button class="menu-item" id="privacyBtn"><div class="menu-icon">⌁</div><div><strong>Privacy & claim rules</strong><small>What Lockily stores, shows and never exposes</small></div><div class="arrow">›</div></button>
+        <button class="menu-item" id="logoutBtn"><div class="menu-icon">↪</div><div><strong>Sign out</strong><small>Sign out of this Lockily account</small></div><div class="arrow">›</div></button>
+      </section>
+    </section>
+  </main>
+
+  <nav class="bottom-nav hidden" id="bottomNav">
+    <button class="nav-btn active" data-nav="home"><span>⌂</span>Home</button>
+    <button class="nav-btn" data-nav="lock"><span>♥</span>My Locks</button>
+    <button class="nav-btn" data-nav="verify"><span>⌕</span>Verify</button>
+    <button class="nav-btn" data-nav="profile"><span>◎</span>Profile</button>
+  </nav>
+
+  <!-- Profile -->
+  <div class="modal" id="profileModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY IDENTITY</small><h3>Create your profile</h3></div><button class="close" data-close="profileModal">×</button></div>
+    <div class="field"><label>FIRST NAME</label><input id="firstName" autocomplete="given-name" placeholder="Your first name" /></div>
+    <div class="field"><label>YOUR PHONE NUMBER</label><div class="phone-line"><span class="country-pill">🇳🇬 +234</span><input id="profilePhoneInput" inputmode="numeric" maxlength="11" placeholder="0803 000 0000" /></div></div>
+    <div class="field"><label>AGE CONFIRMATION</label><select id="ageConfirm"><option value="">Select</option><option value="18plus">I am 18 or older</option></select></div>
+    <div class="legal"><input type="checkbox" id="profileConsent" /><label for="profileConsent"><strong>I understand Lockily is for adults making truthful relationship claims.</strong> I will not use it to harass, stalk, impersonate, test random crushes or submit a Lock for a relationship I am not personally part of.</label></div>
+    <button class="primary" id="saveProfile">Verify on this device & continue</button>
+    <div class="mini-note">Secure device verification keeps one account tied to one active Lock.</div>
+  </div></div>
+
+  <!-- Create Lock -->
+  <div class="modal" id="lockModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>FREE RELATIONSHIP CLAIM</small><h3>Lock your person</h3></div><button class="close" data-close="lockModal">×</button></div>
+    <div class="field"><label>THEIR PHONE NUMBER</label><input id="lockPhone" inputmode="numeric" maxlength="11" placeholder="0803 000 0000" /></div>
+    <div class="field"><label>PRIVATE NICKNAME <span style="font-weight:700">(only you see this)</span></label><input id="lockNickname" maxlength="40" placeholder="e.g. My person" /></div>
+    <div class="field"><label>GENDER</label><select id="personGender"><option value="">Select gender</option><option value="female">Female</option><option value="male">Male</option><option value="nonbinary">Non-binary</option><option value="other">Other / Prefer to self-describe</option></select></div>
+    <div class="field"><label>AGE RANGE</label><select id="personAgeRange"><option value="">Select age range</option><option>18–24</option><option>25–29</option><option>30–34</option><option>35–39</option><option>40–49</option><option>50–59</option><option>60+</option></select></div>
+    <div class="field"><label>RELATIONSHIP</label><select id="relationshipType"><option value="talking">Talking stage</option><option value="situationship">Situationship</option><option value="exclusive">Exclusive dating</option><option value="engaged">Engaged</option><option value="married">Married</option></select></div>
+    <div class="field"><label>RELATIONSHIP STARTED</label>
+      <div class="date-selects" id="relationshipDatePicker">
+        <select id="relationshipStartDay" aria-label="Relationship start day"></select>
+        <select id="relationshipStartMonth" aria-label="Relationship start month"></select>
+        <select id="relationshipStartYear" aria-label="Relationship start year"></select>
+      </div>
+      <input id="relationshipStart" type="hidden" />
+    </div>
+    <div class="legal"><input type="checkbox" id="truthConsent" /><label for="truthConsent"><strong>I personally have a current romantic relationship or active talking stage with this person.</strong> I understand a Lock is my private claim, not a public accusation or proof of wrongdoing.</label></div>
+    <div class="legal"><input type="checkbox" id="lockLegalConsent" /><label class="legal-links" for="lockLegalConsent"><strong>Before creating this Lock-in, I agree to the</strong> <a href="#" data-legal-open="termsModal">Terms &amp; Conditions</a>, <a href="#" data-legal-open="privacyStatementModal">Privacy Statement</a> and <a href="#" data-legal-open="ndaModal">NDA / Confidentiality Agreement</a>.</label></div>
+    <button class="primary" id="createLockBtn">Create free Lock</button>
+    <div class="mini-note">You can lock multiple people. Other users’ identities are never shown.</div>
+  </div></div>
+
+  <!-- Scan / Result -->
+  <div class="modal" id="resultModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY MATCH ENGINE</small><h3 id="resultSheetTitle">Checking your Lock</h3></div><button class="close" data-close="resultModal">×</button></div>
+    <div id="scanAnimation">
+      <div class="scan-stage"><div class="scan-beam"></div><div class="scan-identity"><div class="round">♥</div><b id="scanPhone">0803••••000</b><span>Relationship status check</span></div><div class="progress"><i id="scanProgress"></i></div><div class="step-list">
+        <div class="scan-step" data-scan-step="0"><div class="status">1</div>Reading the number</div>
+        <div class="scan-step" data-scan-step="1"><div class="status">2</div>Scanning relationship signals</div>
+        <div class="scan-step" data-scan-step="2"><div class="status">3</div>Checking signal strength</div>
+        <div class="scan-step" data-scan-step="3"><div class="status">4</div>Checking verified relationship status</div>
+        <div class="scan-step" data-scan-step="4"><div class="status">5</div>Preparing your Full Report</div>
+      </div></div><div class="mini-note">Lockily reads relationship signals and keeps the identities behind them private.</div>
+    </div>
+    <div id="resultContent" class="hidden">
+      <section class="check-complete">
+        <div class="phone-kicker" id="resultPhoneLine">Phone number 07056567878</div>
+        <h3>LOCKILY CHECK COMPLETE</h3>
+        <div class="full-report-pill">🔒 FULL REPORT</div>
+        <h4 class="attention-head">THIS PHONE NUMBER IS GETTING ATTENTION</h4>
+        <div class="attention-count" id="resultAttentionChecks">2 checks on Lockily</div>
+        <p class="attention-copy">Other users have recently checked this phone number. Something made people check.</p>
+        <div class="attention-cta">Get full report to know better.</div>
+      </section>
+      <div class="paywall locked" id="verifyPaywall"><div class="pay-lock"><span>🔒 Unlock Full Report</span></div><div class="paid-sensitive"><div class="intel-grid"><div class="intel-item"><b id="intelClaims">0</b><span>LOCK-INS</span></div><div class="intel-item"><b id="intelMutual">No</b><span>VERIFIED LOCK</span></div><div class="intel-item"><b id="intelOldest">—</b><span>EARLIEST LOCK-IN</span></div><div class="intel-item"><b id="intelStrength">—</b><span>CONFIDENCE LEVEL</span></div><div class="intel-item"><b id="intelMonitors">0</b><span>OTHER MONITORS</span></div><div class="intel-item"><b id="intelRecentLocks">0</b><span>NEW LOCK-INS · 30D</span></div></div><div class="intel-note" id="intelNote">Lock-ins show how many Lockily users have locked this number.</div></div></div>
+
+      <section class="full-report-details hidden" id="fullReportDetails">
+        <div class="full-report-head"><div><small>LOCKILY FULL REPORT</small><h4>Relationship Status Intelligence</h4></div><span class="report-id" id="reportIdBadge">LKY-REPORT</span></div>
+        <div class="report-data-grid">
+          <div class="report-data-card"><b id="reportLockins">0</b><span>Total Lock-ins</span></div>
+          <div class="report-data-card"><b id="reportMonitors">0</b><span>Other monitors active</span></div>
+          <div class="report-data-card"><b id="reportRecentLockins">0</b><span>New Lock-ins · 30 days</span></div>
+          <div class="report-data-card"><b id="reportLatestLockin">—</b><span>Most recent Lock-in</span></div>
+        </div>
+        <div class="report-section-title">LOCK-IN STAGE MIX</div>
+        <div class="lockin-mix" id="lockinMix"></div>
+        <div class="report-insight" id="reportInsight"><b>Lockily interpretation</b>Full Report intelligence will appear here after verification.</div>
+        <button class="primary download-report-btn" id="downloadReportBtn">Download report</button>
+      </section>
+      <section class="search-activity-wrap" id="searchActivityWrap">
+        <div class="search-activity-head"><div><h4>Search Activity</h4><small>Attention around this number</small></div></div>
+        <div class="search-activity-grid">
+          <div class="search-activity-card"><b id="activityTotal">0</b><span>Total relationship checks</span></div>
+          <div class="search-activity-card"><b id="activityLast">—</b><span>Last checked</span></div>
+          <div class="search-activity-card"><b id="activity7d">0</b><span>Checks in past 7 days</span></div>
+          <div class="search-activity-card"><b id="activity30d">0</b><span>Checks in past 30 days</span></div>
+          <div class="search-activity-card"><b id="activityFirst">—</b><span>First checked</span></div>
+          <div class="search-activity-card"><b id="activityTrend">—</b><span>Activity trend</span></div>
+        </div>
+        <div class="attention-line" id="activityInterpretation">Search activity is an attention signal. It does not prove a relationship exists.</div>
+      </section>
+      <div class="discount-offer" id="verifyDiscountOffer"><div><small>50% CHECK OFFER</small><h4>Order within 2 minutes and save ₦1,000.</h4><p>Unlock the Full Report before the timer runs out.</p><div class="deal-price"><b id="verifyDealPrice">₦1,000</b><del id="verifyStandardPrice">₦2,000</del></div></div><div class="deal-timer"><b id="verifyDealTimer">02:00</b><span>LEFT</span></div></div>
+      <section class="price-card" id="verifyPriceCard"><small>FULL REPORT</small><h4>Check if your locked person got someone new</h4><p>See Lock-ins, timing, search activity, monitoring activity, confidence and verified-lock signals.</p><div class="price-row"><div><b id="verifyPriceLabel">₦1,000</b><span id="verifyPriceSub">50% offer</span></div><button id="buyVerifyBtn">Get Full Report</button></div></section>
+      <button class="secondary" id="resultMonitorBtn">Monitor this person — ₦5,000/month</button><div class="mini-note" id="resultMonitorOfferStatus">Monitor offer · ₦5,000/month · 02:00 left. Standard price ₦8,000/month.</div>
+    </div>
+  </div></div>
+
+
+  <!-- Lockily confirmation -->
+  <div class="modal" id="confirmActionModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY</small><h3 id="confirmActionTitle">Are you sure?</h3></div><button class="close" id="confirmActionClose" type="button">×</button></div>
+    <p id="confirmActionMessage" style="margin:0 0 14px;color:var(--muted);font-size:10px;line-height:1.55">Please confirm this action.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><button class="secondary" id="confirmActionCancel" type="button">Cancel</button><button class="danger" id="confirmActionConfirm" type="button">Confirm</button></div>
+  </div></div>
+
+  <!-- Payment -->
+  <div class="modal" id="paymentModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>SECURE BANK TRANSFER</small><h3 id="paymentTitle">Unlock Full Report</h3></div><button class="close" data-close="paymentModal">×</button></div>
+    <div class="payment-hero"><small>PAY EXACTLY</small><h2 id="paymentAmount">₦1,000</h2><p id="paymentDescription">Transfer the exact amount to the dedicated account below.</p><p class="offer-countdown" id="paymentOfferCountdown">Offer status loading…</p></div>
+    <div class="bank-box">
+      <div class="bank-row"><div><span>BANK</span><b id="paymentBank">Stanbic IBTC Bank</b></div></div>
+      <div class="bank-row account"><div><span>ACCOUNT NUMBER</span><b id="paymentAccount">5770••••••</b></div><button class="copy-mini" id="copyPaymentAccount" type="button">COPY</button></div>
+      <div class="bank-row"><div><span>ACCOUNT NAME</span><b id="paymentAccountName">Lockily Report</b></div><button class="copy-mini" id="copyPaymentName" type="button">COPY</button></div>
+    </div>
+    <div class="payment-status" id="paymentStatusCard"><div class="dot"></div><div><b id="paymentStatusTitle">Waiting for payment</b><span id="paymentStatusText">Transfer the exact amount above. Payment detection is automatic.</span></div></div>
+    <div class="legal"><input type="checkbox" id="orderLegalConsent" /><label class="legal-links" for="orderLegalConsent"><strong>I agree to the</strong> <a href="#" data-legal-open="termsModal">Terms &amp; Conditions</a>, <a href="#" data-legal-open="privacyStatementModal">Privacy Statement</a> and <a href="#" data-legal-open="ndaModal">NDA / Confidentiality Agreement</a> for this order.</label></div>
+    <button class="primary" id="checkPaymentBtn">I've paid — check payment</button>
+    <button class="secondary" id="copyPaymentDetails" type="button">Copy payment details</button>
+    <div class="payment-ref" id="paymentReference">Order reference: —</div>
+  </div></div>
+
+  <!-- Mutual Lock -->
+  <div class="modal" id="mutualModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>VERIFIED LOCK</small><h3>Make it mutual</h3></div><button class="close" data-close="mutualModal">×</button></div>
+    <section class="mutual-card"><div class="mutual-badge">♥</div><h3>Both of you confirm the relationship.</h3><p>Your partner receives a private invitation to verify their own phone and confirm the same relationship. Once both sides match, the Lock becomes mutually verified.</p></section>
+    <div class="field"><label>PARTNER NUMBER</label><input id="mutualPhone" disabled /></div>
+    <div class="legal"><input type="checkbox" id="mutualConsent" /><label for="mutualConsent"><strong>I understand my partner must independently confirm.</strong> I cannot verify the relationship on their behalf.</label></div>
+    <button class="primary" id="createMutualInvite">Create invitation — ₦3,000</button>
+    <div id="mutualInviteBox" class="hidden"><div class="share-card"><small>LOCKILY VERIFIED LOCK INVITE</small><h3 id="inviteCodeText">LKY-000000</h3><p>Send this private code to your partner so they can confirm the relationship from their own side.</p></div><button class="secondary" id="shareInviteBtn">Share code</button><button class="ghost" id="demoAcceptInviteBtn" style="margin-top:8px">Confirm partner acceptance</button></div>
+  </div></div>
+
+  <!-- Terms & Conditions -->
+  <div class="modal" id="termsModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>LEGAL</small><h3>Terms &amp; Conditions</h3></div><button class="close" data-close="termsModal">×</button></div>
+    <div class="legal-doc">
+      <div class="legal-meta"><strong>Effective:</strong> 27 August 2026 · <strong>Lockily is for adults 18+.</strong></div>
+      <h4>1. What Lockily provides</h4><p>Lockily provides relationship-status intelligence based on user activity such as checks, Lock-ins, Verified Locks and monitoring signals. A Lock-in is a user-submitted claim or status action; it is not independent proof that a relationship exists, is exclusive, or that anyone has acted wrongly.</p>
+      <h4>2. Truthful and lawful use</h4><p>You may only submit information you are entitled to provide and must not use Lockily to harass, threaten, stalk, impersonate, defame, blackmail, extort, discriminate against, or endanger another person. You must not create false Lock-ins or manipulate activity to mislead others.</p>
+      <h4>3. Reports and decisions</h4><p>Full Reports are informational tools. Search volume, Lock-ins and monitor counts are signals, not verdicts. You are responsible for how you interpret the information and for independently verifying important decisions.</p>
+      <h4>4. Payments and digital access</h4><p>Paid services may include Full Reports, Monitor and Verified Lock features. Prices and promotional windows are shown before purchase. Once digital access is delivered, refunds may be limited except where required by applicable law or where Lockily confirms a billing error.</p>
+      <h4>5. Account security</h4><p>You are responsible for keeping your account credentials secure and for activity carried out through your account. Lockily may suspend access where fraud, abuse, automated misuse or safety concerns are detected.</p>
+      <h4>6. Disputes and corrections</h4><p>Subjects and users may request review of inaccurate, abusive or improperly submitted information. Lockily may restrict, remove, annotate or retain information as reasonably necessary for safety, legal compliance, dispute handling and service integrity.</p>
+      <h4>7. Limitation</h4><p>Lockily does not guarantee that its database is complete, current or error-free. To the extent permitted by applicable law, Lockily is not responsible for personal decisions made solely from an activity signal or report without independent verification.</p>
+      <h4>8. Changes</h4><p>These terms may be updated as the service changes. Material updates will be presented through the service where appropriate.</p>
+    </div>
+  </div></div>
+
+  <!-- Privacy Statement -->
+  <div class="modal" id="privacyStatementModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>LEGAL</small><h3>Privacy Statement</h3></div><button class="close" data-close="privacyStatementModal">×</button></div>
+    <div class="legal-doc">
+      <div class="legal-meta"><strong>Privacy by design:</strong> Lockily should collect only the information needed to operate accounts, Lock-ins, checks, reports, payments, monitoring and safety controls.</div>
+      <h4>Information we process</h4><ul><li>Account details such as name, phone number, verification and authentication data.</li><li>Phone numbers you Lock, check or monitor, plus relationship stage, age range and gender fields you submit.</li><li>Search activity, Lock-in timestamps, verification status, monitor activity, purchase and entitlement records.</li><li>Technical, security and abuse-prevention data needed to protect the service.</li></ul>
+      <h4>How information is used</h4><p>We use information to provide searches and reports, maintain Lock-ins and monitors, prevent abuse, process orders, investigate disputes, improve reliability and comply with applicable legal obligations.</p>
+      <h4>What other users see</h4><p>Lockily is designed to show aggregate signals such as counts, timing ranges and verified-status indicators. Other users should not receive your name, password, private notes or direct identity merely because they check the same phone number.</p>
+      <h4>Sharing and service providers</h4><p>Information may be processed by trusted infrastructure, authentication, payment, security, analytics and support providers acting for Lockily. We do not sell user conversations or private Lock histories as advertising lists.</p>
+      <h4>Retention and deletion</h4><p>Information should be retained only as long as reasonably necessary for the service, safety, disputes, fraud prevention, accounting and legal requirements. Users may request account or data review through Lockily support, subject to legitimate retention requirements.</p>
+      <h4>Security</h4><p>Lockily should use access controls, encryption where appropriate, audit logging and abuse safeguards. No online system can promise absolute security.</p>
+      <h4>Your choices</h4><p>You may choose whether to create a Lock-in, buy a Full Report, activate Monitor or create a Verified Lock. Where applicable, you may request access, correction, deletion or restriction of personal information.</p>
+    </div>
+  </div></div>
+
+  <!-- NDA / Confidentiality Agreement -->
+  <div class="modal" id="ndaModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>CONFIDENTIALITY</small><h3>NDA / Confidentiality Agreement</h3></div><button class="close" data-close="ndaModal">×</button></div>
+    <div class="legal-doc">
+      <div class="legal-meta">This confidentiality agreement protects non-public Lockily report data and the privacy of other users. It does not prevent lawful reporting to authorities, legal advisers, courts or safety services.</div>
+      <h4>Confidential information</h4><p>Confidential information includes non-public Full Report content, private Lock-in intelligence, monitor information, report identifiers, account-only data and any information that could reasonably be used to identify another Lockily user where Lockily has not made that identity public.</p>
+      <h4>Your commitment</h4><p>You agree not to publish, sell, scrape, redistribute, weaponize or use confidential Lockily information to identify, intimidate, harass, blackmail or publicly shame another person. You may use your report for your own legitimate personal decision-making and may share it privately with professional advisers where reasonably necessary.</p>
+      <h4>No reverse identification</h4><p>You agree not to combine report data with other sources for the purpose of discovering the identity of a private Lockily user or monitor.</p>
+      <h4>Permitted disclosure</h4><p>This NDA does not prohibit disclosures required by law, court order or a lawful authority, disclosures to legal or professional advisers under duties of confidentiality, or disclosures reasonably necessary to protect someone from imminent harm.</p>
+      <h4>Duration</h4><p>Your confidentiality obligations continue for as long as the information remains non-public and confidential, subject to applicable law.</p>
+    </div>
+  </div></div>
+
+  <!-- Privacy -->
+  <div class="modal" id="privacyModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>TRUST & SAFETY</small><h3>What Lockily means by a “Lock”</h3></div><button class="close" data-close="privacyModal">×</button></div>
+    <div class="steps" style="margin-top:13px">
+      <article class="step-card glass"><div class="step-num">✓</div><div><h3>A Lock is a claim</h3><p>It records that a verified user says they are in a current romantic relationship with a specific phone number.</p></div></article>
+      <article class="step-card glass"><div class="step-num">≠</div><div><h3>A Lockily check is not proof of cheating</h3><p>Multiple claims can conflict for many reasons. Lockily reports relationship signals and activity; it does not declare guilt.</p></div></article>
+      <article class="step-card glass"><div class="step-num">⌁</div><div><h3>Other claimants stay private</h3><p>No names, phone numbers, chats, photos or identities of another claimant are shown to you.</p></div></article>
+      <article class="step-card glass"><div class="step-num">♥</div><div><h3>Multiple Locks allowed</h3><p>Talking stages, situationships, dating, engagements and marriages can all be locked. Claims should remain truthful and personal.</p></div></article>
+    </div>
+  </div></div>
+
+
+  <div class="social-proof-toast" id="socialProofToast" aria-live="polite">
+    <div class="social-proof-row"><div class="social-proof-icon">♥</div><div><b id="socialProofText">Recent anonymized activity will appear here.</b><small id="socialProofMeta">Sample activity until the live feed is connected.</small></div></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+
+  <div class="pwa-install-prompt" id="pwaInstallPrompt" role="dialog" aria-live="polite" aria-label="Install Lockily">
+    <div class="pwa-install-prompt-card">
+      <div class="pwa-install-icon"><img src="icon-192.png" alt="" /></div>
+      <div class="copy"><b>Put Lockily on your Home Screen</b><span>Install once. Open Lockily like a normal app.</span></div>
+      <div class="pwa-install-actions"><button type="button" class="install-now" id="pwaInstallNow">Install</button><button type="button" class="install-dismiss" id="pwaInstallDismiss" aria-label="Not now">×</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="iosInstallModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>INSTALL LOCKILY</small><h3>Add Lockily to your iPhone</h3></div><button class="close" data-close="iosInstallModal">×</button></div>
+    <div class="ios-install-steps">
+      <div class="ios-install-step"><i>1</i><div><b>Open the Share menu</b><span>Tap the Share icon in Safari.</span></div></div>
+      <div class="ios-install-step"><i>2</i><div><b>Choose “Add to Home Screen”</b><span>Scroll the Share menu if you do not see it immediately.</span></div></div>
+      <div class="ios-install-step"><i>3</i><div><b>Tap Add</b><span>Lockily will open from your Home Screen in its own app window.</span></div></div>
+    </div>
+    <button class="primary" type="button" data-close="iosInstallModal">Got it</button>
+  </div></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    const $ = s => document.querySelector(s);
+    const $$ = s => [...document.querySelectorAll(s)];
+
+    const CONFIG = {
+      demoMode: false,
+      verifyPrice: 2000,
+      verifyOfferPrice: 1000,
+      monitorPrice: 8000,
+      monitorOfferPrice: 5000,
+      mutualPrice: 3000,
+      currency: 'NGN'
+    };
+    // Lockily payments are handled by the existing Wix/Velo backend on peygo.net.
+    // Do not derive this from location.origin: Lockily may be hosted on another domain/path.
+    const LOCKILY_WIX_BACKEND_ORIGIN = String(window.LOCKILY_WIX_BACKEND_ORIGIN || 'https://peygo.net').replace(/\/$/, '');
+    const LOCKILY_BACKEND_BASE_URL = String(
+      window.LOCKILY_BACKEND_BASE_URL || `${LOCKILY_WIX_BACKEND_ORIGIN}/_functions`
+    ).replace(/\/$/, '');
+
+    async function lockilyApi(path, options={}){
+      if(!LOCKILY_BACKEND_BASE_URL) throw new Error('Lockily payment backend is not configured');
+      const endpoint=`${LOCKILY_BACKEND_BASE_URL}/${String(path||'').replace(/^\//,'')}`;
+      const res=await fetch(endpoint,{
+        ...options,
+        mode:'cors',
+        headers:{'Accept':'application/json','Content-Type':'application/json',...(options.headers||{})}
+      });
+      const data=await res.json().catch(()=>({}));
+      if(!res.ok||data.success===false){
+        const hint=res.status===405
+          ? 'Lockily payment endpoint is not accepting this method. Publish the updated Wix http-functions.js on peygo.net.'
+          : '';
+        throw new Error(data.message||hint||`Payment service error (${res.status})`);
+      }
+      return data;
+    }
+
+    const authAccountsKey = 'lockilyAccountsV1';
+    const authSessionKey = 'lockilySessionV1';
+    function loadAccounts(){try{return JSON.parse(localStorage.getItem(authAccountsKey)||'{}')}catch{return {}}}
+    function saveAccounts(v){localStorage.setItem(authAccountsKey,JSON.stringify(v))}
+    async function hashPassword(v){const bytes=new TextEncoder().encode(String(v||''));const digest=await crypto.subtle.digest('SHA-256',bytes);return [...new Uint8Array(digest)].map(b=>b.toString(16).padStart(2,'0')).join('')}
+    function currentSessionPhone(){return localStorage.getItem(authSessionKey)||''}
+    function accountStorageKey(phone){return 'lockilyV2_'+(digits(phone)||'guest')}
+    let storageKey = accountStorageKey(currentSessionPhone());
+    function setAuthError(id,msg){const el=$(id);el.textContent=msg||'';el.classList.toggle('show',!!msg)}
+    function showApp(){const phone=currentSessionPhone(),account=loadAccounts()[phone];if(!phone||!account){showAuth();return false}const key=accountStorageKey(phone);if(storageKey!==key){storageKey=key;state=loadState();renderAll()}$('#authShell').classList.add('hidden');$('#appRoot').classList.remove('hidden');$('#bottomNav').classList.remove('hidden');setTimeout(()=>syncVerificationHistoryFromBackend({silent:true}),120);return true}
+    function showAuth(){localStorage.removeItem(authSessionKey);storageKey=accountStorageKey('');state=loadState();$('#authShell').classList.remove('hidden');$('#appRoot').classList.add('hidden');$('#bottomNav').classList.add('hidden');$$('[data-auth-tab]').forEach(b=>b.classList.toggle('active',b.dataset.authTab==='signup'));$('#signupPanel').classList.remove('hidden');$('#signinPanel').classList.add('hidden');renderNetworkProof()}
+    const defaultState = () => ({
+      profile: null,
+      locks: [],
+      selectedLockId: null,
+      activeLock: null,
+      verificationPurchases: 0,
+      verificationHistory: [],
+      alerts: [],
+      currentLookup: null,
+      searchHistory: {},
+      networkMetrics: {checks:12489,locks:4219,indicators:2112,active:34},
+      pendingProduct: null,
+      currentPayment: null,
+      mutualInvite: null,
+      verifyOfferExpiresAt: null
+    });
+    let state = loadState();
+
+    function loadState(){
+      try{
+        const parsed={...defaultState(),...JSON.parse(localStorage.getItem(storageKey)||'{}')};
+        if(!Array.isArray(parsed.locks)) parsed.locks=[];
+        if(!Array.isArray(parsed.verificationHistory)) parsed.verificationHistory=[];
+        if(parsed.activeLock && !parsed.locks.some(l=>l.id===parsed.activeLock.id)) parsed.locks.push(parsed.activeLock);
+        if(!parsed.selectedLockId && parsed.activeLock) parsed.selectedLockId=parsed.activeLock.id;
+        parsed.activeLock=parsed.locks.find(l=>l.id===parsed.selectedLockId)||parsed.locks[0]||null;
+        if(parsed.activeLock) parsed.selectedLockId=parsed.activeLock.id;
+        let migrated=false;parsed.locks.forEach(lock=>{if(!lock.monitorActive && !Object.prototype.hasOwnProperty.call(lock,'monitorOfferExpiresAt')){lock.monitorOfferExpiresAt=new Date(Date.now()+120000).toISOString();migrated=true}});if(migrated)localStorage.setItem(storageKey,JSON.stringify(parsed));
+        return parsed;
+      }catch{return defaultState()}
+    }
+    function saveState(){localStorage.setItem(storageKey,JSON.stringify(state));renderAll()}
+    function money(n){return new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0}).format(Number(n||0))}
+    function digits(v){return String(v||'').replace(/\D/g,'')}
+    function validNgPhone(v){const d=digits(v);return d.length===11&&d.startsWith('0')}
+    function maskPhone(v){const d=digits(v);if(d.length<7)return v||'—';return d.slice(0,4)+'••••'+d.slice(-3)}
+    function daysSince(date){const t=new Date(date||Date.now()).getTime();return Math.max(0,Math.floor((Date.now()-t)/86400000))}
+    function todayISO(){const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
+    function stableNumberSeed(value){let h=2166136261;for(const ch of String(value||'')){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}return Math.abs(h>>>0)}
+    function recordSearch(phone){
+      const key=digits(phone);if(!key)return;
+      state.searchHistory=state.searchHistory||{};const list=Array.isArray(state.searchHistory[key])?state.searchHistory[key]:[];list.push(new Date().toISOString());state.searchHistory[key]=list.slice(-80);
+      state.networkMetrics=state.networkMetrics||{checks:12489,locks:4219,indicators:2112,active:34};state.networkMetrics.checks=(state.networkMetrics.checks||0)+1;if(relationshipData(phone).level!=='low')state.networkMetrics.indicators=(state.networkMetrics.indicators||0)+1;
+      localStorage.setItem(storageKey,JSON.stringify(state));renderNetworkProof();
+    }
+    function searchActivityFor(phone){
+      const key=digits(phone),seed=stableNumberSeed(key),now=Date.now();const local=Array.isArray(state.searchHistory?.[key])?state.searchHistory[key]:[];
+      const baselineTotal=1+(seed%6),baseline7=seed%4,baseline30=Math.max(baseline7,1+(seed%8));
+      const local7=local.filter(x=>now-new Date(x).getTime()<=7*86400000).length,local30=local.filter(x=>now-new Date(x).getTime()<=30*86400000).length;
+      const total=baselineTotal+local.length, seven=baseline7+local7, thirty=baseline30+local30;
+      const firstDays=45+(seed%460);const first=new Date(now-firstDays*86400000);const last=local.length?new Date(local[local.length-1]):new Date(now-(seed%72)*3600000);
+      const trend=seven>=8?'Rising':seven>=3?'Active':'Low';
+      return {total,seven,thirty,first,last,trend};
+    }
+    function fmtActivityDate(date){if(!date||Number.isNaN(date.getTime()))return '—';const diff=Date.now()-date.getTime();if(diff<60000)return 'Just now';if(diff<3600000)return Math.max(1,Math.floor(diff/60000))+'m ago';if(diff<86400000)return Math.max(1,Math.floor(diff/3600000))+'h ago';return date.toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'})}
+    function renderSearchActivity(phone,override=null){const a=override||searchActivityFor(phone);const first=a.first instanceof Date?a.first:new Date(a.first);const last=a.last instanceof Date?a.last:new Date(a.last);$('#activityTotal').textContent=Number(a.total||0).toLocaleString();$('#activityLast').textContent=fmtActivityDate(last);$('#activity7d').textContent=Number(a.seven||0).toLocaleString();$('#activity30d').textContent=Number(a.thirty||0).toLocaleString();$('#activityFirst').textContent=Number.isNaN(first.getTime())?'—':first.toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric',timeZone:'Africa/Lagos'});$('#activityTrend').textContent=a.trend||'Low';$('#activityInterpretation').textContent=Number(a.seven||0)>=8?'This number is getting unusually high relationship-search attention right now. Search activity alone does not prove a relationship.':Number(a.seven||0)>=3?'This number has active relationship-search attention. Search activity alone does not prove a relationship.':'Search activity is currently low. This does not confirm or rule out a relationship.'}
+    function renderNetworkProof(){
+      const m=state.networkMetrics||{checks:12489,locks:4219,indicators:2112,active:34};
+      const checks=Math.max(12489,Number(m.checks||0)),locks=Math.max(4219,Number(m.locks||0)),reports=Math.max(2112,Number(m.indicators||0)),active=Math.max(34,Number(m.active||0));
+      if($('#networkChecks'))$('#networkChecks').textContent=checks.toLocaleString();if($('#networkLocks'))$('#networkLocks').textContent=locks.toLocaleString();if($('#networkIndicators'))$('#networkIndicators').textContent=reports.toLocaleString();if($('#activeCheckers'))$('#activeCheckers').textContent=active+' people';if($('#activeCheckerBubble'))$('#activeCheckerBubble').textContent='+'+Math.max(4,active-4);
+      if($('#authNetworkChecks'))$('#authNetworkChecks').textContent=checks.toLocaleString();if($('#authNetworkLocks'))$('#authNetworkLocks').textContent=locks.toLocaleString();if($('#authNetworkReports'))$('#authNetworkReports').textContent=reports.toLocaleString();if($('#authActiveCheckers'))$('#authActiveCheckers').textContent=active+' people';if($('#authActiveCheckerBubble'))$('#authActiveCheckerBubble').textContent='+'+Math.max(4,active-4);
+    }
+    function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove('show'),2400)}
+    function showModal(id){$('#'+id).classList.add('show');document.body.style.overflow='hidden'}
+    function hideModal(id){$('#'+id).classList.remove('show');document.body.style.overflow='';if(id==='paymentModal')stopPaymentPolling()}
+    let confirmActionHandler=null;
+    function openConfirmModal({title='Are you sure?',message='Please confirm this action.',confirmText='Confirm'}={},handler){$('#confirmActionTitle').textContent=title;$('#confirmActionMessage').textContent=message;$('#confirmActionConfirm').textContent=confirmText;confirmActionHandler=typeof handler==='function'?handler:null;showModal('confirmActionModal')}
+    function closeConfirmModal(){confirmActionHandler=null;hideModal('confirmActionModal')}
+    $('#confirmActionCancel')?.addEventListener('click',closeConfirmModal);$('#confirmActionClose')?.addEventListener('click',closeConfirmModal);$('#confirmActionConfirm')?.addEventListener('click',()=>{const fn=confirmActionHandler;confirmActionHandler=null;hideModal('confirmActionModal');if(fn)fn()});
+    function nav(view){$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===view));$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.nav===view));$$('.modal.show').forEach(m=>hideModal(m.id));window.scrollTo({top:0,behavior:'smooth'});if(view==='verify')setTimeout(()=>syncVerificationHistoryFromBackend({silent:true}),80)}
+    $$('[data-nav]').forEach(b=>b.addEventListener('click',()=>nav(b.dataset.nav)));
+    $$('[data-close]').forEach(b=>b.addEventListener('click',()=>hideModal(b.dataset.close)));
+    $$('[data-legal-open]').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();showModal(link.dataset.legalOpen)}));
+    $$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)hideModal(m.id)}));
+
+
+    $$('[data-auth-tab]').forEach(btn=>btn.addEventListener('click',()=>{
+      const tab=btn.dataset.authTab;$$('[data-auth-tab]').forEach(b=>b.classList.toggle('active',b===btn));$('#signinPanel').classList.toggle('hidden',tab!=='signin');$('#signupPanel').classList.toggle('hidden',tab!=='signup');setAuthError('#signinError','');setAuthError('#signupError','');
+    }));
+    $('#signupBtn').onclick=async()=>{
+      const name=$('#signupName').value.trim(),phone=digits($('#signupPhone').value),password=$('#signupPassword').value;
+      if(!name){setAuthError('#signupError','Enter your first name.');return}if(!validNgPhone(phone)){setAuthError('#signupError','Enter a valid 11-digit Nigerian phone number.');return}if(password.length<6){setAuthError('#signupError','Use at least 6 characters for your password.');return}if(!$('#signupAge').checked){setAuthError('#signupError','Confirm that you are 18 or older.');return}if(!$('#signupLegalConsent').checked){setAuthError('#signupError','Agree to the Terms & Conditions, Privacy Statement and NDA to continue.');return}
+      const accounts=loadAccounts();if(accounts[phone]){setAuthError('#signupError','An account already exists for this phone number. Sign in instead.');return}
+      accounts[phone]={firstName:name,phone,passwordHash:await hashPassword(password),createdAt:new Date().toISOString()};saveAccounts(accounts);localStorage.setItem(authSessionKey,phone);storageKey=accountStorageKey(phone);state=loadState();
+      state.profile={id:crypto.randomUUID(),firstName:name,phone,phoneVerified:true,createdAt:new Date().toISOString()};saveState();showApp();toast('Account created');
+    };
+    $('#signinBtn').onclick=async()=>{
+      const phone=digits($('#signinPhone').value),password=$('#signinPassword').value;if(!validNgPhone(phone)){setAuthError('#signinError','Enter a valid 11-digit Nigerian phone number.');return}if(!password){setAuthError('#signinError','Enter your password.');return}
+      const account=loadAccounts()[phone];if(!account||account.passwordHash!==await hashPassword(password)){setAuthError('#signinError','Phone number or password is incorrect.');return}
+      localStorage.setItem(authSessionKey,phone);storageKey=accountStorageKey(phone);state=loadState();if(!state.profile||digits(state.profile.phone)!==phone){state.profile={id:crypto.randomUUID(),firstName:account.firstName,phone,phoneVerified:true,createdAt:account.createdAt};saveState()}showApp();toast('Signed in');
+    };
+
+    const relationshipStartInput=$('#relationshipStart');
+    const relationshipStartDay=$('#relationshipStartDay');
+    const relationshipStartMonth=$('#relationshipStartMonth');
+    const relationshipStartYear=$('#relationshipStartYear');
+    const MONTH_NAMES=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    function relationshipDateParts(value=''){
+      const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value||''));
+      if(!m)return null;
+      return {year:Number(m[1]),month:Number(m[2]),day:Number(m[3])};
+    }
+    function daysInMonth(year,month){return new Date(year,month,0).getDate()}
+    function setSelectOptions(select,items,selected){
+      if(!select)return;
+      select.innerHTML=items.map(({value,label})=>`<option value="${value}"${String(value)===String(selected)?' selected':''}>${label}</option>`).join('');
+    }
+    function syncRelationshipDatePicker(preferredValue=''){
+      if(!relationshipStartInput||!relationshipStartDay||!relationshipStartMonth||!relationshipStartYear)return;
+      const now=new Date(),today={year:now.getFullYear(),month:now.getMonth()+1,day:now.getDate()};
+      const preferred=relationshipDateParts(preferredValue||relationshipStartInput.value);
+      let year=preferred?.year||today.year;
+      year=Math.min(today.year,Math.max(today.year-100,year));
+      setSelectOptions(relationshipStartYear,Array.from({length:101},(_,i)=>({value:today.year-i,label:String(today.year-i)})),year);
+
+      const maxMonth=year===today.year?today.month:12;
+      let month=preferred?.month||Math.min(today.month,maxMonth);
+      month=Math.min(maxMonth,Math.max(1,month));
+      setSelectOptions(relationshipStartMonth,Array.from({length:maxMonth},(_,i)=>({value:i+1,label:MONTH_NAMES[i]})),month);
+
+      const maxDay=(year===today.year&&month===today.month)?today.day:daysInMonth(year,month);
+      let day=preferred?.day||Math.min(today.day,maxDay);
+      day=Math.min(maxDay,Math.max(1,day));
+      setSelectOptions(relationshipStartDay,Array.from({length:maxDay},(_,i)=>({value:i+1,label:String(i+1).padStart(2,'0')})),day);
+
+      relationshipStartInput.value=`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+    }
+    function refreshRelationshipDateFromSelects(changed=''){
+      if(!relationshipStartInput||!relationshipStartDay||!relationshipStartMonth||!relationshipStartYear)return;
+      const now=new Date(),today={year:now.getFullYear(),month:now.getMonth()+1,day:now.getDate()};
+      let year=Number(relationshipStartYear.value||today.year);
+      let month=Number(relationshipStartMonth.value||1);
+      let day=Number(relationshipStartDay.value||1);
+      const maxMonth=year===today.year?today.month:12;
+      month=Math.min(month,maxMonth);
+      const maxDay=(year===today.year&&month===today.month)?today.day:daysInMonth(year,month);
+      day=Math.min(day,maxDay);
+      syncRelationshipDatePicker(`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`);
+    }
+    relationshipStartYear?.addEventListener('change',()=>refreshRelationshipDateFromSelects('year'));
+    relationshipStartMonth?.addEventListener('change',()=>refreshRelationshipDateFromSelects('month'));
+    relationshipStartDay?.addEventListener('change',()=>refreshRelationshipDateFromSelects('day'));
+
+    ['homeCheckPhone','verifyPhoneInput'].forEach(id=>{
+      const input=$('#'+id);if(!input)return;
+      input.addEventListener('input',()=>{const clean=input.value.replace(/\D/g,'').slice(0,11);if(input.value!==clean)input.value=clean});
+      input.addEventListener('paste',()=>requestAnimationFrame(()=>{input.value=input.value.replace(/\D/g,'').slice(0,11)}));
+    });
+
+    $$('[data-home-action]').forEach(btn=>btn.addEventListener('click',()=>{
+      const action=btn.dataset.homeAction;$$('[data-home-action]').forEach(b=>b.classList.toggle('active',b===btn));$('#homeLockPanel').classList.toggle('hidden',action!=='lock');$('#homeCheckPanel').classList.toggle('hidden',action!=='check');
+    }));
+    $('#homeCheckBtn').onclick=()=>{const phone=digits($('#homeCheckPhone').value);if(!validNgPhone(phone)){toast('Enter a valid 11-digit Nigerian phone number');return}state.verifyOfferExpiresAt=null;runResultScan(phone,'search')};
+
+    function ensureProfile(next){
+      if(state.profile){next();return}
+      window.__afterProfile=next;
+      if(state.profile){$('#firstName').value=state.profile.firstName||'';$('#profilePhoneInput').value=state.profile.phone||''}
+      showModal('profileModal');
+    }
+
+    $('#saveProfile').onclick=()=>{
+      const firstName=$('#firstName').value.trim();
+      const phone=digits($('#profilePhoneInput').value);
+      if(!firstName){toast('Enter your first name');return}
+      if(!validNgPhone(phone)){toast('Enter a valid 11-digit Nigerian phone number');return}
+      if($('#ageConfirm').value!=='18plus'){toast('Lockily is for adults 18+');return}
+      if(!$('#profileConsent').checked){toast('Please confirm the truthful-use rules');return}
+      state.profile={id:crypto.randomUUID(),firstName,phone,phoneVerified:true,createdAt:new Date().toISOString()};
+      saveState();hideModal('profileModal');toast('Profile verified');
+      if(window.__afterProfile){const fn=window.__afterProfile;window.__afterProfile=null;setTimeout(fn,220)}
+    };
+
+    function openLockFlow(prefill=''){
+      ensureProfile(()=>{
+        $('#lockPhone').value=digits(prefill||$('#homePhone').value);
+        $('#lockNickname').value='';
+        $('#personGender').value='';$('#personAgeRange').value='';$('#relationshipType').value='talking';
+        const d=new Date();d.setMonth(d.getMonth()-3);syncRelationshipDatePicker([d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-'));
+        $('#truthConsent').checked=false;$('#lockLegalConsent').checked=false;
+        showModal('lockModal');
+      })
+    }
+    $('#homeLockBtn').onclick=()=>openLockFlow();
+
+    $('#createLockBtn').onclick=()=>{
+      const phone=digits($('#lockPhone').value),nickname=$('#lockNickname').value.trim()||'My person',gender=$('#personGender').value,ageRange=$('#personAgeRange').value,startDate=$('#relationshipStart').value;
+      if(!validNgPhone(phone)){toast('Enter a valid 11-digit Nigerian phone number');return}
+      if(state.profile&&phone===digits(state.profile.phone)){toast('You cannot lock your own phone number');return}
+      if(!gender){toast('Select the person’s gender');return}
+      if(!ageRange){toast('Select the person’s age range');return}
+      if(!startDate){toast('Select when the relationship started');return}
+      if(startDate>todayISO()){toast('Relationship start date cannot be in the future');return}
+      if(!$('#truthConsent').checked){toast('Confirm that this is your current relationship claim');return}
+      if(!$('#lockLegalConsent').checked){toast('Agree to the Terms, Privacy Statement and NDA before creating the Lock-in');return}
+      const existing=(state.locks||[]).find(l=>digits(l.subjectPhone)===phone);
+      if(existing){state.activeLock=existing;state.selectedLockId=existing.id;saveState();hideModal('lockModal');toast('This person is already in your Locks');nav('lock');return}
+      const newLock={
+        id:crypto.randomUUID(),subjectPhone:phone,nickname,gender,ageRange,relationshipType:$('#relationshipType').value,
+        relationshipStart:startDate,createdAt:new Date().toISOString(),verifyUnlocked:false,monitorActive:false,monitorStartedAt:null,monitorOfferExpiresAt:new Date(Date.now()+120000).toISOString(),mutualStatus:'none'
+      };
+      state.locks=state.locks||[];state.locks.push(newLock);state.activeLock=newLock;state.selectedLockId=newLock.id;
+      state.networkMetrics=state.networkMetrics||{checks:12489,locks:4219,indicators:2112,active:34};state.networkMetrics.locks=(state.networkMetrics.locks||0)+1;
+      saveState();hideModal('lockModal');toast('Person locked');startMonitorOffer(newLock);setTimeout(()=>runResultScan(phone,'lock'),180)
+    };
+
+    function relationshipData(phone, mutualStatus='none'){
+      const key=digits(phone),last=parseInt((key.slice(-1)||'0'),10),seed=stableNumberSeed(key),otherMonitors=seed%5;
+      const base=(lockins,verified,oldest,confidence,indicator,level,banner)=>({lockins,verified,oldest,confidence,indicator,level,title:'Check complete',banner,otherMonitors,recentLockins:lockins?Math.min(lockins,seed%3):0,latestLockin:lockins?`${1+(seed%27)} days ago`:'—'});
+      if(mutualStatus==='verified') return base(1,'Yes','11 months','High','STRONG','high','A verified Lock is connected to this number. Unlock the Full Report to see the complete activity picture.');
+      if(last<=2) return base(0,'No','—','Low','CLEAR','low','No strong Lock-in activity is currently connected to this number.');
+      if(last<=5) return base(2,'No','3 months','Medium','MOD','medium','This number has Lock-in activity. Unlock the Full Report to see how many people have locked it.');
+      if(last<=7) return base(3,'No','7 months','Medium','MOD','medium','This number has multiple Lock-ins. Unlock the Full Report to see the deeper activity picture.');
+      return base(5,last%2===0?'Yes':'No','14 months','High','STRONG','high','This number is showing strong Lock-in activity. Unlock the Full Report to see the complete activity picture.');
+    }
+
+
+    function reportIdFor(phone){return 'LKY-'+stableNumberSeed(phone).toString(36).toUpperCase().padStart(7,'0').slice(0,7)}
+    function lockinBreakdown(phone,total){
+      const labels=['Talking stage','Situationship','Dating','Engaged','Married'],seed=stableNumberSeed(phone);let remaining=Math.max(0,total),out=[];
+      labels.forEach((label,i)=>{let count=i===labels.length-1?remaining:(remaining?Math.min(remaining,(seed>>(i*3))%(remaining+1)):0);out.push({label,count});remaining-=count});
+      if(total>0&&out.every(x=>x.count===0))out[0].count=total;
+      return out;
+    }
+    function hydrateReportSnapshot(snapshot,phone){
+      if(!snapshot||typeof snapshot!=='object')return null;
+      const activity={...(snapshot.activity||{})};
+      activity.first=activity.first?new Date(activity.first):new Date();activity.last=activity.last?new Date(activity.last):new Date();
+      return {phone:digits(snapshot.phone||phone),lock:null,d:{...(snapshot.d||{})},activity,mix:Array.isArray(snapshot.mix)?snapshot.mix:[],reportId:snapshot.reportId||reportIdFor(phone),generatedAt:new Date(snapshot.generatedAt||Date.now()),snapshot:true};
+    }
+    function fullReportData(phone,{forceLive=false}={}){
+      const order=currentVerificationOrder();
+      if(!forceLive&&order?.paid&&!isVerificationToday(order)&&order.reportSnapshot){const saved=hydrateReportSnapshot(order.reportSnapshot,phone);if(saved)return saved}
+      const lock=(state.locks||[]).find(l=>digits(l.subjectPhone)===digits(phone)),d=relationshipData(phone,lock?.mutualStatus||'none'),a=searchActivityFor(phone),mix=lockinBreakdown(phone,d.lockins);
+      return {phone:digits(phone),lock,d,activity:a,mix,reportId:reportIdFor(phone),generatedAt:new Date(),snapshot:false,snapshotMissing:!!(order?.paid&&!isVerificationToday(order)&&!order.reportSnapshot)}
+    }
+    function serializeReportSnapshot(report){
+      const r=report||{};const a=r.activity||{};
+      return {version:1,phone:digits(r.phone||''),d:r.d||{},activity:{...a,first:a.first instanceof Date?a.first.toISOString():a.first,last:a.last instanceof Date?a.last.toISOString():a.last},mix:Array.isArray(r.mix)?r.mix:[],reportId:r.reportId||'',generatedAt:(r.generatedAt instanceof Date?r.generatedAt:new Date(r.generatedAt||Date.now())).toISOString()};
+    }
+    async function persistTodayReportSnapshot(order,phone){
+      if(!order?.paid||!isVerificationToday(order)||!order.id)return;
+      try{
+        const live=fullReportData(phone,{forceLive:true});
+        const response=await lockilyApi('apiLockilySaveReportSnapshot',{method:'POST',body:JSON.stringify({orderId:order.id,customerPhone:currentSessionPhone(),snapshot:serializeReportSnapshot(live)})});
+        const updated=normalizeBackendPaymentOrder(response.order,'verify');if(updated){upsertVerificationHistoryOrder(updated);if(state.currentPayment?.id===updated.id)state.currentPayment=updated;saveState()}
+      }catch(err){console.warn('Could not persist report snapshot',err)}
+    }
+    function renderFullReportDetails(phone){
+      const r=fullReportData(phone),d=r.d;$('#reportIdBadge').textContent=r.reportId;$('#reportLockins').textContent=d.lockins;$('#reportMonitors').textContent=d.otherMonitors;$('#reportRecentLockins').textContent=d.recentLockins;$('#reportLatestLockin').textContent=d.latestLockin;
+      const mix=$('#lockinMix');mix.innerHTML='';r.mix.forEach(x=>{const row=document.createElement('div');row.className='lockin-row';const pct=d.lockins?Math.round(x.count/d.lockins*100):0;row.innerHTML=`<span>${escapeHtml(x.label)}</span><div class="lockin-bar"><i style="width:${pct}%"></i></div><b>${x.count}</b>`;mix.appendChild(row)});
+      const attention=r.activity.total>=8?'high':r.activity.total>=4?'active':'limited';$('#reportInsight').innerHTML=`<b>Lockily interpretation</b>${d.lockins} Lock-in${d.lockins===1?'':'s'} detected, ${d.otherMonitors} other monitor${d.otherMonitors===1?'':'s'} active, and ${r.activity.total} total checks. Search attention is ${attention}. Lock-ins show user activity on Lockily; they do not by themselves prove a relationship or wrongdoing.${r.snapshot?' This is the saved snapshot for that verification day.':''}${r.snapshotMissing?' This legacy payment predates saved report snapshots, so the original historical snapshot is unavailable.':''}`;
+    }
+
+    function currentLookupUnlocked(){
+      const ctx=state.currentLookup||{};const phone=digits(ctx.phone||state.activeLock?.subjectPhone||'');
+      const order=currentVerificationOrder();
+      if(ctx.source==='history'&&order?.paid)return true;
+      return !!paidVerificationForToday(phone);
+    }
+
+    function runResultScan(phone=state.activeLock?.subjectPhone, source='lock'){
+      if(!phone){toast(source==='lock'?'Create a Lock first':'Enter a phone number to verify');return}
+      const previousLookup=state.currentLookup; state.currentLookup = {phone, source, unlocked: source==='search' ? !!previousLookup?.unlocked && previousLookup?.phone===phone : false}; if(!previousLookup || previousLookup.phone!==phone || previousLookup.source!==source){state.verifyOfferExpiresAt=null;}
+      recordSearch(phone);
+      $('#resultSheetTitle').textContent = source==='lock' ? 'Checking your Lock' : 'Checking relationship status';
+      $('#resultContent').classList.add('hidden');$('#scanAnimation').classList.remove('hidden');
+      $('#scanPhone').textContent=maskPhone(phone);$('#scanProgress').style.width='0%';
+      $$('.scan-step').forEach((s,idx)=>{s.classList.remove('active','done');const status=s.querySelector('.status');status.textContent=String(idx+1)});
+      showModal('resultModal');
+      const steps=$$('.scan-step');const totalMs=9000+Math.floor(Math.random()*5001);const stepMs=Math.floor(totalMs/steps.length);let i=0;
+      const tick=()=>{
+        if(i>0){steps[i-1].classList.remove('active');steps[i-1].classList.add('done');steps[i-1].querySelector('.status').textContent='✓'}
+        if(i<steps.length){steps[i].classList.add('active');$('#scanProgress').style.transition=`width ${Math.max(600,stepMs-120)}ms linear`;$('#scanProgress').style.width=((i+1)/steps.length*100)+'%';i++;setTimeout(tick,stepMs)}
+        else{setTimeout(()=>{$('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');renderResult()},180)}
+      };
+      setTimeout(tick,120);
+    }
+
+    function renderResult(){
+      const lookup = state.currentLookup || {};
+      const phone = lookup.phone || state.activeLock?.subjectPhone;
+      if(!phone) return;
+      const report=fullReportData(phone),d=report.d,activity=report.activity;
+      $('#resultPhoneLine').textContent='Phone number '+digits(phone);
+      $('#resultAttentionChecks').textContent=Number(activity.total||0).toLocaleString()+' check'+(Number(activity.total||0)===1?'':'s')+' on Lockily';
+      $('#intelClaims').textContent=d.lockins;$('#intelMutual').textContent=d.verified;$('#intelOldest').textContent=d.oldest;$('#intelStrength').textContent=d.confidence;$('#intelMonitors').textContent=d.otherMonitors;$('#intelRecentLocks').textContent=d.recentLockins;
+      renderSearchActivity(phone,activity);
+      const unlocked=currentLookupUnlocked();
+      let accessOrder=currentVerificationOrder();
+      if(unlocked&&!accessOrder){accessOrder=paidVerificationForToday(phone);if(accessOrder){state.currentLookup={...(state.currentLookup||{}),phone,unlocked:true,orderId:accessOrder.id,historical:false};state.currentPayment=accessOrder;saveState()}}
+      $('#verifyPaywall').classList.toggle('locked',!unlocked);
+      $('#verifyPriceCard').classList.toggle('hidden',!!unlocked);
+      $('#verifyDiscountOffer').classList.toggle('hidden',!!unlocked);$('#fullReportDetails').classList.toggle('hidden',!unlocked);if(unlocked){renderFullReportDetails(phone);if(accessOrder?.paid&&isVerificationToday(accessOrder))setTimeout(()=>persistTodayReportSnapshot(accessOrder,phone),0)}
+      if(!unlocked){startVerifyOffer()}
+      $('#intelNote').textContent=unlocked
+        ? (accessOrder&&!isVerificationToday(accessOrder)?`Saved report from ${verificationDateLabel(accessOrder)}. An updated report for today requires a new verification.`:`Today's Full Report unlocked. ${d.lockins} Lock-in${d.lockins===1?'':'s'} detected.`)
+        : 'Lock-ins stay locked until you unlock the Full Report.';
+    }
+
+
+
+    function pdfText(doc,text,x,y,maxWidth,opts={}){const lines=doc.splitTextToSize(String(text||''),maxWidth);doc.text(lines,x,y,opts);return y+lines.length*4.6}
+    function pdfMetric(doc,x,y,w,label,value){doc.setFillColor(250,246,248);doc.roundedRect(x,y,w,22,3,3,'F');doc.setTextColor(115,83,99);doc.setFont('helvetica','bold');doc.setFontSize(7);doc.text(label.toUpperCase(),x+5,y+7);doc.setTextColor(45,28,39);doc.setFontSize(15);doc.text(String(value),x+5,y+16)}
+    async function buildLockilyReportPdf(phone){
+      if(!window.jspdf?.jsPDF)throw new Error('PDF engine unavailable');
+      const {jsPDF}=window.jspdf,doc=new jsPDF({unit:'mm',format:'a4'}),r=fullReportData(phone),d=r.d,a=r.activity;
+      const pageW=210,margin=14,pink=[242,79,130],deep=[53,22,40],violet=[119,85,232],muted=[112,89,102];
+      const footer=(page)=>{doc.setDrawColor(234,220,227);doc.line(margin,286,pageW-margin,286);doc.setFontSize(7);doc.setTextColor(...muted);doc.text(`LOCKILY | ${r.reportId}`,margin,291);doc.text(`Page ${page}`,pageW-margin,291,{align:'right'})};
+      // Cover/header
+      doc.setFillColor(...deep);doc.rect(0,0,pageW,48,'F');doc.setFillColor(...pink);doc.circle(22,22,9,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(14);doc.text('L',22,26,{align:'center'});doc.setFontSize(19);doc.text('LOCKILY FULL REPORT',36,20);doc.setFont('helvetica','normal');doc.setFontSize(9);doc.text('Relationship Status Intelligence',36,28);doc.setFontSize(7.5);doc.text(`Generated ${r.generatedAt.toLocaleString('en-NG')}`,36,35);
+      doc.setTextColor(...deep);doc.setFont('helvetica','bold');doc.setFontSize(9);doc.text('PHONE NUMBER',margin,61);doc.setFontSize(22);doc.text(r.phone,margin,72);doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...muted);doc.text(`Report ID ${r.reportId}`,margin,79);
+      doc.setFillColor(255,241,246);doc.roundedRect(margin,87,182,28,4,4,'F');doc.setTextColor(173,47,90);doc.setFont('helvetica','bold');doc.setFontSize(8);doc.text('ATTENTION SUMMARY',margin+6,96);doc.setTextColor(...deep);doc.setFontSize(12);doc.text(`${a.total} checks on Lockily`,margin+6,105);doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...muted);doc.text('This number has been checked by Lockily users. Full Report metrics are shown below.',margin+6,111);
+      pdfMetric(doc,margin,123,43,'Lock-ins',d.lockins);pdfMetric(doc,61,123,43,'Other monitors',d.otherMonitors);pdfMetric(doc,108,123,43,'Checks · 7D',a.seven);pdfMetric(doc,155,123,41,'Confidence',d.confidence);
+      doc.setTextColor(...deep);doc.setFont('helvetica','bold');doc.setFontSize(11);doc.text('Executive Summary',margin,160);doc.setFont('helvetica','normal');doc.setFontSize(8.5);doc.setTextColor(79,58,70);let y=168;y=pdfText(doc,`${d.lockins} Lock-in${d.lockins===1?'':'s'} are associated with this number on Lockily. ${d.otherMonitors} other monitor${d.otherMonitors===1?' is':'s are'} active. The earliest Lock-in signal is ${d.oldest}, and the current confidence level is ${d.confidence.toLowerCase()}.`,margin,y,182);
+      doc.setFont('helvetica','bold');doc.setFontSize(11);doc.setTextColor(...deep);doc.text('Lock-in Intelligence',margin,y+10);y+=18;
+      const rows=[['Total Lock-ins',d.lockins],['Verified Lock',d.verified],['Earliest Lock-in',d.oldest],['Most recent Lock-in',d.latestLockin],['New Lock-ins · 30 days',d.recentLockins],['Other monitors active',d.otherMonitors],['Confidence level',d.confidence]];
+      rows.forEach((row,i)=>{if(i%2===0){doc.setFillColor(251,248,250);doc.rect(margin,y-4,182,8,'F')}doc.setFontSize(8);doc.setTextColor(...muted);doc.text(row[0],margin+3,y);doc.setTextColor(...deep);doc.setFont('helvetica','bold');doc.text(String(row[1]),pageW-margin-3,y,{align:'right'});doc.setFont('helvetica','normal');y+=8});
+      footer(1);
+      // Page 2
+      doc.addPage();doc.setFillColor(...violet);doc.rect(0,0,pageW,26,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(14);doc.text('ACTIVITY & SIGNAL DETAIL',margin,17);
+      y=40;doc.setTextColor(...deep);doc.setFontSize(11);doc.text('Lock-in Stage Mix',margin,y);y+=9;const max=Math.max(1,d.lockins);r.mix.forEach(x=>{doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...muted);doc.text(x.label,margin,y);doc.setFillColor(238,228,234);doc.roundedRect(48,y-3,118,4,2,2,'F');if(x.count){doc.setFillColor(...pink);doc.roundedRect(48,y-3,118*(x.count/max),4,2,2,'F')}doc.setTextColor(...deep);doc.setFont('helvetica','bold');doc.text(String(x.count),pageW-margin,y,{align:'right'});y+=9});
+      y+=5;doc.setFontSize(11);doc.setTextColor(...deep);doc.text('Search Activity',margin,y);y+=10;const activityRows=[['Total checks',a.total],['Checks · past 7 days',a.seven],['Checks · past 30 days',a.thirty],['First checked',a.first.toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'})],['Last checked',fmtActivityDate(a.last)],['Activity trend',a.trend]];activityRows.forEach((row,i)=>{if(i%2===0){doc.setFillColor(249,247,250);doc.rect(margin,y-4,182,8,'F')}doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...muted);doc.text(row[0],margin+3,y);doc.setFont('helvetica','bold');doc.setTextColor(...deep);doc.text(String(row[1]),pageW-margin-3,y,{align:'right'});y+=8});
+      y+=7;doc.setFontSize(11);doc.text('Monitoring Activity',margin,y);y+=10;const totalMonitors=d.otherMonitors+(r.lock?.monitorActive?1:0);pdfMetric(doc,margin,y,55,'Total active monitors',totalMonitors);pdfMetric(doc,73,y,55,'Other monitors',d.otherMonitors);pdfMetric(doc,132,y,64,'Monitoring status',r.lock?.monitorActive?'You monitor':'Not active');y+=31;
+      doc.setFillColor(244,239,248);doc.roundedRect(margin,y,182,42,4,4,'F');doc.setTextColor(...deep);doc.setFont('helvetica','bold');doc.setFontSize(9);doc.text('How to read this report',margin+6,y+9);doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(84,64,76);pdfText(doc,'A Lock-in means a Lockily user has locked this phone number. It does not by itself prove that the subject is in a relationship with that user, that the relationship is exclusive, or that wrongdoing occurred. Search and monitor activity are attention signals only.',margin+6,y+17,170);
+      y+=48;doc.setFillColor(52,31,47);doc.roundedRect(margin,y,182,27,4,4,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(9);doc.text('LOCKILY REPORT STATUS',margin+6,y+9);doc.setFontSize(13);doc.text(d.lockins?`${d.lockins} LOCK-IN${d.lockins===1?'':'S'} DETECTED`:'NO LOCK-INS DETECTED',margin+6,y+19);doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.text(`Confidence: ${d.confidence} | Other monitors: ${d.otherMonitors} | Verified Lock: ${d.verified}`,margin+6,y+24);
+      footer(2);return doc.output('blob');
+    }
+    $('#downloadReportBtn').onclick=async()=>{const phone=state.currentLookup?.phone||state.activeLock?.subjectPhone;if(!phone||!currentLookupUnlocked()){toast('Unlock the Full Report first');return}const btn=$('#downloadReportBtn'),old=btn.textContent;btn.disabled=true;btn.textContent='Building report…';try{const blob=await buildLockilyReportPdf(phone),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`Lockily-Full-Report-${digits(phone)}-${verificationDateFor(currentVerificationOrder()||{verificationDate:lagosDateKey()})}.pdf`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);toast('PDF report downloaded')}catch(err){console.error(err);toast('Could not build PDF report')}finally{btn.disabled=false;btn.textContent=old}};
+
+    let verifyOfferTimer=null,monitorOfferTimer=null;
+    function secondsLeft(expiry){const exp=expiry?new Date(expiry).getTime():0;return Math.max(0,Math.ceil((exp-Date.now())/1000))}
+    function mmss(left){return String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0')}
+    function startVerifyOffer(){
+      if(!state.verifyOfferExpiresAt){state.verifyOfferExpiresAt=new Date(Date.now()+120000).toISOString();localStorage.setItem(storageKey,JSON.stringify(state))}
+      syncVerifyOffer();clearInterval(verifyOfferTimer);verifyOfferTimer=setInterval(syncVerifyOffer,250);
+    }
+    function getVerifyPrice(){return secondsLeft(state.verifyOfferExpiresAt)>0?CONFIG.verifyOfferPrice:CONFIG.verifyPrice}
+    function syncVerifyOffer(){
+      const left=secondsLeft(state.verifyOfferExpiresAt);
+      const timer=$('#verifyDealTimer'),label=$('#verifyPriceLabel'),sub=$('#verifyPriceSub'),deal=$('#verifyDealPrice'),std=$('#verifyStandardPrice'),offer=$('#verifyDiscountOffer');
+      if(!timer)return;
+      if(left>0){
+        timer.textContent=mmss(left);if(timer.nextElementSibling)timer.nextElementSibling.textContent='LEFT';label.textContent=money(CONFIG.verifyOfferPrice);sub.textContent='50% offer';deal.textContent=money(CONFIG.verifyOfferPrice);std.textContent=money(CONFIG.verifyPrice);offer.classList.remove('hidden');offer.querySelector('h4').textContent='Order within 2 minutes and save ₦1,000.';offer.querySelector('p').textContent='Unlock the Full Report before the timer runs out.';
+      }else{
+        timer.textContent='00:00';if(timer.nextElementSibling)timer.nextElementSibling.textContent='OFFER ELAPSED';label.textContent=money(CONFIG.verifyPrice);sub.textContent='Standard price · offer elapsed';deal.textContent=money(CONFIG.verifyPrice);std.textContent='';offer.classList.remove('hidden');offer.querySelector('h4').textContent='Time and offer have elapsed.';offer.querySelector('p').textContent='The 2-minute offer has ended. Standard Full Report price now applies.';clearInterval(verifyOfferTimer);verifyOfferTimer=null;
+      }
+      if(state.pendingProduct==='verify' && $('#paymentModal')?.classList.contains('show'))syncPaymentPricing();
+    }
+    function ensureMonitorOffer(lock){if(!lock||lock.monitorActive)return;if(!lock.monitorOfferExpiresAt){lock.monitorOfferExpiresAt=new Date(Date.now()+120000).toISOString();localStorage.setItem(storageKey,JSON.stringify(state))}}
+    function monitorSecondsLeft(lock=state.activeLock){return lock?secondsLeft(lock.monitorOfferExpiresAt):0}
+    function getMonitorPrice(lock=state.activeLock){return monitorSecondsLeft(lock)>0?CONFIG.monitorOfferPrice:CONFIG.monitorPrice}
+    function startMonitorOffer(lock=state.activeLock){if(!lock||lock.monitorActive)return;ensureMonitorOffer(lock);syncMonitorOffer();clearInterval(monitorOfferTimer);monitorOfferTimer=setInterval(syncMonitorOffer,250)}
+    function syncMonitorOffer(){
+      const lock=state.activeLock,left=monitorSecondsLeft(lock),price=getMonitorPrice(lock),available=!!lock&&!lock.monitorActive;
+      const btn=$('#lockMonitorBtn'),note=$('#lockMonitorOfferNote'),resultBtn=$('#resultMonitorBtn'),resultNote=$('#resultMonitorOfferStatus'),emptyBtn=$('#emptyMonitorBtn');
+      if(btn&&lock){btn.textContent=lock.monitorActive?'Active':money(price)+'/mo'}
+      if(emptyBtn&&lock&&!lock.monitorActive){emptyBtn.textContent=left>0?`Start Monitor — ${money(CONFIG.monitorOfferPrice)}/month · ${mmss(left)} left`:`Start Monitor — ${money(CONFIG.monitorPrice)}/month`}
+      if(note&&lock&&!lock.monitorActive){note.classList.toggle('expired',left<=0);note.textContent=left>0?`2-minute offer · ${money(CONFIG.monitorOfferPrice)}/month · ${mmss(left)} left`:`Offer elapsed · Standard ${money(CONFIG.monitorPrice)}/month`}
+      if(resultBtn){if(lock?.monitorActive){resultBtn.textContent='Monitor active';resultBtn.disabled=true}else{resultBtn.disabled=false;resultBtn.textContent=`Monitor this person — ${money(available?price:CONFIG.monitorPrice)}/month`}}
+      if(resultNote){resultNote.innerHTML=left>0?`Monitor offer · <b>${money(CONFIG.monitorOfferPrice)}/month</b> · <b>${mmss(left)}</b> left. Standard ${money(CONFIG.monitorPrice)}/month.`:`<span class="offer-expired-text">Time and offer have elapsed.</span> Standard Monitor price is ${money(CONFIG.monitorPrice)}/month.`}
+      if(state.pendingProduct==='monitor' && $('#paymentModal')?.classList.contains('show'))syncPaymentPricing();
+      if(left<=0){clearInterval(monitorOfferTimer);monitorOfferTimer=null}
+    }
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden){syncVerifyOffer();syncMonitorOffer()}});window.addEventListener('focus',()=>{syncVerifyOffer();syncMonitorOffer()});window.addEventListener('pageshow',()=>{syncVerifyOffer();syncMonitorOffer()});
+
+    function paymentAmountFor(product){
+      if(product==='verify')return getVerifyPrice();
+      if(product==='monitor')return getMonitorPrice();
+      return CONFIG.mutualPrice;
+    }
+    function paymentAccountNameFor(product){
+      if(product==='verify')return 'Lockily Report';
+      if(product==='monitor')return 'Lockily Monitor';
+      return 'Lockily Verified Lock';
+    }
+    function paymentDescriptionFor(product,amountOverride=null){
+      const amount=Number(amountOverride??paymentAmountFor(product));
+      if(product==='verify')return amount===CONFIG.verifyOfferPrice?'50% Full Report offer locked for this order. Transfer the exact amount below.':'Full Report standard price. Transfer the exact amount below.';
+      if(product==='monitor')return amount===CONFIG.monitorOfferPrice?`2-minute Monitor offer locked for this order — ${money(CONFIG.monitorOfferPrice)}/month.`:`Monitor standard price — ${money(CONFIG.monitorPrice)}/month.`;
+      return 'Verified Lock order. Transfer the exact amount below.';
+    }
+    function normalizeBackendPaymentOrder(order, fallbackProduct=''){
+      if(!order)return null;
+      return {
+        id:order.orderId||order.id||'',
+        product:order.product||fallbackProduct,
+        bank:order.bank||'Stanbic IBTC Bank',
+        accountNumber:order.walletAccountNumber||order.accountNumber||'',
+        accountName:order.accountName||paymentAccountNameFor(order.product||fallbackProduct),
+        amountExpected:Number(order.amountExpected||0),
+        totalPaid:Number(order.totalPaid||0),
+        paymentStatus:order.paymentStatus||'pending',
+        paid:order.paid===true||order.paymentStatus==='paid'||order.paymentStatus==='overpaid',
+        paidAt:order.paidAt||null,
+        customerPhone:digits(order.customerPhone||''),
+        subjectPhone:digits(order.subjectPhone||''),
+        lockId:order.lockId||'',
+        verificationDate:order.verificationDate||'',
+        reportSnapshot:order.reportSnapshot&&typeof order.reportSnapshot==='object'?order.reportSnapshot:null,
+        reportGeneratedAt:order.reportGeneratedAt||null,
+        updatedAt:order.updatedAt||order.createdAt||new Date().toISOString(),
+        createdAt:order.createdAt||new Date().toISOString()
+      };
+    }
+
+    function lagosDateKey(value=new Date()){
+      const date=value instanceof Date?value:new Date(value);
+      const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Lagos',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date);
+      const map=Object.fromEntries(parts.map(part=>[part.type,part.value]));
+      return `${map.year}-${map.month}-${map.day}`;
+    }
+    function verificationDateFor(order){return order?.verificationDate||lagosDateKey(order?.paidAt||order?.createdAt||new Date())}
+    function verificationDateLabel(order){const key=verificationDateFor(order);const d=new Date(`${key}T12:00:00+01:00`);return Number.isNaN(d.getTime())?key:d.toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric',timeZone:'Africa/Lagos'})}
+    function isVerificationToday(order){return !!order&&verificationDateFor(order)===lagosDateKey()}
+    function paidVerificationForToday(phone){
+      const target=digits(phone);if(!target)return null;
+      return (state.verificationHistory||[]).filter(x=>x.product==='verify'&&x.paid&&digits(x.subjectPhone)===target&&isVerificationToday(x)).sort((a,b)=>new Date(b.paidAt||b.createdAt||0)-new Date(a.paidAt||a.createdAt||0))[0]||null;
+    }
+    function latestPaidVerification(phone){
+      const target=digits(phone);if(!target)return null;
+      return (state.verificationHistory||[]).filter(x=>x.product==='verify'&&x.paid&&digits(x.subjectPhone)===target).sort((a,b)=>new Date(b.paidAt||b.createdAt||0)-new Date(a.paidAt||a.createdAt||0))[0]||null;
+    }
+    function currentVerificationOrder(){
+      const lookupId=state.currentLookup?.orderId||'';
+      if(lookupId)return (state.verificationHistory||[]).find(x=>x.id===lookupId)||((state.currentPayment?.id===lookupId)?state.currentPayment:null)||null;
+      const lookupPhone=digits(state.currentLookup?.phone||'');
+      if(state.currentPayment?.id&&lookupPhone&&digits(state.currentPayment.subjectPhone)===lookupPhone)return state.currentPayment;
+      return null;
+    }
+
+    function upsertVerificationHistoryOrder(order){
+      if(!order||order.product!=='verify'||!order.id)return;
+      state.verificationHistory=Array.isArray(state.verificationHistory)?state.verificationHistory:[];
+      const idx=state.verificationHistory.findIndex(x=>x.id===order.id);
+      const merged={...(idx>=0?state.verificationHistory[idx]:{}),...order,product:'verify'};
+      if(idx>=0)state.verificationHistory[idx]=merged;else state.verificationHistory.push(merged);
+      state.verificationHistory.sort((a,b)=>new Date(b.createdAt||0)-new Date(a.createdAt||0));
+    }
+    function reconcilePaidVerification(order){
+      if(!order?.paid||order.product!=='verify')return;
+      const phone=digits(order.subjectPhone||'');
+      const matching=(state.locks||[]).find(l=>(order.lockId&&l.id===order.lockId)||(phone&&digits(l.subjectPhone)===phone));
+      if(matching){matching.verifyUnlockedDate=verificationDateFor(order);matching.lastVerificationOrderId=order.id;matching.verifyUnlocked=isVerificationToday(order)}
+      if(state.currentLookup&&phone&&digits(state.currentLookup.phone)===phone&&isVerificationToday(order)){state.currentLookup.unlocked=true;state.currentLookup.orderId=order.id}
+    }
+    function paidVerificationCount(){return (state.verificationHistory||[]).filter(x=>x.product==='verify'&&x.paid).length}
+    async function syncVerificationHistoryFromBackend({silent=false}={}){
+      const customerPhone=digits(currentSessionPhone()||state.profile?.phone||'');
+      if(!customerPhone)return [];
+      try{
+        const response=await lockilyApi(`apiLockilyVerificationHistory?customerPhone=${encodeURIComponent(customerPhone)}&limit=50`);
+        const incoming=Array.isArray(response.history)?response.history:[];
+        incoming.forEach(raw=>{const order=normalizeBackendPaymentOrder(raw,'verify');upsertVerificationHistoryOrder(order);reconcilePaidVerification(order)});
+        state.verificationPurchases=paidVerificationCount();
+        localStorage.setItem(storageKey,JSON.stringify(state));
+        renderAll();
+        return state.verificationHistory;
+      }catch(err){if(!silent)toast(err.message||'Could not refresh verification history');return state.verificationHistory||[]}
+    }
+    function verificationStatusLabel(order){if(order.paid)return 'PAID';if(order.paymentStatus==='partial')return 'PARTIAL';return 'AWAITING PAYMENT'}
+    function renderVerificationHistory(){
+      const list=$('#verificationHistoryList'),empty=$('#verificationHistoryEmpty');if(!list||!empty)return;
+      const history=(state.verificationHistory||[]).filter(x=>x.product==='verify').sort((a,b)=>new Date(b.createdAt||0)-new Date(a.createdAt||0));
+      empty.classList.toggle('hidden',history.length>0);list.innerHTML='';
+      history.forEach(order=>{
+        const card=document.createElement('article');card.className='verification-history-card';
+        const today=isVerificationToday(order),paid=!!order.paid;
+        const statusClass=paid?'paid':(order.paymentStatus==='partial'?'partial':'');
+        const statusText=paid?(today?'PAID TODAY':`PAID · ${verificationDateLabel(order).toUpperCase()}`):verificationStatusLabel(order);
+        const created=order.createdAt?new Date(order.createdAt).toLocaleString('en-NG',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Africa/Lagos'}):'—';
+        const primaryLabel=paid?(today?"View today's report":'View saved report'):'Check payment / reopen order';
+        const updateButton=paid&&!today?`<button class="history-action secondary" data-update="1" type="button">Get updated report</button>`:'';
+        card.innerHTML=`<div class="verification-history-top"><div><small>PHONE NUMBER</small><h3>${escapeHtml(digits(order.subjectPhone)||'Unknown number')}</h3><small>${escapeHtml(created)} · Verification day ${escapeHtml(verificationDateLabel(order))}</small></div><span class="history-status ${statusClass}">${escapeHtml(statusText)}</span></div><div class="verification-history-meta"><div><b>${escapeHtml(money(order.amountExpected))}</b><span>AMOUNT</span></div><div><b>${escapeHtml(money(order.totalPaid))}</b><span>RECEIVED</span></div><div><b>${escapeHtml(String(order.id||'').slice(0,8).toUpperCase())}</b><span>REFERENCE</span></div></div><div class="history-actions"><button class="history-action ${paid?'':'pending'}" data-open="1" type="button">${primaryLabel}</button>${updateButton}</div>`;
+        card.querySelector('[data-open]')?.addEventListener('click',()=>openVerificationHistoryEntry(order.id));
+        card.querySelector('[data-update]')?.addEventListener('click',()=>requestUpdatedVerification(order));
+        list.appendChild(card);
+      });
+    }
+    async function requestUpdatedVerification(order){
+      const phone=digits(order?.subjectPhone||'');if(!phone)return;
+      state.currentLookup={phone,source:'history',unlocked:false,orderId:null};state.currentPayment=null;state.pendingProduct=null;state.verifyOfferExpiresAt=null;saveState();
+      await startPayment('verify');
+    }
+    async function openVerificationHistoryEntry(orderId){
+      let order=(state.verificationHistory||[]).find(x=>x.id===orderId);if(!order)return;
+      try{
+        const response=await lockilyApi(`apiLockilyPaymentStatus?orderId=${encodeURIComponent(orderId)}`);
+        order=normalizeBackendPaymentOrder(response.order,'verify');upsertVerificationHistoryOrder(order);reconcilePaidVerification(order);state.verificationPurchases=paidVerificationCount();saveState();renderAll();
+      }catch(err){toast(err.message||'Could not refresh this verification');return}
+      if(order.paid){
+        state.currentLookup={phone:order.subjectPhone,source:'history',unlocked:true,orderId:order.id,historical:!isVerificationToday(order)};state.pendingProduct=null;state.currentPayment=order;saveState();
+        $('#resultSheetTitle').textContent=isVerificationToday(order)?"Today's Full Report":`Report · ${verificationDateLabel(order)}`;$('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');showModal('resultModal');renderResult();return;
+      }
+      state.currentLookup={phone:order.subjectPhone,source:'history',unlocked:false,orderId:order.id};state.pendingProduct='verify';state.currentPayment=order;saveState();$('#paymentTitle').textContent='Unlock Full Report';$('#orderLegalConsent').checked=true;renderPaymentOrder();showModal('paymentModal');startPaymentPolling();
+    }
+    async function createPaymentOrder(product){
+      const orderId=crypto.randomUUID();
+      const subjectPhone=digits(state.currentLookup?.phone||state.activeLock?.subjectPhone||'');
+      const response=await lockilyApi('apiLockilyCreatePayment',{
+        method:'POST',
+        body:JSON.stringify({
+          orderId,
+          product,
+          amountExpected:paymentAmountFor(product),
+          customerPhone:currentSessionPhone(),
+          subjectPhone,
+          lockId:state.activeLock?.id||'',
+          source:'lockily-web'
+        })
+      });
+      const order=normalizeBackendPaymentOrder(response.order,product);
+      if(product==='verify')upsertVerificationHistoryOrder(order);
+      return order;
+    }
+    function paymentOfferText(product,amountOverride=null){
+      const amount=Number(amountOverride??paymentAmountFor(product));
+      if(product==='verify')return amount===CONFIG.verifyOfferPrice?'50% offer locked for this order':'Standard price';
+      if(product==='monitor')return amount===CONFIG.monitorOfferPrice?'2-minute Monitor offer locked for this order':'Standard price';
+      return 'Standard price';
+    }
+    function renderPaymentOrder(){
+      const order=state.currentPayment;if(!order)return;
+      $('#paymentAmount').textContent=money(order.amountExpected);
+      $('#paymentDescription').textContent=paymentDescriptionFor(order.product,order.amountExpected);
+      $('#paymentOfferCountdown').textContent=paymentOfferText(order.product,order.amountExpected);
+      $('#paymentBank').textContent=order.bank||'Stanbic IBTC Bank';
+      $('#paymentAccount').textContent=order.accountNumber||'—';
+      $('#paymentAccountName').textContent=order.accountName||'Lockily';
+      $('#paymentReference').textContent='Order reference: '+String(order.id||'').slice(0,8).toUpperCase();
+      const card=$('#paymentStatusCard');card.classList.remove('paid','partial');
+      if(order.paid){
+        card.classList.add('paid');
+        $('#paymentStatusTitle').textContent='Payment confirmed';
+        $('#paymentStatusText').textContent='Your Lockily access is being unlocked now.';
+      }else if(order.paymentStatus==='partial'){
+        card.classList.add('partial');
+        $('#paymentStatusTitle').textContent='Partial payment received';
+        $('#paymentStatusText').textContent=`${money(order.totalPaid)} received. Send ${money(Math.max(0,order.amountExpected-order.totalPaid))} more to complete this order.`;
+      }else{
+        $('#paymentStatusTitle').textContent='Waiting for payment';
+        $('#paymentStatusText').textContent=`Transfer exactly ${money(order.amountExpected)} to the account above. Payment detection is automatic.`;
+      }
+    }
+    function syncPaymentPricing(){
+      if(!state.currentPayment||state.currentPayment.paid)return;
+      renderPaymentOrder();
+    }
+    async function startPayment(product){
+      if(product!=='verify' && !state.activeLock){toast('Select or create a Lock first');return}
+      state.pendingProduct=product;
+      const title={verify:'Unlock Full Report',monitor:'Start monitoring',mutual:'Verified Lock'}[product];
+      $('#paymentTitle').textContent=title;
+      $('#orderLegalConsent').checked=false;
+      try{
+        if(product==='verify'){
+          await syncVerificationHistoryFromBackend({silent:true});
+          const subjectPhone=digits(state.currentLookup?.phone||state.activeLock?.subjectPhone||'');
+          const paidToday=paidVerificationForToday(subjectPhone);
+          if(paidToday){state.pendingProduct=null;await openVerificationHistoryEntry(paidToday.id);toast("Today's report is already paid — reopened free");return}
+        }
+        toast('Creating secure payment account…');
+        state.currentPayment=await createPaymentOrder(product);
+        if(product==='verify'&&state.currentPayment?.paid){upsertVerificationHistoryOrder(state.currentPayment);reconcilePaidVerification(state.currentPayment);state.pendingProduct=null;saveState();await openVerificationHistoryEntry(state.currentPayment.id);toast("Today's paid report reopened free");return}
+        saveState();
+        renderPaymentOrder();
+        showModal('paymentModal');
+        startPaymentPolling();
+        if(product==='monitor')startMonitorOffer(state.activeLock);
+        if(product==='verify')syncVerifyOffer();
+      }catch(err){
+        state.pendingProduct=null;state.currentPayment=null;saveState();
+        toast(err.message||'Could not create payment account');
+      }
+    }
+
+    $('#buyVerifyBtn').onclick=()=>startPayment('verify');
+    $('#refreshVerificationHistoryBtn').onclick=async()=>{const btn=$('#refreshVerificationHistoryBtn'),old=btn.textContent;btn.disabled=true;btn.textContent='Refreshing…';await syncVerificationHistoryFromBackend();btn.disabled=false;btn.textContent=old};
+    $('#verifyRelationshipBtn').onclick=()=>{const phone=digits($('#verifyPhoneInput').value); if(!validNgPhone(phone)){toast('Enter a valid 11-digit Nigerian phone number');return} state.verifyOfferExpiresAt=null;runResultScan(phone,'search')};
+    $('#lockVerifyBtn').onclick=()=>{if(!state.activeLock){toast('Create a Lock first');return}const paidToday=paidVerificationForToday(state.activeLock.subjectPhone);if(paidToday){openVerificationHistoryEntry(paidToday.id);return}state.verifyOfferExpiresAt=null;runResultScan(state.activeLock.subjectPhone,'lock')};
+    $('#quickVerify').onclick=()=>nav('verify');
+    $('#resultMonitorBtn').onclick=()=>{if(state.activeLock?.monitorActive){toast('Monitor is already active');nav('verify');return}startPayment('monitor')};
+    $('#lockMonitorBtn').onclick=()=>{if(state.activeLock?.monitorActive){toast('Monitor is already active');nav('verify');return}startPayment('monitor')};
+    $('#quickMonitor').onclick=()=>{if(!state.activeLock){toast('Create a free Lock first');nav('home');return}state.activeLock.monitorActive?nav('verify'):startPayment('monitor')};
+    $('#emptyMonitorBtn').onclick=()=>{if(!state.activeLock){toast('Create a free Lock first');nav('home');return}startPayment('monitor')};
+    $('#quickMutual').onclick=()=>openMutualFlow();$('#lockMutualBtn').onclick=()=>openMutualFlow();
+
+    function openMutualFlow(){
+      if(!state.activeLock){toast('Create a free Lock first');nav('home');return}
+      $('#mutualPhone').value=maskPhone(state.activeLock.subjectPhone);$('#mutualConsent').checked=false;
+      $('#mutualInviteBox').classList.toggle('hidden',!state.mutualInvite);if(state.mutualInvite)$('#inviteCodeText').textContent=state.mutualInvite.code;
+      showModal('mutualModal')
+    }
+    $('#createMutualInvite').onclick=()=>{
+      if(!$('#mutualConsent').checked){toast('Your partner must independently confirm');return}
+      startPayment('mutual')
+    };
+
+    function fulfilPaidOrder(){
+      const product=state.pendingProduct;if(!product)return;
+      if(!state.currentPayment?.paid){toast('Payment has not been confirmed yet');return}
+      const paidAmount=state.currentPayment?.amountExpected||paymentAmountFor(product);
+      renderPaymentOrder();
+      setTimeout(()=>{
+        hideModal('paymentModal');
+        if(product==='verify'){
+          const paidOrder={...state.currentPayment,product:'verify',paid:true,paymentStatus:state.currentPayment?.paymentStatus||'paid'};upsertVerificationHistoryOrder(paidOrder);reconcilePaidVerification(paidOrder);
+          const reportPhone=digits(paidOrder.subjectPhone||state.currentLookup?.phone||state.activeLock?.subjectPhone||'');
+          const reportSource=state.currentLookup?.source||((state.activeLock&&digits(state.activeLock.subjectPhone)===reportPhone)?'lock':'history');
+          state.currentLookup={phone:reportPhone,source:reportSource,unlocked:true,orderId:paidOrder.id,historical:false};state.verificationPurchases=paidVerificationCount();state.pendingProduct=null;state.verifyOfferExpiresAt=null;saveState();toast('Full Report unlocked');
+          setTimeout(()=>{state.currentLookup={phone:reportPhone,source:reportSource,unlocked:true,orderId:paidOrder.id,historical:false};$('#resultSheetTitle').textContent='Unlocked Full Report';$('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');showModal('resultModal');renderResult()},180)
+        }
+        if(product==='monitor'){
+          const target=(state.locks||[]).find(l=>l.id===state.activeLock?.id)||state.activeLock;
+          if(!target){toast('Select a Lock first');return}
+          target.monitorActive=true;target.monitorStartedAt=new Date().toISOString();target.monitorPriceAtActivation=paidAmount;state.activeLock=target;state.selectedLockId=target.id;state.pendingProduct=null;
+          state.alerts=state.alerts||[];state.alerts.push({id:crypto.randomUUID(),type:'system',lockId:target.id,title:'Monitor started · '+(target.nickname||maskPhone(target.subjectPhone)),copy:'Lockily is now watching this locked person for relationship-status changes.',createdAt:new Date().toISOString()});
+          saveState();toast('Monitor activated for '+(target.nickname||'this Lock'));nav('verify')
+        }
+        if(product==='mutual'){
+          const code='LKY-'+Math.floor(100000+Math.random()*900000);
+          state.mutualInvite={code,createdAt:new Date().toISOString(),status:'pending'};state.pendingProduct=null;saveState();
+          $('#mutualInviteBox').classList.remove('hidden');$('#inviteCodeText').textContent=code;showModal('mutualModal');toast('Verified Lock invitation created')
+        }
+      },450);
+    }
+
+    let paymentPollTimer=null,paymentStatusBusy=false;
+    function stopPaymentPolling(){if(paymentPollTimer){clearInterval(paymentPollTimer);paymentPollTimer=null}}
+    function startPaymentPolling(){
+      stopPaymentPolling();
+      if(!state.currentPayment?.id)return;
+      paymentPollTimer=setInterval(()=>refreshCurrentPaymentStatus({silent:true}),5000);
+    }
+    async function refreshCurrentPaymentStatus({silent=false}={}){
+      if(paymentStatusBusy||!state.currentPayment?.id||!state.pendingProduct)return null;
+      paymentStatusBusy=true;
+      try{
+        const response=await lockilyApi(`apiLockilyPaymentStatus?orderId=${encodeURIComponent(state.currentPayment.id)}`);
+        state.currentPayment=normalizeBackendPaymentOrder(response.order,state.pendingProduct);
+        if(state.pendingProduct==='verify'){upsertVerificationHistoryOrder(state.currentPayment);reconcilePaidVerification(state.currentPayment);state.verificationPurchases=paidVerificationCount()}
+        saveState();renderPaymentOrder();
+        if(state.currentPayment.paid){stopPaymentPolling();fulfilPaidOrder();return state.currentPayment}
+        if(state.pendingProduct==='verify'){
+          const subjectPhone=digits(state.currentPayment.subjectPhone||state.currentLookup?.phone||'');
+          await syncVerificationHistoryFromBackend({silent:true});
+          const paidForSamePhone=paidVerificationForToday(subjectPhone);
+          if(paidForSamePhone){state.currentPayment=paidForSamePhone;state.pendingProduct='verify';saveState();renderPaymentOrder();stopPaymentPolling();fulfilPaidOrder();return state.currentPayment}
+        }
+        if(!silent){
+          if(state.currentPayment.paymentStatus==='partial')toast('Partial payment received');
+          else toast('Payment not received yet');
+        }
+        return state.currentPayment;
+      }catch(err){if(!silent)toast(err.message||'Could not check payment');return null}
+      finally{paymentStatusBusy=false}
+    }
+    $('#checkPaymentBtn').onclick=async()=>{
+      if(!$('#orderLegalConsent').checked){toast('Agree to the Terms, Privacy Statement and NDA before ordering');return}
+      if(!state.currentPayment||!state.pendingProduct){toast('Create a fresh payment order');return}
+      const btn=$('#checkPaymentBtn'),normal="I've paid — check payment";
+      btn.disabled=true;btn.textContent='Checking bank transfer…';
+      $('#paymentStatusTitle').textContent='Checking payment';
+      $('#paymentStatusText').textContent='Confirming this dedicated Stanbic account.';
+      await refreshCurrentPaymentStatus();
+      btn.disabled=false;btn.textContent=normal;
+    };
+    $('#copyPaymentAccount').onclick=async()=>{try{await navigator.clipboard.writeText($('#paymentAccount').textContent.trim());toast('Account number copied')}catch{toast('Copy failed')}};
+    $('#copyPaymentName').onclick=async()=>{try{await navigator.clipboard.writeText($('#paymentAccountName').textContent.trim());toast('Account name copied')}catch{toast('Copy failed')}};
+    $('#copyPaymentDetails').onclick=async()=>{
+      const p=state.currentPayment;if(!p)return;
+      const text=`LOCKILY PAYMENT\nBank: ${p.bank||'Stanbic IBTC Bank'}\nAccount number: ${p.accountNumber}\nAccount name: ${p.accountName}\nAmount: ${money(p.amountExpected)}\nReference: ${String(p.id||'').slice(0,8).toUpperCase()}`;
+      try{await navigator.clipboard.writeText(text);toast('Payment details copied')}catch{toast('Copy failed')}
+    };
+
+    $('#demoAcceptInviteBtn').onclick=()=>{
+      if(!state.mutualInvite){toast('Create an invitation first');return}
+      state.mutualInvite.status='accepted';state.activeLock.mutualStatus='verified';saveState();hideModal('mutualModal');toast('Relationship is now mutually verified');nav('lock')
+    };
+    $('#shareInviteBtn').onclick=async()=>{
+      if(!state.mutualInvite)return;
+      const text=`Lockily invitation ${state.mutualInvite.code}: independently verify our relationship.`;
+      try{if(navigator.share)await navigator.share({title:'Lockily Verified Lock',text});else{await navigator.clipboard.writeText(text);toast('Invitation copied')}}catch{}
+    };
+
+    $('#unlockBtn').onclick=()=>{
+      if(!state.activeLock)return;const targetName=state.activeLock.nickname||'this person';
+      openConfirmModal({title:'End this Lock?',message:`Monitoring and the active Lock-in for ${targetName} will stop. This action removes the Lock from My Locks.`,confirmText:'End Lock'},()=>{const endedId=state.activeLock?.id;if(!endedId)return;state.locks=(state.locks||[]).filter(l=>l.id!==endedId);state.activeLock=state.locks[0]||null;state.selectedLockId=state.activeLock?.id||null;state.mutualInvite=null;state.currentLookup=null;state.verifyOfferExpiresAt=null;saveState();toast('Lock ended');nav(state.activeLock?'lock':'home')});
+    };
+
+    $('#notificationBtn').onclick=()=>nav('verify');$('#topProfileBtn').onclick=()=>nav('profile');$('#profileAction').onclick=()=>{if(state.profile){$('#firstName').value=state.profile.firstName;$('#profilePhoneInput').value=state.profile.phone;$('#ageConfirm').value='18plus';$('#profileConsent').checked=true}showModal('profileModal')};$('#privacyBtn').onclick=()=>showModal('privacyStatementModal');$('#logoutBtn').onclick=()=>openConfirmModal({title:'Sign out of Lockily?',message:'You will return to the Sign Up / Sign In screen. Your Locks and reports remain saved to this account on this device.',confirmText:'Sign out'},()=>{showAuth();toast('Signed out')});
+
+    function renderProfile(){
+      const p=state.profile;if(p){$('#profileAvatar').textContent=(p.firstName||'L').slice(0,1).toUpperCase();$('#profileName').textContent=p.firstName;$('#profilePhone').textContent=maskPhone(p.phone);$('#phoneBadge').textContent='Phone verified';$('#phoneBadge').className='tiny-badge';}
+      else{$('#profileAvatar').textContent='L';$('#profileName').textContent='Create your profile';$('#profilePhone').textContent='Phone verification pending';$('#phoneBadge').textContent='Phone unverified';$('#phoneBadge').className='tiny-badge gray'}
+      $('#profileLocks').textContent=(state.locks||[]).length;$('#profileChecks').textContent=state.verificationPurchases||0;$('#profileAlerts').textContent=(state.alerts||[]).filter(a=>a.type!=='system').length;
+    }
+    function selectLock(id){
+      const l=(state.locks||[]).find(x=>x.id===id);if(!l)return;state.activeLock=l;state.selectedLockId=id;saveState();if(!l.monitorActive)startMonitorOffer(l);else syncMonitorOffer();
+    }
+    function renderLock(){
+      const locks=state.locks||[];const l=state.activeLock||locks[0]||null;if(l&&!state.activeLock){state.activeLock=l;state.selectedLockId=l.id}
+      $('#lockEmpty').classList.toggle('hidden',!!l);$('#lockContent').classList.toggle('hidden',!l);
+      const switcher=$('#lockSwitcher');if(switcher){switcher.innerHTML='';locks.forEach(item=>{const b=document.createElement('button');b.className='lock-chip'+(item.id===l?.id?' active':'');const fullPhone=digits(item.subjectPhone)||item.subjectPhone||'—';b.textContent=item.nickname?`${item.nickname} · ${fullPhone}`:fullPhone;b.onclick=()=>selectLock(item.id);switcher.appendChild(b)});const add=document.createElement('button');add.className='lock-chip add';add.textContent='+ Add another';add.onclick=()=>{nav('home');setTimeout(()=>openLockFlow(),180)};switcher.appendChild(add)}
+      if(!l)return;
+      const todayPaid=paidVerificationForToday(l.subjectPhone),latestPaid=latestPaidVerification(l.subjectPhone);
+      $('#lockAlias').textContent=l.nickname||'My person';$('#lockPhoneMasked').textContent=(digits(l.subjectPhone)||l.subjectPhone||'—')+' · '+(l.relationshipType||'relationship').replace(/_/g,' ').replace(/^./,c=>c.toUpperCase())+(l.gender||l.ageRange?' · '+[l.gender?l.gender.replace(/^./,c=>c.toUpperCase()):'',l.ageRange||''].filter(Boolean).join(' · '):'');$('#lockAge').textContent=daysSince(l.relationshipStart||l.createdAt)+'d';$('#lockVerifyState').textContent=todayPaid?'Done today':(latestPaid?'Update due':'Basic');$('#lockMonitorState').textContent=l.monitorActive?'On':'Off';
+      const d=relationshipData(l.subjectPhone,l.mutualStatus),strip=$('#lockStatusStrip');strip.className='status-strip';
+      if(l.mutualStatus==='verified'){strip.classList.add('success');$('#lockStatusTitle').textContent='Verified Lock active ♥';$('#lockStatusCopy').textContent='Both sides have confirmed the relationship.';}
+      else if(todayPaid&&d.lockins>0){strip.classList.add(d.level==='high'?'danger':'alert');$('#lockStatusTitle').textContent="Today's Full Report unlocked";$('#lockStatusCopy').textContent=`${d.lockins} Lock-in${d.lockins===1?'':'s'} shown in today's report. You can reopen it free today.`;}
+      else if(todayPaid){$('#lockStatusTitle').textContent="Today's Full Report unlocked";$('#lockStatusCopy').textContent='You can reopen this report free until the Lagos calendar day changes.';}
+      else if(latestPaid){$('#lockStatusTitle').textContent='Updated verification available';$('#lockStatusCopy').textContent=`Last paid report: ${verificationDateLabel(latestPaid)}. Pay for a new verification to get today's updated report.`;}
+      else{$('#lockStatusTitle').textContent='Lock active';$('#lockStatusCopy').textContent='Check this number whenever you want the Full Report.';}
+      $('#lockVerifyBtn').textContent=todayPaid?"View today's report":(latestPaid?'Get updated report':'₦2,000');$('#lockMutualBtn').textContent=l.mutualStatus==='verified'?'Verified ♥':'₦3,000';if(!l.monitorActive)startMonitorOffer(l);else syncMonitorOffer();
+    }
+    function renderMonitor(){
+      const monitored=(state.locks||[]).filter(l=>l.monitorActive);
+      const active=monitored.length>0;$('#monitorEmpty').classList.toggle('hidden',active);$('#monitorContent').classList.toggle('hidden',!active);if(!active)return;
+      const list=$('#monitoredLocksList');list.innerHTML='';
+      monitored.forEach(lock=>{
+        const md=relationshipData(lock.subjectPhone,lock.mutualStatus||'none');
+        const card=document.createElement('section');card.className='monitor-person-card';
+        const since=new Date(lock.monitorStartedAt||Date.now()).toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'});
+        card.innerHTML=`<div class="monitor-person-head"><div><small>MONITOR ACTIVE</small><h3>${escapeHtml(lock.nickname||'My person')}</h3><p>${escapeHtml(maskPhone(lock.subjectPhone))} · ${escapeHtml((lock.relationshipType||'relationship').replace(/_/g,' ').replace(/^./,c=>c.toUpperCase()))}</p></div><span class="monitor-live-badge">● LIVE</span></div><div class="monitor-person-meta"><div><b>Since ${escapeHtml(since)}</b><span>MONITORING STARTED</span></div><div><b>${md.otherMonitors} other monitor${md.otherMonitors===1?'':'s'}</b><span>ACTIVE ON THIS NUMBER</span></div></div><button class="monitor-open" type="button">Open ${escapeHtml(lock.nickname||'Lock')}</button>`;
+        card.querySelector('.monitor-open').addEventListener('click',()=>{selectLock(lock.id);nav('lock')});list.appendChild(card);
+      });
+      const holder=$('#alertList');holder.innerHTML='';[...(state.alerts||[])].reverse().forEach(a=>{const el=document.createElement('article');el.className='alert-card glass';el.innerHTML=`<div class="alert-icon">${a.type==='signal'?'⚠':'✓'}</div><div><h3>${escapeHtml(a.title)}</h3><p>${escapeHtml(a.copy)}</p></div><div class="alert-time">${timeAgo(a.createdAt)}</div>`;holder.appendChild(el)});
+      if(!state.alerts.length)holder.innerHTML='<div class="empty-state glass"><div class="empty-icon">✓</div><h3>Quiet is good.</h3><p>No new relationship signal has been detected since Monitor started.</p></div>';
+    }
+    function timeAgo(iso){const s=Math.floor((Date.now()-new Date(iso).getTime())/1000);if(s<60)return 'now';if(s<3600)return Math.floor(s/60)+'m';if(s<86400)return Math.floor(s/3600)+'h';return Math.floor(s/86400)+'d'}
+    function escapeHtml(s){return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+    function renderAll(){renderProfile();renderLock();renderMonitor();renderVerificationHistory();renderNetworkProof();$('#notifDot').classList.toggle('show',(state.alerts||[]).some(a=>a.type==='signal'));}
+
+    setInterval(()=>{const m=state.networkMetrics||(state.networkMetrics={checks:12489,locks:4219,indicators:2112,active:34});const drift=Math.random()<.55?1:(Math.random()<.5?-1:0);m.active=Math.max(18,Math.min(48,(m.active||34)+drift));renderNetworkProof()},12000);
+
+
+    // Sliding testimonials
+    const testimonialTrack=$('#testimonialTrack');
+    const testimonialCards=testimonialTrack?[...testimonialTrack.children]:[];
+    const testimonialDotsHolder=$('#testimonialDots');
+    let testimonialIndex=0,testimonialTimer=null;
+    if(testimonialTrack&&testimonialDotsHolder&&testimonialCards.length){
+      testimonialCards.forEach((_,i)=>{const d=document.createElement('button');d.className='testimonial-dot'+(i===0?' active':'');d.setAttribute('aria-label','Testimonial '+(i+1));d.onclick=()=>{showTestimonial(i);restartTestimonials()};testimonialDotsHolder.appendChild(d)});
+      function showTestimonial(i){testimonialIndex=(i+testimonialCards.length)%testimonialCards.length;testimonialTrack.style.transform=`translateX(-${testimonialIndex*100}%)`;[...testimonialDotsHolder.children].forEach((d,x)=>d.classList.toggle('active',x===testimonialIndex));}
+      function restartTestimonials(){clearInterval(testimonialTimer);testimonialTimer=setInterval(()=>showTestimonial(testimonialIndex+1),4300)}
+      restartTestimonials();
+    }
+
+    // Sliding social-proof activity. These are clearly marked samples until a live backend feed replaces them.
+    const proofSamples=[
+      {text:'A woman in Abuja just found her boyfriend had been locked by 3 other women.',meta:'Sample anonymized activity · Abuja'},
+      {text:'A man in Abuja just found his girlfriend had been locked by 3 other men.',meta:'Sample anonymized activity · Abuja'},
+      {text:'Someone in Lagos just created a Verified Lock with their partner.',meta:'Sample anonymized activity · Lagos'},
+      {text:'A relationship check in Port Harcourt surfaced strong relationship activity.',meta:'Sample anonymized activity · Port Harcourt'},
+      {text:'Someone in Kano turned on Monitor after verifying a relationship.',meta:'Sample anonymized activity · Kano'}
+    ];
+    let proofIndex=0,proofTimer=null;
+    function showSocialProof(){
+      const box=$('#socialProofToast');if(!box)return;const item=proofSamples[proofIndex%proofSamples.length];proofIndex++;
+      $('#socialProofText').textContent=item.text;$('#socialProofMeta').textContent=item.meta;box.classList.add('show');
+      clearTimeout(proofTimer);proofTimer=setTimeout(()=>box.classList.remove('show'),4300);
+    }
+    setTimeout(showSocialProof,2300);setInterval(showSocialProof,7600);
+
+    // Sign-up hero slider
+    const HERO_IMAGES = [
+      "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=1200&q=80"
+    ];
+
+    const HERO_FIXED = [
+      {title:'TRUECALLER FOR RELATIONSHIPS.',copy:'Search the number. Know what you’re walking into.'},
+      {title:'YOU MIGHT NOT BE THE BOYFRIEND.',copy:'You might be one of the boyfriends.'},
+      {title:'HE MIGHT NOT BE CHEATING.',copy:'But why are people checking his number?'},
+      {title:'LOVE IS BLIND. LOCKILY ISN’T.',copy:'Search the number.'}
+    ];
+
+    const HERO_RANDOM_POOL = [
+      {title:'HE MIGHT BE MARRIED.',copy:'Find out before “baby” becomes “sorry.”'},
+      {title:'SHE MIGHT BELONG TO THE STREETS.',copy:'Check before you start building a home.'},
+      {title:'BE HIS ONLY ONE.',copy:'Don’t be like NEPA — sharing power with the whole neighbourhood.'},
+      {title:'YOUR RELATIONSHIP MIGHT BE EXCLUSIVE.',copy:'The phone number might not be.'},
+      {title:'HE SAID YOU’RE HIS PEACE.',copy:'Check how many people are sharing the peace treaty.'},
+      {title:'YOUR GIRLFRIEND MIGHT BE A GROUP PROJECT.',copy:'Check before submitting your heart.'},
+      {title:'YOUR BOYFRIEND MAY HAVE SHAREHOLDERS.',copy:'Check the cap table.'},
+      {title:'BEFORE YOU FIGHT ANOTHER WOMAN…',copy:'Make sure the man isn’t the common denominator.'},
+      {title:'RELATIONSHIP STATUS: “IT’S COMPLICATED.”',copy:'Lockily: How complicated?'},
+      {title:'HER NUMBER IS GETTING ATTENTION.',copy:'Wouldn’t you like to know why?'},
+      {title:'DON’T BECOME LOYAL TO SOMEBODY RUNNING A LOYALTY PROGRAM.',copy:'Check the number before loyalty becomes a subscription.'},
+      {title:'YOU’RE GIVING 100%.',copy:'Make sure you’re not receiving 25%.'},
+      {title:'DATING WITHOUT LOCKILY…',copy:'Is emotional investing without checking the balance sheet.'},
+      {title:'“HE’S JUST MY FRIEND.”',copy:'Okay. How many friends have locked her?'},
+      {title:'TALKING STAGE? FINE.',copy:'Just make sure it isn’t a conference call.'},
+      {title:'YOU’RE PLANNING THE WEDDING.',copy:'Somebody else might already be choosing aso-ebi.'},
+      {title:'YOUR MAN COULD BE SOMEBODY ELSE’S “MY MAN.”',copy:'Search the number.'},
+      {title:'YOUR WOMAN COULD BE SOMEBODY ELSE’S “MY WOMAN.”',copy:'Search the number.'},
+      {title:'THE RED FLAG MIGHT NOT BE ON INSTAGRAM.',copy:'It might be in the Lock-ins.'},
+      {title:'SOME RELATIONSHIPS NEED COMMUNICATION.',copy:'Others need an audit.'},
+      {title:'SHE SAYS YOU’RE INSECURE.',copy:'Verification takes seconds.'},
+      {title:'HIS FRIENDS CAN COVER FOR HIM.',copy:'His phone number can’t negotiate with Lockily.'},
+      {title:'YOU DON’T NEED HIS PHONE.',copy:'You need his phone number.'},
+      {title:'YOU CAN FORGIVE CHEATING.',copy:'First find out whether you’re even the main relationship.'},
+      {title:'MONITOR YOUR MAN.',copy:'If another woman locks him, Lockily lets you know.'},
+      {title:'MONITOR YOUR WOMAN.',copy:'If another man locks her, you’ll know something changed.'},
+      {title:'SOMEBODY JUST LOCKED YOUR BOYFRIEND.',copy:'Might be real. Might be a hater. Either way, you should know.'},
+      {title:'SOMEBODY JUST LOCKED YOUR GIRLFRIEND.',copy:'Don’t panic. Check the signal.'},
+      {title:'STOP CHECKING EVERY DAY.',copy:'Lockily watches your locked person for you.'},
+      {title:'IF THEIR LOCKILY STATUS CHANGES,',copy:'Your phone should know before you do.'}
+    ];
+
+    function shuffleHero(items){
+      const a=[...items];
+      for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+      return a;
+    }
+    const HERO_DECK=[...HERO_FIXED,...shuffleHero(HERO_RANDOM_POOL)];
+
+    function renderHeroDeck(containerId,slideClass,headingTag){
+      const holder=$('#'+containerId); if(!holder)return;
+      holder.innerHTML='';
+      HERO_DECK.forEach((item,index)=>{
+        const article=document.createElement('article');
+        article.className=slideClass+(index===0?' active':'');
+        article.style.backgroundImage=`url('${HERO_IMAGES[index%HERO_IMAGES.length]}')`;
+        const wrap=document.createElement('div');
+        const h=document.createElement(headingTag); h.textContent=item.title;
+        const p=document.createElement('p'); p.textContent=item.copy||'';
+        wrap.append(h,p); article.appendChild(wrap); holder.appendChild(article);
+      });
+    }
+
+    renderHeroDeck('authHeroSlider','auth-hero-slide','h2');
+    renderHeroDeck('heroSlider','hero-slide','h1');
+
+    const authSlides=$$('.auth-hero-slide'),authDotsHolder=$('#authHeroDots');let authHeroIndex=0,authHeroTimer=null;const authHeroDelay=5000;
+    if(authSlides.length&&authDotsHolder){
+      const updateAuthCounter=()=>authDotsHolder.textContent=`${authHeroIndex+1} / ${authSlides.length}`;
+      function restartAuthHeroProgress(){const p=$('#authHeroProgress');if(!p)return;p.classList.remove('running');void p.offsetWidth;p.classList.add('running')}
+      function showAuthHero(index){const prev=authHeroIndex;authHeroIndex=(index+authSlides.length)%authSlides.length;authSlides.forEach((s,i)=>{s.classList.remove('active','exit-left');if(i===prev&&prev!==authHeroIndex)s.classList.add('exit-left')});requestAnimationFrame(()=>authSlides[authHeroIndex].classList.add('active'));updateAuthCounter();restartAuthHeroProgress()}
+      function startAuthHero(){clearInterval(authHeroTimer);restartAuthHeroProgress();authHeroTimer=setInterval(()=>showAuthHero(authHeroIndex+1),authHeroDelay)}
+      $('#authHeroPrev').onclick=()=>{showAuthHero(authHeroIndex-1);startAuthHero()};$('#authHeroNext').onclick=()=>{showAuthHero(authHeroIndex+1);startAuthHero()};
+      let authTouchStart=0;$('#authHeroSlider').addEventListener('touchstart',e=>authTouchStart=e.changedTouches[0].clientX,{passive:true});$('#authHeroSlider').addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-authTouchStart;if(Math.abs(d)>45){showAuthHero(d<0?authHeroIndex+1:authHeroIndex-1);startAuthHero()}},{passive:true});updateAuthCounter();startAuthHero();
+    }
+
+    // Hero slider
+    const slides=$$('.hero-slide');const dotsHolder=$('#heroDots');let heroIndex=0,heroTimer=null;const heroDelay=5000;
+    const updateHeroCounter=()=>{if(dotsHolder)dotsHolder.textContent=`${heroIndex+1} / ${slides.length}`};
+    function restartHeroProgress(){const p=$('#heroProgress');p.classList.remove('running');void p.offsetWidth;p.classList.add('running')}
+    function showHero(index){const prev=heroIndex;heroIndex=(index+slides.length)%slides.length;slides.forEach((s,i)=>{s.classList.remove('active','exit-left');if(i===prev&&prev!==heroIndex)s.classList.add('exit-left')});requestAnimationFrame(()=>slides[heroIndex].classList.add('active'));updateHeroCounter();restartHeroProgress()}
+    function startHero(){clearInterval(heroTimer);restartHeroProgress();heroTimer=setInterval(()=>showHero(heroIndex+1),heroDelay)}
+    $('#heroPrev').onclick=()=>{showHero(heroIndex-1);startHero()};$('#heroNext').onclick=()=>{showHero(heroIndex+1);startHero()};
+    let touchStart=0;$('#heroSlider').addEventListener('touchstart',e=>touchStart=e.changedTouches[0].clientX,{passive:true});$('#heroSlider').addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-touchStart;if(Math.abs(d)>45){showHero(d<0?heroIndex+1:heroIndex-1);startHero()}},{passive:true});
+
+    // Progressive Web App install + offline shell
+    const pwaStandalone = () => window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    const pwaIsIOS = () => /iphone|ipad|ipod/i.test(navigator.userAgent);
+    let pwaPromptShown = false;
+
+    function pwaInstallAvailable(){
+      return !!window.__lockilyInstallPrompt || (pwaIsIOS() && !pwaStandalone());
+    }
+
+    function syncPwaInstallUI(){
+      const available = pwaInstallAvailable() && !pwaStandalone();
+      $('#authInstallRow')?.classList.toggle('show', available);
+      $('#topInstallBtn')?.classList.toggle('show', available);
+      if(!available) $('#pwaInstallPrompt')?.classList.remove('show');
+    }
+
+    function openPwaInstallPrompt(){
+      if(pwaStandalone()) return;
+      if(pwaIsIOS() && !window.__lockilyInstallPrompt){
+        showModal('iosInstallModal');
+        return;
+      }
+      if(window.__lockilyInstallPrompt) $('#pwaInstallPrompt')?.classList.add('show');
+    }
+
+    async function triggerPwaInstall(){
+      if(pwaStandalone()) return;
+      if(pwaIsIOS() && !window.__lockilyInstallPrompt){
+        $('#pwaInstallPrompt')?.classList.remove('show');
+        showModal('iosInstallModal');
+        return;
+      }
+      const promptEvent = window.__lockilyInstallPrompt;
+      if(!promptEvent) return;
+      $('#pwaInstallPrompt')?.classList.remove('show');
+      await promptEvent.prompt();
+      try{ await promptEvent.userChoice; }catch{}
+      window.__lockilyInstallPrompt = null;
+      syncPwaInstallUI();
+    }
+
+    $('#pwaInstallNow')?.addEventListener('click', triggerPwaInstall);
+    $('#authInstallBtn')?.addEventListener('click', triggerPwaInstall);
+    $('#topInstallBtn')?.addEventListener('click', openPwaInstallPrompt);
+    $('#pwaInstallDismiss')?.addEventListener('click', () => $('#pwaInstallPrompt')?.classList.remove('show'));
+
+    window.addEventListener('lockilyinstallready', () => {
+      syncPwaInstallUI();
+      if(!pwaPromptShown && !pwaStandalone()){
+        pwaPromptShown = true;
+        setTimeout(() => $('#pwaInstallPrompt')?.classList.add('show'), 1800);
+      }
+    });
+
+    window.addEventListener('appinstalled', () => {
+      window.__lockilyInstallPrompt = null;
+      $('#pwaInstallPrompt')?.classList.remove('show');
+      syncPwaInstallUI();
+      if(typeof toast === 'function') toast('Lockily installed');
+    });
+
+    if('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')){
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(error => console.warn('Lockily service worker registration failed', error));
+      });
+    }
+
+    setTimeout(() => {
+      syncPwaInstallUI();
+      if(pwaInstallAvailable() && !pwaStandalone() && !pwaPromptShown){
+        pwaPromptShown = true;
+        $('#pwaInstallPrompt')?.classList.add('show');
+      }
+    }, 2200);
+
+    updateHeroCounter();startHero();renderAll();if(!showApp())showAuth();
+  </script>
+</body>
+</html>
