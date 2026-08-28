@@ -351,7 +351,7 @@
 
   <section class="auth-shell" id="authShell">
     <div class="auth-wrap">
-      <div class="auth-brand"><div class="logo" aria-hidden="true"></div><div><h1>lockily</h1><p>Lock your person. Check the attention. Know more.</p></div></div>
+      <div class="auth-brand"><div class="logo" aria-hidden="true"></div><div><h1>lockily</h1><p id="authBrandTagline">Lock your person. Check Relationship Status, Know More...</p></div></div>
 
       <div class="auth-hero-slider" id="authHeroSlider" aria-live="polite"></div>
       <div class="auth-hero-controls"><div class="auth-hero-dots" id="authHeroDots"></div><div class="auth-hero-arrows"><button type="button" id="authHeroPrev" aria-label="Previous">‹</button><button type="button" id="authHeroNext" aria-label="Next">›</button></div></div>
@@ -362,13 +362,13 @@
         <p><b id="authActiveCheckers">0 people</b> are checking relationship status right now.</p>
       </div>
       <div class="proof-strip auth-proof-strip">
-        <div class="proof-chip"><b id="authNetworkChecks">0</b><span>relationship checks across the network</span></div>
-        <div class="proof-chip"><b id="authNetworkLocks">0</b><span>people have locked their person</span></div>
-        <div class="proof-chip"><b id="authNetworkReports">0</b><span>full reports unlocked</span></div>
+        <div class="proof-chip"><b id="authNetworkChecks">27,865</b><span id="authNetworkChecksLabel">Relationship Checks Today.</span></div>
+        <div class="proof-chip"><b id="authNetworkLocks">35,678</b><span id="authNetworkLocksLabel">People have Locked their Wives/Husbands/BFs/GFs.</span></div>
+        <div class="proof-chip"><b id="authNetworkReports">6,535</b><span id="authNetworkReportsLabel">Reports Ordered Today.</span></div>
       </div>
       <div class="pwa-install-row" id="authInstallRow">
         <div class="pwa-install-icon"><img src="icon-192.png" alt="" /></div>
-        <div class="pwa-install-copy"><b>Install Lockily</b><span>Search, Monitor a relationship status</span></div>
+        <div class="pwa-install-copy"><b id="authInstallTitle">Install Lockily</b><span id="authInstallSubtitle">Search, Monitor a relationship status</span></div>
         <button type="button" id="authInstallBtn">Install</button>
       </div>
 
@@ -377,7 +377,7 @@
         <button class="auth-tab" data-auth-tab="signin">Sign in</button>
       </div>
       <div class="auth-panel" id="signupPanel">
-        <h2 class="auth-headline">Create your Lockily account.</h2><p class="auth-sub">Your account keeps your Locks, reports and monitors private to you.</p>
+        <h2 class="auth-headline">Create your Lockily account.</h2><p class="auth-sub" id="signupAccountSubtitle">With your account, you can check the relationship status of anyone and monitor if their relationship status change.</p>
         <div class="field"><label>FIRST NAME</label><input id="signupName" autocomplete="given-name" placeholder="Your first name" /></div>
         <div class="field"><label>PHONE NUMBER</label><input id="signupPhone" inputmode="numeric" maxlength="11" placeholder="0803 000 0000" /></div>
         <div class="field"><label>PASSWORD</label><input id="signupPassword" type="password" minlength="6" placeholder="At least 6 characters" /></div>
@@ -393,7 +393,6 @@
         <button class="primary" id="signinBtn">Sign in to Lockily</button>
         <div class="auth-error" id="signinError"></div>
       </div>
-      <div class="auth-foot">Private account access. Other users never see your name, password or personal Lock history.</div>
     </div>
   </section>
 
@@ -458,9 +457,9 @@
       </div>
 
       <div class="proof-strip">
-        <div class="proof-chip"><b id="networkChecks">0</b><span>relationship checks across the network</span></div>
-        <div class="proof-chip"><b id="networkLocks">0</b><span>people have locked their person</span></div>
-        <div class="proof-chip"><b id="networkIndicators">0</b><span>full reports unlocked</span></div>
+        <div class="proof-chip"><b id="networkChecks">27,865</b><span id="networkChecksLabel">Relationship Checks Today.</span></div>
+        <div class="proof-chip"><b id="networkLocks">35,678</b><span id="networkLocksLabel">People have Locked their Wives/Husbands/BFs/GFs.</span></div>
+        <div class="proof-chip"><b id="networkIndicators">6,535</b><span id="networkReportsLabel">Reports Ordered Today.</span></div>
       </div>
 
       <div class="testimonial-shell" id="testimonialShell">
@@ -825,6 +824,7 @@
       networkMetrics: {checks:0,locks:0,indicators:0,active:0},
       content: {hero:[],testimonial:[]},
       activityFeed: [],
+      installPromptConfig: {autoHideMs:6500,autoShowDelayMs:1800},
       pendingProduct: null,
       currentPayment: null,
       mutualInvite: null,
@@ -878,12 +878,31 @@
       CONFIG.offerSeconds=Number(pricing.offerSeconds||120);
       CONFIG.currency=pricing.currency||'NGN';
       renderPricingFromDatabase();
-      state.networkMetrics=payload.networkMetrics||state.networkMetrics;
+      const networkStats=payload?.config?.network_stats||{};
+      const liveMetrics=payload.networkMetrics||{};
+      state.networkMetrics={
+        checks:Number(networkStats.checks ?? liveMetrics.checks ?? 0),
+        locks:Number(networkStats.locks ?? liveMetrics.locks ?? 0),
+        indicators:Number(networkStats.indicators ?? liveMetrics.indicators ?? 0),
+        active:Number(liveMetrics.active||0)
+      };
       state.content=payload.content||state.content;
       state.activityFeed=Array.isArray(payload.activityFeed)?payload.activityFeed:[];
+      const authCopy=payload?.config?.auth_copy||{};
+      if($('#authBrandTagline'))$('#authBrandTagline').textContent=authCopy.tagline||'Lock your person. Check Relationship Status, Know More...';
+      if($('#signupAccountSubtitle'))$('#signupAccountSubtitle').textContent=authCopy.signupSubtitle||'With your account, you can check the relationship status of anyone and monitor if their relationship status change.';
       const install=payload?.config?.install_prompt||{};
+      state.installPromptConfig={autoHideMs:Number(install.autoHideMs||6500),autoShowDelayMs:Number(install.autoShowDelayMs||1800)};
       if($('#pwaInstallTitle'))$('#pwaInstallTitle').textContent=install.title||'Install Lockily';
       if($('#pwaInstallSubtitle'))$('#pwaInstallSubtitle').textContent=install.subtitle||'Search, Monitor a relationship status';
+      if($('#authInstallTitle'))$('#authInstallTitle').textContent=install.title||'Install Lockily';
+      if($('#authInstallSubtitle'))$('#authInstallSubtitle').textContent=install.subtitle||'Search, Monitor a relationship status';
+      const checksLabel=networkStats.checksLabel||'Relationship Checks Today.';
+      const locksLabel=networkStats.locksLabel||'People have Locked their Wives/Husbands/BFs/GFs.';
+      const reportsLabel=networkStats.reportsLabel||'Reports Ordered Today.';
+      ['#authNetworkChecksLabel','#networkChecksLabel'].forEach(id=>{const el=$(id);if(el)el.textContent=checksLabel});
+      ['#authNetworkLocksLabel','#networkLocksLabel'].forEach(id=>{const el=$(id);if(el)el.textContent=locksLabel});
+      ['#authNetworkReportsLabel','#networkReportsLabel'].forEach(id=>{const el=$(id);if(el)el.textContent=reportsLabel});
       renderDatabaseContent();
       renderNetworkProof();
       renderLiveActivity();
@@ -1803,16 +1822,34 @@
     const pwaStandalone = () => window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
     const pwaIsIOS = () => /iphone|ipad|ipod/i.test(navigator.userAgent);
     let pwaPromptShown = false;
+    let pwaPromptShowTimer = null;
+    let pwaPromptHideTimer = null;
 
     function pwaInstallAvailable(){
       return !!window.__lockilyInstallPrompt || (pwaIsIOS() && !pwaStandalone());
+    }
+
+    function closePwaInstallPrompt(){
+      clearTimeout(pwaPromptShowTimer);clearTimeout(pwaPromptHideTimer);
+      pwaPromptShowTimer=null;pwaPromptHideTimer=null;
+      $('#pwaInstallPrompt')?.classList.remove('show');
+    }
+
+    function showPwaInstallPromptTemporarily(delay=0){
+      clearTimeout(pwaPromptShowTimer);clearTimeout(pwaPromptHideTimer);
+      pwaPromptShowTimer=setTimeout(()=>{
+        if(pwaStandalone()||(!window.__lockilyInstallPrompt && !pwaIsIOS()))return;
+        $('#pwaInstallPrompt')?.classList.add('show');
+        const hideAfter=Math.max(2500,Number(state.installPromptConfig?.autoHideMs||6500));
+        pwaPromptHideTimer=setTimeout(closePwaInstallPrompt,hideAfter);
+      },Math.max(0,Number(delay||0)));
     }
 
     function syncPwaInstallUI(){
       const available = pwaInstallAvailable() && !pwaStandalone();
       $('#authInstallRow')?.classList.toggle('show', available);
       $('#topInstallBtn')?.classList.toggle('show', available);
-      if(!available) $('#pwaInstallPrompt')?.classList.remove('show');
+      if(!available) closePwaInstallPrompt();
     }
 
     function openPwaInstallPrompt(){
@@ -1821,19 +1858,19 @@
         showModal('iosInstallModal');
         return;
       }
-      if(window.__lockilyInstallPrompt) $('#pwaInstallPrompt')?.classList.add('show');
+      if(window.__lockilyInstallPrompt) showPwaInstallPromptTemporarily(0);
     }
 
     async function triggerPwaInstall(){
       if(pwaStandalone()) return;
       if(pwaIsIOS() && !window.__lockilyInstallPrompt){
-        $('#pwaInstallPrompt')?.classList.remove('show');
+        closePwaInstallPrompt();
         showModal('iosInstallModal');
         return;
       }
       const promptEvent = window.__lockilyInstallPrompt;
       if(!promptEvent) return;
-      $('#pwaInstallPrompt')?.classList.remove('show');
+      closePwaInstallPrompt();
       await promptEvent.prompt();
       try{ await promptEvent.userChoice; }catch{}
       window.__lockilyInstallPrompt = null;
@@ -1843,26 +1880,26 @@
     $('#pwaInstallNow')?.addEventListener('click', triggerPwaInstall);
     $('#authInstallBtn')?.addEventListener('click', triggerPwaInstall);
     $('#topInstallBtn')?.addEventListener('click', openPwaInstallPrompt);
-    $('#pwaInstallDismiss')?.addEventListener('click', () => $('#pwaInstallPrompt')?.classList.remove('show'));
+    $('#pwaInstallDismiss')?.addEventListener('click', closePwaInstallPrompt);
 
     window.addEventListener('lockilyinstallready', () => {
       syncPwaInstallUI();
       if(!pwaPromptShown && !pwaStandalone()){
         pwaPromptShown = true;
-        setTimeout(() => $('#pwaInstallPrompt')?.classList.add('show'), 1800);
+        showPwaInstallPromptTemporarily(Number(state.installPromptConfig?.autoShowDelayMs||1800));
       }
     });
 
     window.addEventListener('appinstalled', () => {
       window.__lockilyInstallPrompt = null;
-      $('#pwaInstallPrompt')?.classList.remove('show');
+      closePwaInstallPrompt();
       syncPwaInstallUI();
       if(typeof toast === 'function') toast('Lockily installed');
     });
 
     if('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')){
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=20260828-db1',{updateViaCache:'none'}).then(reg=>reg.update()).catch(error => console.warn('Lockily service worker registration failed', error));
+        navigator.serviceWorker.register('./sw.js?v=20260828-db2',{updateViaCache:'none'}).then(reg=>reg.update()).catch(error => console.warn('Lockily service worker registration failed', error));
       });
     }
 
@@ -1870,7 +1907,7 @@
       syncPwaInstallUI();
       if(pwaInstallAvailable() && !pwaStandalone() && !pwaPromptShown){
         pwaPromptShown = true;
-        $('#pwaInstallPrompt')?.classList.add('show');
+        showPwaInstallPromptTemporarily(0);
       }
     }, 2200);
 
