@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lockily-shell-20260828-db2';
+const CACHE_NAME = 'lockily-shell-20260829-mutual-v3';
 
 self.addEventListener('install', () => {
   self.skipWaiting();

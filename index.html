@@ -154,10 +154,9 @@
       padding:11px 12px;background:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.95);backdrop-filter:blur(22px) saturate(150%);
       border-radius:24px;box-shadow:var(--shadow-sm)
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:0}.brand strong{display:block;font-size:17px;letter-spacing:-.045em}.brand span{display:block;color:var(--muted);font-size:9.5px;margin-top:2px}
-    .logo{width:44px;height:44px;flex:0 0 44px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,#ff5c8d,#8c63f2);box-shadow:0 10px 24px rgba(230,68,119,.24);color:#fff;position:relative}
-    .logo:before{content:"♥";font-size:21px;transform:translateY(-2px)}
-    .logo:after{content:"";position:absolute;width:12px;height:10px;border:2px solid #fff;border-top:0;border-radius:3px;bottom:7px;left:50%;transform:translateX(-50%);opacity:.95}
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}.brand span{display:block;color:var(--muted);font-size:9.5px;margin-top:2px}
+    .brand-logo{display:block;width:154px;max-width:42vw;height:46px;object-fit:contain;object-position:left center;flex:0 1 auto}
+    .auth-brand{display:block!important;margin-bottom:20px}.auth-brand-logo{display:block;width:min(310px,82vw);height:auto;max-height:102px;object-fit:contain;object-position:left center}.auth-brand p{margin:7px 0 0!important;color:var(--muted);font-size:11px;line-height:1.4}
     .top-actions{display:flex;gap:8px}.icon-btn{width:42px;height:42px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.82);color:var(--ink);display:grid;place-items:center;transition:.25s var(--ease);position:relative;font-size:15px}.icon-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
     .notif-dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--rose);right:8px;top:7px;border:2px solid #fff;display:none}.notif-dot.show{display:block}
 
@@ -317,7 +316,7 @@
     .ios-install-steps{display:grid;gap:9px;margin-top:13px}.ios-install-step{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:17px;background:#fff4f8;border:1px solid var(--line)}.ios-install-step i{width:30px;height:30px;flex:0 0 30px;border-radius:10px;display:grid;place-items:center;background:#fff;color:#a93662;font-style:normal;font-weight:1000;box-shadow:var(--shadow-sm)}.ios-install-step b{display:block;font-size:10px}.ios-install-step span{display:block;margin-top:2px;color:var(--muted);font-size:8.5px;line-height:1.4}
     .auth-shell{width:min(100%,560px);margin:auto;padding:28px 15px 40px;position:relative;z-index:5;min-height:100vh;display:grid;align-items:center}
     .auth-wrap{padding:22px;border-radius:36px;background:linear-gradient(150deg,rgba(255,255,255,.96),rgba(255,255,255,.78));border:1px solid rgba(255,255,255,.98);box-shadow:var(--shadow);backdrop-filter:blur(24px)}
-    .auth-brand{display:flex;align-items:center;gap:12px;margin-bottom:20px}.auth-brand .logo{width:52px;height:52px;flex-basis:52px}.auth-brand h1{font-size:30px;line-height:1;margin:0;letter-spacing:-.06em}.auth-brand p{margin:5px 0 0;color:var(--muted);font-size:11px}
+    .auth-brand{margin-bottom:20px}
     .auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;border-radius:18px;background:#f7edf2;border:1px solid var(--line);margin-bottom:14px}.auth-tab{border:0;background:transparent;border-radius:14px;padding:12px;color:var(--muted);font-weight:950;font-size:11px}.auth-tab.active{background:#fff;color:#a92f5c;box-shadow:0 7px 18px rgba(83,33,58,.08)}
     .auth-panel.hidden{display:none}.auth-headline{margin:2px 0 4px;font-size:27px;letter-spacing:-.055em}.auth-sub{margin:0 0 12px;color:var(--muted);font-size:11px;line-height:1.5}.auth-foot{text-align:center;color:var(--muted);font-size:9px;line-height:1.45;margin-top:12px}
     .auth-error{display:none;margin:10px 0 0;padding:10px 11px;border-radius:14px;background:var(--red-soft);color:#ad3148;font-size:9px;font-weight:850}.auth-error.show{display:block}
@@ -343,6 +342,16 @@
     .monitor-others{display:none;margin-top:8px;padding:8px 10px;border-radius:13px;background:rgba(255,255,255,.09);font-size:8.5px;font-weight:900;color:#f1e9fb}.monitor-others.show{display:block}
     .monitor-list{display:grid;gap:10px}.monitor-person-card{padding:16px;border-radius:25px;background:linear-gradient(145deg,#2c1d38,#644799);color:#fff;box-shadow:0 18px 48px rgba(84,58,135,.18)}.monitor-person-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.monitor-person-card small{display:block;color:#d9cef6;font-size:7.5px;font-weight:1000;letter-spacing:.08em}.monitor-person-card h3{margin:5px 0 2px;font-size:18px}.monitor-person-card p{margin:0;color:#ddd2f4;font-size:8.5px}.monitor-live-badge{padding:6px 8px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);font-size:7px;font-weight:1000;white-space:nowrap}.monitor-person-meta{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.monitor-person-meta div{padding:9px;border-radius:13px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.1)}.monitor-person-meta b{display:block;font-size:10px}.monitor-person-meta span{display:block;margin-top:2px;font-size:7px;color:#d9cef2}.monitor-person-card .monitor-open{margin-top:9px;width:100%;border:0;border-radius:13px;padding:9px;background:#fff;color:#513676;font-size:8px;font-weight:1000}
 
+
+    .notice-list,.transaction-list{display:grid;gap:9px;margin-top:12px}.notice-card,.transaction-card{padding:14px;border-radius:21px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+    .notice-card.unread{border-color:#f3b4c8;background:linear-gradient(145deg,#fff,#fff4f8)}.notice-head,.transaction-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.notice-head h4,.transaction-head h4{margin:0;font-size:12px}.notice-head small,.transaction-head small{color:var(--muted);font-size:7.5px}.notice-card p,.transaction-card p{margin:6px 0 0;color:var(--muted);font-size:9px;line-height:1.5}
+    .notice-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.notice-actions button{border:0;border-radius:13px;padding:10px;font-size:8.5px;font-weight:1000}.notice-actions .accept{background:linear-gradient(135deg,#f04f81,#8a61ea);color:#fff}.notice-actions .decline{background:#fff;color:#78485e;border:1px solid var(--line)}
+    .notification-count,.menu-badge{display:none;margin-left:auto;min-width:21px;height:21px;padding:0 6px;border-radius:999px;place-items:center;background:var(--rose);color:#fff;font-size:7.5px;font-weight:1000}.notification-count.show,.menu-badge.show{display:grid}.menu-item .menu-badge{margin-left:auto}.menu-item .arrow.with-badge{margin-left:2px}
+    .transaction-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}.transaction-meta div{padding:8px;border-radius:12px;background:#faf5f8}.transaction-meta b{display:block;font-size:9px}.transaction-meta span{display:block;margin-top:2px;color:var(--muted);font-size:6.8px}.transaction-status{padding:6px 8px;border-radius:999px;font-size:7px;font-weight:1000;background:var(--amber-soft);color:#98600c}.transaction-status.paid{background:var(--green-soft);color:#126c4e}.transaction-status.cancelled{background:#f4eef1;color:#8a727e}
+    .recovery-code-box{margin-top:13px;padding:18px;border-radius:22px;background:linear-gradient(145deg,#351628,#6f2449);color:#fff;text-align:center}.recovery-code-box small{display:block;color:#efbfd1;font-size:8px;font-weight:1000;letter-spacing:.09em}.recovery-code-box b{display:block;margin-top:8px;font-size:21px;letter-spacing:.08em;word-break:break-word}.recovery-warning{margin-top:10px;padding:10px 11px;border-radius:15px;background:var(--amber-soft);color:#81540e;font-size:8.5px;line-height:1.5}
+    .forgot-link{display:block;margin:10px auto 0;border:0;background:transparent;color:#a9325e;font-size:9.5px;font-weight:950;text-decoration:underline;text-underline-offset:3px}
+    .signup-phone-status{display:none;margin:7px 3px 0;font-size:8.5px;font-weight:900}.signup-phone-status.exists{display:block;color:#b52f50}.signup-phone-status.available{display:block;color:#0d7d59}
+
   </style>
 </head>
 <body>
@@ -351,7 +360,7 @@
 
   <section class="auth-shell" id="authShell">
     <div class="auth-wrap">
-      <div class="auth-brand"><div class="logo" aria-hidden="true"></div><div><h1>lockily</h1><p id="authBrandTagline">Lock your person. Check Relationship Status, Know More...</p></div></div>
+      <div class="auth-brand"><img class="auth-brand-logo" src="logo.png" alt="Lockily" /><p id="authBrandTagline">Lock your person. Check Relationship Status, Know More...</p></div>
 
       <div class="auth-hero-slider" id="authHeroSlider" aria-live="polite"></div>
       <div class="auth-hero-controls"><div class="auth-hero-dots" id="authHeroDots"></div><div class="auth-hero-arrows"><button type="button" id="authHeroPrev" aria-label="Previous">‹</button><button type="button" id="authHeroNext" aria-label="Next">›</button></div></div>
@@ -379,7 +388,7 @@
       <div class="auth-panel" id="signupPanel">
         <h2 class="auth-headline">Create your Lockily account.</h2><p class="auth-sub" id="signupAccountSubtitle">With your account, you can check the relationship status of anyone and monitor if their relationship status change.</p>
         <div class="field"><label>FIRST NAME</label><input id="signupName" autocomplete="given-name" placeholder="Your first name" /></div>
-        <div class="field"><label>PHONE NUMBER</label><input id="signupPhone" inputmode="numeric" maxlength="11" placeholder="0803 000 0000" /></div>
+        <div class="field"><label>PHONE NUMBER</label><input id="signupPhone" inputmode="numeric" maxlength="11" placeholder="0803 000 0000" /></div><div class="signup-phone-status" id="signupPhoneStatus"></div>
         <div class="field"><label>PASSWORD</label><input id="signupPassword" type="password" minlength="6" placeholder="At least 6 characters" /></div>
         <div class="legal"><input type="checkbox" id="signupAge" /><label for="signupAge"><strong>I am 18 or older.</strong> I will use Lockily only for lawful, truthful personal activity.</label></div>
         <div class="legal"><input type="checkbox" id="signupLegalConsent" /><label class="legal-links" for="signupLegalConsent"><strong>I have read and agree to Lockily's</strong> <a href="#" data-legal-open="termsModal">Terms &amp; Conditions</a>, <a href="#" data-legal-open="privacyStatementModal">Privacy Statement</a> and <a href="#" data-legal-open="ndaModal">NDA / Confidentiality Agreement</a>.</label></div>
@@ -390,7 +399,7 @@
         <h2 class="auth-headline">Welcome back.</h2><p class="auth-sub">Sign in to open your Locks, reports and monitors.</p>
         <div class="field"><label>PHONE NUMBER</label><input id="signinPhone" inputmode="numeric" maxlength="11" placeholder="0803 000 0000" /></div>
         <div class="field"><label>PASSWORD</label><input id="signinPassword" type="password" minlength="6" placeholder="Your password" /></div>
-        <button class="primary" id="signinBtn">Sign in to Lockily</button>
+        <button class="primary" id="signinBtn">Sign in to Lockily</button><button class="forgot-link" id="forgotPasswordBtn" type="button">Forgot password?</button>
         <div class="auth-error" id="signinError"></div>
       </div>
     </div>
@@ -398,13 +407,10 @@
 
   <main class="app hidden" id="appRoot">
     <header class="topbar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div><strong>lockily</strong><span>Are you the only one?</span></div>
-      </div>
+      <div class="brand"><img class="brand-logo" src="logo.png" alt="Lockily" /></div>
       <div class="top-actions">
         <button class="icon-btn pwa-install-top" id="topInstallBtn" aria-label="Install Lockily" title="Install Lockily">⇩</button>
-        <button class="icon-btn" id="notificationBtn" aria-label="Notifications">◉<span class="notif-dot" id="notifDot"></span></button>
+        <button class="icon-btn" id="notificationBtn" aria-label="Notifications" title="Notifications">◉<span class="notif-dot" id="notifDot"></span><span class="notification-count" id="notificationCount">0</span></button>
         <button class="icon-btn" id="topProfileBtn" aria-label="Profile">◎</button>
       </div>
     </header>
@@ -523,6 +529,9 @@
       <section class="menu-card glass">
         <button class="menu-item" id="profileAction"><div class="menu-icon">◎</div><div><strong>Identity & phone</strong><small>Create or edit your verified Lockily profile</small></div><div class="arrow">›</div></button>
         <button class="menu-item" data-nav="lock"><div class="menu-icon">♥</div><div><strong>My Locks</strong><small>Manage everyone you have locked</small></div><div class="arrow">›</div></button>
+        <button class="menu-item" id="notificationsMenuBtn"><div class="menu-icon">◉</div><div><strong>Notifications</strong><small>Verified Lock requests and relationship alerts</small></div><span class="menu-badge" id="notificationsMenuBadge">0</span><div class="arrow with-badge">›</div></button>
+        <button class="menu-item" id="transactionHistoryBtn"><div class="menu-icon">₦</div><div><strong>Payment history</strong><small>Reports, Monitor and Verified Lock payments</small></div><div class="arrow">›</div></button>
+        <button class="menu-item" id="recoverySettingsBtn"><div class="menu-icon">⌘</div><div><strong>Password & recovery</strong><small>Create or replace your account recovery code</small></div><div class="arrow">›</div></button>
         <button class="menu-item" id="privacyBtn"><div class="menu-icon">⌁</div><div><strong>Privacy & claim rules</strong><small>What Lockily stores, shows and never exposes</small></div><div class="arrow">›</div></button>
         <button class="menu-item" id="logoutBtn"><div class="menu-icon">↪</div><div><strong>Sign out</strong><small>Sign out of this Lockily account</small></div><div class="arrow">›</div></button>
       </section>
@@ -658,6 +667,43 @@
     <div id="mutualInviteBox" class="hidden"><div class="share-card"><small>LOCKILY VERIFIED LOCK INVITE</small><h3 id="inviteCodeText">LKY-000000</h3><p>Send this private code to your partner so they can confirm the relationship from their own side.</p></div><button class="secondary" id="shareInviteBtn">Share code</button></div>
   </div></div>
 
+
+  <!-- Notifications -->
+  <div class="modal" id="notificationsModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY NOTIFICATIONS</small><h3>Notifications</h3></div><button class="close" data-close="notificationsModal">×</button></div>
+    <div class="section-head" style="margin-top:14px"><div><h2>Verified Lock requests</h2><p>Only you can accept a request sent to your number.</p></div></div>
+    <div class="notice-list" id="mutualRequestList"></div>
+    <div class="section-head"><div><h2>Recent alerts</h2></div><button class="text-link" id="markNotificationsReadBtn" type="button">Mark read</button></div>
+    <div class="notice-list" id="notificationAlertList"></div>
+  </div></div>
+
+  <!-- Payment history -->
+  <div class="modal" id="transactionHistoryModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY PAYMENTS</small><h3>Payment history</h3></div><button class="close" data-close="transactionHistoryModal">×</button></div>
+    <div class="section-head" style="margin-top:14px"><div><h2>Your orders</h2><p>Full Reports, Monitor and Verified Lock.</p></div><button class="text-link" id="refreshTransactionsBtn" type="button">↻ Refresh</button></div>
+    <div class="transaction-list" id="transactionList"></div>
+  </div></div>
+
+  <!-- Password reset -->
+  <div class="modal" id="resetPasswordModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>ACCOUNT RECOVERY</small><h3>Reset password</h3></div><button class="close" data-close="resetPasswordModal">×</button></div>
+    <p class="mini-note" style="text-align:left;margin:8px 0 12px">Because Lockily does not use email or OTP yet, password recovery uses the one-time recovery code issued to your account.</p>
+    <div class="field"><label>PHONE NUMBER</label><input id="resetPhone" inputmode="numeric" maxlength="11" placeholder="0803 000 0000" /></div>
+    <div class="field"><label>RECOVERY CODE</label><input id="resetRecoveryCode" autocomplete="off" placeholder="LKY-XXXX-XXXX-XXXX" /></div>
+    <div class="field"><label>NEW PASSWORD</label><input id="resetNewPassword" type="password" minlength="6" placeholder="At least 6 characters" /></div>
+    <button class="primary" id="resetPasswordSubmit" type="button">Reset password</button>
+    <div class="auth-error" id="resetPasswordError"></div>
+  </div></div>
+
+  <!-- Recovery code -->
+  <div class="modal" id="recoveryCodeModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>ACCOUNT RECOVERY</small><h3>Save your recovery code</h3></div><button class="close" data-close="recoveryCodeModal">×</button></div>
+    <div class="recovery-code-box"><small>YOUR LOCKILY RECOVERY CODE</small><b id="recoveryCodeValue">—</b></div>
+    <div class="recovery-warning"><strong>Keep this somewhere safe.</strong> Lockily stores only a one-way hash, so this exact code cannot be shown again. Creating another code replaces the old one.</div>
+    <button class="primary" id="copyRecoveryCodeBtn" type="button">Copy recovery code</button>
+    <button class="secondary" data-close="recoveryCodeModal" type="button">I saved it</button>
+  </div></div>
+
   <!-- Terms & Conditions -->
   <div class="modal" id="termsModal"><div class="sheet">
     <div class="handle"></div><div class="sheet-head"><div><small>LEGAL</small><h3>Terms &amp; Conditions</h3></div><button class="close" data-close="termsModal">×</button></div>
@@ -757,8 +803,12 @@
     const LOCKILY_BACKEND_BASE_URL = String(
       window.LOCKILY_BACKEND_BASE_URL || `${LOCKILY_WIX_BACKEND_ORIGIN}/_functions`
     ).replace(/\/$/, '');
-    const LOCKILY_SESSION_KEY = 'lockilySessionTokenV3';
-    let lockilySessionToken = sessionStorage.getItem(LOCKILY_SESSION_KEY) || '';
+    const LOCKILY_SESSION_KEY = 'lockilySessionTokenV4';
+    const LEGACY_SESSION_KEY = 'lockilySessionTokenV3';
+    let lockilySessionToken = localStorage.getItem(LOCKILY_SESSION_KEY) || sessionStorage.getItem(LEGACY_SESSION_KEY) || '';
+    if(lockilySessionToken&&!localStorage.getItem(LOCKILY_SESSION_KEY)){localStorage.setItem(LOCKILY_SESSION_KEY,lockilySessionToken);sessionStorage.removeItem(LEGACY_SESSION_KEY)}
+    function persistLockilySession(token=''){lockilySessionToken=String(token||'');if(lockilySessionToken)localStorage.setItem(LOCKILY_SESSION_KEY,lockilySessionToken);else localStorage.removeItem(LOCKILY_SESSION_KEY)}
+    function clearLockilySession(){localStorage.removeItem(LOCKILY_SESSION_KEY);sessionStorage.removeItem(LEGACY_SESSION_KEY);lockilySessionToken=''}
 
     async function lockilyApi(path, options={}){
       if(!LOCKILY_BACKEND_BASE_URL) throw new Error('Lockily backend is not configured');
@@ -818,6 +868,9 @@
       verificationPurchases: 0,
       verificationHistory: [],
       alerts: [],
+      incomingMutualInvites: [],
+      outgoingMutualInvites: [],
+      transactions: [],
       currentLookup: null,
       relationshipCache: {},
       currentReport: null,
@@ -918,6 +971,9 @@
       state.profile=payload.profile||null;
       state.locks=Array.isArray(payload.locks)?payload.locks:[];
       state.alerts=Array.isArray(payload.alerts)?payload.alerts:[];
+      state.incomingMutualInvites=Array.isArray(payload.incomingMutualInvites)?payload.incomingMutualInvites:[];
+      state.outgoingMutualInvites=Array.isArray(payload.outgoingMutualInvites)?payload.outgoingMutualInvites:[];
+      state.transactions=Array.isArray(payload.transactions)?payload.transactions:[];
       state.verificationHistory=(Array.isArray(payload.verificationHistory)?payload.verificationHistory:[]).map(x=>normalizeBackendPaymentOrder(x,'verify'));
       state.verificationPurchases=Number(payload.verificationPurchases||state.verificationHistory.filter(x=>x.paid).length);
       state.relationshipCache=payload.relationshipByPhone||{};
@@ -938,8 +994,7 @@
         try{await loadAccountBootstrap();return}
         catch(err){
           if(err.status===401){
-            sessionStorage.removeItem(LOCKILY_SESSION_KEY);
-            lockilySessionToken='';
+            clearLockilySession();
           }else console.warn('Account bootstrap failed',err);
         }
       }
@@ -1000,6 +1055,7 @@
       const name=$('#signupName').value.trim(),phone=digits($('#signupPhone').value),password=$('#signupPassword').value;
       if(!name){setAuthError('#signupError','Enter your first name.');return}
       if(!validNgPhone(phone)){setAuthError('#signupError','Enter a valid 11-digit Nigerian phone number.');return}
+      if(await checkSignupPhoneExists()){setAuthError('#signupError','This number already has a Lockily account. Please sign in instead.');return}
       if(password.length<6){setAuthError('#signupError','Use at least 6 characters for your password.');return}
       if(!$('#signupAge').checked){setAuthError('#signupError','Confirm that you are 18 or older.');return}
       if(!$('#signupLegalConsent').checked){setAuthError('#signupError','Agree to the Terms & Conditions, Privacy Statement and NDA to continue.');return}
@@ -1007,10 +1063,11 @@
       try{
         const legacyState=readLegacyState(phone);
         const result=await lockilyApi('apiLockilySignup',{method:'POST',body:JSON.stringify({firstName:name,phone,password,legacyState})});
-        lockilySessionToken=result.sessionToken||'';sessionStorage.setItem(LOCKILY_SESSION_KEY,lockilySessionToken);
+        persistLockilySession(result.sessionToken||'');
         await loadAccountBootstrap();
         clearLegacyStorage(phone);
         toast('Account created');
+        if(result.recoveryCode)showRecoveryCode(result.recoveryCode);
       }catch(err){setAuthError('#signupError',err.message||'Could not create account')}
       finally{btn.disabled=false;btn.textContent=old}
     };
@@ -1029,13 +1086,58 @@
           if(!legacyValid)throw err;
           result=await lockilyApi('apiLockilySignup',{method:'POST',body:JSON.stringify({firstName:legacy.firstName||'Lockily User',phone,password,legacyState:readLegacyState(phone)})});
         }
-        lockilySessionToken=result.sessionToken||'';sessionStorage.setItem(LOCKILY_SESSION_KEY,lockilySessionToken);
+        persistLockilySession(result.sessionToken||'');
         await loadAccountBootstrap();
         clearLegacyStorage(phone);
         toast('Signed in');
+        if(result.recoveryCode)showRecoveryCode(result.recoveryCode);
       }catch(err){setAuthError('#signinError',err.message||'Phone number or password is incorrect.')}
       finally{btn.disabled=false;btn.textContent=old}
     };
+
+
+    let signupPhoneCheckTimer=null;
+    async function checkSignupPhoneExists(){
+      const phone=digits($('#signupPhone').value),status=$('#signupPhoneStatus');
+      status.className='signup-phone-status';status.textContent='';
+      if(!validNgPhone(phone))return false;
+      try{const r=await lockilyApi(`apiLockilyAccountExists?phone=${encodeURIComponent(phone)}`);status.textContent=r.exists?'This number already has a Lockily account. Sign in instead.':'Number available.';status.classList.add(r.exists?'exists':'available');return !!r.exists}catch{return false}
+    }
+    $('#signupPhone').addEventListener('input',()=>{clearTimeout(signupPhoneCheckTimer);signupPhoneCheckTimer=setTimeout(checkSignupPhoneExists,450)});$('#signupPhone').addEventListener('blur',checkSignupPhoneExists);
+
+    function showRecoveryCode(code){$('#recoveryCodeValue').textContent=String(code||'—');showModal('recoveryCodeModal')}
+    $('#copyRecoveryCodeBtn').onclick=async()=>{try{await navigator.clipboard.writeText($('#recoveryCodeValue').textContent.trim());toast('Recovery code copied')}catch{toast('Copy failed')}};
+    async function rotateRecoveryCode(){
+      try{const response=await lockilyApi('apiLockilyCreateRecoveryCode',{method:'POST',body:JSON.stringify({})});showRecoveryCode(response.recoveryCode);toast('New recovery code created')}catch(err){toast(err.message||'Could not create recovery code')}
+    }
+    $('#forgotPasswordBtn').onclick=()=>{$('#resetPhone').value=digits($('#signinPhone').value);$('#resetRecoveryCode').value='';$('#resetNewPassword').value='';setAuthError('#resetPasswordError','');showModal('resetPasswordModal')};
+    $('#resetPasswordSubmit').onclick=async()=>{
+      const phone=digits($('#resetPhone').value),recoveryCode=$('#resetRecoveryCode').value.trim(),newPassword=$('#resetNewPassword').value;
+      if(!validNgPhone(phone)){setAuthError('#resetPasswordError','Enter the 11-digit phone number on the account.');return}if(!recoveryCode){setAuthError('#resetPasswordError','Enter your recovery code.');return}if(newPassword.length<6){setAuthError('#resetPasswordError','Use at least 6 characters for the new password.');return}
+      const btn=$('#resetPasswordSubmit'),old=btn.textContent;btn.disabled=true;btn.textContent='Resetting…';setAuthError('#resetPasswordError','');
+      try{const r=await lockilyApi('apiLockilyResetPassword',{method:'POST',body:JSON.stringify({phone,recoveryCode,newPassword})});hideModal('resetPasswordModal');showRecoveryCode(r.recoveryCode);$('#signinPhone').value=phone;$$('[data-auth-tab]').forEach(b=>b.classList.toggle('active',b.dataset.authTab==='signin'));$('#signupPanel').classList.add('hidden');$('#signinPanel').classList.remove('hidden');toast('Password reset. Sign in with the new password.')}catch(err){setAuthError('#resetPasswordError',err.message||'Could not reset password')}finally{btn.disabled=false;btn.textContent=old}
+    };
+
+    function renderNotificationBadge(){
+      const count=unreadNotificationCount(),dot=$('#notifDot'),counter=$('#notificationCount'),menu=$('#notificationsMenuBadge');dot.classList.toggle('show',count>0);counter.textContent=count>99?'99+':count;counter.classList.toggle('show',count>0);menu.textContent=count>99?'99+':count;menu.classList.toggle('show',count>0)
+    }
+    function renderNotifications(){
+      const requests=$('#mutualRequestList');requests.innerHTML='';const incoming=(state.incomingMutualInvites||[]).filter(i=>i.status==='pending');
+      if(!incoming.length)requests.innerHTML='<div class="empty-state glass"><div class="empty-icon">♥</div><h3>No Verified Lock requests.</h3><p>Requests sent to your account phone number will appear here.</p></div>';
+      incoming.forEach(inv=>{const card=document.createElement('article');card.className='notice-card unread';const rel=(inv.relationshipType||'relationship').replace(/_/g,' ');card.innerHTML=`<div class="notice-head"><div><h4>${escapeHtml(inv.requester?.firstName||'Verified Lock request')}</h4><small>${escapeHtml(digits(inv.requester?.phone)||'')} · ${escapeHtml(rel)}</small></div><small>${escapeHtml(timeAgo(inv.createdAt))}</small></div><p>${escapeHtml(inv.requester?.firstName||'Someone')} says you are in a ${escapeHtml(rel)} relationship and is asking you to confirm it independently.</p><div class="notice-actions"><button class="accept" type="button">Accept Verified Lock</button><button class="decline" type="button">Decline</button></div>`;card.querySelector('.accept').onclick=()=>respondMutualInvite(inv.id,'accept');card.querySelector('.decline').onclick=()=>respondMutualInvite(inv.id,'decline');requests.appendChild(card)});
+      const holder=$('#notificationAlertList');holder.innerHTML='';const alerts=(state.alerts||[]).filter(a=>a.type!=='mutual_invite');if(!alerts.length)holder.innerHTML='<div class="empty-state glass"><div class="empty-icon">✓</div><h3>You are caught up.</h3><p>No other notifications yet.</p></div>';alerts.forEach(a=>{const el=document.createElement('article');el.className='notice-card'+(!a.readAt?' unread':'');el.innerHTML=`<div class="notice-head"><h4>${escapeHtml(a.title||'Lockily update')}</h4><small>${escapeHtml(timeAgo(a.createdAt))}</small></div><p>${escapeHtml(a.copy||'')}</p>`;holder.appendChild(el)})
+    }
+    async function openNotifications(){try{await loadAccountBootstrap()}catch{}renderNotifications();showModal('notificationsModal')}
+    async function respondMutualInvite(inviteId,action){
+      try{const label=action==='accept'?'Accepting Verified Lock…':'Declining request…';toast(label);await lockilyApi('apiLockilyRespondMutualInvite',{method:'POST',body:JSON.stringify({inviteId,action})});await loadAccountBootstrap();renderNotifications();toast(action==='accept'?'Verified Lock confirmed ♥':'Request declined')}catch(err){toast(err.message||'Could not respond to request')}
+    }
+    $('#markNotificationsReadBtn').onclick=async()=>{try{await lockilyApi('apiLockilyMarkAlertsRead',{method:'POST',body:JSON.stringify({})});await loadAccountBootstrap();renderNotifications();toast('Notifications marked read')}catch(err){toast(err.message||'Could not update notifications')}};
+
+    function transactionProductLabel(product){return product==='verify'?'Full Report':product==='monitor'?'Monitor':'Verified Lock'}
+    function renderTransactions(){const list=$('#transactionList');list.innerHTML='';const rows=state.transactions||[];if(!rows.length){list.innerHTML='<div class="empty-state glass"><div class="empty-icon">₦</div><h3>No payments yet.</h3><p>Your Lockily orders will appear here.</p></div>';return}rows.forEach(t=>{const card=document.createElement('article');card.className='transaction-card';const status=String(t.paymentStatus||'pending'),date=new Date(t.paidAt||t.createdAt||Date.now()).toLocaleString('en-NG',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Africa/Lagos'});card.innerHTML=`<div class="transaction-head"><div><h4>${escapeHtml(transactionProductLabel(t.product))}</h4><small>${escapeHtml(date)}${t.subjectPhone?' · '+escapeHtml(digits(t.subjectPhone)):''}</small></div><span class="transaction-status ${t.paid?'paid':status==='cancelled'?'cancelled':''}">${escapeHtml(status.toUpperCase())}</span></div><div class="transaction-meta"><div><b>${escapeHtml(money(t.amountExpected))}</b><span>ORDER</span></div><div><b>${escapeHtml(money(t.totalPaid))}</b><span>RECEIVED</span></div><div><b>${escapeHtml(String(t.id||'').slice(0,8).toUpperCase())}</b><span>REFERENCE</span></div></div>`;list.appendChild(card)})}
+    async function syncTransactions(){const r=await lockilyApi('apiLockilyTransactionHistory');state.transactions=Array.isArray(r.transactions)?r.transactions:[];saveState();return state.transactions}
+    async function openTransactionHistory(){try{await syncTransactions()}catch(err){toast(err.message||'Could not load payment history')}renderTransactions();showModal('transactionHistoryModal')}
+    $('#refreshTransactionsBtn').onclick=async()=>{const b=$('#refreshTransactionsBtn'),old=b.textContent;b.disabled=true;b.textContent='Refreshing';try{await syncTransactions();renderTransactions()}catch(err){toast(err.message||'Could not refresh payments')}finally{b.disabled=false;b.textContent=old}};
 
     const relationshipStartInput=$('#relationshipStart');
     const relationshipStartDay=$('#relationshipStartDay');
@@ -1553,6 +1655,7 @@
         toast('Creating secure payment account…');
         state.currentPayment=await createPaymentOrder(product);
         if(product==='verify'&&state.currentPayment?.paid){upsertVerificationHistoryOrder(state.currentPayment);reconcilePaidVerification(state.currentPayment);state.pendingProduct=null;saveState();await openVerificationHistoryEntry(state.currentPayment.id);toast("Today's paid report reopened free");return}
+        if((product==='mutual'||product==='monitor')&&state.currentPayment?.paid){saveState();await fulfilPaidOrder();return}
         saveState();
         renderPaymentOrder();
         showModal('paymentModal');
@@ -1576,15 +1679,19 @@
     $('#emptyMonitorBtn').onclick=()=>{if(!state.activeLock){toast('Create a free Lock first');nav('home');return}startPayment('monitor')};
     $('#quickMutual').onclick=()=>openMutualFlow();$('#lockMutualBtn').onclick=()=>openMutualFlow();
 
+    function outgoingInviteForActiveLock(){return (state.outgoingMutualInvites||[]).find(i=>i.lockId===state.activeLock?.id&&['pending','accepted'].includes(i.status))||null}
     function openMutualFlow(){
       if(!state.activeLock){toast('Create a free Lock first');nav('home');return}
-      $('#mutualPhone').value=maskPhone(state.activeLock.subjectPhone);$('#mutualConsent').checked=false;
+      const existing=outgoingInviteForActiveLock();state.mutualInvite=existing||state.mutualInvite||null;
+      $('#mutualPhone').value=digits(state.activeLock.subjectPhone)||state.activeLock.subjectPhone||'';$('#mutualConsent').checked=false;
       $('#mutualInviteBox').classList.toggle('hidden',!state.mutualInvite);if(state.mutualInvite)$('#inviteCodeText').textContent=state.mutualInvite.code;
+      const btn=$('#createMutualInvite');btn.disabled=!!existing;btn.textContent=existing?(existing.status==='accepted'?'Verified Lock confirmed ♥':'Invitation pending'):`Create invitation — ${money(CONFIG.mutualPrice)}`;
       showModal('mutualModal')
     }
-    $('#createMutualInvite').onclick=()=>{
+    $('#createMutualInvite').onclick=async()=>{
       if(!$('#mutualConsent').checked){toast('Your partner must independently confirm');return}
-      startPayment('mutual')
+      hideModal('mutualModal');
+      await startPayment('mutual')
     };
 
     async function fulfilPaidOrder(){
@@ -1600,7 +1707,7 @@
           const reportPhone=digits(paidOrder.subjectPhone||state.currentLookup?.phone||state.activeLock?.subjectPhone||'');
           const reportSource=state.currentLookup?.source||((state.activeLock&&digits(state.activeLock.subjectPhone)===reportPhone)?'lock':'history');
           state.currentLookup={phone:reportPhone,source:reportSource,unlocked:true,orderId:paidOrder.id,historical:false};
-          state.verificationPurchases=paidVerificationCount();state.pendingProduct=null;state.verifyOfferExpiresAt=null;state.currentReport=null;saveState();
+          state.verificationPurchases=paidVerificationCount();state.pendingProduct=null;state.verifyOfferExpiresAt=null;state.currentReport=null;try{await syncTransactions()}catch{}saveState();
           await loadPaidReport(paidOrder.id);
           toast('Full Report unlocked');
           $('#resultSheetTitle').textContent='Unlocked Full Report';$('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');showModal('resultModal');renderResult();
@@ -1617,9 +1724,11 @@
         }
         if(product==='mutual'){
           const response=await lockilyApi('apiLockilyCreateMutualInvite',{method:'POST',body:JSON.stringify({orderId:paidOrder.id})});
-          state.mutualInvite=response.invite||null;state.pendingProduct=null;saveState();
+          state.mutualInvite=response.invite||null;state.pendingProduct=null;
+          await loadAccountBootstrap();
+          state.mutualInvite=response.invite||outgoingInviteForActiveLock()||null;saveState();
           if(state.mutualInvite){$('#mutualInviteBox').classList.remove('hidden');$('#inviteCodeText').textContent=state.mutualInvite.code}
-          showModal('mutualModal');toast('Verified Lock invitation created');return;
+          showModal('mutualModal');toast('Verified Lock invitation sent to your partner');return;
         }
       }catch(err){toast(err.message||'Payment confirmed, but access could not be activated. Refresh and try again.')}
     }
@@ -1689,12 +1798,12 @@
       });
     };
 
-    $('#notificationBtn').onclick=()=>nav('verify');$('#topProfileBtn').onclick=()=>nav('profile');$('#profileAction').onclick=()=>{if(state.profile){$('#firstName').value=state.profile.firstName;$('#profilePhoneInput').value=state.profile.phone;$('#ageConfirm').value='18plus';$('#profileConsent').checked=true}showModal('profileModal')};$('#privacyBtn').onclick=()=>showModal('privacyStatementModal');$('#logoutBtn').onclick=()=>openConfirmModal({title:'Sign out of Lockily?',message:'You will return to the Sign Up / Sign In screen. Your Locks and reports remain safely stored in your Lockily account.',confirmText:'Sign out'},async()=>{try{await lockilyApi('apiLockilyLogout',{method:'POST'})}catch{}sessionStorage.removeItem(LOCKILY_SESSION_KEY);lockilySessionToken='';state=defaultState();await loadPublicBootstrap();showAuth();toast('Signed out')});
+    $('#notificationBtn').onclick=()=>openNotifications();$('#notificationsMenuBtn').onclick=()=>openNotifications();$('#transactionHistoryBtn').onclick=()=>openTransactionHistory();$('#recoverySettingsBtn').onclick=()=>rotateRecoveryCode();$('#topProfileBtn').onclick=()=>nav('profile');$('#profileAction').onclick=()=>{if(state.profile){$('#firstName').value=state.profile.firstName;$('#profilePhoneInput').value=state.profile.phone;$('#ageConfirm').value='18plus';$('#profileConsent').checked=true}showModal('profileModal')};$('#privacyBtn').onclick=()=>showModal('privacyStatementModal');$('#logoutBtn').onclick=()=>openConfirmModal({title:'Sign out of Lockily?',message:'You will return to the Sign Up / Sign In screen. Your Locks and reports remain safely stored in your Lockily account.',confirmText:'Sign out'},async()=>{try{await lockilyApi('apiLockilyLogout',{method:'POST'})}catch{}clearLockilySession();state=defaultState();await loadPublicBootstrap();showAuth();toast('Signed out')});
 
     function renderProfile(){
       const p=state.profile;if(p){$('#profileAvatar').textContent=(p.firstName||'L').slice(0,1).toUpperCase();$('#profileName').textContent=p.firstName;$('#profilePhone').textContent=maskPhone(p.phone);$('#phoneBadge').textContent='Phone verified';$('#phoneBadge').className='tiny-badge';}
       else{$('#profileAvatar').textContent='L';$('#profileName').textContent='Create your profile';$('#profilePhone').textContent='Phone verification pending';$('#phoneBadge').textContent='Phone unverified';$('#phoneBadge').className='tiny-badge gray'}
-      $('#profileLocks').textContent=(state.locks||[]).length;$('#profileChecks').textContent=state.verificationPurchases||0;$('#profileAlerts').textContent=(state.alerts||[]).filter(a=>a.type!=='system').length;
+      $('#profileLocks').textContent=(state.locks||[]).length;$('#profileChecks').textContent=state.verificationPurchases||0;$('#profileAlerts').textContent=unreadNotificationCount();
     }
     function selectLock(id){
       const l=(state.locks||[]).find(x=>x.id===id);if(!l)return;state.activeLock=l;state.selectedLockId=id;saveState();if(!l.monitorActive)startMonitorOffer(l);else syncMonitorOffer();
@@ -1712,7 +1821,7 @@
       else if(todayPaid){$('#lockStatusTitle').textContent="Today's Full Report unlocked";$('#lockStatusCopy').textContent='You can reopen this report free until the Lagos calendar day changes.';}
       else if(latestPaid){$('#lockStatusTitle').textContent='Updated verification available';$('#lockStatusCopy').textContent=`Last paid report: ${verificationDateLabel(latestPaid)}. Pay for a new verification to get today's updated report.`;}
       else{$('#lockStatusTitle').textContent='Lock active';$('#lockStatusCopy').textContent='Check this number whenever you want the Full Report.';}
-      $('#lockVerifyBtn').textContent=todayPaid?"View today's report":(latestPaid?'Get updated report':money(CONFIG.verifyPrice));$('#lockMutualBtn').textContent=l.mutualStatus==='verified'?'Verified ♥':money(CONFIG.mutualPrice);if(!l.monitorActive)startMonitorOffer(l);else syncMonitorOffer();
+      const outgoing=(state.outgoingMutualInvites||[]).find(i=>i.lockId===l.id&&i.status==='pending');$('#lockVerifyBtn').textContent=todayPaid?"View today's report":(latestPaid?'Get updated report':money(CONFIG.verifyPrice));$('#lockMutualBtn').textContent=l.mutualStatus==='verified'?'Verified ♥':(outgoing?'Pending':money(CONFIG.mutualPrice));if(!l.monitorActive)startMonitorOffer(l);else syncMonitorOffer();
     }
     function renderMonitor(){
       const monitored=(state.locks||[]).filter(l=>l.monitorActive);
@@ -1730,7 +1839,8 @@
     }
     function timeAgo(iso){const s=Math.floor((Date.now()-new Date(iso).getTime())/1000);if(s<60)return 'now';if(s<3600)return Math.floor(s/60)+'m';if(s<86400)return Math.floor(s/3600)+'h';return Math.floor(s/86400)+'d'}
     function escapeHtml(s){return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
-    function renderAll(){renderProfile();renderLock();renderMonitor();renderVerificationHistory();renderNetworkProof();$('#notifDot').classList.toggle('show',(state.alerts||[]).some(a=>a.type==='signal'));}
+    function unreadNotificationCount(){return (state.alerts||[]).filter(a=>!a.readAt&&a.type!=='mutual_invite').length+(state.incomingMutualInvites||[]).filter(i=>i.status==='pending').length}
+    function renderAll(){renderProfile();renderLock();renderMonitor();renderVerificationHistory();renderNetworkProof();renderNotificationBadge();}
 
     // Database-driven testimonials, hero content and live activity.
     let testimonialIndex=0,testimonialTimer=null;
