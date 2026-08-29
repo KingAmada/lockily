@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lockily-shell-20260829-mutual-v3';
+const CACHE_NAME = 'lockily-shell-20260829-perf1';
 
 self.addEventListener('install', () => {
   self.skipWaiting();
@@ -8,6 +8,9 @@ self.addEventListener('activate', event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
     await Promise.all(keys.filter(key => key.startsWith('lockily-') && key !== CACHE_NAME).map(key => caches.delete(key)));
+    if (self.registration.navigationPreload) {
+      await self.registration.navigationPreload.enable().catch(() => {});
+    }
     await self.clients.claim();
   })());
 });
@@ -20,8 +23,10 @@ self.addEventListener('fetch', event => {
 
   event.respondWith((async () => {
     try {
-      // Network-first prevents an installed PWA from being trapped on an old Lockily build.
-      const fresh = await fetch(request, { cache: 'no-store' });
+      // Use navigation preload when available, then stay network-first so the PWA
+      // receives the newest Lockily build without waiting on a stale shell.
+      const preloaded = request.mode === 'navigate' ? await event.preloadResponse : null;
+      const fresh = preloaded || await fetch(request, { cache: 'no-store' });
       if (fresh && fresh.ok) {
         const cache = await caches.open(CACHE_NAME);
         cache.put(request, fresh.clone()).catch(() => {});

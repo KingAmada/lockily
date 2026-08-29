@@ -135,7 +135,7 @@
       background-image:linear-gradient(rgba(69,31,51,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(69,31,51,.022) 1px,transparent 1px);
       background-size:30px 30px;mask-image:linear-gradient(to bottom,black,transparent 88%);
     }
-    button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+    button,input,select,textarea{font:inherit}button{cursor:pointer;touch-action:manipulation}.hidden{display:none!important}
     a{color:inherit}
 
     .orb{position:fixed;border-radius:999px;filter:blur(70px);opacity:.22;pointer-events:none;animation:drift 9s ease-in-out infinite alternate}
@@ -190,6 +190,45 @@
 
     .quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:13px}.quick{border:1px solid white;background:rgba(255,255,255,.82);border-radius:22px;padding:14px 8px;box-shadow:var(--shadow-sm);color:var(--ink);font-weight:900;font-size:10.5px;transition:.25s var(--ease)}.quick:hover{transform:translateY(-3px)}.quick i{display:grid;place-items:center;width:35px;height:35px;border-radius:13px;margin:0 auto 7px;font-style:normal;font-size:16px}.quick.verify i{background:var(--violet-soft);color:#6848c7}.quick.monitor i{background:var(--amber-soft);color:#a46610}.quick.mutual i{background:var(--rose-soft);color:#be3966}
     .activity-bar{display:flex;align-items:center;gap:9px;padding:10px 12px;margin-top:13px;border-radius:18px;background:#3a1930;color:#fff;box-shadow:0 12px 28px rgba(58,25,48,.18)}.activity-faces{display:flex}.activity-faces span{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#ffe4ee;color:#7b2b4e;border:2px solid #3a1930;font-size:7px;font-weight:1000;margin-left:-7px}.activity-faces span:first-child{margin-left:0}.activity-bar p{margin:0;font-size:9.5px;color:#f0d7e2;line-height:1.35}.activity-bar b{color:#fff}.proof-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.proof-chip{min-height:82px;padding:12px 9px;border-radius:20px;text-align:center;background:rgba(255,255,255,.88);border:1px solid #fff;box-shadow:var(--shadow-sm)}.proof-chip b{display:block;font-size:16px;letter-spacing:-.04em}.proof-chip span{display:block;margin-top:5px;color:var(--muted);font-size:8px;line-height:1.35}.testimonial-grid{display:grid;gap:10px}.testimonial-card{padding:16px;border-radius:25px;position:relative;overflow:hidden}.testimonial-top{display:flex;align-items:center;gap:10px}.testimonial-avatar{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#ffe2ec,#f0ebff);font-weight:1000;color:#9f3863}.testimonial-card h3{margin:0;font-size:11.5px}.testimonial-card small{color:var(--muted);font-size:8px}.testimonial-card blockquote{margin:12px 0 0;font-size:10.5px;line-height:1.55;color:#5e4352}.testimonial-badge{display:inline-flex;margin-top:10px;padding:6px 9px;border-radius:999px;background:var(--rose-soft);color:#a83461;font-size:8px;font-weight:950}.search-activity-wrap{margin-top:12px;padding:15px;border-radius:23px;background:linear-gradient(145deg,#fff,#fff7fb);border:1px solid var(--line)}.search-activity-head{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:9px}.search-activity-head h4{margin:0;font-size:13px}.search-activity-head small{color:var(--muted);font-size:8px}.search-activity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.search-activity-card{padding:11px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.82)}.search-activity-card b{display:block;font-size:17px;letter-spacing:-.035em}.search-activity-card span{display:block;color:var(--muted);font-size:8px;margin-top:2px}.attention-line{margin-top:9px;padding:10px 11px;border-radius:15px;background:var(--violet-soft);color:#5d45aa;font-size:9px;line-height:1.45;font-weight:800}
+    .users-growing-box{
+      margin-top:8px;
+      min-height:48px;
+      padding:11px 14px;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      text-align:center;
+      color:#fff;
+      background:linear-gradient(135deg,#351628,#7b2b55 58%,#7755e8);
+      border:1px solid rgba(255,255,255,.34);
+      box-shadow:0 13px 30px rgba(89,31,62,.16);
+      animation:usersGrowingBlink 1.45s ease-in-out infinite;
+    }
+    .users-growing-box strong{
+      font-size:12px;
+      font-weight:1000;
+      letter-spacing:.015em;
+    }
+    .users-growing-dot{
+      width:8px;
+      height:8px;
+      flex:0 0 8px;
+      border-radius:50%;
+      background:#ff8bae;
+      box-shadow:0 0 0 0 rgba(255,139,174,.6);
+      animation:usersGrowingDot 1.45s ease-in-out infinite;
+    }
+    @keyframes usersGrowingBlink{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.58;transform:scale(.99)}
+    }
+    @keyframes usersGrowingDot{
+      0%,100%{box-shadow:0 0 0 0 rgba(255,139,174,.58)}
+      50%{box-shadow:0 0 0 7px rgba(255,139,174,0)}
+    }
+
     .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin:27px 4px 12px}.section-head h2{font-size:20px;letter-spacing:-.04em;margin:0}.section-head p{margin:4px 0 0;color:var(--muted);font-size:10.5px}.link-btn{border:0;background:none;color:#b73d68;font-weight:950;font-size:10.5px}.text-link{border:1px solid rgba(242,79,130,.22);background:linear-gradient(145deg,#fff,#fff4f8);color:#ad335f;font-weight:950;font-size:9px;padding:9px 12px;border-radius:14px;box-shadow:0 7px 18px rgba(173,51,95,.10);display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:78px;cursor:pointer}.text-link:hover{transform:translateY(-1px)}.text-link:disabled{opacity:.62;cursor:wait;transform:none}.text-link.is-loading::before{content:'';width:11px;height:11px;border-radius:50%;border:2px solid rgba(173,51,95,.22);border-top-color:#ad335f;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
 
     .promise-banner{border-radius:30px;padding:19px;position:relative;overflow:hidden;background:linear-gradient(135deg,#3b1830,#7a2850);color:#fff;box-shadow:0 22px 55px rgba(91,28,61,.24)}.promise-banner:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-80px;top:-90px;background:rgba(255,159,192,.18)}.promise-banner small{font-weight:950;color:#ffbdd2}.promise-banner h3{margin:8px 0 7px;font-size:23px;letter-spacing:-.05em;max-width:390px}.promise-banner p{font-size:11px;line-height:1.55;color:#f1d8e4;margin:0;max-width:410px}.promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;position:relative;z-index:2}.promise-item{padding:10px;border-radius:15px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12)}.promise-item b{display:block;font-size:9.5px}.promise-item span{display:block;color:#ebcada;font-size:8px;margin-top:3px;line-height:1.35}
@@ -219,7 +258,7 @@
     .profile-score{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.profile-score div{padding:11px;border-radius:17px;background:#fff;border:1px solid var(--line);text-align:center}.profile-score b{display:block;font-size:17px}.profile-score span{font-size:8px;color:var(--muted)}
     .menu-card{padding:8px;border-radius:28px}.menu-item{width:100%;border:0;background:transparent;display:flex;align-items:center;gap:12px;padding:13px;border-radius:20px;color:var(--ink);text-align:left}.menu-item:hover{background:#fff4f8}.menu-icon{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:#fff0f5;color:#b33b67}.menu-item strong{display:block;font-size:11px}.menu-item small{display:block;color:var(--muted);font-size:8.5px;margin-top:2px}.menu-item .arrow{margin-left:auto;color:#b7a2ad}
 
-    .modal{position:fixed;inset:0;z-index:120;display:flex;align-items:flex-end;justify-content:center;background:rgba(54,19,39,.34);backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:.3s var(--ease)}.modal.show{opacity:1;pointer-events:auto}.sheet{width:min(100%,560px);max-height:93vh;overflow:auto;padding:15px 15px 34px;background:linear-gradient(180deg,#fff,#fff7fb);border-radius:34px 34px 0 0;border:1px solid #fff;box-shadow:0 -35px 100px rgba(70,21,48,.2);transform:translateY(100%);transition:.42s var(--ease)}.modal.show .sheet{transform:none}.handle{width:43px;height:5px;border-radius:99px;background:#ead5df;margin:1px auto 15px}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.sheet-head h3{margin:0;font-size:21px;letter-spacing:-.04em}.sheet-head small{color:var(--muted);font-weight:950;font-size:8px;letter-spacing:.08em}.close{width:39px;height:39px;border-radius:14px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:18px}
+    .modal{position:fixed;inset:0;z-index:120;display:flex;align-items:flex-end;justify-content:center;background:rgba(54,19,39,.34);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:.18s var(--ease)}.modal.show{opacity:1;pointer-events:auto}.sheet{width:min(100%,560px);max-height:93vh;overflow:auto;padding:15px 15px 34px;background:linear-gradient(180deg,#fff,#fff7fb);border-radius:34px 34px 0 0;border:1px solid #fff;box-shadow:0 -35px 100px rgba(70,21,48,.2);transform:translateY(100%);transition:.24s var(--ease);will-change:transform}.modal.show .sheet{transform:none}.handle{width:43px;height:5px;border-radius:99px;background:#ead5df;margin:1px auto 15px}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.sheet-head h3{margin:0;font-size:21px;letter-spacing:-.04em}.sheet-head small{color:var(--muted);font-weight:950;font-size:8px;letter-spacing:.08em}.close{width:39px;height:39px;border-radius:14px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:18px}
     .legal{display:flex;align-items:flex-start;gap:9px;margin:12px 0;padding:11px;border-radius:16px;background:#fff4f8;border:1px solid #f3dfe8}.legal input{width:17px;height:17px;flex:0 0 17px;margin:1px 0 0;accent-color:var(--rose)}.legal label{font-size:8.7px;line-height:1.48;color:#75586a;cursor:pointer}.legal strong{color:#4c293c}
 
     .scan-stage{padding:17px;border-radius:25px;background:#fff;border:1px solid var(--line);margin-top:14px;overflow:hidden;position:relative}.scan-beam{position:absolute;left:9%;right:9%;height:3px;top:10%;background:linear-gradient(90deg,transparent,#f24f82,transparent);filter:drop-shadow(0 0 6px #f24f82);animation:scan 1.25s ease-in-out infinite}.scan-identity{text-align:center;padding:11px 0 15px}.scan-identity .round{width:72px;height:72px;border-radius:25px;background:linear-gradient(145deg,#fff0f5,#f2efff);margin:auto;display:grid;place-items:center;font-size:25px;color:#b23b67}.scan-identity b{display:block;margin-top:10px;font-size:16px}.scan-identity span{font-size:9px;color:var(--muted)}.progress{height:9px;background:#f2e5eb;border-radius:999px;overflow:hidden;margin:10px 0 15px}.progress i{display:block;width:0;height:100%;border-radius:999px;background:linear-gradient(90deg,#f24f82,#8d62ee);transition:.6s var(--ease)}.step-list{display:grid;gap:8px}.scan-step{display:flex;align-items:center;gap:10px;padding:11px;border-radius:17px;background:#fff7fb;color:#9d8693;font-size:9.5px;font-weight:850}.scan-step .status{width:26px;height:26px;border-radius:10px;display:grid;place-items:center;background:#f0e4ea}.scan-step.active{color:#a33561;background:#fff0f5}.scan-step.active .status{background:#ffdbe7;color:#b73865}.scan-step.done{color:#5f3449}.scan-step.done .status{background:#f24f82;color:#fff}
@@ -239,6 +278,9 @@
 
     .mutual-card{padding:18px;border-radius:28px;background:linear-gradient(145deg,#fff,#fff0f5);border:1px solid white;box-shadow:var(--shadow)}.mutual-badge{width:66px;height:66px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,#f24f82,#9167ee);color:#fff;font-size:25px;margin-bottom:11px}.mutual-card h3{font-size:21px;letter-spacing:-.04em;margin:0 0 5px}.mutual-card p{font-size:9.5px;line-height:1.5;color:var(--muted);margin:0}.share-card{margin-top:12px;padding:17px;border-radius:24px;text-align:center;background:linear-gradient(145deg,#36182c,#74284f);color:#fff;position:relative;overflow:hidden}.share-card:before,.share-card:after{content:"♥";position:absolute;color:rgba(255,255,255,.08);font-size:70px}.share-card:before{left:-12px;top:-21px;transform:rotate(-18deg)}.share-card:after{right:-11px;bottom:-31px;transform:rotate(18deg)}.share-card small{font-size:7px;letter-spacing:.18em;color:#f1c5d5;font-weight:1000}.share-card h3{font-size:24px;margin:7px 0 4px;letter-spacing:-.05em}.share-card p{font-size:9px;color:#ebccd8;margin:0}
 
+    .modal-refresh-state{display:flex;align-items:center;justify-content:center;gap:7px;min-height:24px;margin:5px 0 0;color:var(--muted);font-size:8px;font-weight:900;opacity:0;transition:.18s var(--ease)}
+    .modal-refresh-state.show{opacity:1}
+    .modal-refresh-state:before{content:'';width:10px;height:10px;border:2px solid #ead7e1;border-top-color:#b83e69;border-radius:50%;animation:spin .7s linear infinite}
     .toast{position:fixed;z-index:220;left:50%;top:82px;transform:translate(-50%,-18px);opacity:0;pointer-events:none;background:#3a1930;color:#fff;border-radius:16px;padding:12px 15px;font-size:10px;font-weight:900;box-shadow:var(--shadow);transition:.3s var(--ease);max-width:calc(100% - 30px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
 
     .dev-box{margin-top:18px;padding:12px;border:1px dashed #d9c6d0;border-radius:18px;background:rgba(255,255,255,.6)}.dev-box small{font-size:7.5px;font-weight:1000;color:#8f7484}.dev-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.dev-actions button{border:0;border-radius:10px;padding:8px 9px;font-size:8px;font-weight:900;background:#f7edf2;color:#745064}
@@ -371,9 +413,13 @@
         <p><b id="authActiveCheckers">0 people</b> are checking relationship status right now.</p>
       </div>
       <div class="proof-strip auth-proof-strip">
-        <div class="proof-chip"><b id="authNetworkChecks">27,865</b><span id="authNetworkChecksLabel">Relationship Checks Today.</span></div>
-        <div class="proof-chip"><b id="authNetworkLocks">35,678</b><span id="authNetworkLocksLabel">People have Locked their Wives/Husbands/BFs/GFs.</span></div>
-        <div class="proof-chip"><b id="authNetworkReports">6,535</b><span id="authNetworkReportsLabel">Reports Ordered Today.</span></div>
+        <div class="proof-chip"><b id="authNetworkChecks">—</b><span id="authNetworkChecksLabel">Relationship Checks Today.</span></div>
+        <div class="proof-chip"><b id="authNetworkLocks">—</b><span id="authNetworkLocksLabel">People have Locked their Wives/Husbands/BFs/GFs.</span></div>
+        <div class="proof-chip"><b id="authNetworkReports">—</b><span id="authNetworkReportsLabel">Reports Ordered Today.</span></div>
+      </div>
+      <div class="users-growing-box" aria-live="polite">
+        <span class="users-growing-dot" aria-hidden="true"></span>
+        <strong><span id="authNetworkUsers">—</span>+ Growing Users</strong>
       </div>
       <div class="pwa-install-row" id="authInstallRow">
         <div class="pwa-install-icon"><img src="icon-192.png" alt="" /></div>
@@ -463,9 +509,13 @@
       </div>
 
       <div class="proof-strip">
-        <div class="proof-chip"><b id="networkChecks">27,865</b><span id="networkChecksLabel">Relationship Checks Today.</span></div>
-        <div class="proof-chip"><b id="networkLocks">35,678</b><span id="networkLocksLabel">People have Locked their Wives/Husbands/BFs/GFs.</span></div>
-        <div class="proof-chip"><b id="networkIndicators">6,535</b><span id="networkReportsLabel">Reports Ordered Today.</span></div>
+        <div class="proof-chip"><b id="networkChecks">—</b><span id="networkChecksLabel">Relationship Checks Today.</span></div>
+        <div class="proof-chip"><b id="networkLocks">—</b><span id="networkLocksLabel">People have Locked their Wives/Husbands/BFs/GFs.</span></div>
+        <div class="proof-chip"><b id="networkIndicators">—</b><span id="networkReportsLabel">Reports Ordered Today.</span></div>
+      </div>
+      <div class="users-growing-box" aria-live="polite">
+        <span class="users-growing-dot" aria-hidden="true"></span>
+        <strong><span id="networkUsers">—</span>+ Growing Users</strong>
       </div>
 
       <div class="testimonial-shell" id="testimonialShell">
@@ -670,7 +720,7 @@
 
   <!-- Notifications -->
   <div class="modal" id="notificationsModal"><div class="sheet">
-    <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY NOTIFICATIONS</small><h3>Notifications</h3></div><button class="close" data-close="notificationsModal">×</button></div>
+    <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY NOTIFICATIONS</small><h3>Notifications</h3></div><button class="close" data-close="notificationsModal">×</button></div><div class="modal-refresh-state" id="notificationsRefreshState">Refreshing latest notifications…</div>
     <div class="section-head" style="margin-top:14px"><div><h2>Verified Lock requests</h2><p>Only you can accept a request sent to your number.</p></div></div>
     <div class="notice-list" id="mutualRequestList"></div>
     <div class="section-head"><div><h2>Recent alerts</h2></div><button class="text-link" id="markNotificationsReadBtn" type="button">Mark read</button></div>
@@ -679,7 +729,7 @@
 
   <!-- Payment history -->
   <div class="modal" id="transactionHistoryModal"><div class="sheet">
-    <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY PAYMENTS</small><h3>Payment history</h3></div><button class="close" data-close="transactionHistoryModal">×</button></div>
+    <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY PAYMENTS</small><h3>Payment history</h3></div><button class="close" data-close="transactionHistoryModal">×</button></div><div class="modal-refresh-state" id="transactionsRefreshState">Refreshing latest payments…</div>
     <div class="section-head" style="margin-top:14px"><div><h2>Your orders</h2><p>Full Reports, Monitor and Verified Lock.</p></div><button class="text-link" id="refreshTransactionsBtn" type="button">↻ Refresh</button></div>
     <div class="transaction-list" id="transactionList"></div>
   </div></div>
@@ -874,7 +924,7 @@
       currentLookup: null,
       relationshipCache: {},
       currentReport: null,
-      networkMetrics: {checks:0,locks:0,indicators:0,active:0},
+      networkMetrics: {checks:0,locks:0,indicators:0,users:0,active:0},
       content: {hero:[],testimonial:[]},
       activityFeed: [],
       installPromptConfig: {autoHideMs:6500,autoShowDelayMs:1800},
@@ -892,6 +942,8 @@
       $('#appRoot').classList.remove('hidden');
       $('#bottomNav').classList.remove('hidden');
       renderAll();
+      clearTimeout(window.__lockilyWarmNotifications);
+      window.__lockilyWarmNotifications=setTimeout(()=>syncNotifications({silent:true}),250);
       return true;
     }
     function showAuth(){
@@ -937,6 +989,7 @@
         checks:Number(networkStats.checks ?? liveMetrics.checks ?? 0),
         locks:Number(networkStats.locks ?? liveMetrics.locks ?? 0),
         indicators:Number(networkStats.indicators ?? liveMetrics.indicators ?? 0),
+        users:Number(networkStats.users ?? liveMetrics.users ?? 0),
         active:Number(liveMetrics.active||0)
       };
       state.content=payload.content||state.content;
@@ -1029,10 +1082,10 @@
     function fmtActivityDate(date){if(!date||Number.isNaN(new Date(date).getTime()))return '—';const d=date instanceof Date?date:new Date(date);const diff=Date.now()-d.getTime();if(diff<60000)return 'Just now';if(diff<3600000)return Math.max(1,Math.floor(diff/60000))+'m ago';if(diff<86400000)return Math.max(1,Math.floor(diff/3600000))+'h ago';return d.toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric',timeZone:'Africa/Lagos'})}
     function renderSearchActivity(phone,override=null){const a=override||searchActivityFor(phone);const first=a.first instanceof Date?a.first:(a.first?new Date(a.first):null);const last=a.last instanceof Date?a.last:(a.last?new Date(a.last):null);$('#activityTotal').textContent=Number(a.total||0).toLocaleString();$('#activityLast').textContent=fmtActivityDate(last);$('#activity7d').textContent=Number(a.seven||0).toLocaleString();$('#activity30d').textContent=Number(a.thirty||0).toLocaleString();$('#activityFirst').textContent=!first||Number.isNaN(first.getTime())?'—':first.toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric',timeZone:'Africa/Lagos'});$('#activityTrend').textContent=a.trend||'Low';$('#activityInterpretation').textContent=Number(a.seven||0)>=8?'This number is getting unusually high relationship-search attention right now. Search activity alone does not prove a relationship.':Number(a.seven||0)>=3?'This number has active relationship-search attention. Search activity alone does not prove a relationship.':'Search activity is currently low. This does not confirm or rule out a relationship.'}
     function renderNetworkProof(){
-      const m=state.networkMetrics||{checks:0,locks:0,indicators:0,active:0};
-      const checks=Math.max(0,Number(m.checks||0)),locks=Math.max(0,Number(m.locks||0)),reports=Math.max(0,Number(m.indicators||0)),active=Math.max(0,Number(m.active||0));
-      if($('#networkChecks'))$('#networkChecks').textContent=checks.toLocaleString();if($('#networkLocks'))$('#networkLocks').textContent=locks.toLocaleString();if($('#networkIndicators'))$('#networkIndicators').textContent=reports.toLocaleString();if($('#activeCheckers'))$('#activeCheckers').textContent=active===1?'1 person':`${active} people`;if($('#activeCheckerBubble'))$('#activeCheckerBubble').textContent='+'+active;
-      if($('#authNetworkChecks'))$('#authNetworkChecks').textContent=checks.toLocaleString();if($('#authNetworkLocks'))$('#authNetworkLocks').textContent=locks.toLocaleString();if($('#authNetworkReports'))$('#authNetworkReports').textContent=reports.toLocaleString();if($('#authActiveCheckers'))$('#authActiveCheckers').textContent=active===1?'1 person':`${active} people`;if($('#authActiveCheckerBubble'))$('#authActiveCheckerBubble').textContent='+'+active;
+      const m=state.networkMetrics||{checks:0,locks:0,indicators:0,users:0,active:0};
+      const checks=Math.max(0,Number(m.checks||0)),locks=Math.max(0,Number(m.locks||0)),reports=Math.max(0,Number(m.indicators||0)),users=Math.max(0,Number(m.users||0)),active=Math.max(0,Number(m.active||0));
+      if($('#networkChecks'))$('#networkChecks').textContent=checks.toLocaleString();if($('#networkLocks'))$('#networkLocks').textContent=locks.toLocaleString();if($('#networkIndicators'))$('#networkIndicators').textContent=reports.toLocaleString();if($('#networkUsers'))$('#networkUsers').textContent=users.toLocaleString();if($('#activeCheckers'))$('#activeCheckers').textContent=active===1?'1 person':`${active} people`;if($('#activeCheckerBubble'))$('#activeCheckerBubble').textContent='+'+active;
+      if($('#authNetworkChecks'))$('#authNetworkChecks').textContent=checks.toLocaleString();if($('#authNetworkLocks'))$('#authNetworkLocks').textContent=locks.toLocaleString();if($('#authNetworkReports'))$('#authNetworkReports').textContent=reports.toLocaleString();if($('#authNetworkUsers'))$('#authNetworkUsers').textContent=users.toLocaleString();if($('#authActiveCheckers'))$('#authActiveCheckers').textContent=active===1?'1 person':`${active} people`;if($('#authActiveCheckerBubble'))$('#authActiveCheckerBubble').textContent='+'+active;
     }
     function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove('show'),2400)}
     function showModal(id){$('#'+id).classList.add('show');document.body.style.overflow='hidden'}
@@ -1041,7 +1094,7 @@
     function openConfirmModal({title='Are you sure?',message='Please confirm this action.',confirmText='Confirm'}={},handler){$('#confirmActionTitle').textContent=title;$('#confirmActionMessage').textContent=message;$('#confirmActionConfirm').textContent=confirmText;confirmActionHandler=typeof handler==='function'?handler:null;showModal('confirmActionModal')}
     function closeConfirmModal(){confirmActionHandler=null;hideModal('confirmActionModal')}
     $('#confirmActionCancel')?.addEventListener('click',closeConfirmModal);$('#confirmActionClose')?.addEventListener('click',closeConfirmModal);$('#confirmActionConfirm')?.addEventListener('click',()=>{const fn=confirmActionHandler;confirmActionHandler=null;hideModal('confirmActionModal');if(fn)fn()});
-    function nav(view){$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===view));$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.nav===view));$$('.modal.show').forEach(m=>hideModal(m.id));window.scrollTo({top:0,behavior:'smooth'});if(view==='verify')setTimeout(()=>syncVerificationHistoryFromBackend({silent:true}),80)}
+    function nav(view){$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===view));$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.nav===view));$$('.modal.show').forEach(m=>hideModal(m.id));window.scrollTo({top:0,behavior:'auto'});if(view==='verify')setTimeout(()=>syncVerificationHistoryFromBackend({silent:true}),80)}
     $$('[data-nav]').forEach(b=>b.addEventListener('click',()=>nav(b.dataset.nav)));
     $$('[data-close]').forEach(b=>b.addEventListener('click',()=>hideModal(b.dataset.close)));
     $$('[data-legal-open]').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();showModal(link.dataset.legalOpen)}));
@@ -1108,7 +1161,8 @@
     function showRecoveryCode(code){$('#recoveryCodeValue').textContent=String(code||'—');showModal('recoveryCodeModal')}
     $('#copyRecoveryCodeBtn').onclick=async()=>{try{await navigator.clipboard.writeText($('#recoveryCodeValue').textContent.trim());toast('Recovery code copied')}catch{toast('Copy failed')}};
     async function rotateRecoveryCode(){
-      try{const response=await lockilyApi('apiLockilyCreateRecoveryCode',{method:'POST',body:JSON.stringify({})});showRecoveryCode(response.recoveryCode);toast('New recovery code created')}catch(err){toast(err.message||'Could not create recovery code')}
+      $('#recoveryCodeValue').textContent='Creating…';showModal('recoveryCodeModal');
+      try{const response=await lockilyApi('apiLockilyCreateRecoveryCode',{method:'POST',body:JSON.stringify({})});$('#recoveryCodeValue').textContent=String(response.recoveryCode||'—');toast('New recovery code created')}catch(err){hideModal('recoveryCodeModal');toast(err.message||'Could not create recovery code')}
     }
     $('#forgotPasswordBtn').onclick=()=>{$('#resetPhone').value=digits($('#signinPhone').value);$('#resetRecoveryCode').value='';$('#resetNewPassword').value='';setAuthError('#resetPasswordError','');showModal('resetPasswordModal')};
     $('#resetPasswordSubmit').onclick=async()=>{
@@ -1127,17 +1181,64 @@
       incoming.forEach(inv=>{const card=document.createElement('article');card.className='notice-card unread';const rel=(inv.relationshipType||'relationship').replace(/_/g,' ');card.innerHTML=`<div class="notice-head"><div><h4>${escapeHtml(inv.requester?.firstName||'Verified Lock request')}</h4><small>${escapeHtml(digits(inv.requester?.phone)||'')} · ${escapeHtml(rel)}</small></div><small>${escapeHtml(timeAgo(inv.createdAt))}</small></div><p>${escapeHtml(inv.requester?.firstName||'Someone')} says you are in a ${escapeHtml(rel)} relationship and is asking you to confirm it independently.</p><div class="notice-actions"><button class="accept" type="button">Accept Verified Lock</button><button class="decline" type="button">Decline</button></div>`;card.querySelector('.accept').onclick=()=>respondMutualInvite(inv.id,'accept');card.querySelector('.decline').onclick=()=>respondMutualInvite(inv.id,'decline');requests.appendChild(card)});
       const holder=$('#notificationAlertList');holder.innerHTML='';const alerts=(state.alerts||[]).filter(a=>a.type!=='mutual_invite');if(!alerts.length)holder.innerHTML='<div class="empty-state glass"><div class="empty-icon">✓</div><h3>You are caught up.</h3><p>No other notifications yet.</p></div>';alerts.forEach(a=>{const el=document.createElement('article');el.className='notice-card'+(!a.readAt?' unread':'');el.innerHTML=`<div class="notice-head"><h4>${escapeHtml(a.title||'Lockily update')}</h4><small>${escapeHtml(timeAgo(a.createdAt))}</small></div><p>${escapeHtml(a.copy||'')}</p>`;holder.appendChild(el)})
     }
-    async function openNotifications(){try{await loadAccountBootstrap()}catch{}renderNotifications();showModal('notificationsModal')}
-    async function respondMutualInvite(inviteId,action){
-      try{const label=action==='accept'?'Accepting Verified Lock…':'Declining request…';toast(label);await lockilyApi('apiLockilyRespondMutualInvite',{method:'POST',body:JSON.stringify({inviteId,action})});await loadAccountBootstrap();renderNotifications();toast(action==='accept'?'Verified Lock confirmed ♥':'Request declined')}catch(err){toast(err.message||'Could not respond to request')}
+    let notificationsSyncPromise=null;
+    async function syncNotifications({silent=true}={}){
+      if(!lockilySessionToken)return null;
+      if(notificationsSyncPromise)return notificationsSyncPromise;
+      const stateEl=$('#notificationsRefreshState');stateEl?.classList.add('show');
+      notificationsSyncPromise=(async()=>{
+        try{
+          const r=await lockilyApi('apiLockilyNotifications');
+          state.alerts=Array.isArray(r.alerts)?r.alerts:[];
+          state.incomingMutualInvites=Array.isArray(r.incomingMutualInvites)?r.incomingMutualInvites:[];
+          renderNotifications();renderNotificationBadge();
+          return r;
+        }catch(err){if(!silent)toast(err.message||'Could not refresh notifications');return null}
+        finally{stateEl?.classList.remove('show');notificationsSyncPromise=null}
+      })();
+      return notificationsSyncPromise;
     }
-    $('#markNotificationsReadBtn').onclick=async()=>{try{await lockilyApi('apiLockilyMarkAlertsRead',{method:'POST',body:JSON.stringify({})});await loadAccountBootstrap();renderNotifications();toast('Notifications marked read')}catch(err){toast(err.message||'Could not update notifications')}};
+    function openNotifications(){
+      renderNotifications();
+      showModal('notificationsModal');
+      syncNotifications({silent:true});
+    }
+    async function respondMutualInvite(inviteId,action){
+      try{
+        const label=action==='accept'?'Accepting Verified Lock…':'Declining request…';toast(label);
+        const response=await lockilyApi('apiLockilyRespondMutualInvite',{method:'POST',body:JSON.stringify({inviteId,action})});
+        state.incomingMutualInvites=(state.incomingMutualInvites||[]).filter(i=>i.id!==inviteId);
+        if(action==='accept'&&response.reciprocalLock){
+          const idx=(state.locks||[]).findIndex(l=>l.id===response.reciprocalLock.id);
+          if(idx>=0)state.locks[idx]=response.reciprocalLock;else state.locks.unshift(response.reciprocalLock);
+          state.activeLock=state.locks.find(l=>l.id===response.reciprocalLock.id)||state.activeLock;
+        }
+        renderNotifications();renderNotificationBadge();renderLock();
+        syncNotifications({silent:true});
+        toast(action==='accept'?'Verified Lock confirmed ♥':'Request declined')
+      }catch(err){toast(err.message||'Could not respond to request')}
+    }
+    $('#markNotificationsReadBtn').onclick=async()=>{
+      const before=(state.alerts||[]).map(a=>({...a}));
+      state.alerts=(state.alerts||[]).map(a=>({...a,readAt:a.readAt||new Date().toISOString()}));renderNotifications();renderNotificationBadge();
+      try{await lockilyApi('apiLockilyMarkAlertsRead',{method:'POST',body:JSON.stringify({})});toast('Notifications marked read')}
+      catch(err){state.alerts=before;renderNotifications();renderNotificationBadge();toast(err.message||'Could not update notifications')}
+    };
 
     function transactionProductLabel(product){return product==='verify'?'Full Report':product==='monitor'?'Monitor':'Verified Lock'}
     function renderTransactions(){const list=$('#transactionList');list.innerHTML='';const rows=state.transactions||[];if(!rows.length){list.innerHTML='<div class="empty-state glass"><div class="empty-icon">₦</div><h3>No payments yet.</h3><p>Your Lockily orders will appear here.</p></div>';return}rows.forEach(t=>{const card=document.createElement('article');card.className='transaction-card';const status=String(t.paymentStatus||'pending'),date=new Date(t.paidAt||t.createdAt||Date.now()).toLocaleString('en-NG',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Africa/Lagos'});card.innerHTML=`<div class="transaction-head"><div><h4>${escapeHtml(transactionProductLabel(t.product))}</h4><small>${escapeHtml(date)}${t.subjectPhone?' · '+escapeHtml(digits(t.subjectPhone)):''}</small></div><span class="transaction-status ${t.paid?'paid':status==='cancelled'?'cancelled':''}">${escapeHtml(status.toUpperCase())}</span></div><div class="transaction-meta"><div><b>${escapeHtml(money(t.amountExpected))}</b><span>ORDER</span></div><div><b>${escapeHtml(money(t.totalPaid))}</b><span>RECEIVED</span></div><div><b>${escapeHtml(String(t.id||'').slice(0,8).toUpperCase())}</b><span>REFERENCE</span></div></div>`;list.appendChild(card)})}
-    async function syncTransactions(){const r=await lockilyApi('apiLockilyTransactionHistory');state.transactions=Array.isArray(r.transactions)?r.transactions:[];saveState();return state.transactions}
-    async function openTransactionHistory(){try{await syncTransactions()}catch(err){toast(err.message||'Could not load payment history')}renderTransactions();showModal('transactionHistoryModal')}
-    $('#refreshTransactionsBtn').onclick=async()=>{const b=$('#refreshTransactionsBtn'),old=b.textContent;b.disabled=true;b.textContent='Refreshing';try{await syncTransactions();renderTransactions()}catch(err){toast(err.message||'Could not refresh payments')}finally{b.disabled=false;b.textContent=old}};
+    let transactionSyncPromise=null;
+    async function syncTransactions(){
+      if(transactionSyncPromise)return transactionSyncPromise;
+      $('#transactionsRefreshState')?.classList.add('show');
+      transactionSyncPromise=(async()=>{try{const r=await lockilyApi('apiLockilyTransactionHistory');state.transactions=Array.isArray(r.transactions)?r.transactions:[];renderTransactions();return state.transactions}finally{$('#transactionsRefreshState')?.classList.remove('show');transactionSyncPromise=null}})();
+      return transactionSyncPromise;
+    }
+    function openTransactionHistory(){
+      renderTransactions();showModal('transactionHistoryModal');
+      syncTransactions().catch(err=>toast(err.message||'Could not load payment history'));
+    }
+    $('#refreshTransactionsBtn').onclick=async()=>{const b=$('#refreshTransactionsBtn'),old=b.textContent;b.disabled=true;b.textContent='Refreshing';try{await syncTransactions()}catch(err){toast(err.message||'Could not refresh payments')}finally{b.disabled=false;b.textContent=old}};
 
     const relationshipStartInput=$('#relationshipStart');
     const relationshipStartDay=$('#relationshipStartDay');
@@ -1578,10 +1679,15 @@
     }
     async function openVerificationHistoryEntry(orderId){
       let order=(state.verificationHistory||[]).find(x=>x.id===orderId);if(!order)return;
+      if(order.paid){
+        $('#resultSheetTitle').textContent='Loading report…';$('#scanAnimation').classList.remove('hidden');$('#resultContent').classList.add('hidden');showModal('resultModal');
+      }else{
+        state.currentLookup={phone:order.subjectPhone,source:'history',unlocked:false,orderId:order.id};state.pendingProduct='verify';state.currentPayment=order;$('#paymentTitle').textContent='Unlock Full Report';$('#orderLegalConsent').checked=true;renderPaymentOrder();showModal('paymentModal');
+      }
       try{
         const response=await lockilyApi(`apiLockilyPaymentStatus?orderId=${encodeURIComponent(orderId)}`);
         order=normalizeBackendPaymentOrder(response.order,'verify');upsertVerificationHistoryOrder(order);reconcilePaidVerification(order);state.verificationPurchases=paidVerificationCount();saveState();renderAll();
-      }catch(err){toast(err.message||'Could not refresh this verification');return}
+      }catch(err){if(order.paid)hideModal('resultModal');toast(err.message||'Could not refresh this verification');return}
       if(order.paid){
         state.currentLookup={phone:order.subjectPhone,source:'history',unlocked:true,orderId:order.id,historical:!isVerificationToday(order)};state.pendingProduct=null;state.currentPayment=order;state.currentReport=null;saveState();
         try{await loadPaidReport(order.id)}catch(err){toast(err.message||'Could not load report');return}
@@ -1639,31 +1745,43 @@
       if(!state.currentPayment||state.currentPayment.paid)return;
       renderPaymentOrder();
     }
+    function showPaymentPreparing(product){
+      $('#paymentTitle').textContent={verify:'Unlock Full Report',monitor:'Start monitoring',mutual:'Verified Lock'}[product]||'Lockily payment';
+      $('#paymentAmount').textContent='—';$('#paymentDescription').textContent='Preparing your secure payment account…';$('#paymentOfferCountdown').textContent='';
+      $('#paymentBank').textContent='Stanbic IBTC Bank';$('#paymentAccount').textContent='Generating…';$('#paymentAccountName').textContent='Lockily';
+      $('#paymentReference').textContent='Order reference: preparing';
+      const card=$('#paymentStatusCard');card.classList.remove('paid','partial');$('#paymentStatusTitle').textContent='Preparing secure account';$('#paymentStatusText').textContent='This should only take a moment.';
+      $('#checkPaymentBtn').disabled=true;$('#copyPaymentDetails').disabled=true;$('#copyPaymentAccount').disabled=true;$('#copyPaymentName').disabled=true;
+      showModal('paymentModal');
+    }
+    function enablePaymentControls(){
+      $('#checkPaymentBtn').disabled=false;$('#copyPaymentDetails').disabled=false;$('#copyPaymentAccount').disabled=false;$('#copyPaymentName').disabled=false;
+    }
     async function startPayment(product){
       if(product!=='verify' && !state.activeLock){toast('Select or create a Lock first');return}
       state.pendingProduct=product;
-      const title={verify:'Unlock Full Report',monitor:'Start monitoring',mutual:'Verified Lock'}[product];
-      $('#paymentTitle').textContent=title;
       $('#orderLegalConsent').checked=false;
+      if(product==='verify'){
+        const subjectPhone=digits(state.currentLookup?.phone||state.activeLock?.subjectPhone||'');
+        const localPaid=paidVerificationForToday(subjectPhone);
+        if(localPaid){state.pendingProduct=null;openVerificationHistoryEntry(localPaid.id);toast("Today's report is already paid — reopened free");return}
+      }
+      showPaymentPreparing(product);
       try{
         if(product==='verify'){
           await syncVerificationHistoryFromBackend({silent:true});
           const subjectPhone=digits(state.currentLookup?.phone||state.activeLock?.subjectPhone||'');
           const paidToday=paidVerificationForToday(subjectPhone);
-          if(paidToday){state.pendingProduct=null;await openVerificationHistoryEntry(paidToday.id);toast("Today's report is already paid — reopened free");return}
+          if(paidToday){state.pendingProduct=null;hideModal('paymentModal');await openVerificationHistoryEntry(paidToday.id);toast("Today's report is already paid — reopened free");return}
         }
-        toast('Creating secure payment account…');
         state.currentPayment=await createPaymentOrder(product);
-        if(product==='verify'&&state.currentPayment?.paid){upsertVerificationHistoryOrder(state.currentPayment);reconcilePaidVerification(state.currentPayment);state.pendingProduct=null;saveState();await openVerificationHistoryEntry(state.currentPayment.id);toast("Today's paid report reopened free");return}
-        if((product==='mutual'||product==='monitor')&&state.currentPayment?.paid){saveState();await fulfilPaidOrder();return}
-        saveState();
-        renderPaymentOrder();
-        showModal('paymentModal');
-        startPaymentPolling();
+        if(product==='verify'&&state.currentPayment?.paid){upsertVerificationHistoryOrder(state.currentPayment);reconcilePaidVerification(state.currentPayment);state.pendingProduct=null;saveState();hideModal('paymentModal');await openVerificationHistoryEntry(state.currentPayment.id);toast("Today's paid report reopened free");return}
+        if((product==='mutual'||product==='monitor')&&state.currentPayment?.paid){enablePaymentControls();saveState();await fulfilPaidOrder();return}
+        saveState();renderPaymentOrder();enablePaymentControls();startPaymentPolling();
         if(product==='monitor')startMonitorOffer(state.activeLock);
         if(product==='verify')syncVerifyOffer();
       }catch(err){
-        state.pendingProduct=null;state.currentPayment=null;saveState();
+        state.pendingProduct=null;state.currentPayment=null;saveState();hideModal('paymentModal');
         toast(err.message||'Could not create payment account');
       }
     }
@@ -1717,18 +1835,22 @@
           const response=await lockilyApi('apiLockilyActivateMonitor',{method:'POST',body:JSON.stringify({orderId:paidOrder.id})});
           const updated=response.lock;
           if(updated){
-            const idx=state.locks.findIndex(l=>l.id===updated.id);if(idx>=0)state.locks[idx]=updated;
+            const idx=state.locks.findIndex(l=>l.id===updated.id);if(idx>=0)state.locks[idx]=updated;else state.locks.unshift(updated);
             state.activeLock=updated;state.selectedLockId=updated.id;
           }
-          state.pendingProduct=null;await loadAccountBootstrap();toast('Monitor activated');nav('verify');return;
+          state.pendingProduct=null;saveState();toast('Monitor activated');nav('verify');
+          setTimeout(()=>loadAccountBootstrap().catch(()=>{}),0);return;
         }
         if(product==='mutual'){
           const response=await lockilyApi('apiLockilyCreateMutualInvite',{method:'POST',body:JSON.stringify({orderId:paidOrder.id})});
           state.mutualInvite=response.invite||null;state.pendingProduct=null;
-          await loadAccountBootstrap();
-          state.mutualInvite=response.invite||outgoingInviteForActiveLock()||null;saveState();
-          if(state.mutualInvite){$('#mutualInviteBox').classList.remove('hidden');$('#inviteCodeText').textContent=state.mutualInvite.code}
-          showModal('mutualModal');toast('Verified Lock invitation sent to your partner');return;
+          if(state.mutualInvite){
+            state.outgoingMutualInvites=[state.mutualInvite,...(state.outgoingMutualInvites||[]).filter(i=>i.id!==state.mutualInvite.id)];
+            const lock=(state.locks||[]).find(l=>l.id===state.mutualInvite.lockId);if(lock)lock.mutualStatus='pending';
+            $('#mutualInviteBox').classList.remove('hidden');$('#inviteCodeText').textContent=state.mutualInvite.code
+          }
+          saveState();showModal('mutualModal');toast('Verified Lock invitation sent to your partner');
+          setTimeout(()=>loadAccountBootstrap().catch(()=>{}),0);return;
         }
       }catch(err){toast(err.message||'Payment confirmed, but access could not be activated. Refresh and try again.')}
     }
