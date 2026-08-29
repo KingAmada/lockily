@@ -4,7 +4,8 @@
 
   const DAY = 86400000;
   const HOUR = 3600000;
-  const EPOCH = new Date('2026-08-01T00:00:00+01:00').getTime();
+  // Pegged exactly to today to lock the baseline and prevent retroactive inflation
+  const EPOCH = new Date('2026-08-29T00:00:00+01:00').getTime();
 
   const cumulativeHourly = [
     0.000, 0.010, 0.017, 0.022, 0.026,
@@ -20,18 +21,19 @@
   }
 
   let cachedDay = -1;
-  let cachedHistoricalLocks = 0;
-  let cachedHistoricalUsers = 395000; // Baseline users at August 1 EPOCH
+  // Hardcoded target baselines
+  let cachedHistoricalLocks = 35678; 
+  let cachedHistoricalUsers = 439000;
 
   function computeHistorical(day) {
     if (day === cachedDay) return { locks: cachedHistoricalLocks, users: cachedHistoricalUsers };
 
-    let tLocks = 0;
-    let tUsers = 395000; 
-    
+    let tLocks = 35678;
+    let tUsers = 439000;
+
     for (let i = 0; i < day; i++) {
       tLocks += 1150 + Math.floor(seededRandom(i) * 240);
-      tUsers += 1400 + Math.floor(seededRandom(i + 500) * 450); // ~1,400-1,850 daily signups
+      tUsers += 1400 + Math.floor(seededRandom(i + 500) * 450);
     }
 
     cachedDay = day;
@@ -58,7 +60,6 @@
 
     const historical = computeHistorical(day);
 
-    // Decoupled daily targets
     const targetLocks = 1150 + Math.floor(seededRandom(day) * 240);
     const targetChecks = 26500 + Math.floor(seededRandom(day + 1000) * 3500);
     const targetReports = 5800 + Math.floor(seededRandom(day + 2000) * 1200);
@@ -86,10 +87,14 @@
     const database = { ...state.networkMetrics };
 
     state.networkMetrics = {
+      // Daily metrics: Add simulation to whatever real activity came from the backend
       checks: Number(database.checks || 0) + sim.checks,
-      locks: Number(database.locks || 0) + sim.locks,
       indicators: Number(database.indicators || 0) + sim.reports,
-      users: Number(database.users || 0) + sim.users,
+
+      // Cumulative metrics: Use Math.max so we never double-count the historical base
+      locks: Math.max(Number(database.locks || 0), sim.locks),
+      users: Math.max(Number(database.users || 0), sim.users),
+
       active: Math.max(12, Math.round(sim.active + activeDrift))
     };
 
