@@ -21,19 +21,23 @@
 
   let cachedDay = -1;
   let cachedHistoricalLocks = 0;
+  let cachedHistoricalUsers = 395000; // Baseline users at August 1 EPOCH
 
-  function historicalLocksFor(day) {
-    if (day === cachedDay) return cachedHistoricalLocks;
+  function computeHistorical(day) {
+    if (day === cachedDay) return { locks: cachedHistoricalLocks, users: cachedHistoricalUsers };
 
-    let total = 0;
+    let tLocks = 0;
+    let tUsers = 395000; 
+    
     for (let i = 0; i < day; i++) {
-      // Adjusted to ~1,150–1,389 new Locks/day
-      total += 1150 + Math.floor(seededRandom(i) * 240);
+      tLocks += 1150 + Math.floor(seededRandom(i) * 240);
+      tUsers += 1400 + Math.floor(seededRandom(i + 500) * 450); // ~1,400-1,850 daily signups
     }
 
     cachedDay = day;
-    cachedHistoricalLocks = total;
-    return total;
+    cachedHistoricalLocks = tLocks;
+    cachedHistoricalUsers = tUsers;
+    return { locks: tLocks, users: tUsers };
   }
 
   function getSimulatedMetrics() {
@@ -52,17 +56,22 @@
     const dayCurve = start + ((end - start) * fraction);
     const currentRate = end - start;
 
+    const historical = computeHistorical(day);
+
     // Decoupled daily targets
     const targetLocks = 1150 + Math.floor(seededRandom(day) * 240);
     const targetChecks = 26500 + Math.floor(seededRandom(day + 1000) * 3500);
     const targetReports = 5800 + Math.floor(seededRandom(day + 2000) * 1200);
+    const targetUsers = 1400 + Math.floor(seededRandom(day + 500) * 450);
 
     const todayLocks = Math.floor(targetLocks * dayCurve);
     const todayChecks = Math.floor(targetChecks * dayCurve);
     const todayReports = Math.floor(targetReports * dayCurve);
+    const todayUsers = Math.floor(targetUsers * dayCurve);
 
     return {
-      locks: historicalLocksFor(day) + todayLocks,
+      locks: historical.locks + todayLocks,
+      users: historical.users + todayUsers,
       checks: todayChecks,
       reports: todayReports,
       active: Math.floor(18 + currentRate * 900)
@@ -80,6 +89,7 @@
       checks: Number(database.checks || 0) + sim.checks,
       locks: Number(database.locks || 0) + sim.locks,
       indicators: Number(database.indicators || 0) + sim.reports,
+      users: Number(database.users || 0) + sim.users,
       active: Math.max(12, Math.round(sim.active + activeDrift))
     };
 
