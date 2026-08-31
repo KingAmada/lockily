@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+  <meta name="theme-color" content="#351628" />
+  <title>Lockily Admin — Owner Console</title>
+  <style>
+    :root{
+      --bg:#f8f6f7;--paper:#fff;--paper2:#fff9fc;--ink:#241820;--muted:#8c7783;--line:#eadfe5;
+      --deep:#351628;--deep2:#5d2443;--rose:#f24f82;--rose2:#ff8bae;--violet:#7755e8;
+      --green:#138a63;--greenbg:#eaf8f3;--amber:#a96d0c;--amberbg:#fff5df;--red:#c93759;--redbg:#fff0f3;
+      --shadow:0 16px 45px rgba(60,25,44,.08);--r:18px;--sidebar:248px;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}
+    body{min-height:100vh}
+    button,input,select,textarea{font:inherit}button{cursor:pointer;touch-action:manipulation}
+    .hidden{display:none!important}
+    .login{
+      min-height:100vh;display:grid;place-items:center;padding:28px;
+      background:
+        radial-gradient(circle at 10% 10%,rgba(242,79,130,.15),transparent 30%),
+        radial-gradient(circle at 90% 12%,rgba(119,85,232,.13),transparent 28%),
+        linear-gradient(180deg,#fffafd,#f8f5f7);
+    }
+    .login-card{width:min(100%,470px);background:#fff;border:1px solid #fff;border-radius:30px;padding:28px;box-shadow:0 28px 90px rgba(66,27,48,.14)}
+    .login-logo{width:220px;max-width:75%;height:76px;object-fit:contain;object-position:left center;display:block}
+    .owner-pill{display:inline-flex;margin-top:8px;padding:7px 10px;border-radius:999px;background:#351628;color:#fff;font-size:10px;font-weight:900;letter-spacing:.08em}
+    .login h1{font-size:33px;letter-spacing:-.055em;margin:18px 0 7px}.login p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+    .field{margin-top:17px}.field label{display:block;font-size:9px;color:var(--muted);font-weight:900;letter-spacing:.08em;margin-bottom:7px}
+    .field input,.field textarea,.field select{width:100%;border:1px solid var(--line);outline:none;border-radius:15px;padding:13px 14px;background:#fff;color:var(--ink)}
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:#f3a0bb;box-shadow:0 0 0 4px rgba(242,79,130,.08)}
+    .primary{border:0;border-radius:15px;padding:13px 15px;background:linear-gradient(135deg,#f24f82,#8b62ef);color:white;font-weight:950}
+    .login .primary{width:100%;margin-top:13px}
+    .login-error{min-height:20px;margin-top:9px;color:var(--red);font-size:11px;font-weight:800}
+    .login-note{margin-top:14px!important;font-size:10px!important}
+
+    .shell{display:grid;grid-template-columns:var(--sidebar) 1fr;min-height:100vh}
+    .sidebar{
+      position:fixed;left:0;top:0;bottom:0;width:var(--sidebar);background:linear-gradient(180deg,#311426,#4d1e39);color:#fff;
+      padding:18px 13px;overflow:auto;z-index:30;border-right:1px solid rgba(255,255,255,.06)
+    }
+    .sidebar-brand{padding:3px 8px 17px;border-bottom:1px solid rgba(255,255,255,.10);margin-bottom:13px}
+    .sidebar-brand img{display:block;width:175px;height:55px;object-fit:contain;object-position:left center;filter:brightness(0) invert(1)}
+    .sidebar-brand small{display:block;color:#d8bcca;font-size:8px;font-weight:950;letter-spacing:.12em;margin-top:4px}
+    .nav-group-label{font-size:7.5px;color:#a98094;font-weight:950;letter-spacing:.13em;padding:12px 10px 7px}
+    .nav-btn{width:100%;border:0;background:transparent;color:#d9c6d0;border-radius:13px;padding:10px 11px;display:flex;align-items:center;gap:10px;text-align:left;font-size:10px;font-weight:850;margin:2px 0}
+    .nav-btn:hover{background:rgba(255,255,255,.07);color:#fff}.nav-btn.active{background:#fff;color:#52213d;box-shadow:0 10px 28px rgba(0,0,0,.16)}
+    .nav-icon{width:27px;height:27px;border-radius:9px;display:grid;place-items:center;background:rgba(255,255,255,.09);font-size:12px}.nav-btn.active .nav-icon{background:#fff0f5;color:#b43864}
+    .nav-badge{margin-left:auto;min-width:21px;height:20px;padding:0 6px;border-radius:99px;background:#ff7ea5;color:#4a1731;display:grid;place-items:center;font-size:7px;font-weight:1000}
+    .sidebar-foot{margin:20px 7px 5px;padding:11px;border-radius:14px;background:rgba(255,255,255,.07);color:#cfaebe;font-size:8px;line-height:1.5}
+
+    .main{grid-column:2;min-width:0}
+    .topbar{
+      position:sticky;top:0;z-index:25;height:76px;display:flex;align-items:center;gap:12px;padding:0 24px;
+      background:rgba(248,246,247,.90);backdrop-filter:blur(18px);border-bottom:1px solid rgba(224,210,218,.75)
+    }
+    .mobile-menu{display:none}.top-title{min-width:0}.top-title small{font-size:8px;color:#a17e8f;font-weight:950;letter-spacing:.1em}.top-title h1{margin:2px 0 0;font-size:21px;letter-spacing:-.04em}
+    .top-spacer{flex:1}.status-live{display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid var(--line);background:#fff;border-radius:12px;color:#6f5663;font-size:8.5px;font-weight:900}
+    .status-live i{width:7px;height:7px;border-radius:50%;background:#19aa7a;box-shadow:0 0 0 4px rgba(25,170,122,.12)}
+    .top-btn{border:1px solid var(--line);background:#fff;color:#4b3541;border-radius:12px;padding:9px 11px;font-size:9px;font-weight:900}.top-btn:hover{box-shadow:var(--shadow)}
+    .content{padding:22px 24px 50px;max-width:1680px;margin:0 auto}
+    .page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:17px}
+    .page-head h2{margin:0;font-size:27px;letter-spacing:-.05em}.page-head p{margin:5px 0 0;color:var(--muted);font-size:10.5px}
+    .page-actions{display:flex;gap:8px;flex-wrap:wrap}.soft-btn,.danger-btn,.good-btn{border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 11px;font-size:8.5px;font-weight:950;color:#563947}
+    .danger-btn{color:#aa2948;background:var(--redbg);border-color:#f6ced8}.good-btn{color:#0d7453;background:var(--greenbg);border-color:#cfeee2}
+
+    .kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:11px}
+    .kpi{background:#fff;border:1px solid #efe5ea;border-radius:18px;padding:15px;box-shadow:0 10px 30px rgba(63,29,48,.05);min-width:0;position:relative;overflow:hidden}
+    .kpi:after{content:"";position:absolute;width:70px;height:70px;border-radius:50%;right:-30px;top:-30px;background:rgba(242,79,130,.07)}
+    .kpi small{display:block;color:var(--muted);font-size:7.5px;font-weight:1000;letter-spacing:.07em}.kpi b{display:block;font-size:25px;letter-spacing:-.055em;margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.kpi span{display:block;color:#9c8490;font-size:8px;margin-top:3px}
+    .kpi.money b{font-size:21px}.kpi.good{background:linear-gradient(145deg,#fff,#f1fbf7)}.kpi.warn{background:linear-gradient(145deg,#fff,#fff9ec)}.kpi.deep{background:linear-gradient(145deg,#341528,#6b294e);color:#fff;border:0}.kpi.deep small,.kpi.deep span{color:#e5c9d6}
+    .section-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:12px;margin-top:12px}
+    .panel{background:#fff;border:1px solid #ece1e7;border-radius:20px;padding:16px;box-shadow:0 12px 35px rgba(60,27,45,.05);min-width:0}
+    .panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.panel-head h3{margin:0;font-size:13px}.panel-head small{color:var(--muted);font-size:8px}
+    .canvas-wrap{height:225px;position:relative}.canvas-wrap canvas{width:100%;height:100%}
+    .pulse-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.pulse{padding:12px;border:1px solid var(--line);border-radius:15px;background:#fffafd}.pulse b{display:block;font-size:17px}.pulse span{display:block;color:var(--muted);font-size:8px;margin-top:3px}
+    .product-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.product-card{padding:13px;border-radius:15px;background:#faf5f8;border:1px solid #f0e3ea}.product-card b{font-size:18px}.product-card span{display:block;color:var(--muted);font-size:8px;margin-top:3px}
+    .issue-list{display:grid;gap:8px}.issue{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:15px;padding:11px;background:#fff}.issue-icon{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:#fff0f5;color:#b03862}.issue b{display:block;font-size:10px}.issue span{display:block;font-size:8px;color:var(--muted);margin-top:2px}.issue button{margin-left:auto;border:0;background:#f8eef3;border-radius:9px;padding:7px 9px;color:#7a3657;font-size:7.5px;font-weight:900}
+
+    .toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+    .search{flex:1;min-width:220px;position:relative}.search input{width:100%;border:1px solid var(--line);background:#fff;border-radius:13px;padding:10px 12px 10px 34px;outline:none;font-size:10px}.search:before{content:"⌕";position:absolute;left:12px;top:7px;font-size:16px;color:#a68e9b}
+    .toolbar select{border:1px solid var(--line);background:#fff;border-radius:13px;padding:10px 11px;color:#5c414f;font-size:9px;font-weight:850;outline:none}
+    .table-wrap{background:#fff;border:1px solid #eadee5;border-radius:19px;overflow:auto;box-shadow:0 10px 30px rgba(60,27,45,.04)}
+    table{width:100%;border-collapse:collapse;min-width:900px}th{text-align:left;padding:10px 12px;background:#faf7f9;color:#8c7481;font-size:7px;letter-spacing:.08em;font-weight:1000;border-bottom:1px solid var(--line);white-space:nowrap}
+    td{padding:11px 12px;border-bottom:1px solid #f2e9ee;font-size:9px;vertical-align:middle;color:#4c3742}tr:last-child td{border-bottom:0}tbody tr:hover{background:#fffafd}
+    .cell-main{display:block;font-weight:900;color:#301f28;font-size:9.5px}.cell-sub{display:block;color:#9b8590;font-size:7.5px;margin-top:2px}
+    .pill{display:inline-flex;align-items:center;padding:5px 7px;border-radius:99px;font-size:7px;font-weight:1000;background:#f3edf0;color:#725865;text-transform:uppercase;letter-spacing:.04em}.pill.good{background:var(--greenbg);color:#0e7352}.pill.warn{background:var(--amberbg);color:#92600e}.pill.bad{background:var(--redbg);color:#a82e4a}.pill.violet{background:#f0edff;color:#6047b5}
+    .row-actions{display:flex;gap:5px;justify-content:flex-end}.row-btn{border:1px solid var(--line);background:#fff;border-radius:9px;padding:6px 7px;font-size:7px;font-weight:950;color:#6b4658;white-space:nowrap}.row-btn.bad{color:#aa2948;background:#fff3f5}.row-btn.good{color:#087052;background:#effaf6}
+    .empty{padding:50px 20px;text-align:center;color:#9b8590}.empty b{display:block;color:#4b3741;font-size:14px;margin-bottom:5px}.empty span{font-size:9px}
+    .pager{display:flex;align-items:center;gap:8px;justify-content:flex-end;margin-top:10px}.pager span{font-size:8px;color:var(--muted);font-weight:900}.pager button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-size:8px;font-weight:900}.pager button:disabled{opacity:.4;cursor:not-allowed}
+
+    .drawer-backdrop{position:fixed;inset:0;background:rgba(37,17,29,.32);z-index:70;opacity:0;pointer-events:none;transition:.2s}.drawer-backdrop.show{opacity:1;pointer-events:auto}
+    .drawer{position:fixed;right:0;top:0;bottom:0;width:min(540px,94vw);background:#fff;z-index:71;transform:translateX(102%);transition:.25s;box-shadow:-30px 0 80px rgba(54,21,40,.18);overflow:auto}.drawer-backdrop.show .drawer{transform:none}
+    .drawer-head{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(15px);border-bottom:1px solid var(--line);padding:16px;display:flex;align-items:center;gap:10px;z-index:2}.drawer-head h3{margin:0;font-size:17px}.drawer-head small{display:block;color:var(--muted);font-size:8px;margin-top:2px}.drawer-close{margin-left:auto;width:35px;height:35px;border:1px solid var(--line);background:#fff;border-radius:11px;font-size:17px}.drawer-body{padding:16px 16px 35px}
+    .detail-hero{padding:16px;border-radius:18px;background:linear-gradient(145deg,#fff7fb,#f6f2ff);border:1px solid #eee1e8}.detail-hero h2{margin:0;font-size:23px;letter-spacing:-.045em}.detail-hero p{margin:4px 0 0;color:var(--muted);font-size:9px}.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.detail-grid div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px}.detail-grid b{display:block;font-size:11px}.detail-grid span{font-size:7px;color:var(--muted)}
+    .drawer-section{margin-top:16px}.drawer-section h4{font-size:10px;margin:0 0 8px;letter-spacing:.02em}.drawer-actions{display:flex;gap:7px;flex-wrap:wrap}.drawer-actions button{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 10px;font-size:8px;font-weight:950}.drawer-actions .danger{background:var(--redbg);color:#a62a48;border-color:#f6ced8}.drawer-actions .good{background:var(--greenbg);color:#087052;border-color:#ccecdf}
+    .mini-list{display:grid;gap:7px}.mini-row{padding:10px;border:1px solid var(--line);border-radius:13px;background:#fff}.mini-row b{font-size:9px}.mini-row span{font-size:7.5px;color:var(--muted);display:block;margin-top:3px}
+    .edit-area textarea{width:100%;min-height:230px;border:1px solid var(--line);border-radius:14px;padding:12px;outline:none;font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;resize:vertical}
+    .edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.edit-grid .field{margin-top:0}
+    .checkbox-row{display:flex;align-items:center;gap:8px;padding:9px 0;font-size:9px}.checkbox-row input{width:16px;height:16px;accent-color:var(--rose)}
+    .save-row{display:flex;gap:8px;margin-top:10px}.save-row button{flex:1}
+    .json-preview{margin:0;white-space:pre-wrap;word-break:break-word;background:#2e1726;color:#f8dfea;border-radius:13px;padding:11px;font:8px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;max-height:210px;overflow:auto}
+
+    .toast{position:fixed;z-index:100;left:50%;top:18px;transform:translate(-50%,-20px);opacity:0;pointer-events:none;background:#351628;color:#fff;border-radius:13px;padding:10px 13px;font-size:9px;font-weight:900;box-shadow:0 16px 38px rgba(53,22,40,.22);transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+    .loading-line{height:3px;position:fixed;left:var(--sidebar);right:0;top:0;background:transparent;z-index:99;overflow:hidden}.loading-line.show:after{content:"";display:block;height:100%;width:35%;background:linear-gradient(90deg,#f24f82,#8c63ef);animation:loadline 1s infinite ease-in-out}@keyframes loadline{from{transform:translateX(-100%)}to{transform:translateX(390%)}}
+
+    @media(max-width:1200px){.kpis{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:880px){
+      :root{--sidebar:0px}.shell{display:block}.main{grid-column:auto}.sidebar{width:248px;transform:translateX(-105%);transition:.22s;box-shadow:25px 0 60px rgba(48,18,35,.22)}body.menu-open .sidebar{transform:none}
+      .mobile-menu{display:block;border:1px solid var(--line);background:#fff;border-radius:11px;width:38px;height:38px}.topbar{padding:0 13px}.content{padding:16px 13px 40px}.loading-line{left:0}
+      .section-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:520px){.kpis{grid-template-columns:1fr 1fr}.kpi b{font-size:21px}.page-head{align-items:flex-start;flex-direction:column}.product-row{grid-template-columns:1fr}.pulse-grid{grid-template-columns:1fr 1fr}.topbar .status-live{display:none}}
+  </style>
+</head>
+<body>
+  <div class="toast" id="toast"></div>
+  <div class="loading-line" id="loadingLine"></div>
+
+  <section class="login" id="loginScreen">
+    <div class="login-card">
+      <img class="login-logo" src="logo.png" alt="Lockily" onerror="this.style.display='none'" />
+      <span class="owner-pill">OWNER ADMIN CONSOLE</span>
+      <h1>Everything Lockily.</h1>
+      <p>Users, Lock-ins, Verified Locks, searches, Monitor activity, payments, deposits, content, configuration and the audit trail — live from the database.</p>
+      <div class="field"><label>ADMIN ACCESS KEY</label><input id="adminKey" type="password" autocomplete="current-password" placeholder="Enter your Lockily admin key" /></div>
+      <button class="primary" id="loginBtn">Open Admin Dashboard</button>
+      <div class="login-error" id="loginError"></div>
+      <p class="login-note">The admin key is exchanged for a short-lived admin session and is not stored by this page.</p>
+    </div>
+  </section>
+
+  <div class="shell hidden" id="adminApp">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <img src="logo.png" alt="Lockily" onerror="this.style.display='none'" />
+        <small>OWNER ADMIN CONSOLE</small>
+      </div>
+      <div class="nav-group-label">COMMAND CENTER</div>
+      <button class="nav-btn active" data-route="overview"><span class="nav-icon">⌂</span>Overview</button>
+      <div class="nav-group-label">PEOPLE & RELATIONSHIPS</div>
+      <button class="nav-btn" data-route="users"><span class="nav-icon">◎</span>Registered Users</button>
+      <button class="nav-btn" data-route="locks"><span class="nav-icon">♥</span>Locks & Lock-ins</button>
+      <button class="nav-btn" data-route="monitors"><span class="nav-icon">◉</span>Active Monitors</button>
+      <button class="nav-btn" data-route="verified"><span class="nav-icon">✓</span>Verified Locks</button>
+      <button class="nav-btn" data-route="searches"><span class="nav-icon">⌕</span>Searches</button>
+      <div class="nav-group-label">MONEY</div>
+      <button class="nav-btn" data-route="payments"><span class="nav-icon">₦</span>Payment Orders</button>
+      <button class="nav-btn" data-route="transactions"><span class="nav-icon">⇄</span>Bank Deposits</button>
+      <div class="nav-group-label">OPERATIONS</div>
+      <button class="nav-btn" data-route="alerts"><span class="nav-icon">!</span>Alerts & Notices</button>
+      <button class="nav-btn" data-route="content"><span class="nav-icon">✎</span>App Content</button>
+      <button class="nav-btn" data-route="config"><span class="nav-icon">⚙</span>App Configuration</button>
+      <button class="nav-btn" data-route="audit"><span class="nav-icon">≡</span>Admin Audit Log</button>
+      <div class="sidebar-foot">
+        Sensitive account credentials and password hashes are intentionally excluded from this dashboard.
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+        <div class="top-title"><small>LOCKILY / ADMIN</small><h1 id="topTitle">Overview</h1></div>
+        <div class="top-spacer"></div>
+        <div class="status-live"><i></i><span id="adminLabel">Admin connected</span></div>
+        <button class="top-btn" id="refreshBtn">↻ Refresh</button>
+        <button class="top-btn" id="logoutBtn">Sign out</button>
+      </header>
+      <div class="content" id="content"></div>
+    </main>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop">
+    <aside class="drawer">
+      <div class="drawer-head">
+        <div><h3 id="drawerTitle">Details</h3><small id="drawerSubtitle"></small></div>
+        <button class="drawer-close" id="drawerClose">×</button>
+      </div>
+      <div class="drawer-body" id="drawerBody"></div>
+    </aside>
+  </div>
+
+<script>
+(() => {
+  'use strict';
+  const BACKEND = String(window.LOCKILY_BACKEND_BASE_URL || 'https://peygo.net/_functions').replace(/\/$/,'');
+  const SESSION_KEY = 'lockilyAdminSessionV1';
+  let adminToken = sessionStorage.getItem(SESSION_KEY) || '';
+  let adminLabel = 'Owner';
+  let route = 'overview';
+  let currentRows = [];
+  let currentTotal = 0;
+  let currentPage = 1;
+  let currentLimit = 40;
+  let currentFilters = {};
+  let busyCount = 0;
+  let searchTimer = null;
+  const $ = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+
+  function esc(value=''){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  function num(v){return new Intl.NumberFormat('en-NG').format(Number(v||0))}
+  function money(v){return new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0}).format(Number(v||0))}
+  function dt(v){if(!v)return '—';const d=new Date(v);if(Number.isNaN(d.getTime()))return String(v);return d.toLocaleString('en-NG',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Africa/Lagos'})}
+  function day(v){if(!v)return '—';const d=new Date(v);if(Number.isNaN(d.getTime()))return String(v);return d.toLocaleDateString('en-NG',{day:'2-digit',month:'short',year:'numeric',timeZone:'Africa/Lagos'})}
+  function short(v,n=10){const s=String(v||'');return s.length>n?s.slice(0,n)+'…':s}
+  function product(v){return v==='verify'?'Full Report':v==='monitor'?'Monitor':v==='mutual'?'Verified Lock':v||'—'}
+  function statusPill(value){
+    const v=String(value||'—').toLowerCase();
+    const cls=['paid','overpaid','active','accepted','verified','true'].includes(v)?'good':['pending','partial'].includes(v)?'warn':['cancelled','suspended','ended','false'].includes(v)?'bad':'violet';
+    return `<span class="pill ${cls}">${esc(v)}</span>`;
+  }
+  function toast(msg){
+    const el=$('#toast');el.textContent=String(msg||'');el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2500);
+  }
+  function setBusy(on){busyCount=Math.max(0,busyCount+(on?1:-1));$('#loadingLine').classList.toggle('show',busyCount>0)}
+  async function api(path,options={}){
+    setBusy(true);
+    try{
+      const headers={'Accept':'application/json',...(options.body?{'Content-Type':'application/json'}:{}),...(options.headers||{})};
+      if(adminToken)headers.Authorization=`Bearer ${adminToken}`;
+      const res=await fetch(`${BACKEND}/${String(path).replace(/^\//,'')}`,{...options,headers,mode:'cors'});
+      const text=await res.text();let data={};if(text){try{data=JSON.parse(text)}catch{data={message:text}}}
+      if(!res.ok||data.success===false){
+        const err=new Error(data.message||`Admin service error (${res.status})`);err.status=res.status;
+        if(res.status===401&&path!=='apiLockilyAdminLogin'){signOut(false);toast('Admin session expired');}
+        throw err;
+      }
+      return data;
+    }finally{setBusy(false)}
+  }
+
+  async function signIn(){
+    const key=$('#adminKey').value;
+    $('#loginError').textContent='';
+    if(!key){$('#loginError').textContent='Enter the admin access key.';return}
+    const btn=$('#loginBtn'),old=btn.textContent;btn.disabled=true;btn.textContent='Opening…';
+    try{
+      const r=await api('apiLockilyAdminLogin',{method:'POST',body:JSON.stringify({key})});
+      adminToken=r.sessionToken||'';adminLabel=r.adminLabel||'Owner';sessionStorage.setItem(SESSION_KEY,adminToken);$('#adminKey').value='';
+      showApp();await navigate('overview');
+    }catch(err){$('#loginError').textContent=err.message||'Could not sign in'}
+    finally{btn.disabled=false;btn.textContent=old}
+  }
+  function showApp(){
+    $('#loginScreen').classList.add('hidden');$('#adminApp').classList.remove('hidden');$('#adminLabel').textContent=adminLabel||'Admin connected';
+  }
+  function signOut(callApi=true){
+    if(callApi&&adminToken)api('apiLockilyAdminLogout',{method:'POST',body:'{}'}).catch(()=>{});
+    adminToken='';sessionStorage.removeItem(SESSION_KEY);$('#adminApp').classList.add('hidden');$('#loginScreen').classList.remove('hidden');$('#content').innerHTML='';
+  }
+
+  const titles={
+    overview:'Overview',users:'Registered Users',locks:'Locks & Lock-ins',monitors:'Active Monitors',verified:'Verified Locks',
+    searches:'Search Activity',payments:'Payment Orders',transactions:'Bank Deposits',alerts:'Alerts & Notices',
+    content:'App Content',config:'App Configuration',audit:'Admin Audit Log'
+  };
+
+  async function navigate(next, preset={}){
+    route=next;currentPage=1;currentFilters={...preset};$('#topTitle').textContent=titles[next]||next;
+    $$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.route===next));document.body.classList.remove('menu-open');
+    if(next==='overview')return loadOverview();
+    return loadList();
+  }
+
+  function pageHead(title,sub,extra=''){
+    return `<div class="page-head"><div><h2>${esc(title)}</h2><p>${esc(sub)}</p></div><div class="page-actions">${extra}</div></div>`;
+  }
+
+  async function loadOverview(){
+    $('#content').innerHTML=pageHead('Owner overview','Live operational and financial health from the Lockily database.')+'<div class="empty"><b>Loading command center…</b><span>Pulling live metrics.</span></div>';
+    try{
+      const r=await api('apiLockilyAdminOverview');adminLabel=r.adminLabel||adminLabel;$('#adminLabel').textContent=adminLabel;
+      renderOverview(r.overview||{});
+    }catch(err){$('#content').innerHTML=pageHead('Owner overview','')+`<div class="empty"><b>Could not load dashboard</b><span>${esc(err.message)}</span></div>`}
+  }
+
+  function renderOverview(o){
+    const u=o.users||{},l=o.locks||{},s=o.searches||{},p=o.payments||{},d=o.deposits||{},v=o.verifiedLocks||{},a=o.alerts||{};
+    $('#content').innerHTML=`
+      ${pageHead('Owner overview','Everything important in Lockily, in one place.',`<button class="soft-btn" data-go="audit">View audit trail</button>`)}
+      <div class="kpis">
+        <div class="kpi"><small>REGISTERED USERS</small><b>${num(u.total)}</b><span>${num(u.active24h)} active in 24h</span></div>
+        <div class="kpi good"><small>NEW USERS TODAY</small><b>${num(u.today)}</b><span>${num(u.last7d)} in last 7 days</span></div>
+        <div class="kpi"><small>ACTIVE LOCKS</small><b>${num(l.active)}</b><span>${num(l.total)} all-time Locks</span></div>
+        <div class="kpi"><small>SEARCHES TODAY</small><b>${num(s.today)}</b><span>${num(s.last30d)} in last 30 days</span></div>
+        <div class="kpi"><small>VERIFIED LOCKS</small><b>${num(l.verified)}</b><span>${num(v.pendingInvites)} pending request(s)</span></div>
+        <div class="kpi"><small>ACTIVE MONITORS</small><b>${num(l.monitors)}</b><span>Paid monitoring currently on</span></div>
+        <div class="kpi deep money"><small>REVENUE ALL-TIME</small><b>${money(p.revenueAll)}</b><span>${num(p.paidOrders)} paid order(s)</span></div>
+        <div class="kpi money good"><small>REVENUE TODAY</small><b>${money(p.revenueToday)}</b><span>${money(p.revenue7d)} in 7 days</span></div>
+        <div class="kpi money"><small>30-DAY REVENUE</small><b>${money(p.revenue30d)}</b><span>Confirmed paid orders</span></div>
+        <div class="kpi warn"><small>OPEN PAYMENT ORDERS</small><b>${num((p.pendingOrders||0)+(p.partialOrders||0))}</b><span>${num(p.partialOrders)} partial</span></div>
+        <div class="kpi"><small>BANK DEPOSITS</small><b>${num(d.count)}</b><span>${money(d.amount)} received</span></div>
+        <div class="kpi warn"><small>UNREAD ALERTS</small><b>${num(a.unread)}</b><span>${num(a.total)} alerts total</span></div>
+      </div>
+
+      <div class="section-grid">
+        <section class="panel">
+          <div class="panel-head"><div><h3>30-day activity</h3><small>Users, Searches and Locks</small></div></div>
+          <div class="canvas-wrap"><canvas id="activityChart"></canvas></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><div><h3>Open operational items</h3><small>Things worth checking</small></div></div>
+          <div class="issue-list">
+            ${issue('₦','Pending / partial payments',`${num((p.pendingOrders||0)+(p.partialOrders||0))} open order(s)`,'payments',{status:'pending'})}
+            ${issue('⚑','Flagged Locks',`${num(l.flagged)} flagged Lock(s)`,'locks',{filter:'flagged'})}
+            ${issue('✓','Pending Verified Locks',`${num(v.pendingInvites)} request(s) waiting`,'verified',{status:'pending'})}
+            ${issue('⊘','Suspended users',`${num(u.suspended)} account(s)`,'users',{status:'suspended'})}
+          </div>
+        </section>
+      </div>
+
+      <div class="section-grid">
+        <section class="panel">
+          <div class="panel-head"><div><h3>30-day revenue</h3><small>Confirmed paid orders</small></div></div>
+          <div class="canvas-wrap"><canvas id="revenueChart"></canvas></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><div><h3>Paid products</h3><small>Successful purchases</small></div></div>
+          <div class="product-row">
+            <div class="product-card"><b>${num(p.verifyPaid)}</b><span>Full Reports paid</span></div>
+            <div class="product-card"><b>${num(p.monitorPaid)}</b><span>Monitor payments</span></div>
+            <div class="product-card"><b>${num(p.mutualPaid)}</b><span>Verified Lock payments</span></div>
+          </div>
+          <div class="pulse-grid" style="margin-top:8px">
+            <div class="pulse"><b>${num(s.uniqueSubjects30d)}</b><span>Unique numbers searched / 30d</span></div>
+            <div class="pulse"><b>${num(l.ended)}</b><span>Ended Locks</span></div>
+            <div class="pulse"><b>${num(v.acceptedInvites)}</b><span>Accepted Verified requests</span></div>
+            <div class="pulse"><b>${num(p.cancelledOrders)}</b><span>Cancelled payment orders</span></div>
+          </div>
+        </section>
+      </div>`;
+    $('#content').querySelectorAll('[data-go]').forEach(btn=>btn.onclick=()=>navigate(btn.dataset.go));
+    $('#content').querySelectorAll('[data-route-target]').forEach(btn=>{
+      btn.onclick=()=>{let preset={};try{preset=JSON.parse(decodeURIComponent(btn.dataset.preset||'%7B%7D'))}catch{}navigate(btn.dataset.routeTarget,preset)}
+    });
+    drawActivityChart(o.series30d||[]);drawRevenueChart(o.series30d||[]);
+  }
+
+  function issue(icon,title,copy,target,preset){
+    return `<div class="issue"><div class="issue-icon">${icon}</div><div><b>${esc(title)}</b><span>${esc(copy)}</span></div><button data-route-target="${esc(target)}" data-preset="${encodeURIComponent(JSON.stringify(preset||{}))}">Open</button></div>`;
+  }
+
+  function prepCanvas(canvas){
+    const ratio=Math.max(1,window.devicePixelRatio||1),r=canvas.getBoundingClientRect();canvas.width=Math.floor(r.width*ratio);canvas.height=Math.floor(r.height*ratio);
+    const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);return {ctx,w:r.width,h:r.height};
+  }
+  function drawActivityChart(rows){
+    const canvas=$('#activityChart');if(!canvas)return;const {ctx,w,h}=prepCanvas(canvas);const pad={l:34,r:10,t:12,b:26},iw=w-pad.l-pad.r,ih=h-pad.t-pad.b;
+    const vals=rows.flatMap(x=>[Number(x.users||0),Number(x.searches||0),Number(x.locks||0)]),max=Math.max(1,...vals);
+    ctx.clearRect(0,0,w,h);ctx.strokeStyle='#eadfe5';ctx.lineWidth=1;
+    for(let i=0;i<5;i++){const y=pad.t+ih*i/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke()}
+    const series=[['users','#f24f82'],['searches','#7755e8'],['locks','#351628']];
+    series.forEach(([key,color])=>{ctx.strokeStyle=color;ctx.lineWidth=2;ctx.beginPath();rows.forEach((x,i)=>{const px=pad.l+(rows.length<=1?0:iw*i/(rows.length-1)),py=pad.t+ih-(Number(x[key]||0)/max)*ih;if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py)});ctx.stroke()});
+    ctx.font='9px system-ui';ctx.fillStyle='#8c7783';ctx.fillText('Users',pad.l,10);ctx.fillStyle='#7755e8';ctx.fillText('Searches',pad.l+43,10);ctx.fillStyle='#351628';ctx.fillText('Locks',pad.l+96,10);
+    if(rows.length){ctx.fillStyle='#9a8590';ctx.fillText(String(rows[0].date||'').slice(5),pad.l,h-7);ctx.fillText(String(rows[rows.length-1].date||'').slice(5),Math.max(pad.l,w-pad.r-34),h-7)}
+  }
+  function drawRevenueChart(rows){
+    const canvas=$('#revenueChart');if(!canvas)return;const {ctx,w,h}=prepCanvas(canvas);const pad={l:40,r:8,t:15,b:26},iw=w-pad.l-pad.r,ih=h-pad.t-pad.b;const max=Math.max(1,...rows.map(x=>Number(x.revenue||0)));
+    ctx.clearRect(0,0,w,h);ctx.strokeStyle='#eadfe5';for(let i=0;i<5;i++){const y=pad.t+ih*i/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke()}
+    const bw=Math.max(2,iw/Math.max(1,rows.length)*.62);rows.forEach((x,i)=>{const val=Number(x.revenue||0),bh=(val/max)*ih,px=pad.l+iw*(i+.5)/Math.max(1,rows.length)-bw/2;ctx.fillStyle='#f24f82';ctx.fillRect(px,pad.t+ih-bh,bw,bh)});
+    ctx.font='8px system-ui';ctx.fillStyle='#8c7783';ctx.fillText(money(max).replace('.00',''),2,pad.t+6);ctx.fillText('₦0',12,pad.t+ih);if(rows.length){ctx.fillText(String(rows[0].date||'').slice(5),pad.l,h-7);ctx.fillText(String(rows[rows.length-1].date||'').slice(5),Math.max(pad.l,w-pad.r-34),h-7)}
+  }
+
+  const listDefs={
+    users:{
+      endpoint:'apiLockilyAdminUsers',sub:'All Lockily accounts. Search by name or phone number.',
+      filters:()=>`<select id="filterStatus"><option value="">All account states</option><option value="active">Active</option><option value="suspended">Suspended</option></select><select id="filterRange"><option value="">Any signup date</option><option value="today">New today</option><option value="7d">New in 7 days</option><option value="30d">New in 30 days</option></select>`,
+      query:()=>({status:$('#filterStatus')?.value||currentFilters.status||'',range:$('#filterRange')?.value||currentFilters.range||''}),
+      columns:['User','Phone','Account','Last login','Joined','Actions'],
+      row:r=>`<tr><td><span class="cell-main">${esc(r.first_name||'Lockily User')}</span><span class="cell-sub">${esc(short(r.id,8))}</span></td><td><span class="cell-main">${esc(r.phone||'—')}</span><span class="cell-sub">${r.phone_verified===false?'Unverified':'Phone verified'}</span></td><td>${statusPill(r.account_status||'active')}</td><td>${dt(r.last_login_at)}</td><td>${dt(r.created_at)}</td><td><div class="row-actions"><button class="row-btn" data-user="${esc(r.id)}">Open</button></div></td></tr>`
+    },
+    locks:{
+      endpoint:'apiLockilyAdminLocks',sub:'Every active or ended Lock, Monitor and relationship Lock-in.',
+      filters:()=>`<select id="filterMain"><option value="">All Locks</option><option value="active">Active</option><option value="ended">Ended</option><option value="monitors">Monitor on</option><option value="verified">Verified</option><option value="flagged">Flagged</option></select>`,
+      query:()=>({filter:$('#filterMain')?.value||currentFilters.filter||''}),
+      columns:['Subject','Owner','Relationship','Monitor','Verified','Created','Actions'],
+      row:r=>`<tr><td><span class="cell-main">${esc(r.subject_phone||'—')}</span><span class="cell-sub">${esc(r.nickname||'')}</span></td><td><span class="cell-main">${esc(r.owner?.first_name||'—')}</span><span class="cell-sub">${esc(r.owner?.phone||short(r.user_id,8))}</span></td><td><span class="cell-main">${esc((r.relationship_type||'relationship').replace(/_/g,' '))}</span><span class="cell-sub">${r.ended_at?'Ended':'Active'}${r.admin_flagged?' · FLAGGED':''}</span></td><td>${statusPill(r.monitor_active?'active':'off')}</td><td>${statusPill(r.mutual_status||'none')}</td><td>${dt(r.created_at)}</td><td><div class="row-actions"><button class="row-btn" data-lock="${esc(r.id)}" data-action="${r.admin_flagged?'unflag':'flag'}">${r.admin_flagged?'Unflag':'Flag'}</button><button class="row-btn ${r.ended_at?'good':'bad'}" data-lock="${esc(r.id)}" data-action="${r.ended_at?'restore':'end'}">${r.ended_at?'Restore':'End'}</button></div></td></tr>`
+    },
+    monitors:{
+      endpoint:'apiLockilyAdminLocks',sub:'All Locks with paid Monitor currently active.',
+      fixed:{filter:'monitors'},filters:()=>'',query:()=>({filter:'monitors'}),
+      columns:['Subject','Owner','Relationship','Started','Paid at activation','Verified','Actions'],
+      row:r=>`<tr><td><span class="cell-main">${esc(r.subject_phone||'—')}</span><span class="cell-sub">${esc(r.nickname||'')}</span></td><td><span class="cell-main">${esc(r.owner?.first_name||'—')}</span><span class="cell-sub">${esc(r.owner?.phone||'')}</span></td><td>${esc((r.relationship_type||'relationship').replace(/_/g,' '))}</td><td>${dt(r.monitor_started_at)}</td><td>${money(r.monitor_price_at_activation)}</td><td>${statusPill(r.mutual_status||'none')}</td><td><div class="row-actions"><button class="row-btn" data-lock="${esc(r.id)}" data-action="flag">Flag</button></div></td></tr>`
+    },
+    verified:{
+      endpoint:'apiLockilyAdminVerifiedLocks',sub:'Verified Lock invitations, pairings and current request state.',
+      filters:()=>`<select id="filterStatus"><option value="">All states</option><option value="pending">Pending</option><option value="accepted">Accepted</option><option value="cancelled">Cancelled</option></select>`,
+      query:()=>({status:$('#filterStatus')?.value||currentFilters.status||''}),
+      columns:['Code','Requester','Partner','State','Payment','Created','Actions'],
+      row:r=>`<tr><td><span class="cell-main">${esc(r.code||'—')}</span><span class="cell-sub">${esc(short(r.id,8))}</span></td><td><span class="cell-main">${esc(r.requester?.first_name||'—')}</span><span class="cell-sub">${esc(r.requester?.phone||'')}</span></td><td><span class="cell-main">${esc(r.partner?.first_name||'—')}</span><span class="cell-sub">${esc(r.partner_phone||r.partner?.phone||'')}</span></td><td>${statusPill(r.status)}</td><td><span class="cell-main">${esc(short(r.payment_order_id||'—',12))}</span></td><td>${dt(r.created_at)}</td><td><div class="row-actions">${r.status==='pending'?`<button class="row-btn bad" data-invite="${esc(r.id)}" data-action="cancel">Cancel</button>`:''}</div></td></tr>`
+    },
+    searches:{
+      endpoint:'apiLockilyAdminSearches',sub:'Every relationship-status search recorded by the platform.',
+      filters:()=>'',query:()=>({}),
+      columns:['Number searched','User','Source','Time','Search ID'],
+      row:r=>`<tr><td><span class="cell-main">${esc(r.subject_phone||'—')}</span></td><td><span class="cell-main">${esc(r.owner?.first_name||'Anonymous / legacy')}</span><span class="cell-sub">${esc(r.owner?.phone||short(r.user_id,8)||'')}</span></td><td>${statusPill(r.source||'app')}</td><td>${dt(r.created_at)}</td><td>${esc(short(r.id,12))}</td></tr>`
+    },
+    payments:{
+      endpoint:'apiLockilyAdminPayments',sub:'Full Report, Monitor and Verified Lock orders with payment status.',
+      filters:()=>`<select id="filterStatus"><option value="">All statuses</option><option value="pending">Pending</option><option value="partial">Partial</option><option value="paid">Paid</option><option value="overpaid">Overpaid</option><option value="cancelled">Cancelled</option></select><select id="filterProduct"><option value="">All products</option><option value="verify">Full Report</option><option value="monitor">Monitor</option><option value="mutual">Verified Lock</option></select>`,
+      query:()=>({status:$('#filterStatus')?.value||currentFilters.status||'',product:$('#filterProduct')?.value||currentFilters.product||''}),
+      columns:['Order','Product','Customer','Subject','Expected','Received','Status','Created','Actions'],
+      row:r=>`<tr><td><span class="cell-main">${esc(short(r.id,13))}</span><span class="cell-sub">${esc(r.wallet_account_number||'')}</span></td><td>${esc(product(r.product))}</td><td><span class="cell-main">${esc(r.customer_phone||r.owner?.phone||'—')}</span><span class="cell-sub">${esc(r.owner?.first_name||'')}</span></td><td>${esc(r.subject_phone||'—')}</td><td>${money(r.amount_expected)}</td><td><span class="cell-main">${money(r.total_paid)}</span><span class="cell-sub">${r.paid_at?dt(r.paid_at):''}</span></td><td>${statusPill(r.payment_status)}</td><td>${dt(r.created_at)}</td><td><div class="row-actions">${['pending','partial'].includes(r.payment_status)?`<button class="row-btn bad" data-payment="${esc(r.id)}" data-action="cancel">Cancel</button>`:''}</div></td></tr>`
+    },
+    transactions:{
+      endpoint:'apiLockilyAdminDeposits',sub:'Incoming bank deposits mapped to Lockily payment orders.',
+      filters:()=>'',query:()=>({}),
+      columns:['Transaction','Order','Wallet','Amount','Sender','Bank','Deposited'],
+      row:r=>`<tr><td><span class="cell-main">${esc(r.transaction_id||'—')}</span><span class="cell-sub">${esc(short(r.session_id,12))}</span></td><td>${esc(short(r.order_id,14))}</td><td>${esc(r.wallet_account_number||'—')}</td><td><span class="cell-main">${money(r.amount)}</span></td><td>${esc(r.sender_name||'—')}</td><td>${esc(r.source_bank||'—')}</td><td>${dt(r.deposited_at)}</td></tr>`
+    },
+    alerts:{
+      endpoint:'apiLockilyAdminAlerts',sub:'System and admin alerts delivered to Lockily accounts.',
+      actions:`<button class="soft-btn" id="sendAlertTop">Send user alert</button>`,
+      filters:()=>'',query:()=>({}),
+      columns:['Alert','User','Type','Read','Created','ID'],
+      row:r=>`<tr><td><span class="cell-main">${esc(r.title||'Lockily update')}</span><span class="cell-sub">${esc(r.copy||'')}</span></td><td><span class="cell-main">${esc(r.owner?.first_name||'—')}</span><span class="cell-sub">${esc(r.owner?.phone||short(r.user_id,8))}</span></td><td>${statusPill(r.type||'system')}</td><td>${r.read_at?statusPill('read'):statusPill('pending')}</td><td>${dt(r.created_at)}</td><td>${esc(short(r.id,12))}</td></tr>`
+    },
+    audit:{
+      endpoint:'apiLockilyAdminAudit',sub:'Tamper-resistant operational history of admin actions.',
+      filters:()=>'',query:()=>({}),
+      columns:['Admin','Action','Entity','Entity ID','Time','Details'],
+      row:r=>`<tr><td>${esc(r.admin_label||'Owner')}</td><td>${statusPill(r.action)}</td><td>${esc(r.entity_type||'—')}</td><td>${esc(short(r.entity_id,16))}</td><td>${dt(r.created_at)}</td><td><button class="row-btn" data-audit="${esc(r.id)}">View JSON</button></td></tr>`
+    }
+  };
+
+  async function loadList(){
+    if(route==='content')return loadContent();
+    if(route==='config')return loadConfig();
+    const def=listDefs[route];if(!def)return;
+    const actionHtml=def.actions||`<button class="soft-btn" id="exportBtn">Export CSV</button>`;
+    $('#content').innerHTML=pageHead(titles[route],def.sub,actionHtml)+`
+      <div class="toolbar">
+        <div class="search"><input id="listSearch" placeholder="Search this section…" value="${esc(currentFilters.q||'')}" /></div>
+        ${def.filters?def.filters():''}
+      </div>
+      <div class="table-wrap" id="tableWrap"><div class="empty"><b>Loading…</b><span>Fetching live records.</span></div></div>
+      <div class="pager" id="pager"></div>`;
+    if($('#filterStatus')&&currentFilters.status)$('#filterStatus').value=currentFilters.status;
+    if($('#filterRange')&&currentFilters.range)$('#filterRange').value=currentFilters.range;
+    if($('#filterMain')&&currentFilters.filter)$('#filterMain').value=currentFilters.filter;
+    if($('#filterProduct')&&currentFilters.product)$('#filterProduct').value=currentFilters.product;
+    $('#listSearch').addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>{currentPage=1;fetchList()},350)});
+    $$('#content select').forEach(s=>s.addEventListener('change',()=>{currentPage=1;fetchList()}));
+    $('#exportBtn')?.addEventListener('click',exportCurrentCsv);
+    $('#sendAlertTop')?.addEventListener('click',()=>openSendAlert());
+    await fetchList();
+  }
+
+  async function fetchList(){
+    const def=listDefs[route];if(!def)return;
+    const q=$('#listSearch')?.value.trim()||currentFilters.q||'';
+    const params={page:currentPage,limit:currentLimit,q,...(def.fixed||{}),...(def.query?def.query():{})};
+    const qs=new URLSearchParams(Object.entries(params).filter(([,v])=>v!==''&&v!==undefined&&v!==null)).toString();
+    try{
+      const r=await api(`${def.endpoint}?${qs}`);currentRows=Array.isArray(r.rows)?r.rows:[];currentTotal=Number(r.total||currentRows.length);renderTable(def);renderPager();
+    }catch(err){$('#tableWrap').innerHTML=`<div class="empty"><b>Could not load ${esc(titles[route])}</b><span>${esc(err.message)}</span></div>`}
+  }
+  function renderTable(def){
+    if(!currentRows.length){$('#tableWrap').innerHTML='<div class="empty"><b>No records found</b><span>Try a different search or filter.</span></div>';return}
+    $('#tableWrap').innerHTML=`<table><thead><tr>${def.columns.map(c=>`<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${currentRows.map(def.row).join('')}</tbody></table>`;
+    bindRowActions();
+  }
+  function renderPager(){
+    const pages=Math.max(1,Math.ceil(currentTotal/currentLimit));$('#pager').innerHTML=`<span>${num(currentTotal)} records · Page ${currentPage} of ${pages}</span><button id="prevPage" ${currentPage<=1?'disabled':''}>← Previous</button><button id="nextPage" ${currentPage>=pages?'disabled':''}>Next →</button>`;
+    $('#prevPage').onclick=()=>{if(currentPage>1){currentPage--;fetchList()}};$('#nextPage').onclick=()=>{if(currentPage<pages){currentPage++;fetchList()}};
+  }
+  function bindRowActions(){
+    $$('[data-user]').forEach(b=>b.onclick=()=>openUser(b.dataset.user));
+    $$('[data-lock]').forEach(b=>b.onclick=()=>lockAction(b.dataset.lock,b.dataset.action));
+    $$('[data-invite]').forEach(b=>b.onclick=()=>inviteAction(b.dataset.invite,b.dataset.action));
+    $$('[data-payment]').forEach(b=>b.onclick=()=>paymentAction(b.dataset.payment,b.dataset.action));
+    $$('[data-audit]').forEach(b=>b.onclick=()=>openAudit(b.dataset.audit));
+  }
+
+  async function openUser(userId){
+    openDrawer('User account','Loading complete account activity…','<div class="empty"><b>Loading user…</b></div>');
+    try{
+      const r=await api(`apiLockilyAdminUser?userId=${encodeURIComponent(userId)}`),u=r.user||{},locks=r.locks||[],searches=r.searches||[],payments=r.payments||[],sessions=r.sessions||[];
+      $('#drawerTitle').textContent=u.first_name||'Lockily User';$('#drawerSubtitle').textContent=u.phone||userId;
+      $('#drawerBody').innerHTML=`
+        <div class="detail-hero"><h2>${esc(u.first_name||'Lockily User')}</h2><p>${esc(u.phone||'—')} · Joined ${day(u.created_at)}</p>
+          <div class="detail-grid"><div><b>${num(locks.length)}</b><span>LOCKS</span></div><div><b>${num(searches.length)}</b><span>SEARCHES SHOWN</span></div><div><b>${money(r.revenue)}</b><span>PAID VALUE SHOWN</span></div></div>
+        </div>
+        <div class="drawer-section"><h4>ACCOUNT CONTROL</h4><div class="drawer-actions">
+          ${u.account_status==='suspended'?`<button class="good" data-user-action="activate">Reactivate account</button>`:`<button class="danger" data-user-action="suspend">Suspend account</button>`}
+          <button data-user-action="revoke_sessions">Sign out all devices</button>
+          <button data-user-action="note">Admin note</button>
+          <button data-user-action="alert">Send notification</button>
+        </div></div>
+        ${u.suspended_reason?`<div class="drawer-section"><h4>SUSPENSION REASON</h4><div class="mini-row"><b>${esc(u.suspended_reason)}</b><span>${dt(u.suspended_at)}</span></div></div>`:''}
+        ${u.admin_note?`<div class="drawer-section"><h4>ADMIN NOTE</h4><div class="mini-row"><b>${esc(u.admin_note)}</b></div></div>`:''}
+        <div class="drawer-section"><h4>RECENT LOCKS</h4><div class="mini-list">${locks.slice(0,12).map(x=>`<div class="mini-row"><b>${esc(x.subject_phone)} · ${esc((x.relationship_type||'relationship').replace(/_/g,' '))}</b><span>${x.monitor_active?'Monitor on · ':''}${esc(x.mutual_status||'none')} · ${dt(x.created_at)}</span></div>`).join('')||'<div class="mini-row"><span>No Locks.</span></div>'}</div></div>
+        <div class="drawer-section"><h4>RECENT PAYMENTS</h4><div class="mini-list">${payments.slice(0,12).map(x=>`<div class="mini-row"><b>${esc(product(x.product))} · ${money(x.total_paid)} · ${esc(x.payment_status)}</b><span>${esc(x.subject_phone||'')} · ${dt(x.created_at)}</span></div>`).join('')||'<div class="mini-row"><span>No payments.</span></div>'}</div></div>
+        <div class="drawer-section"><h4>SESSIONS</h4><div class="mini-list">${sessions.slice(0,8).map(x=>`<div class="mini-row"><b>${x.revoked_at?'Revoked':'Session'}</b><span>Last seen ${dt(x.last_seen_at)} · Expires ${dt(x.expires_at)}</span></div>`).join('')||'<div class="mini-row"><span>No sessions.</span></div>'}</div></div>`;
+      $$('[data-user-action]').forEach(b=>b.onclick=()=>userAction(userId,b.dataset.userAction,u));
+    }catch(err){$('#drawerBody').innerHTML=`<div class="empty"><b>Could not load user</b><span>${esc(err.message)}</span></div>`}
+  }
+
+  async function userAction(userId,action,user){
+    if(action==='alert')return openSendAlert(userId,user?.phone);
+    let body={userId,action};
+    if(action==='suspend'){const reason=prompt('Reason for suspension:','Administrative review');if(reason===null)return;body.reason=reason}
+    if(action==='note'){const note=prompt('Admin note:',user?.admin_note||'');if(note===null)return;body.note=note}
+    if(action==='revoke_sessions'&&!confirm('Sign this user out on all devices?'))return;
+    try{await api('apiLockilyAdminUserAction',{method:'POST',body:JSON.stringify(body)});toast('User updated');await openUser(userId);if(route==='users')fetchList()}
+    catch(err){toast(err.message)}
+  }
+  async function lockAction(lockId,action){
+    if(['end','restore'].includes(action)&&!confirm(action==='end'?'End this Lock?':'Restore this Lock?'))return;
+    try{await api('apiLockilyAdminLockAction',{method:'POST',body:JSON.stringify({lockId,action})});toast(`Lock ${action} complete`);fetchList()}
+    catch(err){toast(err.message)}
+  }
+  async function inviteAction(inviteId,action){
+    if(action==='cancel'&&!confirm('Cancel this pending Verified Lock request?'))return;
+    try{await api('apiLockilyAdminInviteAction',{method:'POST',body:JSON.stringify({inviteId,action})});toast('Verified Lock updated');fetchList()}
+    catch(err){toast(err.message)}
+  }
+  async function paymentAction(orderId,action){
+    if(action==='cancel'&&!confirm('Cancel this open payment order? Existing deposits are not deleted.'))return;
+    try{await api('apiLockilyAdminPaymentAction',{method:'POST',body:JSON.stringify({orderId,action})});toast('Payment order updated');fetchList()}
+    catch(err){toast(err.message)}
+  }
+  function openAudit(id){
+    const r=currentRows.find(x=>x.id===id);if(!r)return;openDrawer('Audit event',`${r.action||''} · ${dt(r.created_at)}`,`<div class="drawer-section"><h4>BEFORE</h4><pre class="json-preview">${esc(JSON.stringify(r.before_data,null,2))}</pre></div><div class="drawer-section"><h4>AFTER</h4><pre class="json-preview">${esc(JSON.stringify(r.after_data,null,2))}</pre></div>`);
+  }
+
+  async function openSendAlert(userId='',phone=''){
+    openDrawer('Send Lockily alert',phone?`To ${phone}`:'Send a notification to one registered user',`
+      <div class="field"><label>USER ID</label><input id="alertUserId" value="${esc(userId)}" placeholder="Paste Lockily user UUID" /></div>
+      <div class="field"><label>TITLE</label><input id="alertTitle" maxlength="120" placeholder="Lockily update" /></div>
+      <div class="field"><label>MESSAGE</label><textarea id="alertCopy" maxlength="1000" placeholder="Write the notification…"></textarea></div>
+      <button class="primary" id="sendAlertBtn" style="width:100%;margin-top:12px">Send notification</button>`);
+    $('#sendAlertBtn').onclick=async()=>{try{await api('apiLockilyAdminSendAlert',{method:'POST',body:JSON.stringify({userId:$('#alertUserId').value.trim(),title:$('#alertTitle').value.trim(),copy:$('#alertCopy').value.trim()})});toast('Alert sent');closeDrawer();if(route==='alerts')fetchList()}catch(err){toast(err.message)}};
+  }
+
+  async function loadContent(){
+    $('#content').innerHTML=pageHead('App Content','Manage hero slides, testimonials and other database-driven content.',`<button class="soft-btn" id="newContentBtn">New content item</button>`)+'<div class="table-wrap"><div class="empty"><b>Loading content…</b></div></div>';
+    try{
+      const r=await api('apiLockilyAdminContent'),rows=Array.isArray(r.rows)?r.rows:[];currentRows=rows;
+      $('.table-wrap').innerHTML=rows.length?`<table><thead><tr><th>Section</th><th>Item key</th><th>Order</th><th>Active</th><th>Preview</th><th>Updated</th><th>Actions</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${statusPill(x.section)}</td><td><span class="cell-main">${esc(x.item_key)}</span></td><td>${num(x.sort_order)}</td><td>${statusPill(x.active?'active':'off')}</td><td><span class="cell-main">${esc(x.payload?.headline||x.payload?.title||x.payload?.meta||'Content JSON')}</span><span class="cell-sub">${esc(short(x.payload?.quote||x.payload?.copy||'',90))}</span></td><td>${dt(x.updated_at)}</td><td><button class="row-btn" data-content="${esc(x.item_key)}">Edit</button></td></tr>`).join('')}</tbody></table>`:'<div class="empty"><b>No content</b></div>';
+      $$('[data-content]').forEach(b=>b.onclick=()=>editContent(rows.find(x=>x.item_key===b.dataset.content)));
+      $('#newContentBtn').onclick=()=>editContent(null);
+    }catch(err){$('.table-wrap').innerHTML=`<div class="empty"><b>Could not load content</b><span>${esc(err.message)}</span></div>`}
+  }
+  function editContent(row){
+    openDrawer(row?'Edit content':'New content item',row?.item_key||'Database-driven Lockily content',`
+      <div class="edit-grid">
+        <div class="field"><label>SECTION</label><input id="contentSection" value="${esc(row?.section||'testimonial')}" /></div>
+        <div class="field"><label>ITEM KEY</label><input id="contentKey" value="${esc(row?.item_key||'')}" ${row?'readonly':''} /></div>
+        <div class="field"><label>SORT ORDER</label><input id="contentOrder" type="number" value="${Number(row?.sort_order||0)}" /></div>
+        <label class="checkbox-row"><input id="contentActive" type="checkbox" ${row?.active===false?'':'checked'} /> Active in app</label>
+      </div>
+      <div class="drawer-section edit-area"><h4>PAYLOAD JSON</h4><textarea id="contentPayload">${esc(JSON.stringify(row?.payload||{},null,2))}</textarea></div>
+      <div class="save-row"><button class="primary" id="saveContentBtn">Save content</button></div>`);
+    $('#saveContentBtn').onclick=async()=>{let payload;try{payload=JSON.parse($('#contentPayload').value)}catch{return toast('Payload must be valid JSON')};try{await api('apiLockilyAdminContentSave',{method:'POST',body:JSON.stringify({section:$('#contentSection').value.trim(),itemKey:$('#contentKey').value.trim(),sortOrder:Number($('#contentOrder').value||0),active:$('#contentActive').checked,payload})});toast('Content saved');closeDrawer();loadContent()}catch(err){toast(err.message)}};
+  }
+
+  async function loadConfig(){
+    $('#content').innerHTML=pageHead('App Configuration','Live pricing, network counters, install prompt and app copy stored in Supabase.')+'<div class="table-wrap"><div class="empty"><b>Loading configuration…</b></div></div>';
+    try{
+      const r=await api('apiLockilyAdminConfig'),rows=Array.isArray(r.rows)?r.rows:[];currentRows=rows;
+      $('.table-wrap').innerHTML=rows.length?`<table><thead><tr><th>Key</th><th>Summary</th><th>Updated</th><th>Actions</th></tr></thead><tbody>${rows.map(x=>`<tr><td><span class="cell-main">${esc(x.key)}</span></td><td><span class="cell-sub">${esc(short(JSON.stringify(x.value),160))}</span></td><td>${dt(x.updated_at)}</td><td><button class="row-btn" data-config="${esc(x.key)}">Edit JSON</button></td></tr>`).join('')}</tbody></table>`:'<div class="empty"><b>No configuration</b></div>';
+      $$('[data-config]').forEach(b=>b.onclick=()=>editConfig(rows.find(x=>x.key===b.dataset.config)));
+    }catch(err){$('.table-wrap').innerHTML=`<div class="empty"><b>Could not load configuration</b><span>${esc(err.message)}</span></div>`}
+  }
+  function editConfig(row){
+    openDrawer(`Edit ${row?.key||'configuration'}`,'Changes are written directly to lockily_app_config.',`
+      <div class="field"><label>CONFIG KEY</label><input id="configKey" value="${esc(row?.key||'')}" ${row?'readonly':''} /></div>
+      <div class="drawer-section edit-area"><h4>VALUE JSON</h4><textarea id="configValue">${esc(JSON.stringify(row?.value??{},null,2))}</textarea></div>
+      <div class="save-row"><button class="primary" id="saveConfigBtn">Save configuration</button></div>`);
+    $('#saveConfigBtn').onclick=async()=>{let value;try{value=JSON.parse($('#configValue').value)}catch{return toast('Value must be valid JSON')};try{await api('apiLockilyAdminConfigSave',{method:'POST',body:JSON.stringify({key:$('#configKey').value.trim(),value})});toast('Configuration saved');closeDrawer();loadConfig()}catch(err){toast(err.message)}};
+  }
+
+  function openDrawer(title,subtitle,body){$('#drawerTitle').textContent=title||'Details';$('#drawerSubtitle').textContent=subtitle||'';$('#drawerBody').innerHTML=body||'';$('#drawerBackdrop').classList.add('show')}
+  function closeDrawer(){$('#drawerBackdrop').classList.remove('show')}
+  function exportCurrentCsv(){
+    if(!currentRows.length)return toast('Nothing to export');
+    const flat=currentRows.map(r=>{const x={};Object.entries(r).forEach(([k,v])=>{if(v&&typeof v==='object')x[k]=JSON.stringify(v);else x[k]=v??''});return x});
+    const keys=[...new Set(flat.flatMap(Object.keys))],quote=v=>`"${String(v??'').replace(/"/g,'""')}"`,csv=[keys.map(quote).join(','),...flat.map(r=>keys.map(k=>quote(r[k])).join(','))].join('\n');
+    const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`lockily-${route}-${new Date().toISOString().slice(0,10)}.csv`;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+  }
+
+  $('#loginBtn').onclick=signIn;$('#adminKey').addEventListener('keydown',e=>{if(e.key==='Enter')signIn()});
+  $('#logoutBtn').onclick=()=>{if(confirm('Sign out of Lockily Admin?'))signOut(true)};
+  $('#refreshBtn').onclick=()=>route==='overview'?loadOverview():loadList();
+  $('#mobileMenu').onclick=()=>document.body.classList.toggle('menu-open');
+  $$('.nav-btn').forEach(b=>b.onclick=()=>navigate(b.dataset.route));
+  $('#drawerClose').onclick=closeDrawer;$('#drawerBackdrop').addEventListener('click',e=>{if(e.target===$('#drawerBackdrop'))closeDrawer()});
+  window.addEventListener('resize',()=>{if(route==='overview'){api('apiLockilyAdminOverview').then(r=>{drawActivityChart(r.overview?.series30d||[]);drawRevenueChart(r.overview?.series30d||[])}).catch(()=>{})}});
+
+  if(adminToken){showApp();api('apiLockilyAdminOverview').then(r=>{adminLabel=r.adminLabel||'Owner';$('#adminLabel').textContent=adminLabel;renderOverview(r.overview||{})}).catch(()=>signOut(false))}
+})();
+</script>
+</body>
+</html>
