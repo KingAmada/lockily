@@ -86,14 +86,14 @@
     const sim = getSimulatedMetrics();
     const database = { ...state.networkMetrics };
 
-    state.networkMetrics = {
+state.networkMetrics = {
       // Daily metrics: Add simulation to whatever real activity came from the backend
-      checks: Number(database.checks || 0) + sim.checks,
-      indicators: Number(database.indicators || 0) + sim.reports,
+      checks: Number(database.total_checks || database.checks || 0) + sim.checks,
+      indicators: Number(database.reports_unlocked || database.indicators || 0) + sim.reports,
 
       // Cumulative metrics: Use Math.max so we never double-count the historical base
-      locks: Math.max(Number(database.locks || 0), sim.locks),
-      users: Math.max(Number(database.users || 0), sim.users),
+      locks: Math.max(Number(database.active_locks || database.locks || 0), sim.locks),
+      users: Math.max(Number(database.total_users || database.users || 0), sim.users),
 
       active: Math.max(12, Math.round(sim.active + activeDrift))
     };
