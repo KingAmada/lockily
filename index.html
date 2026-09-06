@@ -986,11 +986,11 @@
       const networkStats=payload?.config?.network_stats||{};
       const liveMetrics=payload.networkMetrics||{};
       state.networkMetrics={
-        checks:Number(liveMetrics.checks ?? 0),
-        locks:Number(liveMetrics.locks ?? 0),
-        indicators:Number(liveMetrics.indicators ?? 0),
-        users:Number(liveMetrics.users ?? 0),
-        active:Number(liveMetrics.active ?? 0)
+        checks: Number(liveMetrics.total_checks ?? liveMetrics.checks ?? 0),
+        locks: Number(liveMetrics.active_locks ?? liveMetrics.locks ?? 0),
+        indicators: Number(liveMetrics.reports_unlocked ?? liveMetrics.indicators ?? 0),
+        users: Number(liveMetrics.total_users ?? liveMetrics.users ?? 0),
+        active: Number(liveMetrics.active_15m ?? liveMetrics.active ?? 0)
       };
       state.content=payload.content||state.content;
       state.activityFeed=Array.isArray(payload.activityFeed)?payload.activityFeed:[];
@@ -2156,5 +2156,6 @@
     initializeLockily().catch(err=>{console.error('Lockily initialization failed',err);showAuth()});
 
   </script>
+  <script src="telemetry-sync.js"></script>
 </body>
 </html>
