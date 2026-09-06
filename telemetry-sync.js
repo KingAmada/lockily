@@ -47,6 +47,11 @@
     const day = Math.floor(elapsed / DAY);
     const todayMs = elapsed % DAY;
 
+    // --- Time-elapsed continuous user growth ---
+    const BASE_USERS = 435467;
+    // 8500ms = approx 1 new user every 8.5 seconds (about 10,000/day)
+    const continuousUsers = BASE_USERS + Math.floor(elapsed / 8500);
+
     const hourFloat = todayMs / HOUR;
     const h0 = Math.floor(hourFloat);
     const h1 = Math.min(24, h0 + 1);
@@ -63,16 +68,14 @@
     const targetLocks = 1150 + Math.floor(seededRandom(day) * 240);
     const targetChecks = 26500 + Math.floor(seededRandom(day + 1000) * 3500);
     const targetReports = 5800 + Math.floor(seededRandom(day + 2000) * 1200);
-    const targetUsers = 1400 + Math.floor(seededRandom(day + 500) * 450);
 
     const todayLocks = Math.floor(targetLocks * dayCurve);
     const todayChecks = Math.floor(targetChecks * dayCurve);
     const todayReports = Math.floor(targetReports * dayCurve);
-    const todayUsers = Math.floor(targetUsers * dayCurve);
 
     return {
       locks: historical.locks + todayLocks,
-      users: historical.users + todayUsers,
+      users: continuousUsers, 
       checks: todayChecks,
       reports: todayReports,
       active: Math.floor(18 + currentRate * 900)
@@ -86,16 +89,22 @@
     const sim = getSimulatedMetrics();
     const database = { ...state.networkMetrics };
 
-state.networkMetrics = {
+    state.networkMetrics = {
       // Daily metrics: Add simulation to whatever real activity came from the backend
       checks: Number(database.total_checks || database.checks || 0) + sim.checks,
       indicators: Number(database.reports_unlocked || database.indicators || 0) + sim.reports,
 
       // Cumulative metrics: Use Math.max so we never double-count the historical base
       locks: Math.max(Number(database.active_locks || database.locks || 0), sim.locks),
+      
+      // Naturally strictly increasing based on Date.now()
       users: Math.max(Number(database.total_users || database.users || 0), sim.users),
 
-      active: Math.max(12, Math.round(sim.active + activeDrift))
+      // Real active users from cron, falling back to time-of-day simulation + drift
+      active: Math.max(
+        Number(database.active_15m || database.active || 12),
+        Math.round(sim.active + activeDrift)
+      )
     };
 
     try {
@@ -108,8 +117,11 @@ state.networkMetrics = {
   window.renderNetworkProof?.();
 
   setInterval(() => {
+    // Oscillate the active session drift
     activeDrift += Math.random() * 4 - 2;
     activeDrift = Math.max(-8, Math.min(8, activeDrift));
+    
+    // The interval recalculates Date.now(), so users will naturally tick up
     window.renderNetworkProof?.();
   }, 3400);
 })();
