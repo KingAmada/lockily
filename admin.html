@@ -206,7 +206,13 @@
 
   function esc(value=''){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
   function num(v){return new Intl.NumberFormat('en-NG').format(Number(v||0))}
-  function money(v){return new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0}).format(Number(v||0))}
+  function moneyCurrency(v,currency='NGN'){const cur=String(currency||'NGN').toUpperCase();return new Intl.NumberFormat(undefined,{style:'currency',currency:cur,minimumFractionDigits:cur==='NGN'?0:2,maximumFractionDigits:cur==='NGN'?0:2}).format(Number(v||0))}
+  function money(v){return moneyCurrency(v,'NGN')}
+  function paymentMeta(row){if(row?.metadata&&typeof row.metadata==='object')return row.metadata;if(typeof row?.metadata==='string'){try{return JSON.parse(row.metadata)}catch{}}return {}}
+  function paymentProvider(row){const m=paymentMeta(row),p=String(m.provider||'').toLowerCase();return ['stripe','paystack','stanbic'].includes(p)?p:(row?.wallet_account_number?'stanbic':'stripe')}
+  function paymentCurrency(row){const m=paymentMeta(row),p=paymentProvider(row);return String(m.currency||(p==='stripe'?'USD':'NGN')).toUpperCase()}
+  function phoneDisplay(v){const raw=String(v||'');const d=raw.replace(/\D/g,'');if(!d)return '—';return d.startsWith('0')?d:`+${d}`}
+  function revenueDisplay(map,period,fallback=0){const entries=Object.entries(map||{}).filter(([,b])=>Number(b?.[period]||0)!==0);if(!entries.length)return money(fallback);return entries.map(([cur,b])=>moneyCurrency(b?.[period]||0,cur)).join(' · ')}
   function dt(v){if(!v)return '—';const d=new Date(v);if(Number.isNaN(d.getTime()))return String(v);return d.toLocaleString('en-NG',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Africa/Lagos'})}
   function day(v){if(!v)return '—';const d=new Date(v);if(Number.isNaN(d.getTime()))return String(v);return d.toLocaleDateString('en-NG',{day:'2-digit',month:'short',year:'numeric',timeZone:'Africa/Lagos'})}
   function short(v,n=10){const s=String(v||'');return s.length>n?s.slice(0,n)+'…':s}
@@ -282,7 +288,7 @@
   }
 
   function renderOverview(o){
-    const u=o.users||{},l=o.locks||{},s=o.searches||{},p=o.payments||{},d=o.deposits||{},v=o.verifiedLocks||{},a=o.alerts||{};
+    const u=o.users||{},l=o.locks||{},s=o.searches||{},p=o.payments||{},d=o.deposits||{},v=o.verifiedLocks||{},a=o.alerts||{},rev=o.paymentRevenueByCurrency||{},rails=o.providerPaidOrders||{};
     $('#content').innerHTML=`
       ${pageHead('Owner overview','Everything important in Lockily, in one place.',`<button class="soft-btn" data-go="audit">View audit trail</button>`)}
       <div class="kpis">
@@ -292,9 +298,9 @@
         <div class="kpi"><small>SEARCHES TODAY</small><b>${num(s.today)}</b><span>${num(s.last30d)} in last 30 days</span></div>
         <div class="kpi"><small>VERIFIED LOCKS</small><b>${num(l.verified)}</b><span>${num(v.pendingInvites)} pending request(s)</span></div>
         <div class="kpi"><small>ACTIVE MONITORS</small><b>${num(l.monitors)}</b><span>Paid monitoring currently on</span></div>
-        <div class="kpi deep money"><small>REVENUE ALL-TIME</small><b>${money(p.revenueAll)}</b><span>${num(p.paidOrders)} paid order(s)</span></div>
-        <div class="kpi money good"><small>REVENUE TODAY</small><b>${money(p.revenueToday)}</b><span>${money(p.revenue7d)} in 7 days</span></div>
-        <div class="kpi money"><small>30-DAY REVENUE</small><b>${money(p.revenue30d)}</b><span>Confirmed paid orders</span></div>
+        <div class="kpi deep money"><small>REVENUE ALL-TIME</small><b>${revenueDisplay(rev,'all',p.revenueAll)}</b><span>${num(p.paidOrders)} paid order(s)</span></div>
+        <div class="kpi money good"><small>REVENUE TODAY</small><b>${revenueDisplay(rev,'today',p.revenueToday)}</b><span>${revenueDisplay(rev,'d7',p.revenue7d)} in 7 days</span></div>
+        <div class="kpi money"><small>30-DAY REVENUE</small><b>${revenueDisplay(rev,'d30',p.revenue30d)}</b><span>Currency-safe confirmed revenue</span></div>
         <div class="kpi warn"><small>OPEN PAYMENT ORDERS</small><b>${num((p.pendingOrders||0)+(p.partialOrders||0))}</b><span>${num(p.partialOrders)} partial</span></div>
         <div class="kpi"><small>BANK DEPOSITS</small><b>${num(d.count)}</b><span>${money(d.amount)} received</span></div>
         <div class="kpi warn"><small>UNREAD ALERTS</small><b>${num(a.unread)}</b><span>${num(a.total)} alerts total</span></div>
@@ -329,6 +335,9 @@
             <div class="product-card"><b>${num(p.mutualPaid)}</b><span>Verified Lock payments</span></div>
           </div>
           <div class="pulse-grid" style="margin-top:8px">
+            <div class="pulse"><b>${num(rails.stripe)}</b><span>Stripe paid orders</span></div>
+            <div class="pulse"><b>${num(rails.paystack)}</b><span>Paystack paid orders</span></div>
+            <div class="pulse"><b>${num(rails.stanbic)}</b><span>Stanbic paid orders</span></div>
             <div class="pulse"><b>${num(s.uniqueSubjects30d)}</b><span>Unique numbers searched / 30d</span></div>
             <div class="pulse"><b>${num(l.ended)}</b><span>Ended Locks</span></div>
             <div class="pulse"><b>${num(v.acceptedInvites)}</b><span>Accepted Verified requests</span></div>
@@ -340,7 +349,7 @@
     $('#content').querySelectorAll('[data-route-target]').forEach(btn=>{
       btn.onclick=()=>{let preset={};try{preset=JSON.parse(decodeURIComponent(btn.dataset.preset||'%7B%7D'))}catch{}navigate(btn.dataset.routeTarget,preset)}
     });
-    drawActivityChart(o.series30d||[]);drawRevenueChart(o.series30d||[]);
+    drawActivityChart(o.series30d||[]);drawRevenueChart(o.series30d||[],rev);
   }
 
   function issue(icon,title,copy,target,preset){
@@ -361,11 +370,13 @@
     ctx.font='9px system-ui';ctx.fillStyle='#8c7783';ctx.fillText('Users',pad.l,10);ctx.fillStyle='#7755e8';ctx.fillText('Searches',pad.l+43,10);ctx.fillStyle='#351628';ctx.fillText('Locks',pad.l+96,10);
     if(rows.length){ctx.fillStyle='#9a8590';ctx.fillText(String(rows[0].date||'').slice(5),pad.l,h-7);ctx.fillText(String(rows[rows.length-1].date||'').slice(5),Math.max(pad.l,w-pad.r-34),h-7)}
   }
-  function drawRevenueChart(rows){
-    const canvas=$('#revenueChart');if(!canvas)return;const {ctx,w,h}=prepCanvas(canvas);const pad={l:40,r:8,t:15,b:26},iw=w-pad.l-pad.r,ih=h-pad.t-pad.b;const max=Math.max(1,...rows.map(x=>Number(x.revenue||0)));
+  function drawRevenueChart(rows,revenueByCurrency={}){
+    const canvas=$('#revenueChart');if(!canvas)return;const {ctx,w,h}=prepCanvas(canvas),currencies=Object.keys(revenueByCurrency||{}).filter(cur=>Number(revenueByCurrency[cur]?.all||0)!==0);
+    if(currencies.length>1){ctx.clearRect(0,0,w,h);ctx.textAlign='center';ctx.fillStyle='#4c3742';ctx.font='700 13px system-ui';ctx.fillText('Revenue is now multi-currency',w/2,h/2-12);ctx.fillStyle='#8c7783';ctx.font='10px system-ui';ctx.fillText('USD and NGN are kept separate — no fake FX conversion.',w/2,h/2+9);ctx.textAlign='left';return}
+    const cur=currencies[0]||'NGN',pad={l:48,r:8,t:15,b:26},iw=w-pad.l-pad.r,ih=h-pad.t-pad.b,max=Math.max(1,...rows.map(x=>Number(x.revenue||0)));
     ctx.clearRect(0,0,w,h);ctx.strokeStyle='#eadfe5';for(let i=0;i<5;i++){const y=pad.t+ih*i/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke()}
     const bw=Math.max(2,iw/Math.max(1,rows.length)*.62);rows.forEach((x,i)=>{const val=Number(x.revenue||0),bh=(val/max)*ih,px=pad.l+iw*(i+.5)/Math.max(1,rows.length)-bw/2;ctx.fillStyle='#f24f82';ctx.fillRect(px,pad.t+ih-bh,bw,bh)});
-    ctx.font='8px system-ui';ctx.fillStyle='#8c7783';ctx.fillText(money(max).replace('.00',''),2,pad.t+6);ctx.fillText('₦0',12,pad.t+ih);if(rows.length){ctx.fillText(String(rows[0].date||'').slice(5),pad.l,h-7);ctx.fillText(String(rows[rows.length-1].date||'').slice(5),Math.max(pad.l,w-pad.r-34),h-7)}
+    ctx.font='8px system-ui';ctx.fillStyle='#8c7783';ctx.fillText(moneyCurrency(max,cur),2,pad.t+6);ctx.fillText(moneyCurrency(0,cur),8,pad.t+ih);if(rows.length){ctx.fillText(String(rows[0].date||'').slice(5),pad.l,h-7);ctx.fillText(String(rows[rows.length-1].date||'').slice(5),Math.max(pad.l,w-pad.r-34),h-7)}
   }
 
   const listDefs={
@@ -404,10 +415,10 @@
     },
     payments:{
       endpoint:'apiLockilyAdminPayments',sub:'Full Report, Monitor and Verified Lock orders with payment status.',
-      filters:()=>`<select id="filterStatus"><option value="">All statuses</option><option value="pending">Pending</option><option value="partial">Partial</option><option value="paid">Paid</option><option value="overpaid">Overpaid</option><option value="cancelled">Cancelled</option></select><select id="filterProduct"><option value="">All products</option><option value="verify">Full Report</option><option value="monitor">Monitor</option><option value="mutual">Verified Lock</option></select>`,
-      query:()=>({status:$('#filterStatus')?.value||currentFilters.status||'',product:$('#filterProduct')?.value||currentFilters.product||''}),
-      columns:['Order','Product','Customer','Subject','Expected','Received','Status','Created','Actions'],
-      row:r=>`<tr><td><span class="cell-main">${esc(short(r.id,13))}</span><span class="cell-sub">${esc(r.wallet_account_number||'')}</span></td><td>${esc(product(r.product))}</td><td><span class="cell-main">${esc(r.customer_phone||r.owner?.phone||'—')}</span><span class="cell-sub">${esc(r.owner?.first_name||'')}</span></td><td>${esc(r.subject_phone||'—')}</td><td>${money(r.amount_expected)}</td><td><span class="cell-main">${money(r.total_paid)}</span><span class="cell-sub">${r.paid_at?dt(r.paid_at):''}</span></td><td>${statusPill(r.payment_status)}</td><td>${dt(r.created_at)}</td><td><div class="row-actions">${['pending','partial'].includes(r.payment_status)?`<button class="row-btn bad" data-payment="${esc(r.id)}" data-action="cancel">Cancel</button>`:''}</div></td></tr>`
+      filters:()=>`<select id="filterStatus"><option value="">All statuses</option><option value="pending">Pending</option><option value="partial">Partial</option><option value="paid">Paid</option><option value="overpaid">Overpaid</option><option value="cancelled">Cancelled</option></select><select id="filterProduct"><option value="">All products</option><option value="verify">Full Report</option><option value="monitor">Monitor</option><option value="mutual">Verified Lock</option></select><select id="filterProvider"><option value="">All payment rails</option><option value="stripe">Stripe</option><option value="paystack">Paystack</option><option value="stanbic">Stanbic</option></select>`,
+      query:()=>({status:$('#filterStatus')?.value||currentFilters.status||'',product:$('#filterProduct')?.value||currentFilters.product||'',provider:$('#filterProvider')?.value||currentFilters.provider||''}),
+      columns:['Order','Provider','Product','Customer','Subject','Expected','Received','Status','Created','Actions'],
+      row:r=>{const provider=paymentProvider(r),currency=paymentCurrency(r),meta=paymentMeta(r);return `<tr><td><span class="cell-main">${esc(short(r.id,13))}</span><span class="cell-sub">${esc(meta.provider_reference||r.wallet_account_number||'')}</span></td><td>${statusPill(provider)}<span class="cell-sub">${esc(currency)}</span></td><td>${esc(product(r.product))}</td><td><span class="cell-main">${esc(phoneDisplay(r.customer_phone||r.owner?.phone||''))}</span><span class="cell-sub">${esc(r.owner?.first_name||'')}</span></td><td>${esc(phoneDisplay(r.subject_phone||''))}</td><td>${moneyCurrency(r.amount_expected,currency)}</td><td><span class="cell-main">${moneyCurrency(r.total_paid,currency)}</span><span class="cell-sub">${r.paid_at?dt(r.paid_at):''}</span></td><td>${statusPill(r.payment_status)}</td><td>${dt(r.created_at)}</td><td><div class="row-actions">${['pending','partial'].includes(r.payment_status)?`<button class="row-btn bad" data-payment="${esc(r.id)}" data-action="cancel">Cancel</button>`:''}</div></td></tr>`}
     },
     transactions:{
       endpoint:'apiLockilyAdminDeposits',sub:'Incoming bank deposits mapped to Lockily payment orders.',
@@ -497,7 +508,7 @@
         ${u.suspended_reason?`<div class="drawer-section"><h4>SUSPENSION REASON</h4><div class="mini-row"><b>${esc(u.suspended_reason)}</b><span>${dt(u.suspended_at)}</span></div></div>`:''}
         ${u.admin_note?`<div class="drawer-section"><h4>ADMIN NOTE</h4><div class="mini-row"><b>${esc(u.admin_note)}</b></div></div>`:''}
         <div class="drawer-section"><h4>RECENT LOCKS</h4><div class="mini-list">${locks.slice(0,12).map(x=>`<div class="mini-row"><b>${esc(x.subject_phone)} · ${esc((x.relationship_type||'relationship').replace(/_/g,' '))}</b><span>${x.monitor_active?'Monitor on · ':''}${esc(x.mutual_status||'none')} · ${dt(x.created_at)}</span></div>`).join('')||'<div class="mini-row"><span>No Locks.</span></div>'}</div></div>
-        <div class="drawer-section"><h4>RECENT PAYMENTS</h4><div class="mini-list">${payments.slice(0,12).map(x=>`<div class="mini-row"><b>${esc(product(x.product))} · ${money(x.total_paid)} · ${esc(x.payment_status)}</b><span>${esc(x.subject_phone||'')} · ${dt(x.created_at)}</span></div>`).join('')||'<div class="mini-row"><span>No payments.</span></div>'}</div></div>
+        <div class="drawer-section"><h4>RECENT PAYMENTS</h4><div class="mini-list">${payments.slice(0,12).map(x=>`<div class="mini-row"><b>${esc(product(x.product))} · ${moneyCurrency(x.total_paid,paymentCurrency(x))} · ${esc(paymentProvider(x).toUpperCase())} · ${esc(x.payment_status)}</b><span>${esc(phoneDisplay(x.subject_phone||''))} · ${dt(x.created_at)}</span></div>`).join('')||'<div class="mini-row"><span>No payments.</span></div>'}</div></div>
         <div class="drawer-section"><h4>SESSIONS</h4><div class="mini-list">${sessions.slice(0,8).map(x=>`<div class="mini-row"><b>${x.revoked_at?'Revoked':'Session'}</b><span>Last seen ${dt(x.last_seen_at)} · Expires ${dt(x.expires_at)}</span></div>`).join('')||'<div class="mini-row"><span>No sessions.</span></div>'}</div></div>`;
       $$('[data-user-action]').forEach(b=>b.onclick=()=>userAction(userId,b.dataset.userAction,u));
     }catch(err){$('#drawerBody').innerHTML=`<div class="empty"><b>Could not load user</b><span>${esc(err.message)}</span></div>`}
@@ -562,12 +573,15 @@
     $('#saveContentBtn').onclick=async()=>{let payload;try{payload=JSON.parse($('#contentPayload').value)}catch{return toast('Payload must be valid JSON')};try{await api('apiLockilyAdminContentSave',{method:'POST',body:JSON.stringify({section:$('#contentSection').value.trim(),itemKey:$('#contentKey').value.trim(),sortOrder:Number($('#contentOrder').value||0),active:$('#contentActive').checked,payload})});toast('Content saved');closeDrawer();loadContent()}catch(err){toast(err.message)}};
   }
 
+  const PAYMENT_CONFIG_DEFAULTS={payments:{defaultProvider:'stripe',stripe:{enabled:true,status:'live',label:'Card / Wallet',currency:'USD'},paystack:{enabled:false,status:'coming_soon',label:'Paystack',currency:'NGN'},stanbic:{enabled:true,status:'live',label:'Bank Transfer',currency:'NGN'}},global_pricing:{verifyPrice:3.99,verifyOfferPrice:1.99,monitorPrice:9.99,monitorOfferPrice:6.99,mutualPrice:4.99,offerSeconds:120,currency:'USD'}};
   async function loadConfig(){
-    $('#content').innerHTML=pageHead('App Configuration','Live pricing, network counters, install prompt and app copy stored in Supabase.')+'<div class="table-wrap"><div class="empty"><b>Loading configuration…</b></div></div>';
+    $('#content').innerHTML=pageHead('App Configuration','Live pricing, payment rails, global pricing, install prompt and app copy stored in Supabase.',`<button class="soft-btn" id="addConfigBtn">New config</button><button class="good-btn" id="seedPaymentsBtn">Add missing payment defaults</button>`)+`<div class="panel" style="margin-bottom:12px"><div class="panel-head"><div><h3>Global payments</h3><small>Stripe is primary · Paystack stays Coming Soon until enabled · Stanbic remains live for Nigeria.</small></div></div><div class="pulse-grid"><div class="pulse"><b>Stripe</b><span>USD card / wallets</span></div><div class="pulse"><b>Paystack</b><span>Pre-built, disabled by config</span></div><div class="pulse"><b>Stanbic</b><span>NGN bank transfer</span></div><div class="pulse"><b>250</b><span>country / territory dialing entries in client</span></div></div></div><div class="table-wrap"><div class="empty"><b>Loading configuration…</b></div></div>`;
     try{
       const r=await api('apiLockilyAdminConfig'),rows=Array.isArray(r.rows)?r.rows:[];currentRows=rows;
       $('.table-wrap').innerHTML=rows.length?`<table><thead><tr><th>Key</th><th>Summary</th><th>Updated</th><th>Actions</th></tr></thead><tbody>${rows.map(x=>`<tr><td><span class="cell-main">${esc(x.key)}</span></td><td><span class="cell-sub">${esc(short(JSON.stringify(x.value),160))}</span></td><td>${dt(x.updated_at)}</td><td><button class="row-btn" data-config="${esc(x.key)}">Edit JSON</button></td></tr>`).join('')}</tbody></table>`:'<div class="empty"><b>No configuration</b></div>';
       $$('[data-config]').forEach(b=>b.onclick=()=>editConfig(rows.find(x=>x.key===b.dataset.config)));
+      $('#addConfigBtn').onclick=()=>editConfig(null);
+      $('#seedPaymentsBtn').onclick=async()=>{const missing=Object.entries(PAYMENT_CONFIG_DEFAULTS).filter(([key])=>!rows.some(x=>x.key===key));if(!missing.length)return toast('Payment config keys already exist — nothing overwritten');try{for(const [key,value] of missing)await api('apiLockilyAdminConfigSave',{method:'POST',body:JSON.stringify({key,value})});toast('Missing global payment defaults added');loadConfig()}catch(err){toast(err.message)}};
     }catch(err){$('.table-wrap').innerHTML=`<div class="empty"><b>Could not load configuration</b><span>${esc(err.message)}</span></div>`}
   }
   function editConfig(row){

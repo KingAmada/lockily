@@ -1,7 +1,7 @@
 {
   "name": "Lockily — Relationship Status Intelligence",
   "short_name": "Lockily",
-  "description": "Lock your person, check phone-number attention, unlock Lock-in reports and monitor relationship-status changes.",
+  "description": "Search relationship-status signals by phone number worldwide, unlock reports, monitor changes and use Verified Lock.",
   "id": "./index.html",
   "start_url": "./index.html",
   "scope": "./",
@@ -9,13 +9,32 @@
   "background_color": "#fff7fb",
   "theme_color": "#351628",
   "orientation": "portrait-primary",
-  "lang": "en-NG",
+  "lang": "en",
   "dir": "ltr",
-  "categories": ["lifestyle", "social"],
+  "categories": [
+    "lifestyle",
+    "social",
+    "utilities"
+  ],
   "prefer_related_applications": false,
   "icons": [
-    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
-    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
-    {"src":"icon-maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }
