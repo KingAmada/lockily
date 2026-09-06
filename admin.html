@@ -187,7 +187,9 @@
 <script>
 (() => {
   'use strict';
-  const BACKEND = String(window.LOCKILY_BACKEND_BASE_URL || 'https://peygo.net/_functions').replace(/\/$/,'');
+  const BACKEND = String(
+  window.LOCKILY_BACKEND_BASE_URL || 'https://api.lockilyapp.com'
+).replace(/\/$/,'');
   const SESSION_KEY = 'lockilyAdminSessionV1';
   let adminToken = sessionStorage.getItem(SESSION_KEY) || '';
   let adminLabel = 'Owner';
