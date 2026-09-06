@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lockily-shell-20260906-globalpay2';
+const CACHE_NAME = 'lockily-shell-20260906-nigeriaux1';
 
 self.addEventListener('install', () => {
   self.skipWaiting();

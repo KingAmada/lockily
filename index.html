@@ -184,7 +184,7 @@
     .segmented{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;background:#f8eaf1;border:1px solid #f1dce6;border-radius:18px;margin-bottom:12px;position:relative;z-index:2}.seg-btn{border:0;border-radius:14px;padding:12px 10px;background:transparent;color:#9b7f8d;font-weight:950;font-size:10px;transition:.25s var(--ease)}.seg-btn.active{background:#fff;color:#a83662;box-shadow:0 8px 20px rgba(89,31,62,.10)}.home-action-panel{position:relative;z-index:2}.home-action-panel.hidden{display:none!important}.inline-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 2px 4px}.inline-kicker b{font-size:9px;letter-spacing:.06em}.inline-kicker span{font-size:8px;color:var(--muted);font-weight:900}
     .field{margin-top:10px;padding:13px 14px;border-radius:19px;border:1px solid var(--line);background:rgba(255,252,254,.92);transition:.25s var(--ease)}.field:focus-within{border-color:#f49ab5;box-shadow:0 0 0 4px rgba(242,79,130,.08);transform:translateY(-1px)}
     .field label{display:block;color:var(--muted);font-size:9px;font-weight:950;margin-bottom:7px;letter-spacing:.05em}.field input,.field select,.field textarea{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:15px;font-weight:800}.field textarea{resize:vertical;min-height:90px}.field input::placeholder,.field textarea::placeholder{color:#bda8b4;font-weight:650}
-    .phone-line{display:grid;grid-template-columns:minmax(146px,.72fr) 1fr;gap:8px;align-items:center}.country-select{width:100%;min-width:0;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:12px;padding:8px 28px 8px 9px;font-size:10px;font-weight:900;outline:none}.country-select:focus{border-color:#f49ab5;box-shadow:0 0 0 3px rgba(242,79,130,.08)}.phone-line input{min-width:0}.phone-hint{font-size:7.5px;color:var(--muted);margin-top:5px}.country-pill{padding:8px 9px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:950}
+    .phone-line{display:grid;grid-template-columns:minmax(128px,.9fr) minmax(0,1.1fr);gap:8px;align-items:center}.country-select{width:100%;min-width:0;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:12px;padding:8px 24px 8px 8px;font-size:9.2px;font-weight:900;outline:none;text-overflow:ellipsis}.country-select:focus{border-color:#f49ab5;box-shadow:0 0 0 3px rgba(242,79,130,.08)}.phone-line input{min-width:0}.phone-hint{font-size:7.5px;color:var(--muted);margin-top:5px}.phone-length-hint{font-size:7.4px;color:#9e7588;margin-top:4px;line-height:1.4}.phone-length-hint.bad{color:#b84a4a;font-weight:850}.country-pill{padding:8px 9px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:950}
     .primary,.secondary,.ghost,.danger,.violet-btn{width:100%;border-radius:19px;padding:15px 17px;font-weight:950;border:0;transition:.27s var(--ease)}
     .primary{margin-top:12px;color:#fff;background:linear-gradient(135deg,#f04f81,#ff8cab);box-shadow:0 14px 30px rgba(242,79,130,.22);position:relative;overflow:hidden}.primary:before{content:"";position:absolute;top:-60%;left:-40%;height:220%;width:28%;transform:rotate(26deg);background:rgba(255,255,255,.42);filter:blur(8px);animation:shine 4s infinite}.primary:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(242,79,130,.27)}
     .secondary{margin-top:10px;background:#fff;border:1px solid var(--line);color:var(--ink)}.ghost{background:#fff7fb;border:1px solid #efdde6;color:#633748}.danger{background:var(--red-soft);border:1px solid #ffd1db;color:#b62e4b}.violet-btn{margin-top:10px;color:#fff;background:linear-gradient(135deg,#7656df,#9d7cf5)}.primary:active,.secondary:active,.ghost:active,.violet-btn:active{transform:scale(.985)}
@@ -273,6 +273,7 @@
 
     .payment-hero{padding:18px;border-radius:24px;background:linear-gradient(145deg,#351628,#6f2449);color:#fff;margin:12px 0 14px;box-shadow:0 18px 40px rgba(67,22,46,.18)}.payment-hero small{font-size:8px;font-weight:1000;letter-spacing:.13em;color:#efbfd1}.payment-hero h2{font-size:32px;margin:4px 0 2px;letter-spacing:-.05em}.payment-hero p{font-size:9px;color:#ecd6e0;margin:0;line-height:1.45}.payment-hero .offer-countdown{margin-top:7px;font-weight:1000;color:#ffd2e2}
     .bank-box{border:1px solid var(--line);border-radius:22px;background:#fff;overflow:hidden;box-shadow:var(--shadow-sm)}.bank-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;border-bottom:1px solid #f2e6ec}.bank-row:last-child{border-bottom:0}.bank-row div{min-width:0}.bank-row span{display:block;font-size:7.5px;font-weight:1000;letter-spacing:.08em;color:#a48997}.bank-row b{display:block;font-size:12px;color:var(--ink);margin-top:3px;word-break:break-word}.bank-row.account b{font-size:20px;letter-spacing:.05em}.copy-mini{border:0;border-radius:11px;padding:8px 9px;background:var(--rose-soft);color:#a33460;font-size:7.5px;font-weight:1000;flex:none}
+    #paymentPrimaryBtn.is-loading{cursor:wait;opacity:.88;pointer-events:none}#paymentPrimaryBtn.is-loading::before{content:'';width:13px;height:13px;border-radius:50%;border:2px solid rgba(255,255,255,.42);border-top-color:#fff;animation:spin .75s linear infinite;display:inline-block;vertical-align:-2px;margin-right:8px}.payment-status.processing{background:#f5f1ff;border-color:#ded4ff}.payment-status.processing .dot{background:var(--violet);box-shadow:0 0 0 5px rgba(119,85,232,.10);animation:paymentPulse 1s ease-in-out infinite}@keyframes paymentPulse{0%,100%{transform:scale(.85);opacity:.65}50%{transform:scale(1.15);opacity:1}}
     .payment-status{display:flex;gap:10px;align-items:flex-start;padding:13px;border-radius:18px;background:#fff7ef;border:1px solid #f0dfc5;margin:10px 0}.payment-status .dot{width:10px;height:10px;border-radius:50%;background:#d99a27;margin-top:4px;box-shadow:0 0 0 5px rgba(217,154,39,.10);flex:none}.payment-status b{display:block;font-size:11px}.payment-status span{display:block;color:var(--muted);font-size:9px;margin-top:2px;line-height:1.45}.payment-status.paid{background:var(--green-soft);border-color:#c9eadc}.payment-status.paid .dot{background:var(--green);box-shadow:0 0 0 5px rgba(13,125,84,.10)}.payment-status.partial{background:var(--amber-soft);border-color:#f1ddb3}.payment-status.partial .dot{background:#c88316}.payment-ref{font-size:8px;color:var(--muted);text-align:center;margin:8px 0 0}.payment-providers{display:grid;gap:8px;margin:12px 0}.payment-provider{width:100%;display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);border-radius:18px;background:#fff;text-align:left;color:var(--ink);transition:.2s var(--ease)}.payment-provider:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}.payment-provider.active{border-color:#f18bab;box-shadow:0 0 0 3px rgba(242,79,130,.08);background:#fffafd}.provider-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#fff0f6,#f2efff);font-size:18px;flex:none}.provider-copy{min-width:0;flex:1}.provider-copy b{display:block;font-size:11px}.provider-copy span{display:block;font-size:8px;color:var(--muted);margin-top:3px;line-height:1.35}.provider-badge{font-size:7px;font-weight:1000;padding:5px 7px;border-radius:999px;background:var(--green-soft);color:#087455;flex:none}.provider-badge.soon{background:var(--amber-soft);color:#94600e}.provider-notice{padding:11px 12px;border-radius:15px;background:#f7f3ff;color:#664dad;font-size:8.5px;line-height:1.45;margin:8px 0}.card-checkout-box{border:1px solid var(--line);border-radius:20px;padding:14px;background:linear-gradient(145deg,#fff,#fff7fb);margin:10px 0}.card-checkout-box b{font-size:11px;display:block}.card-checkout-box p{font-size:8.5px;color:var(--muted);line-height:1.5;margin:4px 0 0}.payment-method-logos{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.payment-method-logos span{font-size:7.5px;font-weight:1000;padding:6px 8px;border:1px solid var(--line);background:#fff;border-radius:9px}
     .date-selects{display:grid;grid-template-columns:.8fr 1.15fr 1fr;gap:8px}.date-selects select{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:13px;font-weight:900;padding:5px 0;min-width:0}
 
@@ -845,6 +846,7 @@
     <button class="primary" type="button" data-close="iosInstallModal">Got it</button>
   </div></div>
 
+  <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.13.12/bundle/libphonenumber-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
     const $ = s => document.querySelector(s);
@@ -919,39 +921,115 @@
     function countryFlag(iso){return String(iso||'').toUpperCase().replace(/./g,c=>String.fromCodePoint(127397+c.charCodeAt(0)))}
     const KEEP_NATIONAL_LEADING_ZERO=new Set(['IT','VA','SM']);
     const PREFERRED_SHARED_DIAL_ISO={'1':'US','7':'RU','39':'IT','44':'GB','47':'NO','61':'AU'};
+    const LOCKILY_ACCOUNT_COUNTRY_KEY='lockilyAccountCountryIsoV1';
+    const PHONE_LENGTH_CACHE={};
+    function phoneLib(){return typeof libphonenumber!=='undefined'&&libphonenumber?libphonenumber:null}
     function guessedCountryIso(){
-      const saved=localStorage.getItem('lockilyCountryIso');if(saved&&COUNTRY_BY_ISO[saved])return saved;
+      const saved=localStorage.getItem(LOCKILY_ACCOUNT_COUNTRY_KEY)||localStorage.getItem('lockilyCountryIso');if(saved&&COUNTRY_BY_ISO[saved])return saved;
       const locale=(navigator.languages?.[0]||navigator.language||'').toUpperCase();const part=locale.split('-')[1];if(part&&COUNTRY_BY_ISO[part])return part;
       const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';if(tz==='Africa/Lagos')return 'NG';
       return 'NG';
     }
     let lastCountryIso=guessedCountryIso();
+    let accountCountryIso=localStorage.getItem(LOCKILY_ACCOUNT_COUNTRY_KEY)||lastCountryIso;
     function countryOptionLabel(c){return `${countryFlag(c.iso2)} ${c.name} +${c.dial}`}
+    function countryIsoFromCanonical(value){
+      const d=digits(value);if(!d)return '';
+      if(/^0[0-9]{10}$/.test(d)||/^234[0-9]{10}$/.test(d))return 'NG';
+      const lib=phoneLib();
+      try{const parsed=lib?.parsePhoneNumberFromString?.(`+${d}`);if(parsed?.country&&COUNTRY_BY_ISO[parsed.country])return parsed.country}catch{}
+      const candidates=LOCKILY_COUNTRIES.filter(c=>d.startsWith(c.dial)).sort((a,b)=>b.dial.length-a.dial.length);
+      return candidates.find(x=>x.iso2===accountCountryIso)?.iso2||candidates.find(x=>x.iso2===PREFERRED_SHARED_DIAL_ISO[candidates[0]?.dial||''])?.iso2||candidates[0]?.iso2||'';
+    }
+    function currentMarketIso(){
+      const profileIso=countryIsoFromCanonical(state?.profile?.phone||'');
+      if(profileIso)return profileIso;
+      return COUNTRY_BY_ISO[accountCountryIso]?accountCountryIso:guessedCountryIso();
+    }
+    function isNigeriaMarket(){return currentMarketIso()==='NG'}
+    function rememberAccountCountry(id){
+      const select=$('#'+id+'Country');if(!select||!COUNTRY_BY_ISO[select.value])return;
+      accountCountryIso=select.value;localStorage.setItem(LOCKILY_ACCOUNT_COUNTRY_KEY,accountCountryIso);
+      try{renderPricingFromDatabase();syncPaymentPricing()}catch{}
+    }
+    function countryLengthBounds(iso){
+      const key=String(iso||'').toUpperCase();if(PHONE_LENGTH_CACHE[key])return PHONE_LENGTH_CACHE[key];
+      const c=COUNTRY_BY_ISO[key]||COUNTRY_BY_ISO.NG,lib=phoneLib(),possible=[];
+      if(lib?.validatePhoneNumberLength){
+        for(let n=4;n<=15;n+=1){
+          let ok=false;
+          for(const seed of ['2','5','8','9']){try{if(!lib.validatePhoneNumberLength(seed.repeat(n),key)){ok=true;break}}catch{}}
+          if(ok)possible.push(n);
+        }
+      }
+      const fallbackMax=Math.max(4,15-String(c.dial||'').length);
+      const bounds=possible.length?{min:Math.min(...possible),max:Math.max(...possible),exact:[...new Set(possible)]}:{min:Math.max(4,7-String(c.dial||'').length),max:fallbackMax,exact:[]};
+      PHONE_LENGTH_CACHE[key]=bounds;return bounds;
+    }
+    function phoneLengthStatus(id){
+      const input=$('#'+id),select=$('#'+id+'Country');if(!input||!select)return 'INVALID';
+      const raw=String(input.value||'').trim(),d=digits(raw);if(!d)return 'EMPTY';
+      const iso=select.value||lastCountryIso||'NG',lib=phoneLib();
+      if(lib?.validatePhoneNumberLength){
+        try{return lib.validatePhoneNumberLength(raw,iso)||'OK'}catch{}
+      }
+      const c=COUNTRY_BY_ISO[iso]||COUNTRY_BY_ISO.NG;let national=d;if(!KEEP_NATIONAL_LEADING_ZERO.has(iso))national=national.replace(/^0+/,'');
+      const max=Math.max(4,15-String(c.dial||'').length),min=Math.max(4,7-String(c.dial||'').length);
+      return national.length>max?'TOO_LONG':national.length<min?'TOO_SHORT':'OK';
+    }
+    function updatePhoneLengthHint(id){
+      const input=$('#'+id),select=$('#'+id+'Country');if(!input||!select)return;
+      let hint=input.closest('.phone-line')?.nextElementSibling;
+      if(!hint||!hint.classList.contains('phone-length-hint')){hint=document.createElement('div');hint.className='phone-length-hint';input.closest('.phone-line')?.insertAdjacentElement('afterend',hint)}
+      const c=COUNTRY_BY_ISO[select.value]||COUNTRY_BY_ISO.NG,b=countryLengthBounds(c.iso2),status=phoneLengthStatus(id);
+      const expected=b.exact.length===1?`${b.max} national digits`:b.exact.length?`${b.min}–${b.max} national digits`:`up to ${b.max} national digits`;
+      hint.textContent=status==='TOO_SHORT'?`${c.name}: number is still too short.`:status==='INVALID_LENGTH'?`${c.name}: this number length is not used.`:`${c.name}: ${expected}. Local trunk prefix (such as 0) is accepted where applicable.`;
+      hint.classList.toggle('bad',['TOO_SHORT','TOO_LONG','INVALID_LENGTH'].includes(status)&&digits(input.value).length>0);
+    }
+    function restrictPhoneInput(id){
+      const input=$('#'+id),select=$('#'+id+'Country');if(!input||!select)return;
+      // These fields are intentionally local-number fields: country is selected separately.
+      let d=digits(input.value).slice(0,18);input.value=d;
+      let guard=0;
+      while(d&&phoneLengthStatus(id)==='TOO_LONG'&&guard<8){d=d.slice(0,-1);input.value=d;guard+=1}
+      updatePhoneLengthHint(id);
+    }
     function initCountrySelectors(){
       $$('select.country-select').forEach(select=>{
-        if(select.options.length)return;
-        const frag=document.createDocumentFragment();LOCKILY_COUNTRIES.forEach(c=>{const o=document.createElement('option');o.value=c.iso2;o.textContent=countryOptionLabel(c);frag.appendChild(o)});select.appendChild(frag);select.value=COUNTRY_BY_ISO[lastCountryIso]?lastCountryIso:'NG';select.title='Country / calling code';
-        select.addEventListener('change',()=>{lastCountryIso=select.value||'NG';localStorage.setItem('lockilyCountryIso',lastCountryIso);updatePhonePlaceholder(select.dataset.phoneFor)});
-        updatePhonePlaceholder(select.dataset.phoneFor);
+        if(!select.options.length){const frag=document.createDocumentFragment();LOCKILY_COUNTRIES.forEach(c=>{const o=document.createElement('option');o.value=c.iso2;o.textContent=countryOptionLabel(c);frag.appendChild(o)});select.appendChild(frag)}
+        select.value=COUNTRY_BY_ISO[lastCountryIso]?lastCountryIso:'NG';select.title='Country / calling code';
+        select.addEventListener('change',()=>{lastCountryIso=select.value||'NG';localStorage.setItem('lockilyCountryIso',lastCountryIso);if(['signupPhone','signinPhone','resetPhone','profilePhoneInput'].includes(select.dataset.phoneFor))rememberAccountCountry(select.dataset.phoneFor);updatePhonePlaceholder(select.dataset.phoneFor);restrictPhoneInput(select.dataset.phoneFor)});
+        const input=$('#'+select.dataset.phoneFor);if(input&&!input.dataset.lengthBound){input.dataset.lengthBound='1';input.maxLength=18;input.addEventListener('input',()=>restrictPhoneInput(select.dataset.phoneFor));input.addEventListener('blur',()=>updatePhoneLengthHint(select.dataset.phoneFor))}
+        updatePhonePlaceholder(select.dataset.phoneFor);updatePhoneLengthHint(select.dataset.phoneFor);
       });
     }
-    function updatePhonePlaceholder(id){const input=$('#'+id),select=$('#'+id+'Country');if(!input||!select)return;const c=COUNTRY_BY_ISO[select.value]||COUNTRY_BY_ISO.NG;input.placeholder=`Phone number (+${c.dial})`}
+    function updatePhonePlaceholder(id){const input=$('#'+id),select=$('#'+id+'Country');if(!input||!select)return;const c=COUNTRY_BY_ISO[select.value]||COUNTRY_BY_ISO.NG,b=countryLengthBounds(c.iso2);input.placeholder=b.exact.length===1?`${b.max}-digit number (+${c.dial})`:`Phone number (+${c.dial})`}
     function phoneValue(id){
       const input=$('#'+id),select=$('#'+id+'Country');if(!input)return '';
-      const raw=String(input.value||'').trim();let d=digits(raw);if(!d)return '';
-      if(raw.startsWith('+'))return d.slice(0,15);
-      if(raw.startsWith('00'))return d.slice(2,17);
+      let d=digits(input.value);if(!d)return '';
       const c=COUNTRY_BY_ISO[select?.value]||COUNTRY_BY_ISO[lastCountryIso]||COUNTRY_BY_ISO.NG;
       if(!KEEP_NATIONAL_LEADING_ZERO.has(c.iso2))d=d.replace(/^0+/,'');else d=d.replace(/^00+/,'0');
       return `${c.dial}${d}`.slice(0,15);
     }
-    function validIntlPhone(v){const d=digits(v);return /^[1-9][0-9]{6,14}$/.test(d)}
+    function validIntlPhone(v){
+      const d=digits(v);if(!/^[1-9][0-9]{6,14}$/.test(d))return false;
+      const lib=phoneLib();try{return lib?.isPossiblePhoneNumber?lib.isPossiblePhoneNumber(`+${d}`):true}catch{return true}
+    }
+    function validPhoneField(id){return phoneLengthStatus(id)==='OK'&&validIntlPhone(phoneValue(id))}
+    function phoneFieldError(id){
+      const select=$('#'+id+'Country'),c=COUNTRY_BY_ISO[select?.value]||COUNTRY_BY_ISO.NG,status=phoneLengthStatus(id);
+      if(status==='TOO_SHORT')return `Enter the complete ${c.name} phone number.`;
+      if(status==='TOO_LONG')return `${c.name} phone number is too long.`;
+      if(status==='INVALID_LENGTH')return `That phone-number length is not used in ${c.name}.`;
+      return `Enter a valid ${c.name} phone number.`;
+    }
     function setPhoneField(id,value){
-      const input=$('#'+id),select=$('#'+id+'Country');if(!input)return;const d=digits(value);if(!d){input.value='';return}
+      const input=$('#'+id),select=$('#'+id+'Country');if(!input)return;const d=digits(value);if(!d){input.value='';updatePhoneLengthHint(id);return}
+      const lib=phoneLib();let parsedCountry='';try{parsedCountry=lib?.parsePhoneNumberFromString?.(`+${d}`)?.country||''}catch{}
       const candidates=LOCKILY_COUNTRIES.filter(c=>d.startsWith(c.dial)).sort((a,b)=>b.dial.length-a.dial.length);
       const preferredIso=PREFERRED_SHARED_DIAL_ISO[candidates[0]?.dial||''];
-      const c=candidates.find(x=>x.iso2===lastCountryIso)||candidates.find(x=>x.iso2===preferredIso)||candidates[0]||COUNTRY_BY_ISO.NG;
-      if(select&&c)select.value=c.iso2;input.value=c&&d.startsWith(c.dial)?d.slice(c.dial.length):d;updatePhonePlaceholder(id);
+      const c=(parsedCountry&&COUNTRY_BY_ISO[parsedCountry]?COUNTRY_BY_ISO[parsedCountry]:null)||candidates.find(x=>x.iso2===lastCountryIso)||candidates.find(x=>x.iso2===preferredIso)||candidates[0]||COUNTRY_BY_ISO.NG;
+      if(select&&c)select.value=c.iso2;input.value=c&&d.startsWith(c.dial)?d.slice(c.dial.length):d;updatePhonePlaceholder(id);restrictPhoneInput(id);
     }
     function internationalDisplay(v){const d=digits(v);return d?`+${d}`:'—'}
 
@@ -980,7 +1058,7 @@
       currentPayment: null,
       mutualInvite: null,
       verifyOfferExpiresAt: null,
-      selectedPaymentProvider: 'stripe'
+      selectedPaymentProvider: null
     });
     let state = defaultState();
 
@@ -1005,8 +1083,10 @@
       renderNetworkProof();
     }
 
+    function localNigeriaPricing(){return {verifyPrice:CONFIG.verifyPrice,verifyOfferPrice:CONFIG.verifyOfferPrice,monitorPrice:CONFIG.monitorPrice,monitorOfferPrice:CONFIG.monitorOfferPrice,mutualPrice:CONFIG.mutualPrice,offerSeconds:CONFIG.offerSeconds,currency:'NGN'}}
     function providerPricing(provider=defaultPaymentProvider()){
-      return provider==='stripe'?CONFIG.globalPricing:{verifyPrice:CONFIG.verifyPrice,verifyOfferPrice:CONFIG.verifyOfferPrice,monitorPrice:CONFIG.monitorPrice,monitorOfferPrice:CONFIG.monitorOfferPrice,mutualPrice:CONFIG.mutualPrice,offerSeconds:CONFIG.offerSeconds,currency:CONFIG.currency};
+      if(isNigeriaMarket())return localNigeriaPricing();
+      return provider==='stripe'?CONFIG.globalPricing:localNigeriaPricing();
     }
     function renderPricingFromDatabase(){
       const provider=defaultPaymentProvider(),pricing=providerPricing(provider),currency=providerCurrency(provider);
@@ -1037,7 +1117,7 @@
       CONFIG.currency=pricing.currency||'NGN';
       CONFIG.globalPricing={...CONFIG.globalPricing,...(payload?.config?.global_pricing||{})};
       CONFIG.payments={...CONFIG.payments,...(payload?.config?.payments||{}),stripe:{...CONFIG.payments.stripe,...(payload?.config?.payments?.stripe||{})},paystack:{...CONFIG.payments.paystack,...(payload?.config?.payments?.paystack||{})},stanbic:{...CONFIG.payments.stanbic,...(payload?.config?.payments?.stanbic||{})}};
-      state.selectedPaymentProvider=CONFIG.payments.defaultProvider||state.selectedPaymentProvider||'stripe';
+      if(!state.currentPayment)state.selectedPaymentProvider=defaultPaymentProvider();
       renderPricingFromDatabase();
       const networkStats=payload?.config?.network_stats||{};
       const liveMetrics=payload.networkMetrics||{};
@@ -1110,8 +1190,11 @@
       showAuth();
     }
     function moneyCurrency(n,currency='NGN'){const cur=String(currency||'NGN').toUpperCase();return new Intl.NumberFormat(cur==='NGN'?'en-NG':'en-US',{style:'currency',currency:cur,maximumFractionDigits:cur==='NGN'?0:2}).format(Number(n||0))}
-    function defaultPaymentProvider(){const configured=CONFIG.payments?.defaultProvider||'stripe';return CONFIG.payments?.[configured]?.enabled===false?(CONFIG.payments?.stripe?.enabled!==false?'stripe':'stanbic'):configured}
-    function providerCurrency(provider=defaultPaymentProvider()){return String(CONFIG.payments?.[provider]?.currency||(provider==='stripe'?CONFIG.globalPricing?.currency:CONFIG.currency)||'NGN').toUpperCase()}
+    function defaultPaymentProvider(){
+      if(isNigeriaMarket()&&CONFIG.payments?.stanbic?.enabled===true)return 'stanbic';
+      const configured=CONFIG.payments?.defaultProvider||'stripe';return CONFIG.payments?.[configured]?.enabled===false?(CONFIG.payments?.stripe?.enabled!==false?'stripe':'stanbic'):configured
+    }
+    function providerCurrency(provider=defaultPaymentProvider()){if(isNigeriaMarket())return 'NGN';return String(CONFIG.payments?.[provider]?.currency||(provider==='stripe'?CONFIG.globalPricing?.currency:CONFIG.currency)||'NGN').toUpperCase()}
     function money(n,currency=providerCurrency()){return moneyCurrency(n,currency)}
     function digits(v){return String(v||'').replace(/\D/g,'')}
     function maskPhone(v){const d=digits(v);if(d.length<7)return v||'—';return '+'+d.slice(0,Math.min(4,d.length-4))+'••••'+d.slice(-3)}
@@ -1163,9 +1246,9 @@
       const tab=btn.dataset.authTab;$$('[data-auth-tab]').forEach(b=>b.classList.toggle('active',b===btn));$('#signinPanel').classList.toggle('hidden',tab!=='signin');$('#signupPanel').classList.toggle('hidden',tab!=='signup');setAuthError('#signinError','');setAuthError('#signupError','');
     }));
     $('#signupBtn').onclick=async()=>{
-      const name=$('#signupName').value.trim(),phone=phoneValue('signupPhone'),password=$('#signupPassword').value;
+      const name=$('#signupName').value.trim(),phone=phoneValue('signupPhone'),password=$('#signupPassword').value;rememberAccountCountry('signupPhone');
       if(!name){setAuthError('#signupError','Enter your first name.');return}
-      if(!validIntlPhone(phone)){setAuthError('#signupError','Enter a valid phone number with the correct country code.');return}
+      if(!validPhoneField('signupPhone')){setAuthError('#signupError',phoneFieldError('signupPhone'));return}
       if(await checkSignupPhoneExists()){setAuthError('#signupError','This number already has a Lockily account. Please sign in instead.');return}
       if(password.length<8){setAuthError('#signupError','Use at least 8 characters for your password.');return}
       if(!$('#signupAge').checked){setAuthError('#signupError','Confirm that you are 18 or older.');return}
@@ -1183,8 +1266,8 @@
       finally{btn.disabled=false;btn.textContent=old}
     };
     $('#signinBtn').onclick=async()=>{
-      const phone=phoneValue('signinPhone'),password=$('#signinPassword').value;
-      if(!validIntlPhone(phone)){setAuthError('#signinError','Enter a valid phone number with the correct country code.');return}
+      const phone=phoneValue('signinPhone'),password=$('#signinPassword').value;rememberAccountCountry('signinPhone');
+      if(!validPhoneField('signinPhone')){setAuthError('#signinError',phoneFieldError('signinPhone'));return}
       if(!password){setAuthError('#signinError','Enter your password.');return}
       const btn=$('#signinBtn');btn.disabled=true;const old=btn.textContent;btn.textContent='Signing in…';setAuthError('#signinError','');
       try{
@@ -1211,7 +1294,7 @@
     async function checkSignupPhoneExists(){
       const phone=phoneValue('signupPhone'),status=$('#signupPhoneStatus');
       status.className='signup-phone-status';status.textContent='';
-      if(!validIntlPhone(phone))return false;
+      if(!validPhoneField('signupPhone'))return false;
       try{const r=await lockilyApi(`apiLockilyAccountExists?phone=${encodeURIComponent(phone)}`);status.textContent=r.exists?'This number already has a Lockily account. Sign in instead.':'Number available.';status.classList.add(r.exists?'exists':'available');return !!r.exists}catch{return false}
     }
     $('#signupPhone').addEventListener('input',()=>{clearTimeout(signupPhoneCheckTimer);signupPhoneCheckTimer=setTimeout(checkSignupPhoneExists,450)});$('#signupPhone').addEventListener('blur',checkSignupPhoneExists);
@@ -1225,7 +1308,7 @@
     $('#forgotPasswordBtn').onclick=()=>{setPhoneField('resetPhone',phoneValue('signinPhone'));$('#resetRecoveryCode').value='';$('#resetNewPassword').value='';setAuthError('#resetPasswordError','');showModal('resetPasswordModal')};
     $('#resetPasswordSubmit').onclick=async()=>{
       const phone=phoneValue('resetPhone'),recoveryCode=$('#resetRecoveryCode').value.trim(),newPassword=$('#resetNewPassword').value;
-      if(!validIntlPhone(phone)){setAuthError('#resetPasswordError','Enter the phone number on the account with the correct country code.');return}if(!recoveryCode){setAuthError('#resetPasswordError','Enter your recovery code.');return}if(newPassword.length<8){setAuthError('#resetPasswordError','Use at least 8 characters for the new password.');return}
+      if(!validPhoneField('resetPhone')){setAuthError('#resetPasswordError',phoneFieldError('resetPhone'));return}if(!recoveryCode){setAuthError('#resetPasswordError','Enter your recovery code.');return}if(newPassword.length<8){setAuthError('#resetPasswordError','Use at least 8 characters for the new password.');return}
       const btn=$('#resetPasswordSubmit'),old=btn.textContent;btn.disabled=true;btn.textContent='Resetting…';setAuthError('#resetPasswordError','');
       try{const r=await lockilyApi('apiLockilyResetPassword',{method:'POST',body:JSON.stringify({phone,recoveryCode,newPassword})});hideModal('resetPasswordModal');showRecoveryCode(r.recoveryCode);setPhoneField('signinPhone',phone);$$('[data-auth-tab]').forEach(b=>b.classList.toggle('active',b.dataset.authTab==='signin'));$('#signupPanel').classList.add('hidden');$('#signinPanel').classList.remove('hidden');toast('Password reset. Sign in with the new password.')}catch(err){setAuthError('#resetPasswordError',err.message||'Could not reset password')}finally{btn.disabled=false;btn.textContent=old}
     };
@@ -1358,7 +1441,7 @@
     $$('[data-home-action]').forEach(btn=>btn.addEventListener('click',()=>{
       const action=btn.dataset.homeAction;$$('[data-home-action]').forEach(b=>b.classList.toggle('active',b===btn));$('#homeLockPanel').classList.toggle('hidden',action!=='lock');$('#homeCheckPanel').classList.toggle('hidden',action!=='check');
     }));
-    $('#homeCheckBtn').onclick=()=>{const phone=phoneValue('homeCheckPhone');if(!validIntlPhone(phone)){toast('Enter a valid phone number and country code');return}state.verifyOfferExpiresAt=null;runResultScan(phone,'search')};
+    $('#homeCheckBtn').onclick=()=>{const phone=phoneValue('homeCheckPhone');if(!validPhoneField('homeCheckPhone')){toast(phoneFieldError('homeCheckPhone'));return}state.verifyOfferExpiresAt=null;runResultScan(phone,'search')};
 
     function ensureProfile(next){
       if(state.profile){next();return}
@@ -1396,7 +1479,7 @@
 
     $('#createLockBtn').onclick=async()=>{
       const phone=phoneValue('lockPhone'),nickname=$('#lockNickname').value.trim()||'My person',gender=$('#personGender').value,ageRange=$('#personAgeRange').value,startDate=$('#relationshipStart').value;
-      if(!validIntlPhone(phone)){toast('Enter a valid phone number and country code');return}
+      if(!validPhoneField('lockPhone')){toast(phoneFieldError('lockPhone'));return}
       if(state.profile&&phone===digits(state.profile.phone)){toast('You cannot lock your own phone number');return}
       if(!gender){toast('Select the person’s gender');return}
       if(!ageRange){toast('Select the person’s age range');return}
@@ -1747,21 +1830,31 @@
     }
     function providerEnabled(provider){return CONFIG.payments?.[provider]?.enabled===true}
     function renderPaymentProviders(){
-      const selected=state.selectedPaymentProvider||defaultPaymentProvider();$$('[data-payment-provider]').forEach(btn=>{const p=btn.dataset.paymentProvider;btn.classList.toggle('active',p===selected);if(p==='paystack'){const live=providerEnabled('paystack');$('#paystackBadge').textContent=live?'LIVE':'COMING SOON';$('#paystackBadge').classList.toggle('soon',!live)}});
+      const selected=state.selectedPaymentProvider||defaultPaymentProvider(),container=$('#paymentProviders');
+      const order=isNigeriaMarket()?['stanbic','stripe','paystack']:['stripe','paystack','stanbic'];
+      const byProvider=Object.fromEntries($$('[data-payment-provider]').map(btn=>[btn.dataset.paymentProvider,btn]));
+      order.forEach(p=>{if(byProvider[p])container?.appendChild(byProvider[p])});
+      $$('[data-payment-provider]').forEach(btn=>{
+        const p=btn.dataset.paymentProvider;btn.classList.toggle('active',p===selected);const badge=btn.querySelector('.provider-badge');
+        if(p==='paystack'){const live=providerEnabled('paystack');if(badge){badge.textContent=live?'LIVE':'COMING SOON';badge.classList.toggle('soon',!live)}}
+        else if(p==='stanbic'&&badge){badge.textContent=isNigeriaMarket()?'RECOMMENDED':'LIVE';badge.classList.remove('soon')}
+        else if(p==='stripe'&&badge){badge.textContent=isNigeriaMarket()?'CARD OPTION':'RECOMMENDED';badge.classList.remove('soon')}
+      });
     }
     function renderPaymentSelection(){
-      const provider=state.selectedPaymentProvider||defaultPaymentProvider(),currency=providerCurrency(provider),amount=paymentAmountFor(state.pendingProduct,provider),live=providerEnabled(provider);
+      const provider=state.selectedPaymentProvider||defaultPaymentProvider(),currency=providerCurrency(provider),amount=paymentAmountFor(state.pendingProduct,provider),live=providerEnabled(provider),ng=isNigeriaMarket();
       $('#paystackEmailField')?.classList.toggle('hidden',provider!=='paystack'||!live);
       $('#paymentKicker').textContent=provider==='stanbic'?'SECURE BANK TRANSFER':'SECURE CHECKOUT';$('#paymentAmount').textContent=moneyCurrency(amount,currency);$('#paymentDescription').textContent=paymentDescriptionFor(state.pendingProduct,amount,provider);$('#paymentOfferCountdown').textContent=paymentOfferText(state.pendingProduct,amount,provider);$('#bankPaymentBox').classList.add('hidden');$('#cardCheckoutBox').classList.toggle('hidden',provider==='stanbic');$('#copyPaymentDetails').classList.add('hidden');
-      const notice=$('#paymentProviderNotice');notice.classList.toggle('hidden',provider!=='paystack'||live);if(provider==='paystack'&&!live)notice.textContent='Paystack is already built into Lockily, but it is not active yet. Use Stripe or bank transfer for this purchase.';
-      $('#paymentStatusCard').classList.remove('paid','partial');$('#paymentStatusTitle').textContent=provider==='paystack'&&!live?'Paystack is coming soon':provider==='stripe'?'Ready for secure card checkout':'Ready to create your bank-transfer order';$('#paymentStatusText').textContent=provider==='stripe'?'You will be redirected to Stripe to pay securely.':provider==='stanbic'?'A dedicated Stanbic account will be generated for this order.':'Choose Stripe or bank transfer to continue today.';
-      const btn=$('#paymentPrimaryBtn');btn.disabled=!live;btn.textContent=provider==='stripe'?'Continue to secure card checkout':provider==='stanbic'?'Generate bank transfer account':live?'Continue with Paystack':'Paystack — Coming soon';$('#paymentReference').textContent='No payment order created yet.';renderPaymentProviders();
+      if(provider==='stripe'&&ng){$('#cardCheckoutBox b').textContent='Secure Stripe checkout · charged in Naira';$('#cardCheckoutBox p').textContent='Your Nigerian price stays in Naira. Card details are entered on Stripe’s hosted checkout; Lockily never receives or stores your card number.'}else if(provider==='stripe'){$('#cardCheckoutBox b').textContent='Secure Stripe checkout';$('#cardCheckoutBox p').textContent='Card details are entered on Stripe\'s hosted checkout. Lockily never receives or stores your card number.'}
+      const notice=$('#paymentProviderNotice');notice.classList.toggle('hidden',provider!=='paystack'||live);if(provider==='paystack'&&!live)notice.textContent='Paystack is already built into Lockily, but it is not active yet. Use bank transfer or Stripe for this purchase.';
+      const status=$('#paymentStatusCard');status.classList.remove('paid','partial','processing');$('#paymentStatusTitle').textContent=provider==='paystack'&&!live?'Paystack is coming soon':provider==='stripe'?'Ready for secure card checkout':'Ready to generate your bank-transfer account';$('#paymentStatusText').textContent=provider==='stripe'?(ng?'You will be charged in Nigerian Naira on Stripe’s secure checkout.':'You will be redirected to Stripe to pay securely.'):provider==='stanbic'?'Tap below and wait a moment while Lockily generates a dedicated Stanbic account for this order.':'Choose bank transfer or Stripe to continue today.';
+      const btn=$('#paymentPrimaryBtn');btn.classList.remove('is-loading');btn.disabled=!live;btn.textContent=provider==='stripe'?'Continue to secure card checkout':provider==='stanbic'?'Generate bank transfer account':live?'Continue with Paystack':'Paystack — Coming soon';$('#paymentReference').textContent='No payment order created yet.';renderPaymentProviders();
     }
     function renderPaymentOrder(){
       const order=state.currentPayment;if(!order){renderPaymentSelection();return}const provider=order.provider||state.selectedPaymentProvider||'stanbic',currency=order.currency||providerCurrency(provider);state.selectedPaymentProvider=provider;renderPaymentProviders();$('#paystackEmailField')?.classList.toggle('hidden',provider!=='paystack'||!providerEnabled('paystack'));
       $('#paymentKicker').textContent=provider==='stanbic'?'SECURE BANK TRANSFER':'SECURE CHECKOUT';$('#paymentAmount').textContent=moneyCurrency(order.amountExpected,currency);$('#paymentDescription').textContent=paymentDescriptionFor(order.product,order.amountExpected,provider);$('#paymentOfferCountdown').textContent=paymentOfferText(order.product,order.amountExpected,provider);$('#bankPaymentBox').classList.toggle('hidden',provider!=='stanbic');$('#cardCheckoutBox').classList.toggle('hidden',provider==='stanbic');$('#copyPaymentDetails').classList.toggle('hidden',provider!=='stanbic');
       $('#paymentBank').textContent=order.bank||'Stanbic IBTC Bank';$('#paymentAccount').textContent=order.accountNumber||'—';$('#paymentAccountName').textContent=order.accountName||'Lockily';$('#paymentReference').textContent='Order reference: '+String(order.id||'').slice(0,8).toUpperCase();
-      const card=$('#paymentStatusCard');card.classList.remove('paid','partial');const btn=$('#paymentPrimaryBtn');
+      const card=$('#paymentStatusCard');card.classList.remove('paid','partial','processing');const btn=$('#paymentPrimaryBtn');btn.classList.remove('is-loading');
       if(order.paid){card.classList.add('paid');$('#paymentStatusTitle').textContent='Payment confirmed';$('#paymentStatusText').textContent='Your Lockily access is being unlocked now.';btn.disabled=true;btn.textContent='Payment confirmed';}
       else if(order.paymentStatus==='partial'){card.classList.add('partial');$('#paymentStatusTitle').textContent='Partial payment received';$('#paymentStatusText').textContent=`${moneyCurrency(order.totalPaid,currency)} received. ${moneyCurrency(Math.max(0,order.amountExpected-order.totalPaid),currency)} remains.`;btn.disabled=false;btn.textContent="I've paid — check payment";}
       else if(provider==='stanbic'){$('#paymentStatusTitle').textContent='Waiting for bank transfer';$('#paymentStatusText').textContent=`Transfer exactly ${moneyCurrency(order.amountExpected,currency)} to the dedicated account above.`;btn.disabled=false;btn.textContent="I've paid — check payment";}
@@ -1771,13 +1864,32 @@
     function showPaymentPreparing(product){$('#paymentTitle').textContent={verify:'Unlock Full Report',monitor:'Start monitoring',mutual:'Verified Lock'}[product]||'Lockily payment';state.currentPayment=null;renderPaymentSelection();showModal('paymentModal')}
     function enablePaymentControls(){const b=$('#paymentPrimaryBtn');if(b)b.disabled=false}
     async function beginSelectedPayment(){
-      if(!$('#orderLegalConsent').checked){toast('Agree to the Terms, Privacy Statement and NDA before ordering');return}const provider=state.selectedPaymentProvider||defaultPaymentProvider();if(!providerEnabled(provider)){toast(provider==='paystack'?'Paystack is coming soon. Use Stripe or bank transfer.':'This payment method is unavailable.');return}
+      if(!$('#orderLegalConsent').checked){toast('Agree to the Terms, Privacy Statement and NDA before ordering');return}
+      const provider=state.selectedPaymentProvider||defaultPaymentProvider();if(!providerEnabled(provider)){toast(provider==='paystack'?'Paystack is coming soon. Use bank transfer or Stripe.':'This payment method is unavailable.');return}
       if(provider==='paystack'){const email=String($('#paystackEmail')?.value||'').trim();if(!/^\S+@\S+\.\S+$/.test(email)){toast('Enter an email address for Paystack checkout');$('#paystackEmail')?.focus();return}}
-      const btn=$('#paymentPrimaryBtn');if(state.currentPayment?.id){if(state.currentPayment.paid){await fulfilPaidOrder();return}if(provider==='stanbic'){btn.disabled=true;btn.textContent='Checking bank transfer…';await refreshCurrentPaymentStatus();btn.disabled=false;renderPaymentOrder();return}if(state.currentPayment.checkoutUrl){location.assign(state.currentPayment.checkoutUrl);return}}
-      btn.disabled=true;const old=btn.textContent;btn.textContent='Preparing secure checkout…';
-      try{state.currentPayment=await createPaymentOrder(state.pendingProduct,provider);saveState();renderPaymentOrder();if(state.currentPayment?.paid){await fulfilPaidOrder();return}if(provider==='stripe'||provider==='paystack'){if(!state.currentPayment.checkoutUrl)throw new Error('Secure checkout URL was not returned');location.assign(state.currentPayment.checkoutUrl);return}startPaymentPolling();}
-      catch(err){state.currentPayment=null;saveState();renderPaymentSelection();toast(err.message||'Could not prepare payment');}
-      finally{if(document.body.contains(btn)){btn.disabled=false;if(!state.currentPayment)btn.textContent=old}}
+      const btn=$('#paymentPrimaryBtn'),status=$('#paymentStatusCard');
+      if(state.currentPayment?.id){
+        if(state.currentPayment.paid){await fulfilPaidOrder();return}
+        if(provider==='stanbic'){
+          btn.disabled=true;btn.classList.add('is-loading');btn.textContent='Checking bank transfer…';status.classList.add('processing');$('#paymentStatusTitle').textContent='Checking bank transfer';$('#paymentStatusText').textContent='Lockily is checking the dedicated account for your payment. Please wait…';
+          try{await refreshCurrentPaymentStatus()}finally{btn.disabled=false;btn.classList.remove('is-loading');renderPaymentOrder()}return
+        }
+        if(state.currentPayment.checkoutUrl){location.assign(state.currentPayment.checkoutUrl);return}
+      }
+      btn.disabled=true;btn.classList.add('is-loading');const old=btn.textContent;
+      if(provider==='stanbic'){
+        btn.textContent='Generating bank transfer account…';status.classList.add('processing');$('#paymentStatusTitle').textContent='Generating your bank-transfer account';$('#paymentStatusText').textContent='Please wait. Lockily is creating a dedicated Stanbic virtual account for this order. Do not tap the button again.';$('#paymentReference').textContent='Processing your request…';
+      }else{
+        btn.textContent='Preparing secure checkout…';status.classList.add('processing');$('#paymentStatusTitle').textContent='Preparing secure checkout';$('#paymentStatusText').textContent=`Connecting securely to ${provider==='stripe'?'Stripe':'Paystack'}…`;
+      }
+      try{
+        state.currentPayment=await createPaymentOrder(state.pendingProduct,provider);saveState();renderPaymentOrder();
+        if(state.currentPayment?.paid){await fulfilPaidOrder();return}
+        if(provider==='stripe'||provider==='paystack'){if(!state.currentPayment.checkoutUrl)throw new Error('Secure checkout URL was not returned');location.assign(state.currentPayment.checkoutUrl);return}
+        startPaymentPolling();toast('Bank-transfer account generated');
+      }
+      catch(err){state.currentPayment=null;saveState();renderPaymentSelection();toast(err.message||'Could not prepare payment')}
+      finally{if(document.body.contains(btn)){btn.classList.remove('is-loading');status.classList.remove('processing');btn.disabled=false;if(!state.currentPayment)btn.textContent=old}}
     }
     async function startPayment(product){
       if(product!=='verify'&&!state.activeLock){toast('Select or create a Lock first');return}state.pendingProduct=product;state.currentPayment=null;state.selectedPaymentProvider=defaultPaymentProvider();$('#orderLegalConsent').checked=false;
@@ -1789,7 +1901,7 @@
 
     $('#buyVerifyBtn').onclick=()=>startPayment('verify');
     $('#refreshVerificationHistoryBtn').onclick=async()=>{const btn=$('#refreshVerificationHistoryBtn'),old=btn.textContent;btn.disabled=true;btn.classList.add('is-loading');btn.textContent='Refreshing';await syncVerificationHistoryFromBackend();btn.classList.remove('is-loading');btn.disabled=false;btn.textContent=old};
-    $('#verifyRelationshipBtn').onclick=()=>{const phone=phoneValue('verifyPhoneInput'); if(!validIntlPhone(phone)){toast('Enter a valid phone number and country code');return} state.verifyOfferExpiresAt=null;runResultScan(phone,'search')};
+    $('#verifyRelationshipBtn').onclick=()=>{const phone=phoneValue('verifyPhoneInput'); if(!validPhoneField('verifyPhoneInput')){toast(phoneFieldError('verifyPhoneInput'));return} state.verifyOfferExpiresAt=null;runResultScan(phone,'search')};
     $('#lockVerifyBtn').onclick=()=>{if(!state.activeLock){toast('Create a Lock first');return}const paidToday=paidVerificationForToday(state.activeLock.subjectPhone);if(paidToday){openVerificationHistoryEntry(paidToday.id);return}state.verifyOfferExpiresAt=null;runResultScan(state.activeLock.subjectPhone,'lock')};
     $('#quickVerify').onclick=()=>nav('verify');
     $('#resultMonitorBtn').onclick=()=>{if(state.activeLock?.monitorActive){toast('Monitor is already active');nav('verify');return}startPayment('monitor')};
