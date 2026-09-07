@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lockily-shell-20260907-legal1';
+const CACHE_NAME = 'lockily-shell-20260907-legalmodal1';
 
 self.addEventListener('install', () => {
   self.skipWaiting();

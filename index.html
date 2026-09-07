@@ -366,6 +366,13 @@
     .auth-panel.hidden{display:none}.auth-headline{margin:2px 0 4px;font-size:27px;letter-spacing:-.055em}.auth-sub{margin:0 0 12px;color:var(--muted);font-size:11px;line-height:1.5}.auth-foot{text-align:center;color:var(--muted);font-size:9px;line-height:1.45;margin-top:12px}
     .auth-error{display:none;margin:10px 0 0;padding:10px 11px;border-radius:14px;background:var(--red-soft);color:#ad3148;font-size:9px;font-weight:850}.auth-error.show{display:block}
     .legal-links{line-height:1.55}.legal-links a{color:#a72f5b;font-weight:950;text-decoration:underline;text-underline-offset:2px}.legal-links a:hover{color:#7f2145}.legal-doc{padding:4px 2px 10px}.legal-doc h4{margin:16px 0 6px;font-size:13px;letter-spacing:-.02em}.legal-doc p,.legal-doc li{color:#654f5b;font-size:10px;line-height:1.6}.legal-doc ul{margin:7px 0 0;padding-left:18px}.legal-doc .legal-meta{padding:10px 11px;border-radius:14px;background:#fff3f7;border:1px solid #f0dbe5;color:#8b4865;font-size:9px;line-height:1.45;margin:10px 0}.legal-doc strong{color:#35222e}
+    .legal-center-sheet{width:min(100%,760px);height:min(93vh,900px);max-height:93vh;overflow:hidden;display:flex;flex-direction:column;padding-bottom:16px}
+    .legal-modal-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0 9px;padding:5px;border-radius:16px;background:#f7edf2;border:1px solid var(--line)}
+    .legal-modal-tab{border:0;background:transparent;border-radius:12px;padding:10px 7px;color:var(--muted);font-size:8.5px;font-weight:1000;line-height:1.2}
+    .legal-modal-tab.active{background:#fff;color:#a92f5c;box-shadow:0 7px 18px rgba(83,33,58,.08)}
+    .legal-frame-wrap{position:relative;flex:1;min-height:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+    .legal-frame{display:block;width:100%;height:100%;border:0;background:#fff}
+    @media(max-width:560px){.legal-center-sheet{height:94vh;max-height:94vh}.legal-modal-tab{font-size:8px;padding:9px 5px}}
     .auth-shell{align-items:start;padding-top:14px;background:transparent}
     .auth-wrap{padding:14px 14px 18px}
     .auth-brand{margin-bottom:10px}
@@ -440,7 +447,7 @@
         <div class="field"><label>PHONE NUMBER</label><div class="phone-line"><select id="signupPhoneCountry" class="country-select" data-phone-for="signupPhone" aria-label="Country code"></select><input id="signupPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="Phone number" /></div><div class="phone-hint">Choose your country, then enter the local phone number.</div></div><div class="signup-phone-status" id="signupPhoneStatus"></div>
         <div class="field"><label>PASSWORD</label><input id="signupPassword" type="password" minlength="8" placeholder="At least 8 characters" /></div>
         <div class="legal"><input type="checkbox" id="signupAge" /><label for="signupAge"><strong>I am 18 or older.</strong> I will use Lockily only for lawful, truthful personal activity.</label></div>
-        <div class="legal"><input type="checkbox" id="signupLegalConsent" /><label class="legal-links" for="signupLegalConsent"><strong>I have read and agree to Lockily's</strong> <a href="legal.html#terms" target="_blank" rel="noopener">Terms &amp; Conditions</a>, <a href="legal.html#privacy" target="_blank" rel="noopener">Privacy Statement</a> and <a href="legal.html#nda" target="_blank" rel="noopener">NDA / Confidentiality Agreement</a>.</label></div>
+        <div class="legal"><input type="checkbox" id="signupLegalConsent" /><label class="legal-links" for="signupLegalConsent"><strong>I have read and agree to Lockily's</strong> <a href="legal.html#terms" class="legal-modal-link" data-legal-section="terms">Terms &amp; Conditions</a>, <a href="legal.html#privacy" class="legal-modal-link" data-legal-section="privacy">Privacy Statement</a> and <a href="legal.html#nda" class="legal-modal-link" data-legal-section="nda">NDA / Confidentiality Agreement</a>.</label></div>
         <button class="primary" id="signupBtn">Create account</button>
         <div class="auth-error" id="signupError"></div>
       </div>
@@ -626,7 +633,7 @@
       <input id="relationshipStart" type="hidden" />
     </div>
     <div class="legal"><input type="checkbox" id="truthConsent" /><label for="truthConsent"><strong>I personally have a current romantic relationship or active talking stage with this person.</strong> I understand a Lock is my private claim, not a public accusation or proof of wrongdoing.</label></div>
-    <div class="legal"><input type="checkbox" id="lockLegalConsent" /><label class="legal-links" for="lockLegalConsent"><strong>Before creating this Lock-in, I agree to the</strong> <a href="legal.html#terms" target="_blank" rel="noopener">Terms &amp; Conditions</a>, <a href="legal.html#privacy" target="_blank" rel="noopener">Privacy Statement</a> and <a href="legal.html#nda" target="_blank" rel="noopener">NDA / Confidentiality Agreement</a>.</label></div>
+    <div class="legal"><input type="checkbox" id="lockLegalConsent" /><label class="legal-links" for="lockLegalConsent"><strong>Before creating this Lock-in, I agree to the</strong> <a href="legal.html#terms" class="legal-modal-link" data-legal-section="terms">Terms &amp; Conditions</a>, <a href="legal.html#privacy" class="legal-modal-link" data-legal-section="privacy">Privacy Statement</a> and <a href="legal.html#nda" class="legal-modal-link" data-legal-section="nda">NDA / Confidentiality Agreement</a>.</label></div>
     <button class="primary" id="createLockBtn">Create free Lock</button>
     <div class="mini-note">You can lock multiple people. Other users’ identities are never shown.</div>
   </div></div>
@@ -712,7 +719,7 @@
       <div class="bank-row"><div><span>ACCOUNT NAME</span><b id="paymentAccountName">Lockily</b></div><button class="copy-mini" id="copyPaymentName" type="button">COPY</button></div>
     </div>
     <div class="payment-status" id="paymentStatusCard"><div class="dot"></div><div><b id="paymentStatusTitle">Choose a payment method</b><span id="paymentStatusText">Stripe is recommended for instant global card payments.</span></div></div>
-    <div class="legal"><input type="checkbox" id="orderLegalConsent" /><label class="legal-links" for="orderLegalConsent"><strong>I agree to the</strong> <a href="legal.html#terms" target="_blank" rel="noopener">Terms &amp; Conditions</a>, <a href="legal.html#privacy" target="_blank" rel="noopener">Privacy Statement</a> and <a href="legal.html#nda" target="_blank" rel="noopener">NDA / Confidentiality Agreement</a> for this order.</label></div>
+    <div class="legal"><input type="checkbox" id="orderLegalConsent" /><label class="legal-links" for="orderLegalConsent"><strong>I agree to the</strong> <a href="legal.html#terms" class="legal-modal-link" data-legal-section="terms">Terms &amp; Conditions</a>, <a href="legal.html#privacy" class="legal-modal-link" data-legal-section="privacy">Privacy Statement</a> and <a href="legal.html#nda" class="legal-modal-link" data-legal-section="nda">NDA / Confidentiality Agreement</a> for this order.</label></div>
     <button class="primary" id="paymentPrimaryBtn" type="button">Continue to secure card checkout</button>
     <button class="secondary hidden" id="copyPaymentDetails" type="button">Copy payment details</button>
     <div class="payment-ref" id="paymentReference">No payment order created yet.</div>
@@ -774,6 +781,18 @@
       <article class="step-card glass"><div class="step-num">⌁</div><div><h3>Other claimants stay private</h3><p>No names, phone numbers, chats, photos or identities of another claimant are shown to you.</p></div></article>
       <article class="step-card glass"><div class="step-num">♥</div><div><h3>Multiple Locks allowed</h3><p>Talking stages, situationships, dating, engagements and marriages can all be locked. Claims must remain truthful, personal and lawful.</p></div></article>
     </div>
+  </div></div>
+
+  <!-- Legal Center modal -->
+  <div class="modal" id="legalCenterModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle"><div class="sheet legal-center-sheet">
+    <div class="handle"></div>
+    <div class="sheet-head"><div><small>LOCKILY LEGAL</small><h3 id="legalModalTitle">Terms &amp; Conditions</h3></div><button class="close" type="button" data-close="legalCenterModal" aria-label="Close legal document">×</button></div>
+    <div class="legal-modal-tabs" role="tablist" aria-label="Legal documents">
+      <button class="legal-modal-tab active" type="button" data-legal-tab="terms" role="tab">Terms &amp; Conditions</button>
+      <button class="legal-modal-tab" type="button" data-legal-tab="privacy" role="tab">Privacy Statement</button>
+      <button class="legal-modal-tab" type="button" data-legal-tab="nda" role="tab">NDA / Confidentiality</button>
+    </div>
+    <div class="legal-frame-wrap"><iframe id="legalFrame" class="legal-frame" title="Lockily legal document" loading="lazy"></iframe></div>
   </div></div>
 
 
@@ -1194,6 +1213,19 @@
     function nav(view){$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===view));$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.nav===view));$$('.modal.show').forEach(m=>hideModal(m.id));window.scrollTo({top:0,behavior:'auto'});if(view==='verify')setTimeout(()=>syncVerificationHistoryFromBackend({silent:true}),80)}
     $$('[data-nav]').forEach(b=>b.addEventListener('click',()=>nav(b.dataset.nav)));
     $$('[data-close]').forEach(b=>b.addEventListener('click',()=>hideModal(b.dataset.close)));
+    const LEGAL_SECTIONS={terms:{title:'Terms & Conditions'},privacy:{title:'Privacy Statement'},nda:{title:'NDA / Confidentiality Agreement'}};
+    function openLegalModal(section='terms'){
+      const key=LEGAL_SECTIONS[section]?section:'terms';
+      const frame=$('#legalFrame');
+      const title=$('#legalModalTitle');
+      if(title)title.textContent=LEGAL_SECTIONS[key].title;
+      $$('.legal-modal-tab').forEach(btn=>{const active=btn.dataset.legalTab===key;btn.classList.toggle('active',active);btn.setAttribute('aria-selected',active?'true':'false')});
+      if(frame){const next=`legal.html?embed=1#${key}`;if(!frame.src.endsWith(next))frame.src=next;}
+      showModal('legalCenterModal');
+    }
+    $$('.legal-modal-link').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openLegalModal(link.dataset.legalSection||'terms')}));
+    $$('.legal-modal-tab').forEach(btn=>btn.addEventListener('click',()=>openLegalModal(btn.dataset.legalTab||'terms')));
+
     $$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)hideModal(m.id)}));
 
 
@@ -1988,7 +2020,7 @@
       });
     };
 
-    $('#notificationBtn').onclick=()=>openNotifications();$('#notificationsMenuBtn').onclick=()=>openNotifications();$('#transactionHistoryBtn').onclick=()=>openTransactionHistory();$('#recoverySettingsBtn').onclick=()=>rotateRecoveryCode();$('#topProfileBtn').onclick=()=>nav('profile');$('#profileAction').onclick=()=>{if(state.profile){$('#firstName').value=state.profile.firstName;$('#profilePhoneInput').value=state.profile.phone;$('#ageConfirm').value='18plus';$('#profileConsent').checked=true}showModal('profileModal')};$('#privacyBtn').onclick=()=>{window.location.href='legal.html#privacy'};$('#logoutBtn').onclick=()=>openConfirmModal({title:'Sign out of Lockily?',message:'You will return to the Sign Up / Sign In screen. Your Locks and reports remain safely stored in your Lockily account.',confirmText:'Sign out'},async()=>{try{await lockilyApi('apiLockilyLogout',{method:'POST'})}catch{}clearLockilySession();state=defaultState();await loadPublicBootstrap();showAuth();toast('Signed out')});
+    $('#notificationBtn').onclick=()=>openNotifications();$('#notificationsMenuBtn').onclick=()=>openNotifications();$('#transactionHistoryBtn').onclick=()=>openTransactionHistory();$('#recoverySettingsBtn').onclick=()=>rotateRecoveryCode();$('#topProfileBtn').onclick=()=>nav('profile');$('#profileAction').onclick=()=>{if(state.profile){$('#firstName').value=state.profile.firstName;$('#profilePhoneInput').value=state.profile.phone;$('#ageConfirm').value='18plus';$('#profileConsent').checked=true}showModal('profileModal')};$('#privacyBtn').onclick=()=>openLegalModal('privacy');$('#logoutBtn').onclick=()=>openConfirmModal({title:'Sign out of Lockily?',message:'You will return to the Sign Up / Sign In screen. Your Locks and reports remain safely stored in your Lockily account.',confirmText:'Sign out'},async()=>{try{await lockilyApi('apiLockilyLogout',{method:'POST'})}catch{}clearLockilySession();state=defaultState();await loadPublicBootstrap();showAuth();toast('Signed out')});
 
     function renderProfile(){
       const p=state.profile;if(p){$('#profileAvatar').textContent=(p.firstName||'L').slice(0,1).toUpperCase();$('#profileName').textContent=p.firstName;$('#profilePhone').textContent=maskPhone(p.phone);setPhoneField('profilePhoneInput',p.phone);$('#phoneBadge').textContent='Phone verified';$('#phoneBadge').className='tiny-badge';}
