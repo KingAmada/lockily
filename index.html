@@ -440,7 +440,7 @@
         <div class="field"><label>PHONE NUMBER</label><div class="phone-line"><select id="signupPhoneCountry" class="country-select" data-phone-for="signupPhone" aria-label="Country code"></select><input id="signupPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="Phone number" /></div><div class="phone-hint">Choose your country, then enter the local phone number.</div></div><div class="signup-phone-status" id="signupPhoneStatus"></div>
         <div class="field"><label>PASSWORD</label><input id="signupPassword" type="password" minlength="8" placeholder="At least 8 characters" /></div>
         <div class="legal"><input type="checkbox" id="signupAge" /><label for="signupAge"><strong>I am 18 or older.</strong> I will use Lockily only for lawful, truthful personal activity.</label></div>
-        <div class="legal"><input type="checkbox" id="signupLegalConsent" /><label class="legal-links" for="signupLegalConsent"><strong>I have read and agree to Lockily's</strong> <a href="#" data-legal-open="termsModal">Terms &amp; Conditions</a>, <a href="#" data-legal-open="privacyStatementModal">Privacy Statement</a> and <a href="#" data-legal-open="ndaModal">NDA / Confidentiality Agreement</a>.</label></div>
+        <div class="legal"><input type="checkbox" id="signupLegalConsent" /><label class="legal-links" for="signupLegalConsent"><strong>I have read and agree to Lockily's</strong> <a href="legal.html#terms" target="_blank" rel="noopener">Terms &amp; Conditions</a>, <a href="legal.html#privacy" target="_blank" rel="noopener">Privacy Statement</a> and <a href="legal.html#nda" target="_blank" rel="noopener">NDA / Confidentiality Agreement</a>.</label></div>
         <button class="primary" id="signupBtn">Create account</button>
         <div class="auth-error" id="signupError"></div>
       </div>
@@ -585,7 +585,7 @@
         <button class="menu-item" id="notificationsMenuBtn"><div class="menu-icon">◉</div><div><strong>Notifications</strong><small>Verified Lock requests and relationship alerts</small></div><span class="menu-badge" id="notificationsMenuBadge">0</span><div class="arrow with-badge">›</div></button>
         <button class="menu-item" id="transactionHistoryBtn"><div class="menu-icon">₦</div><div><strong>Payment history</strong><small>Reports, Monitor and Verified Lock payments</small></div><div class="arrow">›</div></button>
         <button class="menu-item" id="recoverySettingsBtn"><div class="menu-icon">⌘</div><div><strong>Password & recovery</strong><small>Create or replace your account recovery code</small></div><div class="arrow">›</div></button>
-        <button class="menu-item" id="privacyBtn"><div class="menu-icon">⌁</div><div><strong>Privacy & claim rules</strong><small>What Lockily stores, shows and never exposes</small></div><div class="arrow">›</div></button>
+        <button class="menu-item" id="privacyBtn"><div class="menu-icon">⌁</div><div><strong>Legal, privacy & claim rules</strong><small>Terms, privacy, confidentiality and what a Lock means</small></div><div class="arrow">›</div></button>
         <button class="menu-item" id="logoutBtn"><div class="menu-icon">↪</div><div><strong>Sign out</strong><small>Sign out of this Lockily account</small></div><div class="arrow">›</div></button>
       </section>
     </section>
@@ -626,7 +626,7 @@
       <input id="relationshipStart" type="hidden" />
     </div>
     <div class="legal"><input type="checkbox" id="truthConsent" /><label for="truthConsent"><strong>I personally have a current romantic relationship or active talking stage with this person.</strong> I understand a Lock is my private claim, not a public accusation or proof of wrongdoing.</label></div>
-    <div class="legal"><input type="checkbox" id="lockLegalConsent" /><label class="legal-links" for="lockLegalConsent"><strong>Before creating this Lock-in, I agree to the</strong> <a href="#" data-legal-open="termsModal">Terms &amp; Conditions</a>, <a href="#" data-legal-open="privacyStatementModal">Privacy Statement</a> and <a href="#" data-legal-open="ndaModal">NDA / Confidentiality Agreement</a>.</label></div>
+    <div class="legal"><input type="checkbox" id="lockLegalConsent" /><label class="legal-links" for="lockLegalConsent"><strong>Before creating this Lock-in, I agree to the</strong> <a href="legal.html#terms" target="_blank" rel="noopener">Terms &amp; Conditions</a>, <a href="legal.html#privacy" target="_blank" rel="noopener">Privacy Statement</a> and <a href="legal.html#nda" target="_blank" rel="noopener">NDA / Confidentiality Agreement</a>.</label></div>
     <button class="primary" id="createLockBtn">Create free Lock</button>
     <div class="mini-note">You can lock multiple people. Other users’ identities are never shown.</div>
   </div></div>
@@ -712,7 +712,7 @@
       <div class="bank-row"><div><span>ACCOUNT NAME</span><b id="paymentAccountName">Lockily</b></div><button class="copy-mini" id="copyPaymentName" type="button">COPY</button></div>
     </div>
     <div class="payment-status" id="paymentStatusCard"><div class="dot"></div><div><b id="paymentStatusTitle">Choose a payment method</b><span id="paymentStatusText">Stripe is recommended for instant global card payments.</span></div></div>
-    <div class="legal"><input type="checkbox" id="orderLegalConsent" /><label class="legal-links" for="orderLegalConsent"><strong>I agree to the</strong> <a href="#" data-legal-open="termsModal">Terms &amp; Conditions</a>, <a href="#" data-legal-open="privacyStatementModal">Privacy Statement</a> and <a href="#" data-legal-open="ndaModal">NDA / Confidentiality Agreement</a> for this order.</label></div>
+    <div class="legal"><input type="checkbox" id="orderLegalConsent" /><label class="legal-links" for="orderLegalConsent"><strong>I agree to the</strong> <a href="legal.html#terms" target="_blank" rel="noopener">Terms &amp; Conditions</a>, <a href="legal.html#privacy" target="_blank" rel="noopener">Privacy Statement</a> and <a href="legal.html#nda" target="_blank" rel="noopener">NDA / Confidentiality Agreement</a> for this order.</label></div>
     <button class="primary" id="paymentPrimaryBtn" type="button">Continue to secure card checkout</button>
     <button class="secondary hidden" id="copyPaymentDetails" type="button">Copy payment details</button>
     <div class="payment-ref" id="paymentReference">No payment order created yet.</div>
@@ -765,58 +765,14 @@
     <button class="secondary" data-close="recoveryCodeModal" type="button">I saved it</button>
   </div></div>
 
-  <!-- Terms & Conditions -->
-  <div class="modal" id="termsModal"><div class="sheet">
-    <div class="handle"></div><div class="sheet-head"><div><small>LEGAL</small><h3>Terms &amp; Conditions</h3></div><button class="close" data-close="termsModal">×</button></div>
-    <div class="legal-doc">
-      <div class="legal-meta"><strong>Effective:</strong> 27 August 2026 · <strong>Lockily is for adults 18+.</strong> · Lockily is operated by Ingle Meet.</div>
-      <h4>1. What Lockily provides</h4><p>Lockily provides relationship-status intelligence based on user activity such as checks, Lock-ins, Verified Locks and monitoring signals. A Lock-in is a user-submitted claim or status action; it is not independent proof that a relationship exists, is exclusive, or that anyone has acted wrongly.</p>
-      <h4>2. Truthful and lawful use</h4><p>You may only submit information you are entitled to provide and must not use Lockily to harass, threaten, stalk, impersonate, defame, blackmail, extort, discriminate against, or endanger another person. You must not create false Lock-ins or manipulate activity to mislead others.</p>
-      <h4>3. Reports and decisions</h4><p>Full Reports are informational tools. Search volume, Lock-ins and monitor counts are signals, not verdicts. You are responsible for how you interpret the information and for independently verifying important decisions.</p>
-      <h4>4. Payments and digital access</h4><p>Paid services may include Full Reports, Monitor and Verified Lock features. Prices and promotional windows are shown before purchase. Once digital access is delivered, refunds may be limited except where required by applicable law or where Lockily confirms a billing error.</p>
-      <h4>5. Account security</h4><p>You are responsible for keeping your account credentials secure and for activity carried out through your account. Lockily may suspend access where fraud, abuse, automated misuse or safety concerns are detected.</p>
-      <h4>6. Disputes and corrections</h4><p>Subjects and users may request review of inaccurate, abusive or improperly submitted information. Lockily may restrict, remove, annotate or retain information as reasonably necessary for safety, legal compliance, dispute handling and service integrity.</p>
-      <h4>7. Limitation</h4><p>Lockily does not guarantee that its database is complete, current or error-free. To the extent permitted by applicable law, Lockily is not responsible for personal decisions made solely from an activity signal or report without independent verification.</p>
-      <h4>8. Changes</h4><p>These terms may be updated as the service changes. Material updates will be presented through the service where appropriate.</p>
-    </div>
-  </div></div>
-
-  <!-- Privacy Statement -->
-  <div class="modal" id="privacyStatementModal"><div class="sheet">
-    <div class="handle"></div><div class="sheet-head"><div><small>LEGAL</small><h3>Privacy Statement</h3></div><button class="close" data-close="privacyStatementModal">×</button></div>
-    <div class="legal-doc">
-      <div class="legal-meta"><strong>Privacy by design:</strong> Lockily should collect only the information needed to operate accounts, Lock-ins, checks, reports, payments, monitoring and safety controls.</div>
-      <h4>Information we process</h4><ul><li>Account details such as name, phone number, verification and authentication data.</li><li>Phone numbers you Lock, check or monitor, plus relationship stage, age range and gender fields you submit.</li><li>Search activity, Lock-in timestamps, verification status, monitor activity, purchase and entitlement records.</li><li>Technical, security and abuse-prevention data needed to protect the service.</li></ul>
-      <h4>How information is used</h4><p>We use information to provide searches and reports, maintain Lock-ins and monitors, prevent abuse, process orders, investigate disputes, improve reliability and comply with applicable legal obligations.</p>
-      <h4>What other users see</h4><p>Lockily is designed to show aggregate signals such as counts, timing ranges and verified-status indicators. Other users should not receive your name, password, private notes or direct identity merely because they check the same phone number.</p>
-      <h4>Sharing and service providers</h4><p>Information may be processed by trusted infrastructure, authentication, payment, security, analytics and support providers acting for Lockily. We do not sell user conversations or private Lock histories as advertising lists.</p>
-      <h4>Retention and deletion</h4><p>Information should be retained only as long as reasonably necessary for the service, safety, disputes, fraud prevention, accounting and legal requirements. Users may request account or data review through Lockily support, subject to legitimate retention requirements.</p>
-      <h4>Security</h4><p>Lockily should use access controls, encryption where appropriate, audit logging and abuse safeguards. No online system can promise absolute security.</p>
-      <h4>Your choices</h4><p>You may choose whether to create a Lock-in, buy a Full Report, activate Monitor or create a Verified Lock. Where applicable, you may request access, correction, deletion or restriction of personal information.</p>
-    </div>
-  </div></div>
-
-  <!-- NDA / Confidentiality Agreement -->
-  <div class="modal" id="ndaModal"><div class="sheet">
-    <div class="handle"></div><div class="sheet-head"><div><small>CONFIDENTIALITY</small><h3>NDA / Confidentiality Agreement</h3></div><button class="close" data-close="ndaModal">×</button></div>
-    <div class="legal-doc">
-      <div class="legal-meta">This confidentiality agreement protects non-public Lockily report data and the privacy of other users. It does not prevent lawful reporting to authorities, legal advisers, courts or safety services.</div>
-      <h4>Confidential information</h4><p>Confidential information includes non-public Full Report content, private Lock-in intelligence, monitor information, report identifiers, account-only data and any information that could reasonably be used to identify another Lockily user where Lockily has not made that identity public.</p>
-      <h4>Your commitment</h4><p>You agree not to publish, sell, scrape, redistribute, weaponize or use confidential Lockily information to identify, intimidate, harass, blackmail or publicly shame another person. You may use your report for your own legitimate personal decision-making and may share it privately with professional advisers where reasonably necessary.</p>
-      <h4>No reverse identification</h4><p>You agree not to combine report data with other sources for the purpose of discovering the identity of a private Lockily user or monitor.</p>
-      <h4>Permitted disclosure</h4><p>This NDA does not prohibit disclosures required by law, court order or a lawful authority, disclosures to legal or professional advisers under duties of confidentiality, or disclosures reasonably necessary to protect someone from imminent harm.</p>
-      <h4>Duration</h4><p>Your confidentiality obligations continue for as long as the information remains non-public and confidential, subject to applicable law.</p>
-    </div>
-  </div></div>
-
-  <!-- Privacy -->
+  <!-- Privacy / Trust & Safety -->
   <div class="modal" id="privacyModal"><div class="sheet">
     <div class="handle"></div><div class="sheet-head"><div><small>TRUST & SAFETY</small><h3>What Lockily means by a “Lock”</h3></div><button class="close" data-close="privacyModal">×</button></div>
     <div class="steps" style="margin-top:13px">
-      <article class="step-card glass"><div class="step-num">✓</div><div><h3>A Lock is a claim</h3><p>It records that a verified user says they are in a current romantic relationship with a specific phone number.</p></div></article>
+      <article class="step-card glass"><div class="step-num">✓</div><div><h3>A Lock is a claim</h3><p>It records that an account holder says they are in a current romantic relationship with a specific phone number. Verification is shown separately only when the stated verification step has been completed.</p></div></article>
       <article class="step-card glass"><div class="step-num">≠</div><div><h3>A Lockily check is not proof of cheating</h3><p>Multiple claims can conflict for many reasons. Lockily reports relationship signals and activity; it does not declare guilt.</p></div></article>
       <article class="step-card glass"><div class="step-num">⌁</div><div><h3>Other claimants stay private</h3><p>No names, phone numbers, chats, photos or identities of another claimant are shown to you.</p></div></article>
-      <article class="step-card glass"><div class="step-num">♥</div><div><h3>Multiple Locks allowed</h3><p>Talking stages, situationships, dating, engagements and marriages can all be locked. Claims should remain truthful and personal.</p></div></article>
+      <article class="step-card glass"><div class="step-num">♥</div><div><h3>Multiple Locks allowed</h3><p>Talking stages, situationships, dating, engagements and marriages can all be locked. Claims must remain truthful, personal and lawful.</p></div></article>
     </div>
   </div></div>
 
@@ -1238,7 +1194,6 @@
     function nav(view){$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===view));$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.nav===view));$$('.modal.show').forEach(m=>hideModal(m.id));window.scrollTo({top:0,behavior:'auto'});if(view==='verify')setTimeout(()=>syncVerificationHistoryFromBackend({silent:true}),80)}
     $$('[data-nav]').forEach(b=>b.addEventListener('click',()=>nav(b.dataset.nav)));
     $$('[data-close]').forEach(b=>b.addEventListener('click',()=>hideModal(b.dataset.close)));
-    $$('[data-legal-open]').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();showModal(link.dataset.legalOpen)}));
     $$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)hideModal(m.id)}));
 
 
@@ -2033,7 +1988,7 @@
       });
     };
 
-    $('#notificationBtn').onclick=()=>openNotifications();$('#notificationsMenuBtn').onclick=()=>openNotifications();$('#transactionHistoryBtn').onclick=()=>openTransactionHistory();$('#recoverySettingsBtn').onclick=()=>rotateRecoveryCode();$('#topProfileBtn').onclick=()=>nav('profile');$('#profileAction').onclick=()=>{if(state.profile){$('#firstName').value=state.profile.firstName;$('#profilePhoneInput').value=state.profile.phone;$('#ageConfirm').value='18plus';$('#profileConsent').checked=true}showModal('profileModal')};$('#privacyBtn').onclick=()=>showModal('privacyStatementModal');$('#logoutBtn').onclick=()=>openConfirmModal({title:'Sign out of Lockily?',message:'You will return to the Sign Up / Sign In screen. Your Locks and reports remain safely stored in your Lockily account.',confirmText:'Sign out'},async()=>{try{await lockilyApi('apiLockilyLogout',{method:'POST'})}catch{}clearLockilySession();state=defaultState();await loadPublicBootstrap();showAuth();toast('Signed out')});
+    $('#notificationBtn').onclick=()=>openNotifications();$('#notificationsMenuBtn').onclick=()=>openNotifications();$('#transactionHistoryBtn').onclick=()=>openTransactionHistory();$('#recoverySettingsBtn').onclick=()=>rotateRecoveryCode();$('#topProfileBtn').onclick=()=>nav('profile');$('#profileAction').onclick=()=>{if(state.profile){$('#firstName').value=state.profile.firstName;$('#profilePhoneInput').value=state.profile.phone;$('#ageConfirm').value='18plus';$('#profileConsent').checked=true}showModal('profileModal')};$('#privacyBtn').onclick=()=>{window.location.href='legal.html#privacy'};$('#logoutBtn').onclick=()=>openConfirmModal({title:'Sign out of Lockily?',message:'You will return to the Sign Up / Sign In screen. Your Locks and reports remain safely stored in your Lockily account.',confirmText:'Sign out'},async()=>{try{await lockilyApi('apiLockilyLogout',{method:'POST'})}catch{}clearLockilySession();state=defaultState();await loadPublicBootstrap();showAuth();toast('Signed out')});
 
     function renderProfile(){
       const p=state.profile;if(p){$('#profileAvatar').textContent=(p.firstName||'L').slice(0,1).toUpperCase();$('#profileName').textContent=p.firstName;$('#profilePhone').textContent=maskPhone(p.phone);setPhoneField('profilePhoneInput',p.phone);$('#phoneBadge').textContent='Phone verified';$('#phoneBadge').className='tiny-badge';}
