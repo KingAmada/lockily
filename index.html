@@ -337,6 +337,15 @@
     .discount-offer h4{margin:4px 0 3px;font-size:14px;letter-spacing:-.03em}
     .discount-offer p{margin:0;color:#8c7450;font-size:8.5px;line-height:1.35}
     .discount-offer .deal-price{display:flex;align-items:center;gap:6px;margin-top:5px}.discount-offer .deal-price b{font-size:18px;color:#b16f08}.discount-offer .deal-price del{font-size:9px;color:#9a8b77}
+    /* Locked Full Report teaser */
+    .report-teaser{margin-top:10px;padding:16px;border-radius:24px;background:linear-gradient(145deg,#fff,#fff9fc);border:1px solid #f0dfe8;box-shadow:0 14px 36px rgba(89,31,62,.08);position:relative;overflow:hidden}
+    .report-teaser:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-70px;top:-78px;background:radial-gradient(circle,rgba(119,85,232,.10),transparent 68%);pointer-events:none}
+    .report-teaser-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;position:relative;z-index:2}
+    .report-teaser-title{min-width:0}.report-teaser-kicker{display:flex;align-items:center;gap:7px;font-size:8px;font-weight:1000;letter-spacing:.08em;color:#9d5878;text-transform:uppercase}.report-teaser-kicker i{width:25px;height:25px;border-radius:9px;display:grid;place-items:center;font-style:normal;background:linear-gradient(145deg,#fff0f5,#f2efff);font-size:12px}.report-teaser-title h4{margin:6px 0 3px;font-size:16px;letter-spacing:-.035em}.report-teaser-title p{margin:0;color:var(--muted);font-size:8.8px;line-height:1.45}.report-premium-pill{flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;padding:7px 9px;border-radius:999px;background:#fff1f7;border:1px solid #f2dce6;color:#b03965;font-size:7px;font-weight:1000;letter-spacing:.06em;white-space:nowrap}
+    .report-teaser-rows{display:grid;gap:10px;margin-top:14px;position:relative;z-index:1}.report-teaser-row{display:grid;grid-template-columns:minmax(120px,145px) 1fr 22px;gap:8px;align-items:center}.report-teaser-label{font-size:9.5px;font-weight:950;color:#392a33;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.report-teaser-track{height:9px;border-radius:999px;background:#f1e6eb;overflow:hidden;position:relative}.report-teaser-bar{height:100%;border-radius:999px;background:linear-gradient(90deg,#f24f82,#7755e8);filter:blur(4px);opacity:.76;transform:scaleY(1.15)}.report-teaser-num{font-size:10px;font-weight:1000;color:#5c4350;text-align:right;filter:blur(4px);user-select:none}
+    .report-teaser-lock{position:absolute;z-index:3;left:50%;top:59%;transform:translate(-50%,-50%);border:0;border-radius:999px;padding:11px 18px;min-width:142px;background:linear-gradient(135deg,#f24f82,#7755e8);color:#fff;font-size:10px;font-weight:1000;box-shadow:0 13px 28px rgba(119,85,232,.24);display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}.report-teaser-lock:hover{transform:translate(-50%,-52%);box-shadow:0 16px 34px rgba(119,85,232,.29)}.report-teaser-lock:active{transform:translate(-50%,-50%) scale(.985)}
+    .report-teaser-foot{position:relative;z-index:2;display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:11px;border-top:1px solid #f0e4ea;color:#7a6671;font-size:7.8px;line-height:1.4}.report-teaser-foot strong{color:#b43664}.report-teaser-foot .spark{font-size:14px}
+    @media(max-width:430px){.report-teaser{padding:14px}.report-premium-pill{display:none}.report-teaser-row{grid-template-columns:112px 1fr 18px;gap:7px}.report-teaser-label{font-size:8.8px}.report-teaser-lock{top:59%;min-width:132px;padding:10px 16px;font-size:9.5px}.report-teaser-title h4{font-size:15px}}
     .action-offer{display:block;margin-top:4px;font-size:7.5px;font-weight:1000;color:#a15b13;line-height:1.25}
     .action-offer.expired{color:var(--muted)}
     .offer-expired-text{font-weight:1000;color:#9a620f}
@@ -814,6 +823,25 @@
         <div class="attention-line" id="activityInterpretation">Search activity is an attention signal. It does not prove a relationship exists.</div>
       </section>
       <div class="discount-offer" id="verifyDiscountOffer"><div><small>50% CHECK OFFER</small><h4>Limited-time offer loading…</h4><p>Unlock the Full Report before the timer runs out.</p><div class="deal-price"><b id="verifyDealPrice">—</b><del id="verifyStandardPrice">—</del></div></div><div class="deal-timer"><b id="verifyDealTimer">02:00</b><span>LEFT</span></div></div>
+      <section class="report-teaser" id="verifyReportTeaser" aria-label="Locked relationship claims preview">
+        <div class="report-teaser-head">
+          <div class="report-teaser-title">
+            <div class="report-teaser-kicker"><i>📊</i><span>Phase 2 · Relationship Claims</span></div>
+            <h4>See what people are claiming</h4>
+            <p>Lock-ins currently tied to this number on Lockily.</p>
+          </div>
+          <span class="report-premium-pill">🔒 PREMIUM INSIGHT</span>
+        </div>
+        <div class="report-teaser-rows" aria-hidden="true">
+          <div class="report-teaser-row"><span class="report-teaser-label">💬 Talking Stage</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:36%"></div></div><span class="report-teaser-num">8</span></div>
+          <div class="report-teaser-row"><span class="report-teaser-label">🤷 Situationship</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:52%"></div></div><span class="report-teaser-num">4</span></div>
+          <div class="report-teaser-row"><span class="report-teaser-label">💑 Exclusive</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:22%"></div></div><span class="report-teaser-num">2</span></div>
+          <div class="report-teaser-row"><span class="report-teaser-label">💍 Engaged</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:14%"></div></div><span class="report-teaser-num">1</span></div>
+          <div class="report-teaser-row"><span class="report-teaser-label">👰 Married</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:31%"></div></div><span class="report-teaser-num">3</span></div>
+        </div>
+        <button class="report-teaser-lock" id="teaserGetReportBtn" type="button"><span>🔒</span><span>Get Report</span><span>›</span></button>
+        <div class="report-teaser-foot"><span class="spark">✨</span><div><strong>Exact counts are locked.</strong> Unlock the Full Report to see the real bars, numbers and verification details.</div></div>
+      </section>
       <section class="price-card" id="verifyPriceCard"><small>FULL REPORT</small><h4>Check if your locked person got someone new</h4><p>See Lock-ins, timing, search activity, monitoring activity, confidence and verified-lock signals.</p><div class="price-row"><div><b id="verifyPriceLabel">—</b><span id="verifyPriceSub">Loading pricing…</span></div><button id="buyVerifyBtn">Get Full Report</button></div></section>
       <button class="secondary" id="resultMonitorBtn">Monitor this person</button><div class="mini-note" id="resultMonitorOfferStatus">Loading Monitor pricing…</div>
     </div>
@@ -1863,6 +1891,7 @@
       $('#verifyPaywall').classList.toggle('locked',!unlocked);
       $('#searchActivityWrap').classList.toggle('hidden',!!unlocked);
       $('#verifyPriceCard').classList.toggle('hidden',!!unlocked);
+      $('#verifyReportTeaser')?.classList.toggle('hidden',!!unlocked);
       $('#verifyDiscountOffer').classList.toggle('hidden',!!unlocked);$('#fullReportDetails').classList.toggle('hidden',!unlocked);if(unlocked){renderFullReportDetails(phone);if(accessOrder?.paid&&isVerificationToday(accessOrder))setTimeout(()=>persistTodayReportSnapshot(accessOrder,phone),0)}
       if(!unlocked){startVerifyOffer()}
       $('#intelNote').textContent=unlocked
@@ -2288,6 +2317,7 @@
       });
     };
 
+    $('#teaserGetReportBtn')?.addEventListener('click',()=>{const buy=$('#buyVerifyBtn');if(buy&&!buy.disabled)buy.click()});
     $('#notificationBtn').onclick=()=>openNotifications();$('#notificationsMenuBtn').onclick=()=>openNotifications();$('#transactionHistoryBtn').onclick=()=>openTransactionHistory();$('#recoverySettingsBtn').onclick=()=>rotateRecoveryCode();$('#topProfileBtn').onclick=()=>nav('profile');$('#profileAction').onclick=()=>{if(state.profile){$('#firstName').value=state.profile.firstName;$('#profilePhoneInput').value=state.profile.phone;$('#ageConfirm').value='18plus';$('#profileConsent').checked=true}showModal('profileModal')};$('#privacyBtn').onclick=()=>openLegalModal('privacy');$('#logoutBtn').onclick=()=>openConfirmModal({title:'Sign out of Lockily?',message:'You will return to the Sign Up / Sign In screen. Your Locks and reports remain safely stored in your Lockily account.',confirmText:'Sign out'},async()=>{try{await lockilyApi('apiLockilyLogout',{method:'POST'})}catch{}clearLockilySession();state=defaultState();await loadPublicBootstrap();showAuth();toast('Signed out')});
 
     function renderProfile(){
