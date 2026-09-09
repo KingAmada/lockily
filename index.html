@@ -458,6 +458,16 @@
     .monitor-list{display:grid;gap:10px}.monitor-person-card{padding:16px;border-radius:25px;background:linear-gradient(145deg,#2c1d38,#644799);color:#fff;box-shadow:0 18px 48px rgba(84,58,135,.18)}.monitor-person-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.monitor-person-card small{display:block;color:#d9cef6;font-size:7.5px;font-weight:1000;letter-spacing:.08em}.monitor-person-card h3{margin:5px 0 2px;font-size:18px}.monitor-person-card p{margin:0;color:#ddd2f4;font-size:8.5px}.monitor-live-badge{padding:6px 8px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);font-size:7px;font-weight:1000;white-space:nowrap}.monitor-person-meta{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.monitor-person-meta div{padding:9px;border-radius:13px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.1)}.monitor-person-meta b{display:block;font-size:10px}.monitor-person-meta span{display:block;margin-top:2px;font-size:7px;color:#d9cef2}.monitor-person-card .monitor-open{margin-top:9px;width:100%;border:0;border-radius:13px;padding:9px;background:#fff;color:#513676;font-size:8px;font-weight:1000}
 
 
+    /* Subject response layer: Claim Back / Dispute */
+    .incoming-lock-list{display:grid;gap:10px}.incoming-lock-card{padding:15px;border-radius:22px;background:linear-gradient(145deg,#fff,#fff8fb);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+    .incoming-lock-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.incoming-lock-top h4{margin:0;font-size:12px}.incoming-lock-top small{display:block;margin-top:3px;color:var(--muted);font-size:8px}.incoming-lock-status{flex:0 0 auto;padding:6px 8px;border-radius:999px;background:#f5f0f3;color:#745e69;font-size:7px;font-weight:1000;letter-spacing:.05em;text-transform:uppercase}.incoming-lock-status.claimed{background:#fff0f5;color:#b43765}.incoming-lock-status.disputed{background:#fff6e5;color:#94600f}.incoming-lock-status.review{background:#fff0f3;color:#ad3450}
+    .incoming-lock-copy{margin:9px 0 0;color:#6b5662;font-size:9px;line-height:1.52}.incoming-lock-proof{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.incoming-lock-proof span{padding:5px 8px;border-radius:999px;background:#f5f0f3;color:#765f6b;font-size:7px;font-weight:950}.incoming-lock-proof .verified{background:#edf8f1;color:#2d7142}.incoming-lock-proof .mutual{background:#f0edff;color:#634bb3}
+    .incoming-lock-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}.incoming-lock-actions button{border:0;border-radius:13px;padding:10px 9px;font-size:8px;font-weight:1000}.incoming-lock-actions .claim-back{background:linear-gradient(135deg,#f24f82,#8b62ef);color:#fff}.incoming-lock-actions .dispute{background:#fff;border:1px solid #efdce5;color:#8a4663}
+    .dispute-reasons{display:grid;gap:8px;margin-top:13px}.dispute-reason{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);background:#fff;border-radius:16px;text-align:left;color:var(--ink)}.dispute-reason.active{border-color:#f09abb;box-shadow:0 0 0 4px rgba(242,79,130,.08);background:#fff7fa}.dispute-reason i{font-style:normal;font-size:18px}.dispute-reason b{display:block;font-size:10px}.dispute-reason span{display:block;color:var(--muted);font-size:8px;margin-top:3px;line-height:1.45}
+    .subject-response-note{margin-top:10px;padding:10px 11px;border-radius:15px;background:#f4f0ff;color:#5f4bb0;font-size:8px;line-height:1.5;font-weight:800}
+    .lrp-tag.claimed{background:#fff0f5;color:#b43765}.lrp-tag.disputed{background:#fff6e5;color:#94600f}.lrp-tag.outdated{background:#f4f1f3;color:#725e68}.lrp-tag.harassment{background:#fff0f3;color:#ae3551}.lrp-tag.unresponded{background:#f6f1f4;color:#7b6671}
+    .lrp-response-summary{margin-top:12px;padding:12px;border:1px solid var(--lrp-light);border-radius:16px;background:#fff}.lrp-response-summary-title{font-size:9px;font-weight:950;color:var(--lrp-text);letter-spacing:.05em;text-transform:uppercase;margin-bottom:9px}.lrp-response-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.lrp-response-stat{padding:9px;border-radius:13px;background:#faf6f8;text-align:center}.lrp-response-stat b{display:block;font-size:14px}.lrp-response-stat span{display:block;margin-top:3px;color:var(--lrp-muted);font-size:7px;line-height:1.3}
+
     .notice-list,.transaction-list{display:grid;gap:9px;margin-top:12px}.notice-card,.transaction-card{padding:14px;border-radius:21px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
     .notice-card.unread{border-color:#f3b4c8;background:linear-gradient(145deg,#fff,#fff4f8)}.notice-head,.transaction-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.notice-head h4,.transaction-head h4{margin:0;font-size:12px}.notice-head small,.transaction-head small{color:var(--muted);font-size:7.5px}.notice-card p,.transaction-card p{margin:6px 0 0;color:var(--muted);font-size:9px;line-height:1.5}
     .notice-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.notice-actions button{border:0;border-radius:13px;padding:10px;font-size:8.5px;font-weight:1000}.notice-actions .accept{background:linear-gradient(135deg,#f04f81,#8a61ea);color:#fff}.notice-actions .decline{background:#fff;color:#78485e;border:1px solid var(--line)}
@@ -800,6 +810,14 @@
                 <div class="lrp-mini-stat"><span>⚠ Verified Conflict</span><b id="lrpConflictEvidence">No</b></div>
               </div>
             </div>
+            <div class="lrp-response-summary">
+              <div class="lrp-response-summary-title">Subject response layer</div>
+              <div class="lrp-response-stats">
+                <div class="lrp-response-stat"><b id="lrpClaimedBackCount">0</b><span>💗 Mutual / Claimed Back</span></div>
+                <div class="lrp-response-stat"><b id="lrpDisputedCount">0</b><span>⚠️ Disputed</span></div>
+                <div class="lrp-response-stat"><b id="lrpUnrespondedCount">0</b><span>○ Unresponded</span></div>
+              </div>
+            </div>
             <div class="lrp-verdict" id="lrpVerdict"><strong>⚠️ Lockily Interpretation:</strong> Report interpretation will appear here.</div>
           </div>
 
@@ -893,10 +911,25 @@
   <!-- Notifications -->
   <div class="modal" id="notificationsModal"><div class="sheet">
     <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY NOTIFICATIONS</small><h3>Notifications</h3></div><button class="close" data-close="notificationsModal">×</button></div><div class="modal-refresh-state" id="notificationsRefreshState">Refreshing latest notifications…</div>
-    <div class="section-head" style="margin-top:14px"><div><h2>Verified Lock requests</h2><p>Only you can accept a request sent to your number.</p></div></div>
+    <div class="section-head" style="margin-top:14px"><div><h2>Lock-ins involving you</h2><p>Claim Back to acknowledge it, or dispute a claim that is false, harassment or outdated.</p></div></div>
+    <div class="incoming-lock-list" id="incomingLockList"></div>
+    <div class="section-head"><div><h2>Verified Lock requests</h2><p>Only you can accept a request sent to your number.</p></div></div>
     <div class="notice-list" id="mutualRequestList"></div>
     <div class="section-head"><div><h2>Recent alerts</h2></div><button class="text-link" id="markNotificationsReadBtn" type="button">Mark read</button></div>
     <div class="notice-list" id="notificationAlertList"></div>
+  </div></div>
+
+  <!-- Dispute a Lock-in -->
+  <div class="modal" id="disputeLockModal"><div class="sheet">
+    <div class="handle"></div><div class="sheet-head"><div><small>RESPOND TO LOCK-IN</small><h3>Dispute this Lock-in</h3></div><button class="close" data-close="disputeLockModal">×</button></div>
+    <p style="margin:6px 0 0;color:var(--muted);font-size:9px;line-height:1.55">Your response becomes part of the Lockily report. A dispute records what you say; it does not automatically declare the original claimant wrong.</p>
+    <div class="dispute-reasons" id="disputeReasonList">
+      <button class="dispute-reason" type="button" data-dispute-reason="false"><i>⚠️</i><div><b>False</b><span>You say this relationship claim is not true.</span></div></button>
+      <button class="dispute-reason" type="button" data-dispute-reason="outdated"><i>🕒</i><div><b>Outdated</b><span>You say the relationship may have existed before but is no longer current.</span></div></button>
+      <button class="dispute-reason" type="button" data-dispute-reason="harassment"><i>🚨</i><div><b>Harassment</b><span>You say the Lock-in was submitted maliciously or to harass you. This also flags it for review.</span></div></button>
+    </div>
+    <div class="subject-response-note" id="disputeVerificationNote">Your phone-verification status will be recorded with this response.</div>
+    <button class="primary" id="submitLockDisputeBtn" type="button">Submit dispute</button>
   </div></div>
 
   <!-- Payment history -->
@@ -1175,6 +1208,7 @@
       verificationHistory: [],
       alerts: [],
       incomingMutualInvites: [],
+      incomingLocks: [],
       outgoingMutualInvites: [],
       transactions: [],
       currentLookup: null,
@@ -1188,7 +1222,9 @@
       currentPayment: null,
       mutualInvite: null,
       verifyOfferExpiresAt: null,
-      selectedPaymentProvider: null
+      selectedPaymentProvider: null,
+      respondingLockId: null,
+      selectedDisputeReason: null
     });
     let state = defaultState();
 
@@ -1291,6 +1327,7 @@
       state.locks=Array.isArray(payload.locks)?payload.locks:[];
       state.alerts=Array.isArray(payload.alerts)?payload.alerts:[];
       state.incomingMutualInvites=Array.isArray(payload.incomingMutualInvites)?payload.incomingMutualInvites:[];
+      state.incomingLocks=Array.isArray(payload.incomingLocks)?payload.incomingLocks:[];
       state.outgoingMutualInvites=Array.isArray(payload.outgoingMutualInvites)?payload.outgoingMutualInvites:[];
       state.transactions=Array.isArray(payload.transactions)?payload.transactions:[];
       state.verificationHistory=(Array.isArray(payload.verificationHistory)?payload.verificationHistory:[]).map(x=>normalizeBackendPaymentOrder(x,'verify'));
@@ -1458,7 +1495,17 @@
     function renderNotificationBadge(){
       const count=unreadNotificationCount(),dot=$('#notifDot'),counter=$('#notificationCount'),menu=$('#notificationsMenuBadge');dot.classList.toggle('show',count>0);counter.textContent=count>99?'99+':count;counter.classList.toggle('show',count>0);menu.textContent=count>99?'99+':count;menu.classList.toggle('show',count>0)
     }
+    function relationshipDisplay(value){const key=String(value||'relationship').toLowerCase();const map={talking:'💬 Talking stage',situationship:'🪢 Situationship',boyfriend_girlfriend:'💕 Dating / BF-GF',dating:'💕 Dating / BF-GF',exclusive:'❤️ Exclusive relationship',engaged:'💍 Engaged',married:'💒 Married',separated:'↔️ Separated / On a break',complicated:"🧩 It's complicated",long_distance:'📍 Long-distance relationship'};return map[key]||('🫶 '+key.replace(/_/g,' ').replace(/^./,c=>c.toUpperCase()))}
+    function incomingResponseLabel(item){const s=String(item?.responseStatus||'unresponded');if(s==='claimed_back')return{label:'💗 Mutual · Claimed Back',cls:'claimed'};if(s==='under_review')return{label:'🚨 Under Review',cls:'review'};if(s==='disputed'){const r=String(item?.disputeReason||'');return{label:r==='outdated'?'🕒 Disputed · Outdated':r==='harassment'?'🚨 Disputed · Harassment':'⚠️ Disputed · False',cls:'disputed'}}return{label:'○ Unresponded',cls:''}}
+    function renderIncomingLocks(){
+      const wrap=$('#incomingLockList');if(!wrap)return;wrap.innerHTML='';const rows=state.incomingLocks||[];
+      if(!rows.length){wrap.innerHTML='<div class="empty-state glass"><div class="empty-icon">🔒</div><h3>No Lock-ins involving your number.</h3><p>If another Lockily user locks your number, you can respond here.</p></div>';return}
+      rows.forEach(item=>{const status=incomingResponseLabel(item),card=document.createElement('article');card.className='incoming-lock-card';const rel=relationshipDisplay(item.relationshipType);const verified=item.claimantPhoneVerified===true;const responseVerified=item.subjectResponsePhoneVerified===true;card.innerHTML=`<div class="incoming-lock-top"><div><h4>${escapeHtml(rel)}</h4><small>Lock-in created ${escapeHtml(timeAgo(item.createdAt))}</small></div><span class="incoming-lock-status ${status.cls}">${escapeHtml(status.label)}</span></div><p class="incoming-lock-copy">A Lockily user associated your number with this relationship claim. The claimant identity remains private.</p><div class="incoming-lock-proof"><span class="${verified?'verified':''}">📱 Claimant ${verified?'phone-verified':'unverified'}</span>${item.mutualStatus==='verified'?'<span class="mutual">🤝 Verified Mutual</span>':''}${item.respondedAt?`<span class="${responseVerified?'verified':''}">Subject response ${responseVerified?'verified':'unverified'}</span>`:''}</div>${item.responseStatus==='unresponded'?'<div class="incoming-lock-actions"><button class="claim-back" type="button">💗 Claim Back</button><button class="dispute" type="button">⚠️ Dispute</button></div>':''}`;
+        card.querySelector('.claim-back')?.addEventListener('click',()=>claimBackIncomingLock(item.id));card.querySelector('.dispute')?.addEventListener('click',()=>openDisputeLock(item.id));wrap.appendChild(card)
+      })
+    }
     function renderNotifications(){
+      renderIncomingLocks();
       const requests=$('#mutualRequestList');requests.innerHTML='';const incoming=(state.incomingMutualInvites||[]).filter(i=>i.status==='pending');
       if(!incoming.length)requests.innerHTML='<div class="empty-state glass"><div class="empty-icon">♥</div><h3>No Verified Lock requests.</h3><p>Requests sent to your account phone number will appear here.</p></div>';
       incoming.forEach(inv=>{const card=document.createElement('article');card.className='notice-card unread';const rel=(inv.relationshipType||'relationship').replace(/_/g,' ');card.innerHTML=`<div class="notice-head"><div><h4>${escapeHtml(inv.requester?.firstName||'Verified Lock request')}</h4><small>${escapeHtml(digits(inv.requester?.phone)||'')} · ${escapeHtml(rel)}</small></div><small>${escapeHtml(timeAgo(inv.createdAt))}</small></div><p>${escapeHtml(inv.requester?.firstName||'Someone')} says you are in a ${escapeHtml(rel)} relationship and is asking you to confirm it independently.</p><div class="notice-actions"><button class="accept" type="button">Accept Verified Lock</button><button class="decline" type="button">Decline</button></div>`;card.querySelector('.accept').onclick=()=>respondMutualInvite(inv.id,'accept');card.querySelector('.decline').onclick=()=>respondMutualInvite(inv.id,'decline');requests.appendChild(card)});
@@ -1474,6 +1521,7 @@
           const r=await lockilyApi('apiLockilyNotifications');
           state.alerts=Array.isArray(r.alerts)?r.alerts:[];
           state.incomingMutualInvites=Array.isArray(r.incomingMutualInvites)?r.incomingMutualInvites:[];
+          state.incomingLocks=Array.isArray(r.incomingLocks)?r.incomingLocks:[];
           renderNotifications();renderNotificationBadge();
           return r;
         }catch(err){if(!silent)toast(err.message||'Could not refresh notifications');return null}
@@ -1486,6 +1534,15 @@
       showModal('notificationsModal');
       syncNotifications({silent:true});
     }
+    async function claimBackIncomingLock(lockId){
+      openConfirmModal({title:'Claim this Lock-in back?',message:'This will record that the subject account acknowledges the relationship claim. Your phone-verification status will be stored with the response.',confirmText:'💗 Claim Back · Make Mutual'},async()=>{
+        try{toast('Claiming Lock-in back…');const r=await lockilyApi('apiLockilyRespondLock',{method:'POST',body:JSON.stringify({lockId,action:'claim_back'})});state.incomingLocks=(state.incomingLocks||[]).map(x=>x.id===lockId?(r.lock||x):x);renderNotifications();renderNotificationBadge();toast(r.subjectResponsePhoneVerified?'Lock-in claimed back · verified response':'Lock-in claimed back · response recorded');syncNotifications({silent:true})}catch(err){toast(err.message||'Could not claim this Lock-in back')}
+      })
+    }
+    function openDisputeLock(lockId){state.respondingLockId=lockId;state.selectedDisputeReason=null;$$('[data-dispute-reason]').forEach(b=>b.classList.remove('active'));const note=$('#disputeVerificationNote');if(note)note.textContent=state.profile?.phoneVerified?'📱 Your current phone-verification status will be attached to this dispute.':'○ Your phone is not verified yet. The dispute will still be recorded, but the report will show the response as unverified.';showModal('disputeLockModal')}
+    $$('[data-dispute-reason]').forEach(btn=>btn.addEventListener('click',()=>{state.selectedDisputeReason=btn.dataset.disputeReason;$$('[data-dispute-reason]').forEach(b=>b.classList.toggle('active',b===btn))}));
+    $('#submitLockDisputeBtn')?.addEventListener('click',async()=>{const lockId=state.respondingLockId,reason=state.selectedDisputeReason;if(!lockId||!reason){toast('Choose why you are disputing this Lock-in');return}const btn=$('#submitLockDisputeBtn'),old=btn.textContent;btn.disabled=true;btn.textContent='Submitting…';try{const r=await lockilyApi('apiLockilyRespondLock',{method:'POST',body:JSON.stringify({lockId,action:'dispute',reason})});state.incomingLocks=(state.incomingLocks||[]).map(x=>x.id===lockId?(r.lock||x):x);hideModal('disputeLockModal');state.respondingLockId=null;state.selectedDisputeReason=null;renderNotifications();renderNotificationBadge();toast(reason==='harassment'?'Harassment dispute submitted for review':'Dispute recorded');syncNotifications({silent:true})}catch(err){toast(err.message||'Could not submit dispute')}finally{btn.disabled=false;btn.textContent=old}});
+
     async function respondMutualInvite(inviteId,action){
       try{
         const label=action==='accept'?'Accepting Verified Lock…':'Declining request…';toast(label);
@@ -1735,9 +1792,9 @@
     };
     function srRelKey(value){const s=String(value||'').trim().toLowerCase().replace(/[_-]+/g,' ').replace(/\s+/g,' ');if(s.includes('married')||s==='wife'||s==='husband')return'married';if(s.includes('engag'))return'engaged';if(s.includes('situationship'))return'situationship';if(s.includes('talking'))return'talking';if(s.includes('exclusive'))return'exclusive';if(s.includes('separated')||s.includes('on a break'))return'separated';if(s.includes('complicated')||s.includes('on and off'))return'complicated';if(s.includes('long distance'))return'long_distance';if(s.includes('dating')||s.includes('boyfriend')||s.includes('girlfriend'))return'dating';return SR_REL_TYPES[s]?s:'other'}
     function srClaimMix(report){
-      if(Array.isArray(report.claimMix)&&report.claimMix.length)return report.claimMix.map(x=>({key:srRelKey(x.key||x.label),label:x.label,count:positiveNum(x.count),unverified:positiveNum(x.unverified),phoneVerified:positiveNum(x.phoneVerified),mutualConfirmed:positiveNum(x.mutualConfirmed)}));
+      if(Array.isArray(report.claimMix)&&report.claimMix.length)return report.claimMix.map(x=>({key:srRelKey(x.key||x.label),label:x.label,count:positiveNum(x.count),unverified:positiveNum(x.unverified),phoneVerified:positiveNum(x.phoneVerified),mutualConfirmed:positiveNum(x.mutualConfirmed),claimedBack:positiveNum(x.claimedBack),unresponded:positiveNum(x.unresponded),disputed:positiveNum(x.disputed),disputedFalse:positiveNum(x.disputedFalse),disputedOutdated:positiveNum(x.disputedOutdated),disputedHarassment:positiveNum(x.disputedHarassment),subjectVerifiedResponses:positiveNum(x.subjectVerifiedResponses)}));
       const d=report.d||{},phoneVerified=positiveNum(d.phoneVerifiedClaims??d.verifiedPhoneClaims??d.phoneVerifiedCount),mutual=positiveNum(d.mutualConfirmedClaims??d.mutualVerifiedCount??d.mutualCount??(affirmative(d.verified)?1:0));let pvLeft=phoneVerified,mutLeft=mutual;
-      return (Array.isArray(report.mix)?report.mix:[]).map(x=>{const count=positiveNum(x.count),pv=Math.min(count,pvLeft),mu=Math.min(pv,mutLeft);pvLeft-=pv;mutLeft-=mu;return{key:srRelKey(x.label),label:x.label,count,unverified:Math.max(0,count-pv),phoneVerified:pv,mutualConfirmed:mu}});
+      return (Array.isArray(report.mix)?report.mix:[]).map(x=>{const count=positiveNum(x.count),pv=Math.min(count,pvLeft),mu=Math.min(pv,mutLeft);pvLeft-=pv;mutLeft-=mu;return{key:srRelKey(x.label),label:x.label,count,unverified:Math.max(0,count-pv),phoneVerified:pv,mutualConfirmed:mu,claimedBack:0,unresponded:count,disputed:0,disputedFalse:0,disputedOutdated:0,disputedHarassment:0,subjectVerifiedResponses:0}});
     }
     function srAttentionMeta(activity){const seven=positiveNum(activity.seven),thirty=positiveNum(activity.thirty);if(seven>=8||seven>=Math.max(4,Math.ceil(thirty*.65)))return{label:'Rising',emoji:'↗️',copy:'Relationship-search attention is rising recently.'};if(seven>=3||thirty>=5)return{label:'Active',emoji:'👀',copy:'This number has active relationship-search attention.'};return{label:'Low',emoji:'—',copy:'Search attention around this number is currently limited.'}}
     function srRenderTrust(d){
@@ -1803,7 +1860,7 @@
       const byKey=new Map(srClaimMix(report).map(row=>[srRelKey(row.key||row.label),row]));
       return LRP_REL_ORDER.map(key=>{
         const meta=SR_REL_TYPES[key]||SR_REL_TYPES.other,row=byKey.get(key)||{};
-        return {key,label:meta.label,emoji:meta.emoji,count:positiveNum(row.count),unverified:positiveNum(row.unverified),phoneVerified:positiveNum(row.phoneVerified),mutualConfirmed:positiveNum(row.mutualConfirmed)};
+        return {key,label:meta.label,emoji:meta.emoji,count:positiveNum(row.count),unverified:positiveNum(row.unverified),phoneVerified:positiveNum(row.phoneVerified),mutualConfirmed:positiveNum(row.mutualConfirmed),claimedBack:positiveNum(row.claimedBack),unresponded:positiveNum(row.unresponded),disputed:positiveNum(row.disputed),disputedFalse:positiveNum(row.disputedFalse),disputedOutdated:positiveNum(row.disputedOutdated),disputedHarassment:positiveNum(row.disputedHarassment),subjectVerifiedResponses:positiveNum(row.subjectVerifiedResponses)};
       }).filter(row=>row.key!=='long_distance'||row.count>0);
     }
     function lrpRenderClaims(report,total){
@@ -1811,7 +1868,16 @@
       rows.forEach(row=>{
         const pct=row.count?Math.max(4,Math.round(row.count/den*100)):0,el=document.createElement('div');
         el.className=`lrp-claim-card${row.count?'':' empty'}`;
-        el.innerHTML=`<div class="lrp-claim-head"><span class="lrp-claim-label">${row.emoji} ${escapeHtml(row.label)}</span><span class="lrp-claim-total">${row.count.toLocaleString()} ${row.count===1?'Claim':'Claims'}</span></div><div class="lrp-bar-track"><div class="lrp-bar-fill" style="width:${pct}%"></div></div><div class="lrp-claim-tags"><span class="lrp-tag ${row.phoneVerified?'phone':'dim'}">📱 ${row.phoneVerified} verified</span><span class="lrp-tag ${row.mutualConfirmed?'mutual':'dim'}">🤝 ${row.mutualConfirmed} mutual</span><span class="lrp-tag ${row.unverified?'':'dim'}">○ ${row.unverified} unverified</span></div>`;
+        const tags=[];
+        if(row.phoneVerified)tags.push(`<span class="lrp-tag phone">📱 ${row.phoneVerified} claimant verified</span>`);
+        if(row.claimedBack)tags.push(`<span class="lrp-tag claimed">💗 ${row.claimedBack} mutual / claimed back</span>`);
+        if(row.mutualConfirmed)tags.push(`<span class="lrp-tag mutual">🤝 ${row.mutualConfirmed} verified mutual</span>`);
+        if(row.disputedFalse)tags.push(`<span class="lrp-tag disputed">⚠️ ${row.disputedFalse} disputed false</span>`);
+        if(row.disputedOutdated)tags.push(`<span class="lrp-tag outdated">🕒 ${row.disputedOutdated} outdated</span>`);
+        if(row.disputedHarassment)tags.push(`<span class="lrp-tag harassment">🚨 ${row.disputedHarassment} harassment</span>`);
+        if(row.unresponded)tags.push(`<span class="lrp-tag unresponded">○ ${row.unresponded} unresponded</span>`);
+        if(!tags.length)tags.push('<span class="lrp-tag dim">No response evidence</span>');
+        el.innerHTML=`<div class="lrp-claim-head"><span class="lrp-claim-label">${row.emoji} ${escapeHtml(row.label)}</span><span class="lrp-claim-total">${row.count.toLocaleString()} ${row.count===1?'Claim':'Claims'}</span></div><div class="lrp-bar-track"><div class="lrp-bar-fill" style="width:${pct}%"></div></div><div class="lrp-claim-tags">${tags.join('')}</div>`;
         wrap.appendChild(el);
       });
     }
@@ -1821,19 +1887,22 @@
       return d.oldest&&d.oldest!=='—'?d.oldest:'—';
     }
     function lrpVerdict(report,attention){
-      const d=report.d||{},conflict=srConflictAnalysis(report),total=positiveNum(d.lockins),phoneVerified=positiveNum(d.phoneVerifiedClaims??d.verifiedPhoneClaims??d.phoneVerifiedCount),mutual=positiveNum(d.mutualConfirmedClaims??d.mutualVerifiedCount??d.mutualCount??(affirmative(d.verified)?1:0));
-      if(conflict.strong)return{tone:'strong',html:`<strong>⚠️ Lockily Interpretation:</strong> ${escapeHtml(conflict.copy)}`};
-      if(conflict.show)return{tone:'',html:`<strong>⚠️ Lockily Interpretation:</strong> ${escapeHtml(conflict.copy)} Search attention is ${escapeHtml(String(attention.label||'low').toLowerCase())}.`};
-      if(total===1&&phoneVerified>0)return{tone:'good',html:`<strong>✓ Lockily Interpretation:</strong> One relationship claim is active and the claimant phone identity is verified.${mutual?' The relationship also has mutual account confirmation.':' No mutual confirmation is recorded.'}`};
-      if(total===1)return{tone:'',html:`<strong>ℹ️ Lockily Interpretation:</strong> One relationship claim is active, but the claimant has not completed phone ownership verification. Treat it as a lower-trust signal.`};
+      const d=report.d||{},conflict=srConflictAnalysis(report),total=positiveNum(d.lockins),phoneVerified=positiveNum(d.phoneVerifiedClaims??d.verifiedPhoneClaims??d.phoneVerifiedCount),verifiedMutual=positiveNum(d.mutualConfirmedClaims??d.mutualVerifiedCount??d.mutualCount??(affirmative(d.verified)?1:0)),claimedBack=positiveNum(d.claimedBackClaims),disputed=positiveNum(d.disputedClaims),outdated=positiveNum(d.outdatedClaims),harassment=positiveNum(d.harassmentDisputes),unresponded=positiveNum(d.unrespondedClaims??Math.max(0,total-claimedBack-disputed));
+      if(harassment>0)return{tone:'strong',html:`<strong>🚨 Lockily Interpretation:</strong> ${harassment} Lock-in ${harassment===1?'has':'have'} been disputed as harassment and flagged for review. The dispute records the subject response; it does not automatically establish that the original claimant acted wrongly.`};
+      if(conflict.strong)return{tone:'strong',html:`<strong>⚠️ Lockily Interpretation:</strong> ${escapeHtml(conflict.copy)} Subject responses: ${claimedBack} claimed back, ${disputed} disputed, ${unresponded} unresponded.`};
+      if(claimedBack>0&&disputed>0)return{tone:'strong',html:`<strong>⚠️ Lockily Interpretation:</strong> The subject has acknowledged ${claimedBack} ${claimedBack===1?'claim':'claims'} while disputing ${disputed}. This creates directly conflicting relationship responses. ${outdated?`${outdated} ${outdated===1?'claim is':'claims are'} specifically marked outdated.`:''}`};
+      if(claimedBack>0)return{tone:'good',html:`<strong>💗 Lockily Interpretation:</strong> ${claimedBack} ${claimedBack===1?'Lock-in has':'Lock-ins have'} been claimed back by the subject account. ${verifiedMutual?`${verifiedMutual} also ${verifiedMutual===1?'has':'have'} formal Verified Mutual confirmation.`:'Formal Verified Mutual confirmation is shown separately where available.'}`};
+      if(disputed>0)return{tone:'',html:`<strong>⚠️ Lockily Interpretation:</strong> ${disputed} ${disputed===1?'claim has':'claims have'} been disputed by the subject. ${outdated?`${outdated} ${outdated===1?'was':'were'} marked outdated.`:''} A dispute records the subject position and does not automatically determine which statement is true.`};
+      if(total===1&&phoneVerified>0)return{tone:'good',html:`<strong>✓ Lockily Interpretation:</strong> One relationship claim is active and the claimant phone identity is verified. The subject has not responded to this Lock-in yet.`};
+      if(total===1)return{tone:'',html:`<strong>ℹ️ Lockily Interpretation:</strong> One relationship claim is active, the claimant has not completed phone ownership verification, and the subject has not responded yet.`};
       return{tone:'good',html:`<strong>✓ Lockily Interpretation:</strong> No active relationship claim is currently recorded. ${attention.label==='Low'?'Search attention is also limited.':'Some search attention exists, but searches do not establish a relationship.'}`};
     }
     function renderFullReportDetails(phone){
-      const r=fullReportData(phone),d=r.d||relationshipData(phone),a=r.activity||{},total=positiveNum(d.lockins),phoneVerified=positiveNum(d.phoneVerifiedClaims??d.verifiedPhoneClaims??d.phoneVerifiedCount),mutual=positiveNum(d.mutualConfirmedClaims??d.mutualVerifiedCount??d.mutualCount??(affirmative(d.verified)?1:0)),unverified=Math.max(0,positiveNum(d.unverifiedClaims??(total-phoneVerified))),monitors=positiveNum(d.otherMonitors),recent=positiveNum(d.recentLockins),subjectVerified=affirmative(d.subjectPhoneVerified),attention=srAttentionMeta(a),conflict=affirmative(d.conflictingPhoneVerifiedClaims)||phoneVerified>=2;
+      const r=fullReportData(phone),d=r.d||relationshipData(phone),a=r.activity||{},total=positiveNum(d.lockins),phoneVerified=positiveNum(d.phoneVerifiedClaims??d.verifiedPhoneClaims??d.phoneVerifiedCount),mutual=positiveNum(d.mutualConfirmedClaims??d.mutualVerifiedCount??d.mutualCount??(affirmative(d.verified)?1:0)),unverified=Math.max(0,positiveNum(d.unverifiedClaims??(total-phoneVerified))),monitors=positiveNum(d.otherMonitors),recent=positiveNum(d.recentLockins),subjectVerified=affirmative(d.subjectPhoneVerified),claimedBack=positiveNum(d.claimedBackClaims),disputed=positiveNum(d.disputedClaims),unresponded=positiveNum(d.unrespondedClaims??Math.max(0,total-claimedBack-disputed)),attention=srAttentionMeta(a),conflict=affirmative(d.conflictingPhoneVerifiedClaims)||phoneVerified>=2;
       $('#lrpPhone').textContent=internationalDisplay(r.phone||phone);$('#lrpMeta').textContent=`Generated: ${reportDate(r.generatedAt)} · ID: ${r.reportId}`;
       $('#lrpTotalChecks').textContent=positiveNum(a.total).toLocaleString();$('#lrpActivityTrend').textContent=String(attention.label||'Low').toUpperCase();$('#lrpChecks7d').textContent=positiveNum(a.seven).toLocaleString();$('#lrpLastChecked').textContent=fmtActivityDate(a.last);
       lrpRenderClaims(r,total);$('#lrpEarliestClaim').textContent=lrpEarliestClaim(r,d);$('#lrpNewClaims').textContent=`${recent>0?'+':''}${recent} ${recent===1?'Claim':'Claims'}`;
-      $('#lrpMutualVerified').textContent=mutual>0?'Yes':'No';$('#lrpOtherMonitors').textContent=`${monitors} Active`;$('#lrpUnverified').textContent=unverified.toLocaleString();$('#lrpPhoneVerified').textContent=phoneVerified.toLocaleString();$('#lrpMutualCount').textContent=mutual.toLocaleString();$('#lrpClaimantPhoneEvidence').textContent=`${phoneVerified} verified`;$('#lrpSubjectPhoneEvidence').textContent=subjectVerified?'Verified':'Not verified';$('#lrpMutualEvidence').textContent=`${mutual} active`;$('#lrpConflictEvidence').textContent=conflict?'Yes':'No';
+      $('#lrpMutualVerified').textContent=mutual>0?'Yes':'No';$('#lrpOtherMonitors').textContent=`${monitors} Active`;$('#lrpUnverified').textContent=unverified.toLocaleString();$('#lrpPhoneVerified').textContent=phoneVerified.toLocaleString();$('#lrpMutualCount').textContent=mutual.toLocaleString();$('#lrpClaimantPhoneEvidence').textContent=`${phoneVerified} verified`;$('#lrpSubjectPhoneEvidence').textContent=subjectVerified?'Verified':'Not verified';$('#lrpMutualEvidence').textContent=`${mutual} active`;$('#lrpConflictEvidence').textContent=conflict?'Yes':'No';$('#lrpClaimedBackCount').textContent=claimedBack.toLocaleString();$('#lrpDisputedCount').textContent=disputed.toLocaleString();$('#lrpUnrespondedCount').textContent=unresponded.toLocaleString();
       const verdict=lrpVerdict(r,attention),box=$('#lrpVerdict');box.className=`lrp-verdict${verdict.tone?' '+verdict.tone:''}`;box.innerHTML=verdict.html;
     }
 
@@ -2359,7 +2428,7 @@
     }
     function timeAgo(iso){const s=Math.floor((Date.now()-new Date(iso).getTime())/1000);if(s<60)return 'now';if(s<3600)return Math.floor(s/60)+'m';if(s<86400)return Math.floor(s/3600)+'h';return Math.floor(s/86400)+'d'}
     function escapeHtml(s){return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
-    function unreadNotificationCount(){return (state.alerts||[]).filter(a=>!a.readAt&&a.type!=='mutual_invite').length+(state.incomingMutualInvites||[]).filter(i=>i.status==='pending').length}
+    function unreadNotificationCount(){return (state.alerts||[]).filter(a=>!a.readAt&&a.type!=='mutual_invite').length+(state.incomingMutualInvites||[]).filter(i=>i.status==='pending').length+(state.incomingLocks||[]).filter(i=>String(i.responseStatus||'unresponded')==='unresponded').length}
     function renderAll(){renderProfile();renderLock();renderMonitor();renderVerificationHistory();renderNetworkProof();renderNotificationBadge();}
 
     // Database-driven testimonials, hero content and live activity.
