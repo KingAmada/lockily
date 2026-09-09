@@ -448,8 +448,9 @@
     @media(max-width:420px){#resultModal .intelligence-scan{min-height:535px;padding:16px 12px 15px}#resultModal .scan-globe-shell{width:210px;height:210px}#resultModal .scan-globe{width:196px;height:196px}#resultModal .network-scan-phase h4{font-size:17px}}
 
     /* v8 free-result choice stack */
-    #resultModal .result-choice-actions{display:grid;gap:8px;margin:11px 0 10px}
+    #resultModal .result-choice-actions{display:grid;gap:8px;margin:11px 0 10px;padding:10px;border-radius:22px;background:rgba(255,255,255,.7);border:1px solid #f0e1e9;box-shadow:0 10px 28px rgba(89,31,62,.055)}
     #resultModal .result-choice-actions button{width:100%;margin:0;border-radius:18px;padding:13px 14px;font-weight:1000;font-size:10px}
+    #resultModal .result-full-report-btn{border:0;background:linear-gradient(135deg,#351628,#6f2850);color:#fff;box-shadow:0 13px 29px rgba(89,31,62,.18)}
     #resultModal .result-lock-btn{border:1px solid #f1cad9;background:linear-gradient(145deg,#fff,#fff2f7);color:#ad345f;box-shadow:0 10px 24px rgba(173,52,95,.08)}
     #resultModal .result-lock-btn:disabled{background:#f3f0f2;color:#8d7a84;border-color:#ece3e8;box-shadow:none}
     #resultModal .result-monitor-btn{border:0;background:linear-gradient(135deg,#7252d6,#9b78ef);color:#fff;box-shadow:0 12px 27px rgba(114,82,214,.18)}
@@ -921,12 +922,47 @@
         <p class="attention-copy" id="resultAttentionCopy">Other users have recently checked this phone number. Something made people check.</p>
         <div class="attention-cta" id="resultAttentionCta">Unlock the Full Report to see what the basic check doesn't show.</div>
       </section>
+      <section class="search-activity-wrap" id="searchActivityWrap">
+        <div class="search-activity-head"><div><h4>Search Activity</h4><small>Attention around this number</small></div></div>
+        <div class="search-activity-grid">
+          <div class="search-activity-card"><b id="activityTotal">0</b><span>Total relationship checks</span></div>
+          <div class="search-activity-card"><b id="activityLast">—</b><span>Last checked</span></div>
+          <div class="search-activity-card"><b id="activity7d">0</b><span>Checks in past 7 days</span></div>
+          <div class="search-activity-card"><b id="activity30d">0</b><span>Checks in past 30 days</span></div>
+          <div class="search-activity-card"><b id="activityFirst">—</b><span>First checked</span></div>
+          <div class="search-activity-card"><b id="activityTrend">—</b><span>Activity trend</span></div>
+        </div>
+        <div class="attention-line" id="activityInterpretation">Search activity is an attention signal. It does not prove a relationship exists.</div>
+      </section>
+      <section class="report-teaser" id="verifyReportTeaser" aria-label="Locked relationship claims preview">
+        <div class="report-teaser-head">
+          <div class="report-teaser-title">
+            <div class="report-teaser-kicker"><i>📊</i><span>Phase 2 · Relationship Claims</span></div>
+            <h4>See what people are claiming</h4>
+            <p>Lock-ins currently tied to this number on Lockily.</p>
+          </div>
+          <span class="report-premium-pill">🔒 PREMIUM INSIGHT</span>
+        </div>
+        <div class="report-teaser-rows" aria-hidden="true">
+          <div class="report-teaser-row"><span class="report-teaser-label">💬 Talking Stage</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:36%"></div></div><span class="report-teaser-num">8</span></div>
+          <div class="report-teaser-row"><span class="report-teaser-label">🤷 Situationship</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:52%"></div></div><span class="report-teaser-num">4</span></div>
+          <div class="report-teaser-row"><span class="report-teaser-label">💑 Exclusive</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:22%"></div></div><span class="report-teaser-num">2</span></div>
+          <div class="report-teaser-row"><span class="report-teaser-label">💍 Engaged</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:14%"></div></div><span class="report-teaser-num">1</span></div>
+          <div class="report-teaser-row"><span class="report-teaser-label">👰 Married</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:31%"></div></div><span class="report-teaser-num">3</span></div>
+        </div>
+        <button class="report-teaser-lock" id="teaserGetReportBtn" type="button"><span>🔒</span><span>Get Report</span><span>›</span></button>
+        <div class="report-teaser-foot"><span class="spark">✨</span><div><strong>Exact counts are locked.</strong> Unlock the Full Report to see the real bars, numbers and verification details.</div></div>
+      </section>
+      <section class="price-card" id="verifyPriceCard"><small>FULL REPORT</small><h4>Check the full relationship status of this person.</h4><p>See Lock-ins, timing, search activity, monitoring activity, confidence and verified-lock signals.</p><div class="price-row"><div><b id="verifyPriceLabel">₦2,000</b><span id="verifyPriceSub">Full Report</span></div></div></section>
       <div class="result-choice-actions" id="resultChoiceActions">
-        <button class="result-lock-btn" id="resultLockBtn" type="button">♡ Lock this person — Free</button>
-        <button class="result-monitor-btn" id="resultMonitorBtn" type="button">Monitor this person — ₦8,000</button>
-        <div class="result-choice-note" id="resultMonitorOfferStatus">Choose what you want to do next: Lock, Monitor, or unlock the Full Report.</div>
+        <button class="result-full-report-btn" id="buyVerifyBtn" type="button">Get Full Report — ₦2,000</button>
+        <button class="result-lock-btn" id="resultLockBtn" type="button">♡ Lock This Person — Free</button>
+        <button class="result-monitor-btn" id="resultMonitorBtn" type="button">Monitor This Person — ₦8,000</button>
+        <div class="result-choice-note" id="resultMonitorOfferStatus">Choose your next step.</div>
       </div>
-      <section class="price-card" id="verifyPriceCard"><small>FULL REPORT</small><h4>Check if your locked person got someone new</h4><p>See Lock-ins, timing, search activity, monitoring activity, confidence and verified-lock signals.</p><div class="price-row"><div><b id="verifyPriceLabel">—</b><span id="verifyPriceSub">Loading pricing…</span></div><button id="buyVerifyBtn">Get Full Report</button></div></section>
+      <div class="discount-offer" id="verifyDiscountOffer"><div><small>50% CHECK OFFER</small><h4>Limited-time offer loading…</h4><p>Unlock the Full Report before the timer runs out.</p><div class="deal-price"><b id="verifyDealPrice">—</b><del id="verifyStandardPrice">—</del></div></div><div class="deal-timer"><b id="verifyDealTimer">02:00</b><span>LEFT</span></div></div>
+
+
       <div class="paywall locked" id="verifyPaywall"><div class="pay-lock"><span>🔒 Unlock Full Report</span></div><div class="paid-sensitive"><div class="intel-grid"><div class="intel-item"><b id="intelClaims">0</b><span>LOCK-INS</span></div><div class="intel-item"><b id="intelMutual">No</b><span>VERIFIED LOCK</span></div><div class="intel-item"><b id="intelOldest">—</b><span>EARLIEST LOCK-IN</span></div><div class="intel-item"><b id="intelStrength">—</b><span>CONFIDENCE LEVEL</span></div><div class="intel-item"><b id="intelMonitors">0</b><span>OTHER MONITORS</span></div><div class="intel-item"><b id="intelRecentLocks">0</b><span>NEW LOCK-INS · 30D</span></div></div><div class="intel-note" id="intelNote">Lock-ins show how many Lockily users have locked this number.</div></div></div>
 
       <section class="full-report-details lrp-shell hidden" id="fullReportDetails">
@@ -997,38 +1033,9 @@
           <button class="secondary lrp-image-btn" id="downloadImageReportBtn" type="button">Download Image</button>
         </div>
       </section>
-      <section class="search-activity-wrap" id="searchActivityWrap">
-        <div class="search-activity-head"><div><h4>Search Activity</h4><small>Attention around this number</small></div></div>
-        <div class="search-activity-grid">
-          <div class="search-activity-card"><b id="activityTotal">0</b><span>Total relationship checks</span></div>
-          <div class="search-activity-card"><b id="activityLast">—</b><span>Last checked</span></div>
-          <div class="search-activity-card"><b id="activity7d">0</b><span>Checks in past 7 days</span></div>
-          <div class="search-activity-card"><b id="activity30d">0</b><span>Checks in past 30 days</span></div>
-          <div class="search-activity-card"><b id="activityFirst">—</b><span>First checked</span></div>
-          <div class="search-activity-card"><b id="activityTrend">—</b><span>Activity trend</span></div>
-        </div>
-        <div class="attention-line" id="activityInterpretation">Search activity is an attention signal. It does not prove a relationship exists.</div>
-      </section>
-      <div class="discount-offer" id="verifyDiscountOffer"><div><small>50% CHECK OFFER</small><h4>Limited-time offer loading…</h4><p>Unlock the Full Report before the timer runs out.</p><div class="deal-price"><b id="verifyDealPrice">—</b><del id="verifyStandardPrice">—</del></div></div><div class="deal-timer"><b id="verifyDealTimer">02:00</b><span>LEFT</span></div></div>
-      <section class="report-teaser" id="verifyReportTeaser" aria-label="Locked relationship claims preview">
-        <div class="report-teaser-head">
-          <div class="report-teaser-title">
-            <div class="report-teaser-kicker"><i>📊</i><span>Phase 2 · Relationship Claims</span></div>
-            <h4>See what people are claiming</h4>
-            <p>Lock-ins currently tied to this number on Lockily.</p>
-          </div>
-          <span class="report-premium-pill">🔒 PREMIUM INSIGHT</span>
-        </div>
-        <div class="report-teaser-rows" aria-hidden="true">
-          <div class="report-teaser-row"><span class="report-teaser-label">💬 Talking Stage</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:36%"></div></div><span class="report-teaser-num">8</span></div>
-          <div class="report-teaser-row"><span class="report-teaser-label">🤷 Situationship</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:52%"></div></div><span class="report-teaser-num">4</span></div>
-          <div class="report-teaser-row"><span class="report-teaser-label">💑 Exclusive</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:22%"></div></div><span class="report-teaser-num">2</span></div>
-          <div class="report-teaser-row"><span class="report-teaser-label">💍 Engaged</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:14%"></div></div><span class="report-teaser-num">1</span></div>
-          <div class="report-teaser-row"><span class="report-teaser-label">👰 Married</span><div class="report-teaser-track"><div class="report-teaser-bar" style="width:31%"></div></div><span class="report-teaser-num">3</span></div>
-        </div>
-        <button class="report-teaser-lock" id="teaserGetReportBtn" type="button"><span>🔒</span><span>Get Report</span><span>›</span></button>
-        <div class="report-teaser-foot"><span class="spark">✨</span><div><strong>Exact counts are locked.</strong> Unlock the Full Report to see the real bars, numbers and verification details.</div></div>
-      </section>
+
+
+
 
     </div>
   </div></div>
@@ -1466,11 +1473,12 @@
       if($('#verifyStandardPrice'))$('#verifyStandardPrice').textContent=verifyStandard;
       if($('#verifyPriceLabel'))$('#verifyPriceLabel').textContent=verifyStandard;
       if($('#verifyPriceSub'))$('#verifyPriceSub').textContent=`${provider==='stripe'?'Global card':'Local'} price`;
+      if($('#buyVerifyBtn'))$('#buyVerifyBtn').textContent=`Get Full Report — ${Number(pricing.verifyOfferPrice||0)>0?verifyOffer:verifyStandard}`;
       if($('#lockVerifyBtn')&&!state.activeLock)$('#lockVerifyBtn').textContent=verifyStandard;
       if($('#lockMutualBtn')&&!state.activeLock)$('#lockMutualBtn').textContent=mutual;
       if($('#createMutualInvite'))$('#createMutualInvite').textContent=`Create invitation — ${mutual}`;
       if($('#emptyMonitorBtn')&&!state.activeLock)$('#emptyMonitorBtn').textContent=`Start Monitor — ${monitorStandard}`;
-      if($('#resultMonitorBtn')&&!state.activeLock)$('#resultMonitorBtn').textContent=`Monitor this person — ${monitorStandard}`;
+      if($('#resultMonitorBtn')&&!state.activeLock)$('#resultMonitorBtn').textContent=`Monitor This Person — ${monitorStandard}`;
       if($('#resultMonitorOfferStatus')&&!state.activeLock)$('#resultMonitorOfferStatus').textContent=`Standard Monitor price ${monitorStandard}.`;
       if($('#lockMonitorOfferNote')&&!state.activeLock)$('#lockMonitorOfferNote').textContent=`New Lock offer · ${monitorOffer}`;
       const offerTitle=$('#verifyDiscountOffer h4');if(offerTitle)offerTitle.textContent=`Order within 2 minutes and save ${moneyCurrency(Math.max(0,Number(pricing.verifyPrice||0)-Number(pricing.verifyOfferPrice||0)),currency)}.`;
@@ -2233,7 +2241,7 @@
       renderSearchActivity(phone,activity);
       const unlocked=currentLookupUnlocked();
       const matchingLock=(state.locks||[]).find(l=>digits(l.subjectPhone)===digits(phone))||null;
-      const resultLockBtn=$('#resultLockBtn');if(resultLockBtn){resultLockBtn.disabled=!!matchingLock;resultLockBtn.textContent=matchingLock?'✓ This person is Locked':'♡ Lock this person — Free'}
+      const resultLockBtn=$('#resultLockBtn');if(resultLockBtn){resultLockBtn.disabled=!!matchingLock;resultLockBtn.textContent=matchingLock?'✓ This Person is Locked':'♡ Lock This Person — Free'}
       $('#resultChoiceActions')?.classList.toggle('hidden',unlocked);
       let accessOrder=currentVerificationOrder();
       if(unlocked&&!accessOrder){accessOrder=paidVerificationForToday(phone);if(accessOrder){state.currentLookup={...(state.currentLookup||{}),phone,unlocked:true,orderId:accessOrder.id,historical:false};state.currentPayment=accessOrder;saveState()}}
@@ -2308,12 +2316,12 @@
     function getVerifyPrice(){const p=providerPricing();return secondsLeft(state.verifyOfferExpiresAt)>0?Number(p.verifyOfferPrice||0):Number(p.verifyPrice||0)}
     function syncVerifyOffer(){
       const left=secondsLeft(state.verifyOfferExpiresAt);
-      const timer=$('#verifyDealTimer'),label=$('#verifyPriceLabel'),sub=$('#verifyPriceSub'),deal=$('#verifyDealPrice'),std=$('#verifyStandardPrice'),offer=$('#verifyDiscountOffer');
+      const timer=$('#verifyDealTimer'),label=$('#verifyPriceLabel'),sub=$('#verifyPriceSub'),deal=$('#verifyDealPrice'),std=$('#verifyStandardPrice'),offer=$('#verifyDiscountOffer'),actionBtn=$('#buyVerifyBtn');
       if(!timer)return;
       if(left>0){
-        timer.textContent=mmss(left);if(timer.nextElementSibling)timer.nextElementSibling.textContent='LEFT';label.textContent=moneyCurrency(providerPricing().verifyOfferPrice,providerCurrency());sub.textContent='50% offer';deal.textContent=moneyCurrency(providerPricing().verifyOfferPrice,providerCurrency());std.textContent=moneyCurrency(providerPricing().verifyPrice,providerCurrency());offer.classList.remove('hidden');offer.querySelector('h4').textContent=`Order within 2 minutes and save ${moneyCurrency(Math.max(0,Number(providerPricing().verifyPrice||0)-Number(providerPricing().verifyOfferPrice||0)),providerCurrency())}.`;offer.querySelector('p').textContent='Unlock the Full Report before the timer runs out.';
+        timer.textContent=mmss(left);if(timer.nextElementSibling)timer.nextElementSibling.textContent='LEFT';label.textContent=moneyCurrency(providerPricing().verifyOfferPrice,providerCurrency());sub.textContent='50% offer';deal.textContent=moneyCurrency(providerPricing().verifyOfferPrice,providerCurrency());std.textContent=moneyCurrency(providerPricing().verifyPrice,providerCurrency());if(actionBtn)actionBtn.textContent=`Get Full Report — ${moneyCurrency(providerPricing().verifyOfferPrice,providerCurrency())}`;offer.classList.remove('hidden');offer.querySelector('h4').textContent=`Order within 2 minutes and save ${moneyCurrency(Math.max(0,Number(providerPricing().verifyPrice||0)-Number(providerPricing().verifyOfferPrice||0)),providerCurrency())}.`;offer.querySelector('p').textContent='Unlock the Full Report before the timer runs out.';
       }else{
-        timer.textContent='00:00';if(timer.nextElementSibling)timer.nextElementSibling.textContent='OFFER ELAPSED';label.textContent=moneyCurrency(providerPricing().verifyPrice,providerCurrency());sub.textContent='Standard price · offer elapsed';deal.textContent=moneyCurrency(providerPricing().verifyPrice,providerCurrency());std.textContent='';offer.classList.remove('hidden');offer.querySelector('h4').textContent='Time and offer have elapsed.';offer.querySelector('p').textContent='The 2-minute offer has ended. Standard Full Report price now applies.';clearInterval(verifyOfferTimer);verifyOfferTimer=null;
+        timer.textContent='00:00';if(timer.nextElementSibling)timer.nextElementSibling.textContent='OFFER ELAPSED';label.textContent=moneyCurrency(providerPricing().verifyPrice,providerCurrency());sub.textContent='Standard price · offer elapsed';deal.textContent=moneyCurrency(providerPricing().verifyPrice,providerCurrency());std.textContent='';if(actionBtn)actionBtn.textContent=`Get Full Report — ${moneyCurrency(providerPricing().verifyPrice,providerCurrency())}`;offer.classList.remove('hidden');offer.querySelector('h4').textContent='Time and offer have elapsed.';offer.querySelector('p').textContent='The 2-minute offer has ended. Standard Full Report price now applies.';clearInterval(verifyOfferTimer);verifyOfferTimer=null;
       }
       if(state.pendingProduct==='verify' && $('#paymentModal')?.classList.contains('show'))syncPaymentPricing();
     }
@@ -2328,7 +2336,7 @@
       if(btn&&lock){btn.textContent=lock.monitorActive?'Active':money(price)+'/mo'}
       if(emptyBtn&&lock&&!lock.monitorActive){emptyBtn.textContent=left>0?`Start Monitor — ${moneyCurrency(providerPricing().monitorOfferPrice,providerCurrency())} · ${mmss(left)} left`:`Start Monitor — ${moneyCurrency(providerPricing().monitorPrice,providerCurrency())}`}
       if(note&&lock&&!lock.monitorActive){note.classList.toggle('expired',left<=0);note.textContent=left>0?`2-minute offer · ${moneyCurrency(providerPricing().monitorOfferPrice,providerCurrency())} · ${mmss(left)} left`:`Offer elapsed · Standard ${moneyCurrency(providerPricing().monitorPrice,providerCurrency())}`}
-      if(resultBtn){if(resultLock?.monitorActive){resultBtn.textContent='✓ Monitor active';resultBtn.disabled=true}else{resultBtn.disabled=false;resultBtn.textContent=`Monitor this person — ${moneyCurrency(resultPrice,providerCurrency())}`}}
+      if(resultBtn){if(resultLock?.monitorActive){resultBtn.textContent='✓ Monitor active';resultBtn.disabled=true}else{resultBtn.disabled=false;resultBtn.textContent=`Monitor This Person — ${moneyCurrency(resultPrice,providerCurrency())}`}}
       if(resultNote){resultNote.innerHTML=resultLock&&resultLeft>0?`Monitor offer · <b>${moneyCurrency(providerPricing().monitorOfferPrice,providerCurrency())}</b> · <b>${mmss(resultLeft)}</b> left. Standard ${moneyCurrency(providerPricing().monitorPrice,providerCurrency())}.`:`Choose what you want to do next: <b>Lock</b>, <b>Monitor</b>, or unlock the <b>Full Report</b>.`}
       if(state.pendingProduct==='monitor' && $('#paymentModal')?.classList.contains('show'))syncPaymentPricing();
       if(left<=0){clearInterval(monitorOfferTimer);monitorOfferTimer=null}
