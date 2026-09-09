@@ -184,7 +184,7 @@
     .segmented{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;background:#f8eaf1;border:1px solid #f1dce6;border-radius:18px;margin-bottom:12px;position:relative;z-index:2}.seg-btn{border:0;border-radius:14px;padding:12px 10px;background:transparent;color:#9b7f8d;font-weight:950;font-size:10px;transition:.25s var(--ease)}.seg-btn.active{background:#fff;color:#a83662;box-shadow:0 8px 20px rgba(89,31,62,.10)}.home-action-panel{position:relative;z-index:2}.home-action-panel.hidden{display:none!important}.inline-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 2px 4px}.inline-kicker b{font-size:9px;letter-spacing:.06em}.inline-kicker span{font-size:8px;color:var(--muted);font-weight:900}
     .field{margin-top:10px;padding:13px 14px;border-radius:19px;border:1px solid var(--line);background:rgba(255,252,254,.92);transition:.25s var(--ease)}.field:focus-within{border-color:#f49ab5;box-shadow:0 0 0 4px rgba(242,79,130,.08);transform:translateY(-1px)}
     .field label{display:block;color:var(--muted);font-size:9px;font-weight:950;margin-bottom:7px;letter-spacing:.05em}.field input,.field select,.field textarea{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:15px;font-weight:800}.field textarea{resize:vertical;min-height:90px}.field input::placeholder,.field textarea::placeholder{color:#bda8b4;font-weight:650}
-    .phone-line{display:grid;grid-template-columns:minmax(128px,.9fr) minmax(0,1.1fr);gap:8px;align-items:center}.country-select{width:100%;min-width:0;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:12px;padding:8px 24px 8px 8px;font-size:9.2px;font-weight:900;outline:none;text-overflow:ellipsis}.country-select:focus{border-color:#f49ab5;box-shadow:0 0 0 3px rgba(242,79,130,.08)}.phone-line input{min-width:0}.phone-hint{font-size:7.5px;color:var(--muted);margin-top:5px}.phone-length-hint{font-size:7.4px;color:#9e7588;margin-top:4px;line-height:1.4}.phone-length-hint.bad{color:#b84a4a;font-weight:850}.country-pill{padding:8px 9px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:950}
+    .phone-line{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;align-items:center}.country-select{width:96px;max-width:96px;min-width:96px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:12px;padding:8px 22px 8px 8px;font-size:10.2px;font-weight:950;outline:none;text-overflow:clip;white-space:nowrap;overflow:hidden}.country-select:focus{border-color:#f49ab5;box-shadow:0 0 0 3px rgba(242,79,130,.08)}.phone-line input{min-width:0}.phone-hint{font-size:7.5px;color:var(--muted);margin-top:5px}.phone-length-hint{font-size:7.4px;color:#9e7588;margin-top:4px;line-height:1.4}.phone-length-hint[hidden]{display:none!important}.phone-length-hint.bad{color:#b84a4a;font-weight:850}.country-pill{padding:8px 9px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:950}@media(max-width:380px){.phone-line{grid-template-columns:92px minmax(0,1fr)}.country-select{width:92px;max-width:92px;min-width:92px;font-size:9.6px}}
     .primary,.secondary,.ghost,.danger,.violet-btn{width:100%;border-radius:19px;padding:15px 17px;font-weight:950;border:0;transition:.27s var(--ease)}
     .primary{margin-top:12px;color:#fff;background:linear-gradient(135deg,#f04f81,#ff8cab);box-shadow:0 14px 30px rgba(242,79,130,.22);position:relative;overflow:hidden}.primary:before{content:"";position:absolute;top:-60%;left:-40%;height:220%;width:28%;transform:rotate(26deg);background:rgba(255,255,255,.42);filter:blur(8px);animation:shine 4s infinite}.primary:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(242,79,130,.27)}
     .secondary{margin-top:10px;background:#fff;border:1px solid var(--line);color:var(--ink)}.ghost{background:#fff7fb;border:1px solid #efdde6;color:#633748}.danger{background:var(--red-soft);border:1px solid #ffd1db;color:#b62e4b}.violet-btn{margin-top:10px;color:#fff;background:linear-gradient(135deg,#7656df,#9d7cf5)}.primary:active,.secondary:active,.ghost:active,.violet-btn:active{transform:scale(.985)}
@@ -342,6 +342,42 @@
       .home-lock-secondary{font-size:11px;padding:11px 12px}
       .view[data-view="home"] .home-feature-cards .quick{min-height:86px}
     }
+
+    /* v6 immersive Lockily scan/result journey */
+    #resultModal #scanAnimation{margin-top:4px}
+    #resultModal .scan-stage{min-height:470px;padding:23px 17px 18px;border-radius:30px;border:1px solid rgba(255,255,255,.98);background:radial-gradient(circle at 50% 34%,rgba(242,79,130,.13),transparent 25%),radial-gradient(circle at 18% 86%,rgba(119,85,232,.12),transparent 28%),linear-gradient(180deg,#fff,#fff8fb 65%,#f9f3ff);box-shadow:0 20px 55px rgba(89,31,62,.10);text-align:center}
+    #resultModal .scan-kicker{display:inline-flex;align-items:center;justify-content:center;padding:7px 10px;border-radius:999px;background:#fff0f5;border:1px solid #f2dbe5;color:#b43665;font-size:7.8px;font-weight:1000;letter-spacing:.12em}
+    #resultModal .scan-lead{max-width:330px;margin:9px auto 0;color:#8b7682;font-size:9.5px;line-height:1.45;font-weight:750}
+    #resultModal .scan-beam{left:18%;right:18%;height:2px;top:39%;opacity:.6}
+    #resultModal .scan-identity{padding:18px 0 12px}
+    #resultModal .scan-identity .round{width:158px;height:158px;border-radius:50%;position:relative;isolation:isolate;background:radial-gradient(circle at 35% 30%,#fff 0 7%,#ffdce8 31%,#d765a1 62%,#7755e8 100%);box-shadow:0 22px 52px rgba(119,85,232,.22),inset 0 0 0 1px rgba(255,255,255,.72);font-size:0}
+    #resultModal .scan-identity .round:before,#resultModal .scan-identity .round:after{content:"";position:absolute;border-radius:50%;inset:-18px;border:1px solid rgba(215,81,135,.13);z-index:-1;animation:scanOrbitPulse 2.2s ease-in-out infinite}
+    #resultModal .scan-identity .round:after{inset:-38px;border-color:rgba(119,85,232,.10);animation-delay:-1.1s}
+    #resultModal .scan-heart{width:58px;height:58px;border-radius:21px;background:rgba(255,255,255,.88);display:grid;place-items:center;color:#c33670;font-size:28px;box-shadow:0 12px 35px rgba(80,30,62,.14)}
+    #resultModal .scan-identity b{margin-top:17px;font-size:21px;letter-spacing:-.035em;color:var(--deep)}
+    #resultModal .scan-identity span:not(.scan-heart){display:block;margin-top:5px;font-size:9px;color:#9a8290;font-weight:900}
+    #resultModal .scan-progress-meta{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:5px 3px 6px;text-align:left}
+    #resultModal .scan-progress-meta b{font-size:20px;letter-spacing:-.05em;color:#8b3261}
+    #resultModal .scan-progress-meta span{font-size:7.2px;color:#a38e99;font-weight:900;text-transform:uppercase;letter-spacing:.07em}
+    #resultModal .progress{height:7px;margin:0 2px 14px;background:#eee3ea;box-shadow:inset 0 1px 2px rgba(69,31,51,.05)}
+    #resultModal .progress i{background:linear-gradient(90deg,#f24f82,#ad3f9c,#7755e8);box-shadow:0 0 14px rgba(119,85,232,.22)}
+    #resultModal .step-list{gap:6px;text-align:left}
+    #resultModal .scan-step{min-height:42px;padding:8px 10px;border-radius:14px;background:rgba(255,255,255,.6);border:1px solid rgba(239,223,232,.82);color:#ad98a4;font-size:8.5px}
+    #resultModal .scan-step .status{width:25px;height:25px;flex:0 0 25px;border-radius:50%;background:#f3e8ee;font-size:7.5px}
+    #resultModal .scan-step.active{background:#fff1f6;border-color:#f4cfdd;color:#a83261;transform:translateX(2px)}
+    #resultModal .scan-step.active .status{background:linear-gradient(145deg,#f24f82,#9c4abd);color:#fff;box-shadow:0 7px 16px rgba(173,63,156,.18)}
+    #resultModal .scan-step.done{background:rgba(255,255,255,.82);color:#5f4051}
+    #resultModal .scan-step.done .status{background:#351628;color:#fff}
+    #resultModal .check-complete{padding:21px 18px;border-radius:30px;text-align:center;background:radial-gradient(circle at 50% -12%,rgba(242,79,130,.16),transparent 36%),linear-gradient(145deg,#fff,#fff7fb);box-shadow:0 17px 42px rgba(89,31,62,.08)}
+    #resultModal .check-complete .phone-kicker{font-size:8px;font-weight:950;letter-spacing:.06em;text-transform:uppercase}
+    #resultModal .check-complete h3{margin:8px 0 9px;font-size:12px;letter-spacing:.08em;color:#805468}
+    #resultModal .check-complete .full-report-pill{margin:0 auto 10px;background:linear-gradient(135deg,#351628,#6e2d54)}
+    #resultModal .attention-head{max-width:390px;margin:12px auto 7px;font-size:26px;line-height:.98}
+    #resultModal .attention-count{font-size:16px}
+    #resultModal .attention-copy{max-width:390px;margin:8px auto 0}
+    #resultModal .attention-cta{max-width:400px;margin:13px auto 0;padding:12px 13px;background:linear-gradient(135deg,#351628,#6f2850)}
+    @keyframes scanOrbitPulse{0%,100%{transform:scale(.96);opacity:.55}50%{transform:scale(1.06);opacity:1}}
+    @media(max-width:420px){#resultModal .scan-stage{min-height:445px;padding:20px 14px 16px}#resultModal .scan-identity .round{width:142px;height:142px}#resultModal .scan-identity .round:after{inset:-31px}#resultModal .attention-head{font-size:23px}}
 
     /* v4 compact conversion layout */
     .view[data-view="home"]{min-height:calc(100vh - 108px)}
@@ -531,7 +567,7 @@
     @media(max-width:380px){.lrp-section{padding:16px}.lrp-card{padding:12px}.lrp-card .lrp-value{font-size:19px}.lrp-header .lrp-phone{font-size:24px}.lrp-actions{grid-template-columns:1fr}}
 
   </style>
-</head>
+<style>#authShell{display:none!important}#appRoot{display:block!important}</style></head>
 <body>
   <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
 
@@ -615,11 +651,11 @@
         <button class="home-search-primary primary" id="homeCheckBtn"><span class="home-search-icon" aria-hidden="true">⌕</span><span>Check Relationship Status</span><span class="home-search-arrow" aria-hidden="true">→</span></button>
         <button class="home-lock-secondary" id="homeLockBtn" type="button"><span class="home-lock-heart" aria-hidden="true">♡</span><span>Lock Your Person</span><strong>FREE</strong></button>
         <div class="home-lock-note">Save them to your Locks. Check and monitor them anytime.</div>
-        <div class="home-privacy-note"><span aria-hidden="true">▣</span> Private search · Searching won't notify them.</div>
+        <div class="home-privacy-note"><span aria-hidden="true">▣</span> Private search · They won't know you checked.</div>
       </section>
 
       <div class="quick-actions home-feature-cards">
-        <button class="quick verify" id="quickVerify"><i>▤</i><span><b>Full Report</b><small>See relationship signals</small></span></button>
+        <button class="quick verify" id="quickVerify"><i>▤</i><span><b>Full Report</b><small>See what the basic check doesn't show</small></span></button>
         <button class="quick monitor" id="quickMonitor"><i>↗</i><span><b>Monitor Changes</b><small>Get alerts when things change</small></span></button>
         <button class="quick mutual" id="quickMutual"><i>♡</i><span><b>Verified Lock</b><small>Confirm a relationship together</small></span></button>
       </div>
@@ -762,23 +798,31 @@
   <div class="modal" id="resultModal"><div class="sheet">
     <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY MATCH ENGINE</small><h3 id="resultSheetTitle">Checking your Lock</h3></div><button class="close" data-close="resultModal">×</button></div>
     <div id="scanAnimation">
-      <div class="scan-stage"><div class="scan-beam"></div><div class="scan-identity"><div class="round">♥</div><b id="scanPhone">0803••••000</b><span>Relationship status check</span></div><div class="progress"><i id="scanProgress"></i></div><div class="step-list">
-        <div class="scan-step" data-scan-step="0"><div class="status">1</div>Reading the number</div>
-        <div class="scan-step" data-scan-step="1"><div class="status">2</div>Scanning relationship signals</div>
-        <div class="scan-step" data-scan-step="2"><div class="status">3</div>Checking signal strength</div>
-        <div class="scan-step" data-scan-step="3"><div class="status">4</div>Checking verified relationship status</div>
-        <div class="scan-step" data-scan-step="4"><div class="status">5</div>Preparing your Full Report</div>
-      </div></div><div class="mini-note">Lockily reads relationship signals and keeps the identities behind them private.</div>
+      <div class="scan-stage">
+        <div class="scan-kicker">LOCKILY DEEP CHECK</div>
+        <div class="scan-lead">Checking relationship signals connected to this number.</div>
+        <div class="scan-beam"></div>
+        <div class="scan-identity"><div class="round"><span class="scan-heart">♥</span></div><b id="scanPhone">0803••••000</b><span id="scanStageText">Reading the number…</span></div>
+        <div class="scan-progress-meta"><b id="scanPercent">0%</b><span>Relationship status intelligence</span></div>
+        <div class="progress"><i id="scanProgress"></i></div>
+        <div class="step-list">
+          <div class="scan-step" data-scan-step="0"><div class="status">1</div>Reading the number</div>
+          <div class="scan-step" data-scan-step="1"><div class="status">2</div>Checking recent search attention</div>
+          <div class="scan-step" data-scan-step="2"><div class="status">3</div>Cross-checking Lock-ins</div>
+          <div class="scan-step" data-scan-step="3"><div class="status">4</div>Checking verified relationship signals</div>
+          <div class="scan-step" data-scan-step="4"><div class="status">5</div>Preparing what Lockily can show you</div>
+        </div>
+      </div><div class="mini-note">Private check · The person you searched is not notified.</div>
     </div>
     <div id="resultContent" class="hidden">
       <section class="check-complete">
         <div class="phone-kicker" id="resultPhoneLine">Phone number 07056567878</div>
         <h3>LOCKILY CHECK COMPLETE</h3>
         <div class="full-report-pill">🔒 FULL REPORT</div>
-        <h4 class="attention-head">THIS PHONE NUMBER IS GETTING ATTENTION</h4>
+        <h4 class="attention-head" id="resultAttentionTitle">THIS PHONE NUMBER IS GETTING ATTENTION</h4>
         <div class="attention-count" id="resultAttentionChecks">2 checks on Lockily</div>
-        <p class="attention-copy">Other users have recently checked this phone number. Something made people check.</p>
-        <div class="attention-cta">Get full report to know better.</div>
+        <p class="attention-copy" id="resultAttentionCopy">Other users have recently checked this phone number. Something made people check.</p>
+        <div class="attention-cta" id="resultAttentionCta">Unlock the Full Report to see what the basic check doesn't show.</div>
       </section>
       <div class="paywall locked" id="verifyPaywall"><div class="pay-lock"><span>🔒 Unlock Full Report</span></div><div class="paid-sensitive"><div class="intel-grid"><div class="intel-item"><b id="intelClaims">0</b><span>LOCK-INS</span></div><div class="intel-item"><b id="intelMutual">No</b><span>VERIFIED LOCK</span></div><div class="intel-item"><b id="intelOldest">—</b><span>EARLIEST LOCK-IN</span></div><div class="intel-item"><b id="intelStrength">—</b><span>CONFIDENCE LEVEL</span></div><div class="intel-item"><b id="intelMonitors">0</b><span>OTHER MONITORS</span></div><div class="intel-item"><b id="intelRecentLocks">0</b><span>NEW LOCK-INS · 30D</span></div></div><div class="intel-note" id="intelNote">Lock-ins show how many Lockily users have locked this number.</div></div></div>
 
@@ -1117,7 +1161,7 @@
     }
     let lastCountryIso=guessedCountryIso();
     let accountCountryIso=localStorage.getItem(LOCKILY_ACCOUNT_COUNTRY_KEY)||lastCountryIso;
-    function countryOptionLabel(c){return `${countryFlag(c.iso2)} ${c.name} +${c.dial}`}
+    function countryOptionLabel(c){return `${countryFlag(c.iso2)} +${c.dial}  ${c.name}`}
     function countryIsoFromCanonical(value){
       const d=digits(value);if(!d)return '';
       if(/^0[0-9]{10}$/.test(d)||/^234[0-9]{10}$/.test(d))return 'NG';
@@ -1166,10 +1210,10 @@
       const input=$('#'+id),select=$('#'+id+'Country');if(!input||!select)return;
       let hint=input.closest('.phone-line')?.nextElementSibling;
       if(!hint||!hint.classList.contains('phone-length-hint')){hint=document.createElement('div');hint.className='phone-length-hint';input.closest('.phone-line')?.insertAdjacentElement('afterend',hint)}
-      const c=COUNTRY_BY_ISO[select.value]||COUNTRY_BY_ISO.NG,b=countryLengthBounds(c.iso2),status=phoneLengthStatus(id);
-      const expected=b.exact.length===1?`${b.max} national digits`:b.exact.length?`${b.min}–${b.max} national digits`:`up to ${b.max} national digits`;
-      hint.textContent=status==='TOO_SHORT'?`${c.name}: number is still too short.`:status==='INVALID_LENGTH'?`${c.name}: this number length is not used.`:`${c.name}: ${expected}. Local trunk prefix (such as 0) is accepted where applicable.`;
-      hint.classList.toggle('bad',['TOO_SHORT','TOO_LONG','INVALID_LENGTH'].includes(status)&&digits(input.value).length>0);
+      const c=COUNTRY_BY_ISO[select.value]||COUNTRY_BY_ISO.NG,status=phoneLengthStatus(id),hasDigits=digits(input.value).length>0;
+      const messages={TOO_SHORT:`Number is too short for ${c.name}.`,TOO_LONG:`Number is too long for ${c.name}.`,INVALID_LENGTH:`That number length isn't used in ${c.name}.`};
+      const message=hasDigits?messages[status]||'':'';
+      hint.textContent=message;hint.hidden=!message;hint.classList.toggle('bad',!!message);
     }
     function restrictPhoneInput(id){
       const input=$('#'+id),select=$('#'+id+'Country');if(!input||!select)return;
@@ -1188,7 +1232,7 @@
         updatePhonePlaceholder(select.dataset.phoneFor);updatePhoneLengthHint(select.dataset.phoneFor);
       });
     }
-    function updatePhonePlaceholder(id){const input=$('#'+id),select=$('#'+id+'Country');if(!input||!select)return;const c=COUNTRY_BY_ISO[select.value]||COUNTRY_BY_ISO.NG,b=countryLengthBounds(c.iso2);input.placeholder=b.exact.length===1?`${b.max}-digit number (+${c.dial})`:`Phone number (+${c.dial})`}
+    function updatePhonePlaceholder(id){const input=$('#'+id),select=$('#'+id+'Country');if(!input||!select)return;input.placeholder='Phone number'}
     function phoneValue(id){
       const input=$('#'+id),select=$('#'+id+'Country');if(!input)return '';
       let d=digits(input.value);if(!d)return '';
@@ -1952,7 +1996,7 @@
       if(!previousLookup||previousLookup.phone!==phone||previousLookup.source!==source)state.verifyOfferExpiresAt=null;
       $('#resultSheetTitle').textContent=source==='lock'?'Checking your Lock':'Checking relationship status';
       $('#resultContent').classList.add('hidden');$('#scanAnimation').classList.remove('hidden');
-      $('#scanPhone').textContent=maskPhone(phone);$('#scanProgress').style.width='0%';
+      $('#scanPhone').textContent=maskPhone(phone);$('#scanProgress').style.width='0%';if($('#scanPercent'))$('#scanPercent').textContent='0%';if($('#scanStageText'))$('#scanStageText').textContent='Reading the number…';
       $$('.scan-step').forEach((s,idx)=>{s.classList.remove('active','done');const status=s.querySelector('.status');status.textContent=String(idx+1)});
       showModal('resultModal');
       try{
@@ -1961,13 +2005,13 @@
         state.verifyOfferExpiresAt=response.offerExpiresAt||null;
         const paidToday=paidVerificationForToday(phone);
         if(paidToday){state.currentLookup.unlocked=true;state.currentLookup.orderId=paidToday.id;state.currentPayment=paidToday;await loadPaidReport(paidToday.id)}
-        const steps=$$('.scan-step'),totalMs=2600,stepMs=Math.floor(totalMs/Math.max(1,steps.length));let i=0;
+        const steps=$$('.scan-step'),scanMessages=['Reading the number…','Checking recent search attention…','Cross-checking Lock-ins…','Checking verified relationship signals…','Preparing what Lockily can show you…'],totalMs=3400,stepMs=Math.floor(totalMs/Math.max(1,steps.length));let i=0;
         const tick=()=>{
           if(i>0){steps[i-1].classList.remove('active');steps[i-1].classList.add('done');steps[i-1].querySelector('.status').textContent='✓'}
-          if(i<steps.length){steps[i].classList.add('active');$('#scanProgress').style.transition=`width ${Math.max(300,stepMs-60)}ms linear`;$('#scanProgress').style.width=((i+1)/steps.length*100)+'%';i++;setTimeout(tick,stepMs)}
-          else{setTimeout(()=>{$('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');renderResult()},120)}
+          if(i<steps.length){const pct=Math.round((i+1)/steps.length*100);steps[i].classList.add('active');if($('#scanStageText'))$('#scanStageText').textContent=scanMessages[i]||'Checking relationship signals…';if($('#scanPercent'))$('#scanPercent').textContent=pct+'%';$('#scanProgress').style.transition=`width ${Math.max(360,stepMs-70)}ms linear`;$('#scanProgress').style.width=pct+'%';i++;setTimeout(tick,stepMs)}
+          else{if($('#scanPercent'))$('#scanPercent').textContent='100%';if($('#scanStageText'))$('#scanStageText').textContent='Check complete.';setTimeout(()=>{$('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');renderResult()},220)}
         };
-        setTimeout(tick,80);
+        setTimeout(tick,100);
       }catch(err){
         $('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');
         toast(err.message||'Could not check relationship status');
@@ -1981,7 +2025,11 @@
       if(!phone) return;
       const report=fullReportData(phone),d=report.d,activity=report.activity;
       $('#resultPhoneLine').textContent='Phone number '+digits(phone);
-      $('#resultAttentionChecks').textContent=Number(activity.total||0).toLocaleString()+' check'+(Number(activity.total||0)===1?'':'s')+' on Lockily';
+      const attentionTotal=Number(activity.total||0);
+      $('#resultAttentionChecks').textContent=attentionTotal.toLocaleString()+' check'+(attentionTotal===1?'':'s')+' on Lockily';
+      if($('#resultAttentionTitle'))$('#resultAttentionTitle').textContent=attentionTotal>0?'WE FOUND ACTIVITY AROUND THIS NUMBER':'NO RECENT SEARCH ATTENTION FOUND';
+      if($('#resultAttentionCopy'))$('#resultAttentionCopy').textContent=attentionTotal>0?'Other Lockily users have checked this number. Searches are attention signals, not proof of a relationship.':'No recent Lockily search attention is recorded for this number. That alone does not prove the person is single.';
+      if($('#resultAttentionCta'))$('#resultAttentionCta').textContent="Unlock the Full Report to see what the basic check doesn't show.";
       $('#intelClaims').textContent=d.lockins;$('#intelMutual').textContent=d.verified;$('#intelOldest').textContent=d.oldest;$('#intelStrength').textContent=d.confidence;$('#intelMonitors').textContent=d.otherMonitors;$('#intelRecentLocks').textContent=d.recentLockins;
       renderSearchActivity(phone,activity);
       const unlocked=currentLookupUnlocked();
@@ -2505,12 +2553,15 @@
 
     function renderHomeHeroSlides(){
       const holder=$('#heroSlider');if(!holder)return [];
-      const items=[
+      const strategic=[
         {title:'Are you really the only one?',accent:'the only one?',copy:'Enter their number and see what Lockily knows.'},
         {title:'You might not be the boyfriend.',accent:'not be the boyfriend.',copy:'You might be one of the boyfriends. Search the number before assumptions become surprises.'},
         {title:"LOVE IS BLIND. LOCKILY ISN'T.",accent:"LOCKILY ISN'T.",copy:"Search the number. Know what you're walking into."},
         {title:"Don't just check them. Lock them.",accent:'Lock them.',copy:'Save your person to your Locks and know when relationship signals change.'}
       ];
+      const original=Array.isArray(state.content?.hero)?state.content.hero.map(item=>({title:String(item?.title||'').trim(),copy:String(item?.copy||'').trim(),accent:String(item?.accent||'').trim()})).filter(item=>item.title||item.copy):[];
+      const items=[],seen=new Set();
+      [...strategic,...original].forEach(item=>{const key=(String(item.title||'')+'|'+String(item.copy||'')).toLowerCase().replace(/\s+/g,' ').trim();if(!key||seen.has(key))return;seen.add(key);items.push(item)});
       holder.innerHTML='';
       items.forEach((item,index)=>{
         const article=document.createElement('article');article.className='hero-slide'+(index===0?' active':'');
