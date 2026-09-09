@@ -379,6 +379,53 @@
     @keyframes scanOrbitPulse{0%,100%{transform:scale(.96);opacity:.55}50%{transform:scale(1.06);opacity:1}}
     @media(max-width:420px){#resultModal .scan-stage{min-height:445px;padding:20px 14px 16px}#resultModal .scan-identity .round{width:142px;height:142px}#resultModal .scan-identity .round:after{inset:-31px}#resultModal .attention-head{font-size:23px}}
 
+    /* v7 compact hero indicator */
+    .view[data-view="home"] .home-slider-controls .hero-counter{
+      min-width:58px;height:27px;padding:0 10px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,.84);border:1px solid #f0dfe8;box-shadow:0 7px 18px rgba(89,31,62,.07);
+      color:#8e697c;font-size:8px;font-weight:1000;letter-spacing:.10em;font-variant-numeric:tabular-nums
+    }
+
+    /* v7 true custom country picker: compact closed state, full searchable country list */
+    .country-picker-shell{position:relative;width:86px;min-width:86px;max-width:86px}
+    .country-picker-shell>.country-select{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important;overflow:hidden!important;clip-path:inset(50%)!important}
+    .country-picker-button{width:86px;height:40px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;gap:5px;padding:0 7px;font-size:10px;font-weight:1000;white-space:nowrap;box-shadow:0 4px 12px rgba(89,31,62,.035);transition:.2s var(--ease)}
+    .country-picker-button:hover{border-color:#e9bfd0;background:#fffafd}.country-picker-button:focus-visible{outline:0;box-shadow:0 0 0 3px rgba(242,79,130,.10)}
+    .country-picker-button .cp-flag{font-size:15px;line-height:1}.country-picker-button .cp-code{letter-spacing:-.02em}.country-picker-button .cp-chevron{font-size:8px;color:#a68b98;margin-left:1px}
+    .country-picker-button:disabled{opacity:.62;cursor:not-allowed}
+    .phone-line:has(.country-picker-shell){grid-template-columns:86px minmax(0,1fr)}
+    .home-search-field .country-picker-button{height:39px;border:0;background:#fff8fb}
+    .country-picker-overlay{position:fixed;inset:0;z-index:310;background:rgba(53,22,40,.22);backdrop-filter:blur(5px);display:flex;align-items:flex-end;justify-content:center;padding:12px;opacity:0;pointer-events:none;transition:.18s var(--ease)}
+    .country-picker-overlay.show{opacity:1;pointer-events:auto}
+    .country-picker-panel{width:min(100%,520px);max-height:min(72vh,610px);display:flex;flex-direction:column;background:linear-gradient(180deg,#fff,#fff9fc);border:1px solid rgba(255,255,255,.96);border-radius:28px;box-shadow:0 28px 85px rgba(53,22,40,.24);overflow:hidden;transform:translateY(18px);transition:.22s var(--ease)}
+    .country-picker-overlay.show .country-picker-panel{transform:none}
+    .country-picker-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 15px 9px}.country-picker-head strong{font-size:16px;letter-spacing:-.035em}.country-picker-close{width:35px;height:35px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font-size:18px}
+    .country-picker-search{margin:0 14px 10px;padding:11px 13px;border:1px solid var(--line);border-radius:15px;background:#fff;display:flex;align-items:center;gap:8px}.country-picker-search span{color:#a08795;font-size:15px}.country-picker-search input{width:100%;border:0;outline:0;background:transparent;font-size:13px;font-weight:750;color:var(--ink)}
+    .country-picker-current{margin:0 14px 8px;padding:8px 10px;border-radius:13px;background:#fff1f6;color:#a53360;font-size:8px;font-weight:950;letter-spacing:.04em}
+    .country-picker-list{overflow:auto;padding:0 8px 13px;overscroll-behavior:contain}.country-picker-option{width:100%;border:0;background:transparent;border-radius:15px;display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:8px;padding:10px 9px;color:var(--ink);text-align:left}.country-picker-option:hover,.country-picker-option.active{background:#fff0f5}.country-picker-option .flag{font-size:20px}.country-picker-option .name{font-size:11px;font-weight:900;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.country-picker-option .code{font-size:10px;font-weight:1000;color:#a14d70}
+    .country-picker-empty{padding:24px;text-align:center;color:var(--muted);font-size:10px}
+    @media(min-width:720px){.country-picker-overlay{align-items:center}.country-picker-panel{max-height:min(70vh,620px)}}
+
+    /* v7 globe-based number intelligence scan */
+    #resultModal .intelligence-scan{min-height:620px;padding-top:18px;background:radial-gradient(circle at 50% 23%,rgba(119,85,232,.11),transparent 26%),radial-gradient(circle at 50% 28%,rgba(242,79,130,.10),transparent 34%),linear-gradient(180deg,#fff,#fff9fc 62%,#f8f4ff)}
+    #resultModal .scan-globe-shell{position:relative;width:230px;height:230px;margin:10px auto 2px;display:grid;place-items:center;isolation:isolate}
+    #resultModal .scan-globe-halo{position:absolute;inset:18px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.96) 0 50%,rgba(255,223,235,.54) 67%,rgba(119,85,232,.08) 100%);box-shadow:0 24px 52px rgba(91,47,119,.16),0 0 0 1px rgba(255,255,255,.82);z-index:-2}
+    #resultModal .scan-globe{width:214px;height:214px;border-radius:50%;overflow:hidden;position:relative;z-index:2;filter:drop-shadow(0 18px 24px rgba(83,41,101,.11))}
+    #resultModal .scan-globe-fallback{position:absolute;inset:11px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 34% 28%,#fff 0 5%,#f7dce8 39%,#dd85ad 65%,#7d67d4 100%);color:rgba(255,255,255,.88);font-size:72px;animation:fallbackGlobeSpin 5s linear infinite}
+    #resultModal .scan-radar-ring{position:absolute;inset:8px;border:1px solid rgba(215,65,120,.18);border-radius:50%;animation:scanRadar 2.5s ease-in-out infinite;z-index:-1}.scan-radar-ring.ring-b{inset:-5px;border-color:rgba(119,85,232,.10);animation-delay:-1.25s}
+    #resultModal .scan-country-reveal{min-height:52px;margin:-2px auto 4px;padding:8px 13px;border-radius:18px;background:rgba(255,255,255,.78);border:1px solid #f0dfe8;box-shadow:0 9px 24px rgba(89,31,62,.06);display:flex;flex-direction:column;justify-content:center;max-width:330px;transition:.3s var(--ease)}
+    #resultModal .scan-country-reveal.found{background:linear-gradient(145deg,#fff,#fff0f5);border-color:#f2ccdc;transform:scale(1.02)}
+    #resultModal .scan-country-reveal small{font-size:6.5px;letter-spacing:.12em;font-weight:1000;color:#b295a4}#resultModal .scan-country-reveal strong{display:block;margin-top:3px;font-size:13px;color:#5d3047;letter-spacing:-.02em}
+    #resultModal .intelligence-number{padding:4px 0 5px}#resultModal .intelligence-number b{margin-top:0;font-size:13px;letter-spacing:.03em;color:#805468}#resultModal .intelligence-number span:not(.scan-heart){margin-top:3px;font-size:8px}
+    #resultModal .scan-intel-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:7px 0 10px;text-align:left}
+    #resultModal .scan-intel-item{min-height:49px;padding:9px 10px;border-radius:14px;background:rgba(255,255,255,.74);border:1px solid rgba(239,223,232,.9);transition:.28s var(--ease)}#resultModal .scan-intel-item.revealed{background:#fff;border-color:#eed5e0;box-shadow:0 8px 18px rgba(89,31,62,.045)}#resultModal .scan-intel-item span{display:block;font-size:6.3px;font-weight:1000;letter-spacing:.09em;color:#aa909d}#resultModal .scan-intel-item b{display:block;margin-top:3px;font-size:10px;color:#5e3c4d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    #resultModal .intelligence-step-list .scan-step span{min-width:0;line-height:1.25}
+    #resultModal .intelligence-scan .scan-progress-meta{margin-top:5px}
+    @keyframes scanRadar{0%,100%{transform:scale(.92);opacity:.42}50%{transform:scale(1.04);opacity:1}}
+    @keyframes fallbackGlobeSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+    @media(max-width:420px){#resultModal .intelligence-scan{min-height:590px;padding:16px 12px 15px}#resultModal .scan-globe-shell{width:205px;height:205px}#resultModal .scan-globe{width:192px;height:192px}#resultModal .scan-intel-item{min-height:46px;padding:8px 9px}}
+
+
     /* v4 compact conversion layout */
     .view[data-view="home"]{min-height:calc(100vh - 108px)}
     .view[data-view="home"] .quick-actions{margin-top:8px}
@@ -638,7 +685,7 @@
         <div class="eyebrow"><span class="live-dot"></span> Relationship status intelligence</div>
         <div class="hero-slider home-copy-slider" id="heroSlider" aria-live="polite"></div>
         <div class="hero-slider-controls home-slider-controls">
-          <div class="hero-dots" id="heroDots" aria-label="Hero messages"></div>
+          <div class="hero-counter" id="heroDots" aria-label="Hero message position">1 / 1</div>
         </div>
         <div class="hero-progress"><i id="heroProgress"></i></div>
       </div>
@@ -796,21 +843,41 @@
 
   <!-- Scan / Result -->
   <div class="modal" id="resultModal"><div class="sheet">
-    <div class="handle"></div><div class="sheet-head"><div><small>LOCKILY MATCH ENGINE</small><h3 id="resultSheetTitle">Checking your Lock</h3></div><button class="close" data-close="resultModal">×</button></div>
+    <div class="handle"></div><div class="sheet-head"><div><small>RELATIONSHIP STATUS INTELLIGENCE</small><h3 id="resultSheetTitle">Checking your Lock</h3></div><button class="close" data-close="resultModal">×</button></div>
     <div id="scanAnimation">
-      <div class="scan-stage">
+      <div class="scan-stage intelligence-scan">
         <div class="scan-kicker">LOCKILY DEEP CHECK</div>
-        <div class="scan-lead">Checking relationship signals connected to this number.</div>
-        <div class="scan-beam"></div>
-        <div class="scan-identity"><div class="round"><span class="scan-heart">♥</span></div><b id="scanPhone">0803••••000</b><span id="scanStageText">Reading the number…</span></div>
+        <div class="scan-lead" id="scanLead">Following the number's signals across the map.</div>
+
+        <div class="scan-globe-shell">
+          <div class="scan-globe-halo"></div>
+          <div id="scanGlobe" class="scan-globe" aria-label="Global number signal map"><div class="scan-globe-fallback">◎</div></div>
+          <div class="scan-radar-ring ring-a"></div><div class="scan-radar-ring ring-b"></div>
+        </div>
+
+        <div class="scan-country-reveal" id="scanCountryReveal" aria-live="polite">
+          <small>COUNTRY SIGNAL</small>
+          <strong id="scanCountryGuess">Looking across the globe…</strong>
+        </div>
+
+        <div class="scan-identity intelligence-number"><b id="scanPhone">0803••••000</b><span id="scanStageText">Establishing global signal…</span></div>
+
+        <div class="scan-intel-grid" id="scanIntelGrid">
+          <div class="scan-intel-item"><span>COUNTRY</span><b id="scanIntelCountry">Scanning…</b></div>
+          <div class="scan-intel-item"><span>CALLING CODE</span><b id="scanIntelCode">—</b></div>
+          <div class="scan-intel-item"><span>NUMBER TYPE</span><b id="scanIntelType">Analyzing…</b></div>
+          <div class="scan-intel-item"><span>LOCAL TIME</span><b id="scanIntelTime">Checking…</b></div>
+        </div>
+
         <div class="scan-progress-meta"><b id="scanPercent">0%</b><span>Relationship status intelligence</span></div>
         <div class="progress"><i id="scanProgress"></i></div>
-        <div class="step-list">
-          <div class="scan-step" data-scan-step="0"><div class="status">1</div>Reading the number</div>
-          <div class="scan-step" data-scan-step="1"><div class="status">2</div>Checking recent search attention</div>
-          <div class="scan-step" data-scan-step="2"><div class="status">3</div>Cross-checking Lock-ins</div>
-          <div class="scan-step" data-scan-step="3"><div class="status">4</div>Checking verified relationship signals</div>
-          <div class="scan-step" data-scan-step="4"><div class="status">5</div>Preparing what Lockily can show you</div>
+        <div class="step-list intelligence-step-list">
+          <div class="scan-step" data-scan-step="0"><div class="status">1</div><span>Establishing global number signal</span></div>
+          <div class="scan-step" data-scan-step="1"><div class="status">2</div><span>Following country-code signal</span></div>
+          <div class="scan-step" data-scan-step="2"><div class="status">3</div><span>Analyzing number structure</span></div>
+          <div class="scan-step" data-scan-step="3"><div class="status">4</div><span>Checking Lockily network activity</span></div>
+          <div class="scan-step" data-scan-step="4"><div class="status">5</div><span>Cross-checking relationship signals</span></div>
+          <div class="scan-step" data-scan-step="5"><div class="status">6</div><span>Building what Lockily can show you</span></div>
         </div>
       </div><div class="mini-note">Private check · The person you searched is not notified.</div>
     </div>
@@ -1074,6 +1141,9 @@
     <button class="primary" type="button" data-close="iosInstallModal">Got it</button>
   </div></div>
 
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.13.12/bundle/libphonenumber-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -1223,13 +1293,46 @@
       while(d&&phoneLengthStatus(id)==='TOO_LONG'&&guard<8){d=d.slice(0,-1);input.value=d;guard+=1}
       updatePhoneLengthHint(id);
     }
+    let activeCountryPickerSelect=null;
+    function countryPickerClosedLabel(c){return {flag:countryFlag(c.iso2),code:`+${c.dial}`}}
+    function ensureCountryPickerOverlay(){
+      let overlay=$('#countryPickerOverlay');if(overlay)return overlay;
+      overlay=document.createElement('div');overlay.id='countryPickerOverlay';overlay.className='country-picker-overlay';overlay.setAttribute('aria-hidden','true');
+      overlay.innerHTML=`<div class="country-picker-panel" role="dialog" aria-modal="true" aria-label="Choose country"><div class="country-picker-head"><strong>Choose country</strong><button type="button" class="country-picker-close" aria-label="Close">×</button></div><label class="country-picker-search"><span>⌕</span><input id="countryPickerSearchInput" type="search" autocomplete="off" placeholder="Search country or code" /></label><div class="country-picker-current" id="countryPickerCurrent">Select a country</div><div class="country-picker-list" id="countryPickerList" role="listbox"></div></div>`;
+      document.body.appendChild(overlay);
+      const close=()=>closeCountryPicker();
+      overlay.querySelector('.country-picker-close').addEventListener('click',close);
+      overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
+      overlay.querySelector('#countryPickerSearchInput').addEventListener('input',renderCountryPickerOptions);
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('show'))close()});
+      return overlay;
+    }
+    function syncCountryPicker(select){
+      if(!select)return;const c=COUNTRY_BY_ISO[select.value]||COUNTRY_BY_ISO.NG,btn=select.closest('.country-picker-shell')?.querySelector('.country-picker-button');if(!btn)return;
+      const closed=countryPickerClosedLabel(c);btn.innerHTML=`<span class="cp-flag">${closed.flag}</span><span class="cp-code">${closed.code}</span><span class="cp-chevron">⌄</span>`;btn.disabled=!!select.disabled;btn.setAttribute('aria-label',`${c.name}, ${closed.code}. Choose country`);btn.title=`${c.name} ${closed.code}`;
+    }
+    function renderCountryPickerOptions(){
+      const overlay=ensureCountryPickerOverlay(),list=overlay.querySelector('#countryPickerList'),q=String(overlay.querySelector('#countryPickerSearchInput')?.value||'').trim().toLowerCase(),selected=activeCountryPickerSelect?.value||'';
+      const rows=LOCKILY_COUNTRIES.filter(c=>!q||c.name.toLowerCase().includes(q)||c.iso2.toLowerCase()===q.replace(/[^a-z]/g,'')||c.dial.includes(q.replace(/\D/g,''))||(`+${c.dial}`).includes(q));
+      list.innerHTML='';
+      if(!rows.length){list.innerHTML='<div class="country-picker-empty">No matching country.</div>';return}
+      const frag=document.createDocumentFragment();rows.forEach(c=>{const btn=document.createElement('button');btn.type='button';btn.className='country-picker-option'+(c.iso2===selected?' active':'');btn.setAttribute('role','option');btn.setAttribute('aria-selected',c.iso2===selected?'true':'false');btn.innerHTML=`<span class="flag">${countryFlag(c.iso2)}</span><span class="name">${escapeHtml(c.name)}</span><span class="code">+${c.dial}</span>`;btn.addEventListener('click',()=>{if(!activeCountryPickerSelect)return;activeCountryPickerSelect.value=c.iso2;activeCountryPickerSelect.dispatchEvent(new Event('change',{bubbles:true}));syncCountryPicker(activeCountryPickerSelect);closeCountryPicker();});frag.appendChild(btn)});list.appendChild(frag);
+      requestAnimationFrame(()=>list.querySelector('.country-picker-option.active')?.scrollIntoView({block:'nearest'}));
+    }
+    function openCountryPicker(select){
+      if(!select||select.disabled)return;activeCountryPickerSelect=select;const overlay=ensureCountryPickerOverlay(),search=overlay.querySelector('#countryPickerSearchInput'),c=COUNTRY_BY_ISO[select.value]||COUNTRY_BY_ISO.NG;search.value='';overlay.querySelector('#countryPickerCurrent').textContent=`Current: ${countryFlag(c.iso2)} ${c.name}  +${c.dial}`;renderCountryPickerOptions();overlay.classList.add('show');overlay.setAttribute('aria-hidden','false');setTimeout(()=>search.focus(),120);
+    }
+    function closeCountryPicker(){const overlay=$('#countryPickerOverlay');if(!overlay)return;overlay.classList.remove('show');overlay.setAttribute('aria-hidden','true');activeCountryPickerSelect=null}
+    function enhanceCountrySelect(select){
+      if(!select||select.dataset.customPicker==='1')return;select.dataset.customPicker='1';const shell=document.createElement('span');shell.className='country-picker-shell';select.parentNode.insertBefore(shell,select);shell.appendChild(select);const btn=document.createElement('button');btn.type='button';btn.className='country-picker-button';btn.setAttribute('aria-haspopup','dialog');btn.addEventListener('click',()=>openCountryPicker(select));shell.appendChild(btn);syncCountryPicker(select);
+    }
     function initCountrySelectors(){
       $$('select.country-select').forEach(select=>{
         if(!select.options.length){const frag=document.createDocumentFragment();LOCKILY_COUNTRIES.forEach(c=>{const o=document.createElement('option');o.value=c.iso2;o.textContent=countryOptionLabel(c);frag.appendChild(o)});select.appendChild(frag)}
         select.value=COUNTRY_BY_ISO[lastCountryIso]?lastCountryIso:'NG';select.title='Country / calling code';
-        select.addEventListener('change',()=>{lastCountryIso=select.value||'NG';localStorage.setItem('lockilyCountryIso',lastCountryIso);if(['signupPhone','signinPhone','resetPhone','profilePhoneInput'].includes(select.dataset.phoneFor))rememberAccountCountry(select.dataset.phoneFor);updatePhonePlaceholder(select.dataset.phoneFor);restrictPhoneInput(select.dataset.phoneFor)});
+        select.addEventListener('change',()=>{lastCountryIso=select.value||'NG';localStorage.setItem('lockilyCountryIso',lastCountryIso);if(['signupPhone','signinPhone','resetPhone','profilePhoneInput'].includes(select.dataset.phoneFor))rememberAccountCountry(select.dataset.phoneFor);syncCountryPicker(select);updatePhonePlaceholder(select.dataset.phoneFor);restrictPhoneInput(select.dataset.phoneFor)});
         const input=$('#'+select.dataset.phoneFor);if(input&&!input.dataset.lengthBound){input.dataset.lengthBound='1';input.maxLength=18;input.addEventListener('input',()=>restrictPhoneInput(select.dataset.phoneFor));input.addEventListener('blur',()=>updatePhoneLengthHint(select.dataset.phoneFor))}
-        updatePhonePlaceholder(select.dataset.phoneFor);updatePhoneLengthHint(select.dataset.phoneFor);
+        enhanceCountrySelect(select);updatePhonePlaceholder(select.dataset.phoneFor);updatePhoneLengthHint(select.dataset.phoneFor);
       });
     }
     function updatePhonePlaceholder(id){const input=$('#'+id),select=$('#'+id+'Country');if(!input||!select)return;input.placeholder='Phone number'}
@@ -1258,7 +1361,7 @@
       const candidates=LOCKILY_COUNTRIES.filter(c=>d.startsWith(c.dial)).sort((a,b)=>b.dial.length-a.dial.length);
       const preferredIso=PREFERRED_SHARED_DIAL_ISO[candidates[0]?.dial||''];
       const c=(parsedCountry&&COUNTRY_BY_ISO[parsedCountry]?COUNTRY_BY_ISO[parsedCountry]:null)||candidates.find(x=>x.iso2===lastCountryIso)||candidates.find(x=>x.iso2===preferredIso)||candidates[0]||COUNTRY_BY_ISO.NG;
-      if(select&&c)select.value=c.iso2;input.value=c&&d.startsWith(c.dial)?d.slice(c.dial.length):d;updatePhonePlaceholder(id);restrictPhoneInput(id);
+      if(select&&c){select.value=c.iso2;syncCountryPicker(select)}input.value=c&&d.startsWith(c.dial)?d.slice(c.dial.length):d;updatePhonePlaceholder(id);restrictPhoneInput(id);
     }
     function internationalDisplay(v){const d=digits(v);return d?`+${d}`:'—'}
 
@@ -1470,7 +1573,7 @@
     $('#confirmActionCancel')?.addEventListener('click',closeConfirmModal);$('#confirmActionClose')?.addEventListener('click',closeConfirmModal);$('#confirmActionConfirm')?.addEventListener('click',()=>{const fn=confirmActionHandler;confirmActionHandler=null;hideModal('confirmActionModal');if(fn)fn()});
     function nav(view){$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===view));$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.nav===view));$$('.modal.show').forEach(m=>hideModal(m.id));window.scrollTo({top:0,behavior:'auto'});if(view==='verify')setTimeout(()=>syncVerificationHistoryFromBackend({silent:true}),80)}
     $$('[data-nav]').forEach(b=>b.addEventListener('click',()=>nav(b.dataset.nav)));
-    $$('[data-close]').forEach(b=>b.addEventListener('click',()=>hideModal(b.dataset.close)));
+    $$('[data-close]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.close==='resultModal')disposeScanGlobe();hideModal(b.dataset.close)}));
     const LEGAL_SECTIONS={terms:{title:'Terms & Conditions'},privacy:{title:'Privacy Statement'},nda:{title:'NDA / Confidentiality Agreement'}};
     function openLegalModal(section='terms'){
       const key=LEGAL_SECTIONS[section]?section:'terms';
@@ -1987,35 +2090,78 @@
       return !!paidVerificationForToday(phone);
     }
 
+    const COUNTRY_PRIMARY_TIMEZONE={NG:'Africa/Lagos',GB:'Europe/London',US:'America/New_York',CA:'America/Toronto',GH:'Africa/Accra',KE:'Africa/Nairobi',ZA:'Africa/Johannesburg',AE:'Asia/Dubai',IN:'Asia/Kolkata',CN:'Asia/Shanghai',JP:'Asia/Tokyo',FR:'Europe/Paris',DE:'Europe/Berlin',IT:'Europe/Rome',ES:'Europe/Madrid',BR:'America/Sao_Paulo',MX:'America/Mexico_City',AU:'Australia/Sydney',NZ:'Pacific/Auckland',SA:'Asia/Riyadh',EG:'Africa/Cairo',TR:'Europe/Istanbul',RU:'Europe/Moscow',PK:'Asia/Karachi'};
+    let scanGlobeRoot=null,scanGlobeChart=null,scanGlobeSeries=null,scanGlobeTimer=null;
+    function scanNumberIntelligence(phone){
+      const d=digits(phone),iso=countryIsoFromCanonical(d)||'NG',country=COUNTRY_BY_ISO[iso]||COUNTRY_BY_ISO.NG,lib=phoneLib();let parsed=null;try{parsed=lib?.parsePhoneNumberFromString?.(`+${d}`)||null}catch{}
+      let type='Phone number';try{const raw=parsed?.getType?.();const labels={MOBILE:'Mobile',FIXED_LINE:'Landline',FIXED_LINE_OR_MOBILE:'Mobile / landline',VOIP:'VoIP',TOLL_FREE:'Toll-free',PREMIUM_RATE:'Premium-rate',PERSONAL_NUMBER:'Personal number',PAGER:'Pager'};if(raw&&labels[raw])type=labels[raw]}catch{}
+      const national=parsed?.nationalNumber?String(parsed.nationalNumber):d.slice(String(country.dial).length);
+      if(type==='Phone number'&&iso==='NG'&&/^(70|80|81|90|91)\d{8}$/.test(national))type='Mobile';
+      let formatted=`+${d}`;try{formatted=parsed?.formatInternational?.()||formatted}catch{}
+      const tz=COUNTRY_PRIMARY_TIMEZONE[iso]||'';let localTime='Country time';if(tz){try{localTime=new Intl.DateTimeFormat('en',{timeZone:tz,hour:'numeric',minute:'2-digit',hour12:true}).format(new Date())}catch{}}
+      return {phone:d,iso,country,flag:countryFlag(iso),dial:`+${country.dial}`,national,type,formatted,tz,localTime};
+    }
+    function worldFeatureForIso(iso){try{return (window.am5geodata_worldLow?.features||[]).find(f=>String(f.id||f.properties?.id||f.properties?.iso_a2||'').toUpperCase()===String(iso||'').toUpperCase())||null}catch{return null}}
+    function featureCenter(feature){
+      const points=[];const walk=node=>{if(!Array.isArray(node))return;if(node.length>=2&&typeof node[0]==='number'&&typeof node[1]==='number'){points.push([node[0],node[1]]);return}node.forEach(walk)};walk(feature?.geometry?.coordinates);
+      if(!points.length)return {lon:0,lat:12};let minLon=180,maxLon=-180,minLat=90,maxLat=-90;points.forEach(([lon,lat])=>{if(Number.isFinite(lon)&&Number.isFinite(lat)){minLon=Math.min(minLon,lon);maxLon=Math.max(maxLon,lon);minLat=Math.min(minLat,lat);maxLat=Math.max(maxLat,lat)}});return {lon:(minLon+maxLon)/2,lat:(minLat+maxLat)/2};
+    }
+    function disposeScanGlobe(){if(scanGlobeTimer){clearInterval(scanGlobeTimer);scanGlobeTimer=null}try{scanGlobeRoot?.dispose()}catch{}scanGlobeRoot=null;scanGlobeChart=null;scanGlobeSeries=null}
+    function initScanGlobe(){
+      const host=$('#scanGlobe');if(!host)return false;disposeScanGlobe();
+      if(!(window.am5&&window.am5map&&window.am5geodata_worldLow)){host.classList.add('fallback-only');return false}
+      host.classList.remove('fallback-only');host.querySelector('.scan-globe-fallback')?.remove();
+      try{
+        scanGlobeRoot=am5.Root.new('scanGlobe');
+        scanGlobeChart=scanGlobeRoot.container.children.push(am5map.MapChart.new(scanGlobeRoot,{projection:am5map.geoOrthographic(),panX:'rotateX',panY:'rotateY',wheelY:'none',pinchZoom:false,rotationX:-24,rotationY:-12,zoomLevel:1.02}));
+        scanGlobeSeries=scanGlobeChart.series.push(am5map.MapPolygonSeries.new(scanGlobeRoot,{geoJSON:am5geodata_worldLow,exclude:['AQ']}));
+        scanGlobeSeries.mapPolygons.template.setAll({fill:am5.color(0xf2cbdc),stroke:am5.color(0xffffff),strokeWidth:.65,interactive:false,tooltipText:''});
+        scanGlobeSeries.mapPolygons.template.states.create('hover',{fill:am5.color(0xe05d93)});
+        scanGlobeTimer=setInterval(()=>{if(scanGlobeChart){const x=Number(scanGlobeChart.get('rotationX')||0);scanGlobeChart.set('rotationX',x+.42)}},55);
+        return true;
+      }catch(err){console.warn('Lockily globe unavailable',err);disposeScanGlobe();return false}
+    }
+    function focusScanGlobe(iso){
+      if(!scanGlobeChart||!scanGlobeSeries)return;const feature=worldFeatureForIso(iso),center=featureCenter(feature);if(scanGlobeTimer){clearInterval(scanGlobeTimer);scanGlobeTimer=null}
+      try{scanGlobeChart.animate({key:'rotationX',to:-center.lon,duration:1200,easing:am5.ease.cubicOut});scanGlobeChart.animate({key:'rotationY',to:-center.lat,duration:1200,easing:am5.ease.cubicOut});scanGlobeChart.animate({key:'zoomLevel',to:2.35,duration:1350,easing:am5.ease.cubicOut})}catch{}
+      try{scanGlobeSeries.mapPolygons.each(poly=>{const id=String(poly.dataItem?.get('id')||'').toUpperCase();poly.animate({key:'fill',to:am5.color(id===iso?0xd62f77:0xf1d3df),duration:650})})}catch{}
+    }
+    function setScanStep(index,pct,text){
+      const steps=$$('.scan-step');steps.forEach((s,i)=>{s.classList.toggle('active',i===index);if(i<index){s.classList.add('done');s.classList.remove('active');const st=s.querySelector('.status');if(st)st.textContent='✓'}});if($('#scanStageText'))$('#scanStageText').textContent=text;if($('#scanPercent'))$('#scanPercent').textContent=pct+'%';const bar=$('#scanProgress');if(bar){bar.style.transition='width 650ms cubic-bezier(.2,.8,.2,1)';bar.style.width=pct+'%'}
+    }
+    function revealScanIntel(id,value){const el=$('#'+id);if(!el)return;el.textContent=value;el.closest('.scan-intel-item')?.classList.add('revealed')}
+    function resetScanIntelligence(phone){
+      const info=scanNumberIntelligence(phone);$('#scanPhone').textContent=maskPhone(phone);$('#scanProgress').style.width='0%';$('#scanPercent').textContent='0%';$('#scanStageText').textContent='Establishing global signal…';$('#scanCountryGuess').textContent='Looking across the globe…';$('#scanCountryReveal').classList.remove('found');$('#scanIntelCountry').textContent='Scanning…';$('#scanIntelCode').textContent='—';$('#scanIntelType').textContent='Analyzing…';$('#scanIntelTime').textContent='Checking…';$$('.scan-intel-item').forEach(x=>x.classList.remove('revealed'));$$('.scan-step').forEach((s,idx)=>{s.classList.remove('active','done');const status=s.querySelector('.status');if(status)status.textContent=String(idx+1)});initScanGlobe();return info;
+    }
+    async function playIntelligenceScan(phone){
+      const info=scanNumberIntelligence(phone),wait=ms=>new Promise(r=>setTimeout(r,ms));
+      setScanStep(0,9,'Establishing global number signal…');revealScanIntel('scanIntelCode',info.dial);await wait(720);
+      setScanStep(1,26,'Following the country-code signal…');await wait(650);focusScanGlobe(info.iso);$('#scanCountryGuess').textContent=`Looks like it's in ${info.country.name} ${info.flag}`;$('#scanCountryReveal').classList.add('found');revealScanIntel('scanIntelCountry',`${info.flag} ${info.country.name}`);await wait(1150);
+      setScanStep(2,45,'Analyzing number structure…');revealScanIntel('scanIntelType',info.type);revealScanIntel('scanIntelTime',info.localTime);await wait(850);
+      setScanStep(3,63,'Checking Lockily network activity…');await wait(850);
+      setScanStep(4,80,'Cross-checking Lock-ins and verified signals…');await wait(850);
+      setScanStep(5,94,'Building relationship intelligence…');await wait(700);
+      return info;
+    }
+
     async function runResultScan(phone=state.activeLock?.subjectPhone, source='lock'){
       phone=digits(phone);
       if(!phone){toast(source==='lock'?'Create a Lock first':'Enter a phone number to verify');return}
       const previousLookup=state.currentLookup;
-      state.currentLookup={phone,source,unlocked:false,orderId:null};
-      state.currentReport=null;
+      state.currentLookup={phone,source,unlocked:false,orderId:null};state.currentReport=null;
       if(!previousLookup||previousLookup.phone!==phone||previousLookup.source!==source)state.verifyOfferExpiresAt=null;
-      $('#resultSheetTitle').textContent=source==='lock'?'Checking your Lock':'Checking relationship status';
-      $('#resultContent').classList.add('hidden');$('#scanAnimation').classList.remove('hidden');
-      $('#scanPhone').textContent=maskPhone(phone);$('#scanProgress').style.width='0%';if($('#scanPercent'))$('#scanPercent').textContent='0%';if($('#scanStageText'))$('#scanStageText').textContent='Reading the number…';
-      $$('.scan-step').forEach((s,idx)=>{s.classList.remove('active','done');const status=s.querySelector('.status');status.textContent=String(idx+1)});
-      showModal('resultModal');
+      $('#resultSheetTitle').textContent=source==='lock'?'Checking your Lock':'Checking relationship status';$('#resultContent').classList.add('hidden');$('#scanAnimation').classList.remove('hidden');
+      resetScanIntelligence(phone);showModal('resultModal');
+      const narrative=playIntelligenceScan(phone);
       try{
         const response=await lockilyApi('apiLockilySearch',{method:'POST',body:JSON.stringify({subjectPhone:phone,source})});
-        if(response.relationship)state.relationshipCache[phone]=response.relationship;
-        state.verifyOfferExpiresAt=response.offerExpiresAt||null;
-        const paidToday=paidVerificationForToday(phone);
-        if(paidToday){state.currentLookup.unlocked=true;state.currentLookup.orderId=paidToday.id;state.currentPayment=paidToday;await loadPaidReport(paidToday.id)}
-        const steps=$$('.scan-step'),scanMessages=['Reading the number…','Checking recent search attention…','Cross-checking Lock-ins…','Checking verified relationship signals…','Preparing what Lockily can show you…'],totalMs=3400,stepMs=Math.floor(totalMs/Math.max(1,steps.length));let i=0;
-        const tick=()=>{
-          if(i>0){steps[i-1].classList.remove('active');steps[i-1].classList.add('done');steps[i-1].querySelector('.status').textContent='✓'}
-          if(i<steps.length){const pct=Math.round((i+1)/steps.length*100);steps[i].classList.add('active');if($('#scanStageText'))$('#scanStageText').textContent=scanMessages[i]||'Checking relationship signals…';if($('#scanPercent'))$('#scanPercent').textContent=pct+'%';$('#scanProgress').style.transition=`width ${Math.max(360,stepMs-70)}ms linear`;$('#scanProgress').style.width=pct+'%';i++;setTimeout(tick,stepMs)}
-          else{if($('#scanPercent'))$('#scanPercent').textContent='100%';if($('#scanStageText'))$('#scanStageText').textContent='Check complete.';setTimeout(()=>{$('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');renderResult()},220)}
-        };
-        setTimeout(tick,100);
+        if(response.relationship)state.relationshipCache[phone]=response.relationship;state.verifyOfferExpiresAt=response.offerExpiresAt||null;
+        const paidToday=paidVerificationForToday(phone);if(paidToday){state.currentLookup.unlocked=true;state.currentLookup.orderId=paidToday.id;state.currentPayment=paidToday;await loadPaidReport(paidToday.id)}
+        await narrative;
+        $$('.scan-step').forEach(s=>{s.classList.remove('active');s.classList.add('done');const st=s.querySelector('.status');if(st)st.textContent='✓'});$('#scanPercent').textContent='100%';$('#scanStageText').textContent='Check complete.';$('#scanProgress').style.width='100%';
+        await new Promise(r=>setTimeout(r,420));disposeScanGlobe();$('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');renderResult();
       }catch(err){
-        $('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');
-        toast(err.message||'Could not check relationship status');
-        hideModal('resultModal');
+        disposeScanGlobe();$('#scanAnimation').classList.add('hidden');$('#resultContent').classList.remove('hidden');toast(err.message||'Could not check relationship status');hideModal('resultModal');
       }
     }
 
@@ -2589,18 +2735,17 @@
 
     function initHomeHero(slides){
       clearInterval(heroTimer);heroTimer=null;heroIndex=0;
-      const dots=$('#heroDots'),slider=$('#heroSlider'),progress=$('#heroProgress'),searchInput=$('#homeCheckPhone');
-      if(!slides.length){if(dots)dots.innerHTML='';return}
+      const counter=$('#heroDots'),slider=$('#heroSlider'),progress=$('#heroProgress'),searchInput=$('#homeCheckPhone');
+      if(!slides.length){if(counter)counter.textContent='0 / 0';return}
       let paused=false;
       const restartProgress=()=>{if(!progress)return;progress.classList.remove('running');if(paused)return;void progress.offsetWidth;progress.classList.add('running')};
-      const update=()=>{if(!dots)return;[...dots.children].forEach((dot,i)=>dot.classList.toggle('active',i===heroIndex))};
+      const update=()=>{if(counter)counter.textContent=`${String(heroIndex+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`};
       const show=index=>{const prev=heroIndex;heroIndex=(index+slides.length)%slides.length;slides.forEach((slide,i)=>{slide.classList.remove('active','exit-left');if(i===prev&&prev!==heroIndex)slide.classList.add('exit-left')});requestAnimationFrame(()=>slides[heroIndex]?.classList.add('active'));update();restartProgress()};
       const start=()=>{clearInterval(heroTimer);heroTimer=null;restartProgress();if(!paused&&slides.length>1)heroTimer=setInterval(()=>show(heroIndex+1),heroDelay)};
       const pause=()=>{paused=true;clearInterval(heroTimer);heroTimer=null;if(progress)progress.classList.remove('running')};
       const resume=()=>{paused=false;start()};
-      if(dots){dots.innerHTML='';slides.forEach((_,i)=>{const dot=document.createElement('button');dot.type='button';dot.className='hero-dot'+(i===0?' active':'');dot.setAttribute('aria-label',`Show hero message ${i+1}`);dot.onclick=()=>{show(i);start()};dots.appendChild(dot)})}
       if(slider){let startX=0;slider.ontouchstart=e=>{startX=e.changedTouches[0].clientX};slider.ontouchend=e=>{const d=e.changedTouches[0].clientX-startX;if(Math.abs(d)>45){show(d<0?heroIndex+1:heroIndex-1);start()}}}
-      if(searchInput){searchInput.addEventListener('focus',pause);searchInput.addEventListener('blur',resume)}
+      if(searchInput&&!searchInput.dataset.heroPauseBound){searchInput.dataset.heroPauseBound='1';searchInput.addEventListener('focus',pause);searchInput.addEventListener('blur',resume)}
       update();start();
     }
 
