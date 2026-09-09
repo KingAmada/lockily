@@ -292,20 +292,59 @@
     @media(min-width:720px){.app{padding-top:24px}.modal{align-items:center;padding:24px}.sheet{border-radius:34px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 
+    /* v5 search-first Lockily home: sliding story, fixed conversion action */
+    .view[data-view="home"] .home-hero{padding:18px 5px 8px;text-align:center}
+    .view[data-view="home"] .home-hero .eyebrow{justify-content:center;margin:0 auto;background:linear-gradient(145deg,#fff2f7,#fff8fb);border-color:#f7dce7;color:#c43e70;box-shadow:none;font-size:9.5px}
+    .view[data-view="home"] .home-copy-slider{height:176px;margin-top:9px;perspective:none;overflow:hidden}
+    .view[data-view="home"] .home-copy-slider .hero-slide{inset:0;padding:12px 10px 7px;border:0;border-radius:0;box-shadow:none;background:none!important;display:grid;place-items:center;text-align:center;overflow:visible;transform:translateX(20px);opacity:0;transition:opacity .42s var(--ease),transform .42s var(--ease)}
+    .view[data-view="home"] .home-copy-slider .hero-slide:before{display:none}
+    .view[data-view="home"] .home-copy-slider .hero-slide.active{opacity:1;transform:none;pointer-events:auto}
+    .view[data-view="home"] .home-copy-slider .hero-slide.exit-left{opacity:0;transform:translateX(-20px)}
+    .view[data-view="home"] .home-copy-slider .hero-slide>div{width:100%;max-width:510px;margin:auto}
+    .view[data-view="home"] .home-copy-slider .hero-slide h1{max-width:500px;margin:0 auto 10px;color:var(--deep);text-shadow:none;font-size:clamp(34px,10.2vw,52px);line-height:.94;letter-spacing:-.07em}
+    .view[data-view="home"] .home-copy-slider .hero-slide h1 .hero-accent{background:linear-gradient(90deg,#f04f81,#9a47b6 72%,#7755e8);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .view[data-view="home"] .home-copy-slider .hero-slide p{max-width:430px;margin:0 auto;color:#806d79;font-size:11.5px;line-height:1.5}
+    .view[data-view="home"] .home-slider-controls{justify-content:center;margin-top:1px;min-height:12px}
+    .view[data-view="home"] .home-slider-controls .hero-dots{justify-content:center;gap:6px}
+    .view[data-view="home"] .home-slider-controls .hero-dot{cursor:pointer}
+    .view[data-view="home"] .hero-progress{height:2px;max-width:150px;margin:7px auto 0;background:#f3e5eb}
+
+    .home-search-card{position:relative;z-index:5;margin-top:5px;padding:13px;border-radius:28px;background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.98);backdrop-filter:blur(22px) saturate(150%);box-shadow:0 20px 52px rgba(89,31,62,.11)}
+    .home-search-card:before{content:"";position:absolute;inset:-28px -20px auto;width:120px;height:120px;margin:auto;border-radius:50%;background:rgba(242,79,130,.08);filter:blur(40px);pointer-events:none}
+    .home-search-field{position:relative;z-index:1;margin:0;padding:12px 13px;border-radius:21px;background:#fff;border:1px solid #f2dce7;box-shadow:0 7px 20px rgba(89,31,62,.045)}
+    .home-search-field label{font-size:7.5px;margin-bottom:5px;color:#a78898}
+    .home-search-field .country-select{border:0;background:#fff8fb;padding-top:9px;padding-bottom:9px;border-radius:11px}
+    .home-search-field input{font-size:16px!important}
+    .home-search-primary{position:relative;z-index:1;display:grid;grid-template-columns:30px 1fr 24px;align-items:center;gap:7px;margin-top:10px;padding:15px 15px;border-radius:22px;background:linear-gradient(135deg,#ef3f7b,#c72e79 56%,#7a3cb5);font-size:13px;letter-spacing:-.01em;box-shadow:0 14px 30px rgba(198,45,117,.23)}
+    .home-search-primary .home-search-icon{font-size:24px;font-weight:500;line-height:1}
+    .home-search-primary .home-search-arrow{font-size:22px;line-height:1;text-align:right}
+    .home-lock-secondary{position:relative;z-index:1;width:100%;margin-top:10px;padding:12px 14px;border:1.5px solid #e24c82;border-radius:20px;background:linear-gradient(145deg,#fff,#fff7fa);color:#7a214d;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:950;font-size:12px;box-shadow:0 8px 20px rgba(144,37,83,.055);transition:.22s var(--ease)}
+    .home-lock-secondary:hover{transform:translateY(-1px);box-shadow:0 11px 24px rgba(144,37,83,.09)}
+    .home-lock-secondary:active{transform:scale(.987)}
+    .home-lock-secondary .home-lock-heart{font-size:23px;color:#d73b74;line-height:1}
+    .home-lock-secondary strong{font-size:8px;letter-spacing:.06em;color:#b72f64;background:#fff0f5;border:1px solid #f1d2df;border-radius:999px;padding:5px 7px}
+    .home-lock-note{position:relative;z-index:1;margin:8px 4px 0;text-align:center;color:#897681;font-size:8.8px;line-height:1.42}
+    .home-privacy-note{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:6px;margin:8px 4px 1px;color:#9b8993;font-size:8px;font-weight:800}
+    .home-privacy-note span{font-size:9px;color:#806776}
+
+    .view[data-view="home"] .home-feature-cards{margin-top:10px;gap:8px}
+    .view[data-view="home"] .home-feature-cards .quick{min-height:90px;padding:10px 6px 9px;border-radius:19px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:0;text-align:center;background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.96);box-shadow:0 10px 27px rgba(89,31,62,.07)}
+    .view[data-view="home"] .home-feature-cards .quick i{width:31px;height:31px;margin:0 auto 6px;border-radius:11px;font-size:14px}
+    .view[data-view="home"] .home-feature-cards .quick span{display:block;min-width:0}
+    .view[data-view="home"] .home-feature-cards .quick b{display:block;font-size:9.5px;line-height:1.15;color:var(--ink)}
+    .view[data-view="home"] .home-feature-cards .quick small{display:block;margin-top:4px;color:var(--muted);font-size:6.8px;line-height:1.3;font-weight:750}
+
+    @media(max-width:420px){
+      .view[data-view="home"] .home-copy-slider{height:162px}
+      .view[data-view="home"] .home-copy-slider .hero-slide h1{font-size:clamp(31px,9.7vw,43px)}
+      .home-search-card{padding:11px;border-radius:25px}
+      .home-search-primary{font-size:12px;padding:14px 13px}
+      .home-lock-secondary{font-size:11px;padding:11px 12px}
+      .view[data-view="home"] .home-feature-cards .quick{min-height:86px}
+    }
+
     /* v4 compact conversion layout */
     .view[data-view="home"]{min-height:calc(100vh - 108px)}
-    .view[data-view="home"] .hero{padding:14px 4px 8px}
-    .view[data-view="home"] .hero-slider{height:196px;margin-top:8px}
-    .view[data-view="home"] .hero-slide{padding:15px;border-radius:25px}
-    .view[data-view="home"] .hero-slide h1{font-size:clamp(28px,8.7vw,39px);line-height:.96}
-    .view[data-view="home"] .hero-slide p{font-size:10.5px;line-height:1.36}
-    .view[data-view="home"] .hero-slider-controls{margin-top:6px}
-    .view[data-view="home"] .hero-arrow{width:34px;height:34px;border-radius:12px}
-    .view[data-view="home"] .hero-progress{margin-top:7px}
-    .view[data-view="home"] .lock-card{margin-top:7px;padding:12px;border-radius:25px}
-    .view[data-view="home"] .field{padding:10px 12px;margin-top:8px}
-    .view[data-view="home"] .primary{padding:13px 15px;margin-top:9px}
-    .view[data-view="home"] .mini-note{margin-top:7px}
     .view[data-view="home"] .quick-actions{margin-top:8px}
     .view[data-view="home"] .quick{padding:8px 5px;border-radius:16px}
     .view[data-view="home"] .quick i{width:27px;height:27px;margin-bottom:3px}
@@ -352,9 +391,6 @@
     .deal-timer{min-width:74px;padding:9px;border-radius:15px;background:#351628;color:#fff;text-align:center}.deal-timer b{display:block;font-size:17px;letter-spacing:.04em}.deal-timer span{display:block;font-size:6.5px;color:#ead3df;margin-top:2px}
 
     @media(max-width:420px){
-      .view[data-view="home"] .hero-slider{height:182px}
-      .view[data-view="home"] .hero-slide h1{font-size:clamp(29px,9vw,40px)}
-      .view[data-view="home"] .hero{padding-top:10px}
     }
 
 
@@ -562,45 +598,30 @@
     </header>
 
     <section class="view active" data-view="home">
-      <div class="hero">
+      <div class="hero home-hero">
         <div class="eyebrow"><span class="live-dot"></span> Relationship status intelligence</div>
-        <div class="hero-slider" id="heroSlider" aria-live="polite"></div>
-        <div class="hero-slider-controls">
-          <div class="hero-dots" id="heroDots"></div>
-          <div class="hero-arrow-group"><button class="hero-arrow" id="heroPrev" aria-label="Previous">‹</button><button class="hero-arrow" id="heroNext" aria-label="Next">›</button></div>
+        <div class="hero-slider home-copy-slider" id="heroSlider" aria-live="polite"></div>
+        <div class="hero-slider-controls home-slider-controls">
+          <div class="hero-dots" id="heroDots" aria-label="Hero messages"></div>
         </div>
         <div class="hero-progress"><i id="heroProgress"></i></div>
       </div>
 
-      <section class="card glass lock-card">
-        <div class="segmented" id="homeActionTabs">
-          <button class="seg-btn active" data-home-action="lock">Lock Your Person</button>
-          <button class="seg-btn" data-home-action="check">Check Status</button>
+      <section class="home-search-card" aria-label="Relationship status search">
+        <div class="home-search-field field">
+          <label>THEIR PHONE NUMBER</label>
+          <div class="phone-line"><select id="homeCheckPhoneCountry" class="country-select" data-phone-for="homeCheckPhone" aria-label="Country code"></select><input id="homeCheckPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="Phone number" /></div>
         </div>
-        <div class="home-action-panel" id="homeLockPanel">
-          <div class="inline-kicker"><b>LOCK YOUR PERSON</b><span class="free-badge">FREE</span></div>
-          <div class="field">
-            <label>THEIR PHONE NUMBER</label>
-            <div class="phone-line"><select id="homePhoneCountry" class="country-select" data-phone-for="homePhone" aria-label="Country code"></select><input id="homePhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="Phone number" /></div>
-          </div>
-          <button class="primary" id="homeLockBtn">Lock this person — Free</button>
-          <div class="mini-note">Lock the relationship now. Verify it whenever you need the full picture.</div>
-        </div>
-        <div class="home-action-panel hidden" id="homeCheckPanel">
-          <div class="inline-kicker"><b>CHECK RELATIONSHIP STATUS</b><span>PHONE SEARCH</span></div>
-          <div class="field">
-            <label>PHONE NUMBER</label>
-            <div class="phone-line"><select id="homeCheckPhoneCountry" class="country-select" data-phone-for="homeCheckPhone" aria-label="Country code"></select><input id="homeCheckPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="Phone number" /></div>
-          </div>
-          <button class="primary" id="homeCheckBtn">Check Relationship Status</button>
-          <div class="mini-note">Find out if truly you're the only one they admire</div>
-        </div>
+        <button class="home-search-primary primary" id="homeCheckBtn"><span class="home-search-icon" aria-hidden="true">⌕</span><span>Check Relationship Status</span><span class="home-search-arrow" aria-hidden="true">→</span></button>
+        <button class="home-lock-secondary" id="homeLockBtn" type="button"><span class="home-lock-heart" aria-hidden="true">♡</span><span>Lock Your Person</span><strong>FREE</strong></button>
+        <div class="home-lock-note">Save them to your Locks. Check and monitor them anytime.</div>
+        <div class="home-privacy-note"><span aria-hidden="true">▣</span> Private search · Searching won't notify them.</div>
       </section>
 
-      <div class="quick-actions">
-        <button class="quick verify" id="quickVerify"><i>⌕</i>Verify Relationship</button>
-        <button class="quick monitor" id="quickMonitor"><i>◉</i>Monitor</button>
-        <button class="quick mutual" id="quickMutual"><i>♥</i>Get Verified</button>
+      <div class="quick-actions home-feature-cards">
+        <button class="quick verify" id="quickVerify"><i>▤</i><span><b>Full Report</b><small>See relationship signals</small></span></button>
+        <button class="quick monitor" id="quickMonitor"><i>↗</i><span><b>Monitor Changes</b><small>Get alerts when things change</small></span></button>
+        <button class="quick mutual" id="quickMutual"><i>♡</i><span><b>Verified Lock</b><small>Confirm a relationship together</small></span></button>
       </div>
 
       <div class="activity-bar">
@@ -1649,9 +1670,6 @@
       input.addEventListener('input',()=>{input.value=input.value.replace(/[^0-9+() .-]/g,'').slice(0,24)});
     });
 
-    $$('[data-home-action]').forEach(btn=>btn.addEventListener('click',()=>{
-      const action=btn.dataset.homeAction;$$('[data-home-action]').forEach(b=>b.classList.toggle('active',b===btn));$('#homeLockPanel').classList.toggle('hidden',action!=='lock');$('#homeCheckPanel').classList.toggle('hidden',action!=='check');
-    }));
     $('#homeCheckBtn').onclick=()=>{const phone=phoneValue('homeCheckPhone');if(!validPhoneField('homeCheckPhone')){toast(phoneFieldError('homeCheckPhone'));return}state.verifyOfferExpiresAt=null;runResultScan(phone,'search')};
 
     function ensureProfile(next){
@@ -1678,7 +1696,7 @@
 
     function openLockFlow(prefill=''){
       ensureProfile(()=>{
-        setPhoneField('lockPhone',prefill||phoneValue('homePhone'));
+        setPhoneField('lockPhone',prefill||phoneValue('homeCheckPhone'));
         $('#lockNickname').value='';
         $('#personGender').value='';$('#personAgeRange').value='';$('#relationshipType').value='talking';
         const d=new Date();d.setMonth(d.getMonth()-3);syncRelationshipDatePicker([d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-'));
@@ -1686,7 +1704,7 @@
         showModal('lockModal');
       })
     }
-    $('#homeLockBtn').onclick=()=>openLockFlow();
+    $('#homeLockBtn').onclick=()=>openLockFlow(phoneValue('homeCheckPhone'));
 
     $('#createLockBtn').onclick=async()=>{
       const phone=phoneValue('lockPhone'),nickname=$('#lockNickname').value.trim()||'My person',gender=$('#personGender').value,ageRange=$('#personAgeRange').value,startDate=$('#relationshipStart').value;
@@ -2485,6 +2503,25 @@
       return [...holder.children];
     }
 
+    function renderHomeHeroSlides(){
+      const holder=$('#heroSlider');if(!holder)return [];
+      const items=[
+        {title:'Are you really the only one?',accent:'the only one?',copy:'Enter their number and see what Lockily knows.'},
+        {title:'You might not be the boyfriend.',accent:'not be the boyfriend.',copy:'You might be one of the boyfriends. Search the number before assumptions become surprises.'},
+        {title:"LOVE IS BLIND. LOCKILY ISN'T.",accent:"LOCKILY ISN'T.",copy:"Search the number. Know what you're walking into."},
+        {title:"Don't just check them. Lock them.",accent:'Lock them.',copy:'Save your person to your Locks and know when relationship signals change.'}
+      ];
+      holder.innerHTML='';
+      items.forEach((item,index)=>{
+        const article=document.createElement('article');article.className='hero-slide'+(index===0?' active':'');
+        const wrap=document.createElement('div'),h=document.createElement('h1'),p=document.createElement('p');
+        const title=String(item.title||''),accent=String(item.accent||'');
+        if(accent&&title.includes(accent)){const at=title.indexOf(accent);h.append(document.createTextNode(title.slice(0,at)));const em=document.createElement('span');em.className='hero-accent';em.textContent=accent;h.append(em,document.createTextNode(title.slice(at+accent.length)));}else h.textContent=title;
+        p.textContent=item.copy||'';wrap.append(h,p);article.appendChild(wrap);holder.appendChild(article);
+      });
+      return [...holder.children];
+    }
+
     function initAuthHero(slides){
       clearInterval(authHeroTimer);authHeroTimer=null;authHeroIndex=0;
       const counter=$('#authHeroDots'),slider=$('#authHeroSlider'),progress=$('#authHeroProgress');
@@ -2501,22 +2538,25 @@
 
     function initHomeHero(slides){
       clearInterval(heroTimer);heroTimer=null;heroIndex=0;
-      const counter=$('#heroDots'),slider=$('#heroSlider'),progress=$('#heroProgress');
-      if(counter)counter.textContent=slides.length?`1 / ${slides.length}`:'0 / 0';
-      if(!slides.length)return;
-      const update=()=>{if(counter)counter.textContent=`${heroIndex+1} / ${slides.length}`};
-      const restartProgress=()=>{if(!progress)return;progress.classList.remove('running');void progress.offsetWidth;progress.classList.add('running')};
+      const dots=$('#heroDots'),slider=$('#heroSlider'),progress=$('#heroProgress'),searchInput=$('#homeCheckPhone');
+      if(!slides.length){if(dots)dots.innerHTML='';return}
+      let paused=false;
+      const restartProgress=()=>{if(!progress)return;progress.classList.remove('running');if(paused)return;void progress.offsetWidth;progress.classList.add('running')};
+      const update=()=>{if(!dots)return;[...dots.children].forEach((dot,i)=>dot.classList.toggle('active',i===heroIndex))};
       const show=index=>{const prev=heroIndex;heroIndex=(index+slides.length)%slides.length;slides.forEach((slide,i)=>{slide.classList.remove('active','exit-left');if(i===prev&&prev!==heroIndex)slide.classList.add('exit-left')});requestAnimationFrame(()=>slides[heroIndex]?.classList.add('active'));update();restartProgress()};
-      const start=()=>{clearInterval(heroTimer);restartProgress();if(slides.length>1)heroTimer=setInterval(()=>show(heroIndex+1),heroDelay)};
-      if($('#heroPrev'))$('#heroPrev').onclick=()=>{show(heroIndex-1);start()};if($('#heroNext'))$('#heroNext').onclick=()=>{show(heroIndex+1);start()};
+      const start=()=>{clearInterval(heroTimer);heroTimer=null;restartProgress();if(!paused&&slides.length>1)heroTimer=setInterval(()=>show(heroIndex+1),heroDelay)};
+      const pause=()=>{paused=true;clearInterval(heroTimer);heroTimer=null;if(progress)progress.classList.remove('running')};
+      const resume=()=>{paused=false;start()};
+      if(dots){dots.innerHTML='';slides.forEach((_,i)=>{const dot=document.createElement('button');dot.type='button';dot.className='hero-dot'+(i===0?' active':'');dot.setAttribute('aria-label',`Show hero message ${i+1}`);dot.onclick=()=>{show(i);start()};dots.appendChild(dot)})}
       if(slider){let startX=0;slider.ontouchstart=e=>{startX=e.changedTouches[0].clientX};slider.ontouchend=e=>{const d=e.changedTouches[0].clientX-startX;if(Math.abs(d)>45){show(d<0?heroIndex+1:heroIndex-1);start()}}}
+      if(searchInput){searchInput.addEventListener('focus',pause);searchInput.addEventListener('blur',resume)}
       update();start();
     }
 
     function renderDatabaseContent(){
       renderTestimonialsFromDatabase();
       initAuthHero(renderHeroSlidesFromDatabase('authHeroSlider','auth-hero-slide','h2'));
-      initHomeHero(renderHeroSlidesFromDatabase('heroSlider','hero-slide','h1'));
+      initHomeHero(renderHomeHeroSlides());
     }
 
     function renderLiveActivity(){
