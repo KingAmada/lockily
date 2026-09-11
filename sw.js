@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lockily-shell-20260909-claimantdetails1';
+const CACHE_NAME = 'lockily-shell-20260911-authrestore1';
 
 self.addEventListener('install', () => {
   self.skipWaiting();
